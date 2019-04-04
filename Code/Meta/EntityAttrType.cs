@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     [DataContract]
     [Serializable]

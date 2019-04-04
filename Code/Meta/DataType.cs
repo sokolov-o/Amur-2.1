@@ -5,10 +5,10 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     [DataContract]
-    public class DataType : FERHRI.Common.DicItem
+    public class DataType : SOV.Common.DicItem
     {
         public DataType(int id, string name, string nameShort, string description = null)
             : base(id, name, nameShort, description)

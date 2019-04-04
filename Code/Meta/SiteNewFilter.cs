@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     /// <summary>
     /// Коды меньшие 1 и пустые строки преобразуются в null.

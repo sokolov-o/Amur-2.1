@@ -5,10 +5,10 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     [DataContract]
-    public class GeneralCategory: FERHRI.Common.DicItem
+    public class GeneralCategory: SOV.Common.DicItem
     {
         public GeneralCategory(int id, string name, string nameShort, string description = null)
             : base(id, name, nameShort, description)

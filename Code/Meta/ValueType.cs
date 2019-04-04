@@ -5,10 +5,10 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     [DataContract]
-    public class ValueType : FERHRI.Common.DicItem
+    public class ValueType : SOV.Common.DicItem
     {
         [DataMember]
         public string NameEng { get { return NameShort; } set { NameShort = value; } }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
-using FERHRI.Common;
+using SOV.Common;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     /// <summary>
     /// Инструменты пункта наблюдений.

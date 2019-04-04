@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     [DataContract]
     public class Catalog

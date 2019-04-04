@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
-    public class CodeForm: FERHRI.Common.DicItem
+    public class CodeForm: SOV.Common.DicItem
     {
         public CodeForm(int id, string name)
             : base(id, name)

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FERHRI.Common;
+using SOV.Common;
 using System.Runtime.Serialization;
-using FERHRI.Amur.Meta;
+using SOV.Amur.Meta;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     /// <summary>
     /// Для всех списков класса значение null означает (все).

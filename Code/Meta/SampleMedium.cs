@@ -5,10 +5,10 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     [DataContract]
-    public class SampleMedium: FERHRI.Common.DicItem
+    public class SampleMedium: SOV.Common.DicItem
     {
         public SampleMedium(int id, string name, string description = null)
             : base(id, name, null, description)

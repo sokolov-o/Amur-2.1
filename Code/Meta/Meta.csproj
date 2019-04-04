@@ -91,13 +91,13 @@
     <Compile Include="VariableFilter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Geo\Geo.csproj">
-      <Project>{34f63caa-4627-4434-be40-16ac1b3d2541}</Project>
-      <Name>Geo</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geo\Geo.csproj">
+      <Project>{34f63caa-4627-4434-be40-16ac1b3d2541}</Project>
+      <Name>Geo</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
