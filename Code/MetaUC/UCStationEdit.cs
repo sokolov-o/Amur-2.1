@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using FERHRI.Common;
+using SOV.Common;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public partial class UCStationEdit : UserControl
     {

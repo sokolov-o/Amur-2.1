@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data
+﻿namespace SOV.Amur.Data
 {
     partial class UCDataGrpSVYM
     {
@@ -135,7 +135,7 @@
             // refreshButton
             // 
             this.refreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshButton.Image = global::FERHRI.Amur.Data.Properties.Resources.refresh_16xLG;
+            this.refreshButton.Image = global::SOV.Amur.Data.Properties.Resources.refresh_16xLG;
             this.refreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(40, 40);
@@ -146,7 +146,7 @@
             // 
             this.optionsButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.optionsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.optionsButton.Image = global::FERHRI.Amur.Data.Properties.Resources.Property_501;
+            this.optionsButton.Image = global::SOV.Amur.Data.Properties.Resources.Property_501;
             this.optionsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.optionsButton.Name = "optionsButton";
             this.optionsButton.Size = new System.Drawing.Size(40, 40);

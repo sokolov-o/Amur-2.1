@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class FormVariableFilter
     {
@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            FERHRI.Amur.Meta.VariableFilter variableFilter1 = new FERHRI.Amur.Meta.VariableFilter();
+            SOV.Amur.Meta.VariableFilter variableFilter1 = new SOV.Amur.Meta.VariableFilter();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.ucVariableFilter1 = new FERHRI.Amur.Meta.UCVariableFilter();
+            this.ucVariableFilter1 = new SOV.Amur.Meta.UCVariableFilter();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 

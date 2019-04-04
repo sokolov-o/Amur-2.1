@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FERHRI.Amur.Sys
+namespace SOV.Amur.Sys
 {
     public partial class FormSys : Form
     {

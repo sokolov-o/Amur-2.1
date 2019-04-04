@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FERHRI.Amur.Parser
+namespace SOV.Amur.Parser
 {
     public class SysObj
     {

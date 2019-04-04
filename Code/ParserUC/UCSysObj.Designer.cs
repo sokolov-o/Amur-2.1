@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Parser
+﻿namespace SOV.Amur.Parser
 {
     partial class UCSysObj
     {

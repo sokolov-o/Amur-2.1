@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Odbc;
-using FERHRI.Common;
-using FERHRI.Amur.Meta;
+using SOV.Common;
+using SOV.Amur.Meta;
 
-namespace FERHRI.Amur.DataP
+namespace SOV.Amur.DataP
 {
     public class RegionXMeteoZoneRepository
     {

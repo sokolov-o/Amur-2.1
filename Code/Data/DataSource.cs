@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.Runtime.Serialization;
 
-namespace FERHRI.Amur.Data
+namespace SOV.Amur.Data
 {
     [DataContract]
     public class DataSource

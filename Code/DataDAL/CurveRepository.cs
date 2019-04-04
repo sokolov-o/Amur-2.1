@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using FERHRI.Common;
+using SOV.Common;
 using Npgsql;
 
-namespace FERHRI.Amur.Data
+namespace SOV.Amur.Data
 {
     public class CurveRepository
     {

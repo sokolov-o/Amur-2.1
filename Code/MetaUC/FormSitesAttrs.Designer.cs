@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class FormSitesAttrs
     {
@@ -41,8 +41,8 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.eavGroupBox = new System.Windows.Forms.GroupBox();
             this.saveEAVButton = new System.Windows.Forms.Button();
-            this.ucSites = new FERHRI.Amur.Meta.UCSiteGeoObjectList();
-            this.ucEntityAttrValue = new FERHRI.Amur.Meta.UCEntityAttrValue();
+            this.ucSites = new SOV.Amur.Meta.UCSiteGeoObjectList();
+            this.ucEntityAttrValue = new SOV.Amur.Meta.UCEntityAttrValue();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -214,14 +214,14 @@
             this.ucSites.SiteGroupId = null;
             this.ucSites.Size = new System.Drawing.Size(404, 375);
             this.ucSites.TabIndex = 0;
-            this.ucSites.UCEntityAttrValueChangedEvent += new FERHRI.Amur.Meta.UCSiteGeoObjectList.UCEntityAttrValueChangedEventHandler(this.ucSites_UCEntityAttrValueChangedEvent);
+            this.ucSites.UCEntityAttrValueChangedEvent += new SOV.Amur.Meta.UCSiteGeoObjectList.UCEntityAttrValueChangedEventHandler(this.ucSites_UCEntityAttrValueChangedEvent);
             this.ucSites.Load += new System.EventHandler(this.ucSiteObjects_Load);
             // 
             // ucEntityAttrValue
             // 
             this.ucEntityAttrValue.DateTimeFormat = "dd.MM.yyyy HH:mm";
             this.ucEntityAttrValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucEntityAttrValue.EntityAttrTypes = ((System.Collections.Generic.List<FERHRI.Amur.Meta.EntityAttrType>)(resources.GetObject("ucEntityAttrValue.EntityAttrTypes")));
+            this.ucEntityAttrValue.EntityAttrTypes = ((System.Collections.Generic.List<SOV.Amur.Meta.EntityAttrType>)(resources.GetObject("ucEntityAttrValue.EntityAttrTypes")));
             this.ucEntityAttrValue.Location = new System.Drawing.Point(3, 16);
             this.ucEntityAttrValue.Name = "ucEntityAttrValue";
             this.ucEntityAttrValue.Size = new System.Drawing.Size(241, 215);

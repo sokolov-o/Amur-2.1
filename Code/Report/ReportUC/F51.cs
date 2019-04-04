@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FERHRI.Amur.Data;
-using FERHRI.Amur.Meta;
-using FERHRI.Common;
+using SOV.Amur.Data;
+using SOV.Amur.Meta;
+using SOV.Common;
 
-namespace FERHRI.Amur.Report
+namespace SOV.Amur.Report
 {
     public class F51Report : List<F51Value>
     {

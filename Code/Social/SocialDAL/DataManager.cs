@@ -1,10 +1,10 @@
 ﻿using System;
 using Npgsql;
-using FERHRI.Common;
+using SOV.Common;
 
-namespace FERHRI.Social
+namespace SOV.Social
 {
-    public class DataManager : FERHRI.Common.BaseDataManager
+    public class DataManager : SOV.Common.BaseDataManager
     {
         public readonly LegalEntityRepository LegalEntityRepository;
         public readonly StaffRepository StaffRepository;
@@ -64,14 +64,14 @@ namespace FERHRI.Social
         /// <returns></returns>
         public static DataManager GetInstance()
         {
-            return (DataManager)GetInstance(GetDefaultConnectionString());//, Type.GetType("FERHRI.Infores.DataManager"));
+            return (DataManager)GetInstance(GetDefaultConnectionString());//, Type.GetType("SOV.Infores.DataManager"));
         }
         /// <summary>
         /// Экземпляр с заданной строкой подключения.
         /// </summary>
         public static DataManager GetInstance(string connectionString)
         {
-            return (DataManager)GetInstance(connectionString, Type.GetType("FERHRI.Social.DataManager"));
+            return (DataManager)GetInstance(connectionString, Type.GetType("SOV.Social.DataManager"));
         }
 
         /// <summary>

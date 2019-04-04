@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FERHRI.Amur.Report
+namespace SOV.Amur.Report
 {
     public enum EnumReport : int
     {

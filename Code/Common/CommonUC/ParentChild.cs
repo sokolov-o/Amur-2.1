@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace FERHRI.Common
+namespace SOV.Common
 {
     public class ParentChild
     {

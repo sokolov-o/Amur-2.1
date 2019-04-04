@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public partial class UCSiteGeoObjectList : UserControl
     {
@@ -29,7 +29,7 @@ namespace FERHRI.Amur.Meta
             _isFilled = true;
             try
             {
-                dgv.Columns["stationName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+                dgv.Columns["siteName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
                 dgv.Columns["siteTypeName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
                 dgv.Rows.Clear();
                 if (siteGroupId.HasValue)
@@ -40,58 +40,30 @@ namespace FERHRI.Amur.Meta
 
                     // GET GROUP Sites & Stations
                     List<Site> sites = SiteGroupComboBox.GetGroupSites(siteGroupId);
-                    List<Station> stations = dm.StationRepository.Select(sites.Select(x => x.StationId).ToList());
-                    List<StationType> sts = dm.StationTypeRepository.Select();
+                    List<SiteType> sts = dm.SiteTypeRepository.Select();
 
                     // Station X GeoObject -> Geo objects
-                    List<StationGeoObject> sgos = dm.StationGeoObjectRepository.SelectByStations(stations.Select(x => x.Id).ToList());
+                    List<SiteGeoObject> sgos = dm.SiteGeoObjectRepository.SelectBySites(sites.Select(x => x.Id).ToList());
                     List<int> sgosId = sgos.Select(x => x.GeoObjectId).Distinct().ToList();
                     List<GeoObject> gos = (sgosId.Count == 0) ? new List<GeoObject>() : dm.GeoObjectRepository.Select(sgos.Select(x => x.GeoObjectId).Distinct().ToList());
 
                     // FILL DGV - SITES WITH GO
-                    foreach (var go in gos.OrderBy(x => x.Order))
+                    foreach (var go in gos.OrderBy(x => x.OrderBy))
                     {
-                        foreach (var sgo in sgos.Where(x => x.GeoObjectId == go.Id).OrderBy(x => x.Order))
+                        foreach (var sgo in sgos.Where(x => x.GeoObjectId == go.Id).OrderBy(x => x.OrderBy))
                         {
-                            Station station = stations.Find(x => x.Id == sgo.StationId);
-
-                            foreach (var site in sites.Where(x => x.StationId == sgo.StationId))
-                            {
-                                //StationType siteType = sts.Find(x => x.Id == site.SiteTypeId);
-                                AddDGVRow(site, station, go, sts.Find(x => x.Id == site.SiteTypeId));
-
-                                //DataGridViewRow row = dgv.Rows[dgv.Rows.Add()];
-                                //row.Tag = new RowTag() { Site = site, Station = station, GeoObject = go, SiteType = siteType };
-
-                                //row.Cells["geoObjectName"].Value = go.Name;
-                                //row.Cells["stationName"].Value = site.SiteCode + " " + station.Name;
-                                //row.Cells["stationCode"].Value = station.Code;
-                                //row.Cells["siteTypeName"].Value = siteType.NameShort;
-                            }
+                            AddDGVRow(sites.First(x => x.Id == sgo.SiteId), go);
                         }
                     }
                     // FILL DGV - SITES WITHOUT GO
-                    List<Station> stnNoGOList = stations.Where(x => !sgos.Exists(y => y.StationId == x.Id)).ToList();
-                    foreach (Station station in stnNoGOList.OrderBy(x => x.Name))
+                    foreach (var site in sites.Where(x => !sgos.Exists(y => y.SiteId == x.Id)).OrderBy(x => x.Name))
                     {
-                        foreach (var site in sites.Where(x => x.StationId == station.Id))
-                        {
-                            //StationType siteType = sts.Find(x => x.Id == site.SiteTypeId);
-                            AddDGVRow(site, station, null, sts.Find(x => x.Id == site.SiteTypeId));
-
-                            //DataGridViewRow row = dgv.Rows[dgv.Rows.Add()];
-                            //row.Tag = new RowTag() { Site = site, Station = station, GeoObject = null, SiteType = siteType };//
-
-                            //row.Cells["geoObjectName"].Value = string.Empty;
-                            //row.Cells["stationName"].Value = site.SiteCode + " " + station.Name;
-                            //row.Cells["stationCode"].Value = station.Code;
-                            //row.Cells["siteTypeName"].Value = siteType.NameShort;
-                        }
+                        AddDGVRow(site, null);
                     }
 
                     FillSiteAttributes(sites);
 
-                    dgv.Columns["stationName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dgv.Columns["siteName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     dgv.Columns["siteTypeName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
 
                     infoToolStripLabel.Text = dgv.Rows.Count.ToString();
@@ -104,15 +76,15 @@ namespace FERHRI.Amur.Meta
                 RaiseSelectedSiteChangedEvent();
             }
         }
-        void AddDGVRow(Site site, Station station, GeoObject go, StationType siteType)
+        void AddDGVRow(Site site, GeoObject go)
         {
             DataGridViewRow row = dgv.Rows[dgv.Rows.Add()];
-            row.Tag = new RowTag() { Site = site, Station = station, GeoObject = null, SiteType = siteType };//
+            row.Tag = new RowTag() { Site = site, GeoObject = go };//
 
             row.Cells["geoObjectName"].Value = go == null ? string.Empty : go.Name;
-            row.Cells["stationName"].Value = station.Name + " (" + site.SiteCode + ")";
-            row.Cells["stationCode"].Value = station.Code;
-            row.Cells["siteTypeName"].Value = siteType.NameShort;
+            row.Cells["siteName"].Value = site.Name;
+            row.Cells["siteCode"].Value = site.Code;
+            row.Cells["siteTypeName"].Value = SiteTypeRepository.GetCash().First(x => x.Id == site.TypeId).NameShort;
         }
         private void FillSiteAttributes(List<Site> sites)
         {
@@ -155,25 +127,11 @@ namespace FERHRI.Amur.Meta
             }
         }
 
-        Station Station
-        {
-            get
-            {
-                return dgv.SelectedRows.Count == 0 ? null : ((RowTag)dgv.SelectedRows[0].Tag).Station;
-            }
-        }
         GeoObject GeoObject
         {
             get
             {
                 return dgv.SelectedRows.Count == 0 ? null : ((RowTag)dgv.SelectedRows[0].Tag).GeoObject;
-            }
-        }
-        StationType SiteType
-        {
-            get
-            {
-                return dgv.SelectedRows.Count == 0 ? null : ((RowTag)dgv.SelectedRows[0].Tag).SiteType;
             }
         }
 
@@ -335,13 +293,13 @@ namespace FERHRI.Amur.Meta
                 UCSelectedSiteChangedEvent(Site);
             }
         }
-        public delegate void UCEditDataEventHandler(Site site, Station station, StationType siteType);
+        public delegate void UCEditDataEventHandler(Site site);
         public event UCEditDataEventHandler UCEditDataEvent;
         protected virtual void RaiseEditDataEvent()
         {
             if (UCEditDataEvent != null)
             {
-                UCEditDataEvent(Site, Station, SiteType);
+                UCEditDataEvent(Site);
             }
         }
         public delegate void UCEditSiteEventHandler(int siteId);
@@ -441,17 +399,7 @@ namespace FERHRI.Amur.Meta
         class RowTag
         {
             public Site Site { get; set; }
-            public Station Station { get; set; }
             public GeoObject GeoObject { get; set; }
-            public StationType SiteType { get; set; }
-
-            public string SiteName
-            {
-                get
-                {
-                    return Meta.Site.GetName(Station, SiteType, Site.SiteCode, 2) + " (" + Site.Id + ")";
-                }
-            }
         }
 
         public List<EntityAttrValue> EAVEdited = new List<EntityAttrValue>();
@@ -516,7 +464,7 @@ namespace FERHRI.Amur.Meta
                 }
 
                 // RAISE
-                UCEntityAttrValueChangedEvent(CurrentRowTag == null ? null : CurrentRowTag.SiteName, eav);
+                UCEntityAttrValueChangedEvent(CurrentRowTag == null ? null : CurrentRowTag.Site.Name, eav);
             }
         }
         RowTag CurrentRowTag

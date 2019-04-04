@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public partial class FormCatalogFilter : Form
     {
@@ -23,7 +23,7 @@ namespace FERHRI.Amur.Meta
                 Text = caption;
         }
 
-        public FERHRI.Amur.Meta.CatalogFilter CatalogFilter
+        public SOV.Amur.Meta.CatalogFilter CatalogFilter
         {
             set
             {
@@ -60,7 +60,7 @@ namespace FERHRI.Amur.Meta
                     SitesOnly == null ? SiteRepository.GetCash() : SitesOnly,
                     VariablesOnly == null ? VariableRepository.GetCash() : VariablesOnly,
                     MethodsOnly == null ? MethodRepository.GetCash() : MethodsOnly,
-                    SourcesOnly == null ? FERHRI.Social.DataManager.GetInstance().LegalEntityRepository.SelectAll() : SourcesOnly,
+                    SourcesOnly == null ? SOV.Social.DataManager.GetInstance().LegalEntityRepository.SelectAll() : SourcesOnly,
                     OffsetTypesOnly == null ? OffsetTypeRepository.GetCash() : OffsetTypesOnly
                 );
             _isLoaded = true;

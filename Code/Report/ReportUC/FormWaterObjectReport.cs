@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using FERHRI.Common;
-using FERHRI.Amur.Meta;
-using FERHRI.Social;
+using SOV.Common;
+using SOV.Amur.Meta;
+using SOV.Social;
 
-namespace FERHRI.Amur.Report
+namespace SOV.Amur.Report
 {
     public partial class FormWaterObjectReport : Form
     {

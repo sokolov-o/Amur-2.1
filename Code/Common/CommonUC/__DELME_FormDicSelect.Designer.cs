@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Common
+﻿namespace SOV.Common
 {
     partial class __DELME_FormDicSelect
     {
@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(__DELME_FormDicSelect));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
-            this.ucDicList = new FERHRI.Common.UCDicListBox();
+            this.ucDicList = new SOV.Common.UCDicListBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -95,7 +95,7 @@
             this.ucDicList.ShowUpdateToolbarButton = false;
             this.ucDicList.Size = new System.Drawing.Size(278, 352);
             this.ucDicList.TabIndex = 0;
-            this.ucDicList.UCDoubleClick += new FERHRI.Common.UCDicListBox.UCDoubleClickEventHandler(this.ucDicList_UCDoubleClick);
+            this.ucDicList.UCDoubleClick += new SOV.Common.UCDicListBox.UCDoubleClickEventHandler(this.ucDicList_UCDoubleClick);
             // 
             // button2
             // 

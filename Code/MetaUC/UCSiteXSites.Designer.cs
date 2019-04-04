@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCSiteXSites
     {
@@ -103,7 +103,7 @@
             // addToolStripButton
             // 
             this.addToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addToolStripButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.action_add_16xLG1;
+            this.addToolStripButton.Image = global::SOV.Amur.Meta.Properties.Resources.action_add_16xLG1;
             this.addToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addToolStripButton.Name = "addToolStripButton";

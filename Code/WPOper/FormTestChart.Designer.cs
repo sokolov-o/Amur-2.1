@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur
+﻿namespace SOV.Amur
 {
     partial class FormTestChart
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucChartHydro1 = new FERHRI.Amur.Data.UCChartHydro(0, null);
+            this.ucChartHydro1 = new SOV.Amur.Data.UCChartHydro(0, null);
             this.SuspendLayout();
             // 
             // ucChartHydro1
@@ -40,7 +40,7 @@
             this.ucChartHydro1.Size = new System.Drawing.Size(751, 415);
             this.ucChartHydro1.TabIndex = 0;
             this.ucChartHydro1.ToolbarVisible = true;
-            //this.ucChartHydro1.UCRefreshEvent += new FERHRI.Amur.Data.UCChartHydro.UCRefreshEventHandler(this.ucChartHydro1_UCRefreshEvent);
+            //this.ucChartHydro1.UCRefreshEvent += new SOV.Amur.Data.UCChartHydro.UCRefreshEventHandler(this.ucChartHydro1_UCRefreshEvent);
             // 
             // FormTestChart
             // 

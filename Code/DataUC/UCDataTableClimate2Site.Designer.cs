@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data
+﻿namespace SOV.Amur.Data
 {
     partial class UCDataTableClimate2Site
     {
@@ -98,7 +98,7 @@
             this.mnuMonthToolStripMenuItem,
             this.mnuDecadeToolStripMenuItem,
             this.mnuPentadeToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = global::FERHRI.Amur.Data.Properties.Resources.Property_501;
+            this.toolStripDropDownButton1.Image = global::SOV.Amur.Data.Properties.Resources.Property_501;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
@@ -106,7 +106,7 @@
             // 
             // mnuYearToolStripMenuItem
             // 
-            this.mnuYearToolStripMenuItem.Image = global::FERHRI.Amur.Data.Properties.Resources.CheckBoxChecked;
+            this.mnuYearToolStripMenuItem.Image = global::SOV.Amur.Data.Properties.Resources.CheckBoxChecked;
             this.mnuYearToolStripMenuItem.Name = "mnuYearToolStripMenuItem";
             this.mnuYearToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.mnuYearToolStripMenuItem.Text = "Год";
@@ -114,7 +114,7 @@
             // 
             // mnuMonthToolStripMenuItem
             // 
-            this.mnuMonthToolStripMenuItem.Image = global::FERHRI.Amur.Data.Properties.Resources.CheckBoxChecked;
+            this.mnuMonthToolStripMenuItem.Image = global::SOV.Amur.Data.Properties.Resources.CheckBoxChecked;
             this.mnuMonthToolStripMenuItem.Name = "mnuMonthToolStripMenuItem";
             this.mnuMonthToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.mnuMonthToolStripMenuItem.Text = "Месяц";
@@ -122,7 +122,7 @@
             // 
             // mnuDecadeToolStripMenuItem
             // 
-            this.mnuDecadeToolStripMenuItem.Image = global::FERHRI.Amur.Data.Properties.Resources.CheckBoxChecked;
+            this.mnuDecadeToolStripMenuItem.Image = global::SOV.Amur.Data.Properties.Resources.CheckBoxChecked;
             this.mnuDecadeToolStripMenuItem.Name = "mnuDecadeToolStripMenuItem";
             this.mnuDecadeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.mnuDecadeToolStripMenuItem.Text = "Декада";
@@ -130,7 +130,7 @@
             // 
             // mnuPentadeToolStripMenuItem
             // 
-            this.mnuPentadeToolStripMenuItem.Image = global::FERHRI.Amur.Data.Properties.Resources.CheckBoxChecked;
+            this.mnuPentadeToolStripMenuItem.Image = global::SOV.Amur.Data.Properties.Resources.CheckBoxChecked;
             this.mnuPentadeToolStripMenuItem.Name = "mnuPentadeToolStripMenuItem";
             this.mnuPentadeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.mnuPentadeToolStripMenuItem.Text = "Пентада";

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FERHRI.Common.TableIUD
+namespace SOV.Common.TableIUD
 {
     public partial class UCComboBoxTableField : UCTableField
     {

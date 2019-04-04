@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Amur.Meta;
-using FERHRI.Amur.Data;
-using FERHRI.Common;
+using SOV.Amur.Meta;
+using SOV.Amur.Data;
+using SOV.Common;
 
-namespace FERHRI.Amur.Data
+namespace SOV.Amur.Data
 {
     public partial class UCChartsOper : UserControl
     {
@@ -60,7 +60,7 @@ namespace FERHRI.Amur.Data
             List<Station> stations = mrep.StationRepository.Select(SitesGroupList.Select(x => x.StationId).Distinct().ToList());
             SitesGroupList.RemoveAll(x => SitesGroupList.FindIndex(y => y.Id == x.Id) != SitesGroupList.IndexOf(x));
             // ЦИКЛ по всем пунктам группы
-            // TODO: неэффективный алгоритм чтения данных. Исправить. OSokolof@ferhri.ru
+            // TODO: неэффективный алгоритм чтения данных. Исправить. OSokolof@SOV.ru
             foreach (Site site in SitesGroupList)
             {
                 // CREATE CHART OPTIONS
@@ -126,7 +126,7 @@ namespace FERHRI.Amur.Data
                 uc.ToolbarVisible = false;
                 uc.EnableAxesTitle = false;
                 uc.EnableLegendRevert();
-                uc.title = site.GetName(Meta.StationRepository.GetCash(), Meta.StationTypeRepository.GetCash(), 2);
+                uc.title = site.GetName(Meta.StationRepository.GetCash(), Meta.SiteTypeRepository.GetCash(), 2);
                 uc.Dock = DockStyle.Fill;
                 uc.HandleDestroyed += uc_HandleDestroyed;
 

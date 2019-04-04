@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Social
+﻿namespace SOV.Social
 {
     partial class FormSelectStaffPosition
     {
@@ -31,7 +31,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.ucStaffPositions = new FERHRI.Social.UCStaffPositions();
+            this.ucStaffPositions = new SOV.Social.UCStaffPositions();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,7 +82,7 @@
             this.ucStaffPositions.Name = "ucStaffPositions";
             this.ucStaffPositions.Size = new System.Drawing.Size(361, 250);
             this.ucStaffPositions.TabIndex = 0;
-            this.ucStaffPositions.UCMouseDoubleClickEvent += new FERHRI.Social.UCStaffPositions.UCMouseDoubleClickEventHandler(this.ucStaffPositions_UCMouseDoubleClickEvent);
+            this.ucStaffPositions.UCMouseDoubleClickEvent += new SOV.Social.UCStaffPositions.UCMouseDoubleClickEventHandler(this.ucStaffPositions_UCMouseDoubleClickEvent);
             // 
             // FormSelectStaffPosition
             // 

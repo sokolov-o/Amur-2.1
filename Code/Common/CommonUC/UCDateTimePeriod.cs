@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace FERHRI.Common
+namespace SOV.Common
 {
     /// <summary>
     /// Временной период с возможностью открытости с обеих сторон.

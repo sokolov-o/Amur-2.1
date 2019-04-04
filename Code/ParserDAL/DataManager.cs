@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
-using FERHRI.Common;
+using SOV.Common;
 
-namespace FERHRI.Amur.Parser
+namespace SOV.Amur.Parser
 {
     public class DataManager : Common.ADbNpgsql
     {
@@ -25,7 +25,7 @@ namespace FERHRI.Amur.Parser
         public static DataManager GetInstance(string connectionString = null)
         {
             DataManager ret;
-            string cnns = connectionString == null ? global::FERHRI.Amur.Parser.Properties.Settings.Default.ConnectionString : connectionString;
+            string cnns = connectionString == null ? global::SOV.Amur.Parser.Properties.Settings.Default.ConnectionString : connectionString;
 
             if (!_dm.TryGetValue(cnns, out ret))
             {
@@ -78,7 +78,7 @@ namespace FERHRI.Amur.Parser
 
         public static void SetDefaultConnectionString(string cnns)
         {
-            FERHRI.Amur.Parser.Properties.Settings.Default["ConnectionString"] = cnns;
+            SOV.Amur.Parser.Properties.Settings.Default["ConnectionString"] = cnns;
         }
     }
 }

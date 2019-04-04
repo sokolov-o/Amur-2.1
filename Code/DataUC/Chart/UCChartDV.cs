@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-using FERHRI.Amur.Meta;
+using SOV.Amur.Meta;
 
-namespace FERHRI.Amur.Data
+namespace SOV.Amur.Data
 {
     /// <summary>
     /// Графики: x - дата, y - значения.

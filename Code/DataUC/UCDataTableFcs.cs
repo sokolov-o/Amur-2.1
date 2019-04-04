@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Amur.Meta;
+using SOV.Amur.Meta;
 
-namespace FERHRI.Amur.Data
+namespace SOV.Amur.Data
 {
     public partial class UCDataTableFcs : UserControl
     {
@@ -49,7 +49,6 @@ namespace FERHRI.Amur.Data
         Dictionary<int, List<DateTime>> _fcsCD;
         List<Catalog> _ctls;
         List<Site> _sites;
-        List<Station> _stations;
         List<Variable> _vars;
         List<DateTime> _dates;
 
@@ -71,7 +70,6 @@ namespace FERHRI.Amur.Data
             _ctls = Catalog.FindAll(_ctls, df.CatalogFilter);
 
             _sites = Meta.DataManager.GetInstance().SiteRepository.Select(_ctls.Select(x => x.SiteId).Distinct().ToList());
-            _stations = Meta.DataManager.GetInstance().StationRepository.Select(_sites.Select(x => x.StationId).Distinct().ToList());
             _vars = Meta.DataManager.GetInstance().VariableRepository.Select(_ctls.Select(x => x.VariableId).Distinct().ToList()).OrderBy(x => x.NameRus).ToList();
 
             _dates = new List<DateTime>();
@@ -113,9 +111,9 @@ namespace FERHRI.Amur.Data
                     break;
                 case View.Date_Station_VariableDate:
 
-                    foreach (var site in _sites.OrderBy(x => x.GetName(StationRepository.GetCash(), StationTypeRepository.GetCash(), 0)))
+                    foreach (var site in _sites.OrderBy(x => x.Name))
                     {
-                        TreeNode tnV = new TreeNode(site.GetName(StationRepository.GetCash(), StationTypeRepository.GetCash(), 2));
+                        TreeNode tnV = new TreeNode(Meta.Site.GetName(site, 2, true, SiteTypeRepository.GetCash()));
                         tnV.Tag = site;
 
                         tv.Nodes.Add(tnV);
@@ -159,7 +157,6 @@ namespace FERHRI.Amur.Data
             _fcsCD = null;
             _ctls = null;
             _sites = null;
-            _stations = null;
             _vars = null;
             _dates = null;
         }
@@ -215,7 +212,7 @@ namespace FERHRI.Amur.Data
                     foreach (var site in _sites)
                     {
                         DataGridViewRow row = dgv.Rows[dgv.Rows.Add()];
-                        row.Cells[0].Value = site.GetName(StationRepository.GetCash(), StationTypeRepository.GetCash(), 0);
+                        row.Cells[0].Value = Meta.Site.GetName(site, 0, true, SiteTypeRepository.GetCash());
                         row.Cells[0].Tag = site;
 
                         List<DataForecast> data1 = data.FindAll(x => ctls.Exists(y => y.SiteId == site.Id && y.Id == x.CatalogId));

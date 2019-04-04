@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 
-namespace FERHRI.Common
+namespace SOV.Common
 {
     /// <summary>
     /// IdClass items as datasource for datagridview.

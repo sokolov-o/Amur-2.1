@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Common.TableIUD
+﻿namespace SOV.Common.TableIUD
 {
     partial class FormTableView<T, F>
     {
@@ -101,7 +101,7 @@
             // insertToolStripButton
             // 
             this.insertToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.insertToolStripButton.Image = global::FERHRI.Common.Properties.Resources.add;
+            this.insertToolStripButton.Image = global::SOV.Common.Properties.Resources.add;
             this.insertToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.insertToolStripButton.Name = "insertToolStripButton";
             this.insertToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -111,7 +111,7 @@
             // updateToolStripButton
             // 
             this.updateToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.updateToolStripButton.Image = global::FERHRI.Common.Properties.Resources.edit_data;
+            this.updateToolStripButton.Image = global::SOV.Common.Properties.Resources.edit_data;
             this.updateToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.updateToolStripButton.Name = "updateToolStripButton";
             this.updateToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -121,7 +121,7 @@
             // deleteToolStripButton
             // 
             this.deleteToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.deleteToolStripButton.Image = global::FERHRI.Common.Properties.Resources.delete;
+            this.deleteToolStripButton.Image = global::SOV.Common.Properties.Resources.delete;
             this.deleteToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.deleteToolStripButton.Name = "deleteToolStripButton";
             this.deleteToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -131,7 +131,7 @@
             // refreshToolStripButton
             // 
             this.refreshToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshToolStripButton.Image = global::FERHRI.Common.Properties.Resources.refresh;
+            this.refreshToolStripButton.Image = global::SOV.Common.Properties.Resources.refresh;
             this.refreshToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.refreshToolStripButton.Name = "refreshToolStripButton";
             this.refreshToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -145,7 +145,7 @@
             this.viewTypeStripDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gridTypeToolStripMenuItem,
             this.treeTypeToolStripMenuItem});
-            this.viewTypeStripDropDownButton.Image = global::FERHRI.Common.Properties.Resources.clone;
+            this.viewTypeStripDropDownButton.Image = global::SOV.Common.Properties.Resources.clone;
             this.viewTypeStripDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.viewTypeStripDropDownButton.Name = "viewTypeStripDropDownButton";
             this.viewTypeStripDropDownButton.Size = new System.Drawing.Size(29, 22);

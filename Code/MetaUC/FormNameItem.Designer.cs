@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class FormNameItem
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNameItem));
-            this.ucNameItems = new FERHRI.Amur.Meta.UCNameItems();
+            this.ucNameItems = new SOV.Amur.Meta.UCNameItems();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();

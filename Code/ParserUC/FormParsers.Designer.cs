@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Parser
+﻿namespace SOV.Amur.Parser
 {
     partial class FormParsers
     {
@@ -39,7 +39,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ucParsers = new FERHRI.Amur.Parser.UCSysObj();
+            this.ucParsers = new SOV.Amur.Parser.UCSysObj();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.saveParserButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -120,7 +120,7 @@
             // 
             // sysObjBindingSource
             // 
-            this.sysObjBindingSource.DataSource = typeof(FERHRI.Amur.Parser.SysObj);
+            this.sysObjBindingSource.DataSource = typeof(SOV.Amur.Parser.SysObj);
             // 
             // splitContainer1
             // 

@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCCatalogFilter
     {
@@ -39,19 +39,19 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tc = new System.Windows.Forms.TabControl();
             this._tpSite = new System.Windows.Forms.TabPage();
-            this.sitesFilter = new FERHRI.Amur.Meta.UCCatalogFilter0();
+            this.sitesFilter = new SOV.Amur.Meta.UCCatalogFilter0();
             this._tpVariable = new System.Windows.Forms.TabPage();
-            this.varsFilter = new FERHRI.Amur.Meta.UCCatalogFilter0();
+            this.varsFilter = new SOV.Amur.Meta.UCCatalogFilter0();
             this._tpOffset = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.offsetsFilter = new FERHRI.Amur.Meta.UCCatalogFilter0();
+            this.offsetsFilter = new SOV.Amur.Meta.UCCatalogFilter0();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.offsetValueTextBox = new System.Windows.Forms.TextBox();
             this._tpMethod = new System.Windows.Forms.TabPage();
-            this.methodsFilter = new FERHRI.Amur.Meta.UCCatalogFilter0();
+            this.methodsFilter = new SOV.Amur.Meta.UCCatalogFilter0();
             this._tpSource = new System.Windows.Forms.TabPage();
-            this.sourcesFilter = new FERHRI.Amur.Meta.UCCatalogFilter0();
+            this.sourcesFilter = new SOV.Amur.Meta.UCCatalogFilter0();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.refreshAllCashButton = new System.Windows.Forms.ToolStripButton();
             this.filterButton = new System.Windows.Forms.ToolStripButton();
@@ -169,8 +169,8 @@
             this.sitesFilter.Name = "sitesFilter";
             this.sitesFilter.Size = new System.Drawing.Size(331, 214);
             this.sitesFilter.TabIndex = 0;
-            this.sitesFilter.UCDicItemCheckedEvent += new FERHRI.Amur.Meta.UCCatalogFilter0.UCDicItemCheckedEventHandler(this.sitesFilter_UCDicItemCheckedEvent);
-            this.sitesFilter.UCGroupChangedEvent += new FERHRI.Amur.Meta.UCCatalogFilter0.UCGroupChangedEventHandler(this.sitesFilter_UCGroupChangedEvent);
+            this.sitesFilter.UCDicItemCheckedEvent += new SOV.Amur.Meta.UCCatalogFilter0.UCDicItemCheckedEventHandler(this.sitesFilter_UCDicItemCheckedEvent);
+            this.sitesFilter.UCGroupChangedEvent += new SOV.Amur.Meta.UCCatalogFilter0.UCGroupChangedEventHandler(this.sitesFilter_UCGroupChangedEvent);
             // 
             // _tpVariable
             // 
@@ -317,7 +317,7 @@
             // refreshAllCashButton
             // 
             this.refreshAllCashButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshAllCashButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.refresh_16xLG;
+            this.refreshAllCashButton.Image = global::SOV.Amur.Meta.Properties.Resources.refresh_16xLG;
             this.refreshAllCashButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.refreshAllCashButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.refreshAllCashButton.Name = "refreshAllCashButton";
@@ -329,7 +329,7 @@
             // filterButton
             // 
             this.filterButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.filterButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.FilteredObject_13400_16x_MD;
+            this.filterButton.Image = global::SOV.Amur.Meta.Properties.Resources.FilteredObject_13400_16x_MD;
             this.filterButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.filterButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.filterButton.Name = "filterButton";
@@ -340,7 +340,7 @@
             // saveFilterButton
             // 
             this.saveFilterButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveFilterButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.SaveBlack;
+            this.saveFilterButton.Image = global::SOV.Amur.Meta.Properties.Resources.SaveBlack;
             this.saveFilterButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.saveFilterButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveFilterButton.Name = "saveFilterButton";
@@ -352,7 +352,7 @@
             // 
             this.settingsButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.settingsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.settingsButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.Property_501;
+            this.settingsButton.Image = global::SOV.Amur.Meta.Properties.Resources.Property_501;
             this.settingsButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.settingsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.settingsButton.Name = "settingsButton";

@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Report
+﻿namespace SOV.Amur.Report
 {
     partial class UCF50ReportFilter
     {
@@ -34,10 +34,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.siteGroupComboBox = new FERHRI.Common.UCDicComboBox();
+            this.siteGroupComboBox = new SOV.Common.UCDicComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.flagAQCComboBox = new FERHRI.Common.UCDicComboBox();
-            this.timeUnitComboBox = new FERHRI.Common.UCDicComboBox();
+            this.flagAQCComboBox = new SOV.Common.UCDicComboBox();
+            this.timeUnitComboBox = new SOV.Common.UCDicComboBox();
             this.SuspendLayout();
             // 
             // yearTextBox

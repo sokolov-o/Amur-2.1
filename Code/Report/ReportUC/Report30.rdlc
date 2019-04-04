@@ -5944,9 +5944,9 @@ IIf(Parameters!orgEmail.Value = "", "", " Email: " + Parameters!orgEmail.Value)<
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>FERHRI.Amur.Report</rd:DataSetName>
+        <rd:DataSetName>SOV.Amur.Report</rd:DataSetName>
         <rd:TableName>WaterObjDailyDataItem</rd:TableName>
-        <rd:ObjectDataSourceType>FERHRI.Amur.Report.WaterObjReport+WaterObjDailyDataItem, FERHRI.Amur.ReportUC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:ObjectDataSourceType>SOV.Amur.Report.WaterObjReport+WaterObjDailyDataItem, SOV.Amur.ReportUC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
     <DataSet Name="DecadeDataItem">
@@ -6009,9 +6009,9 @@ IIf(Parameters!orgEmail.Value = "", "", " Email: " + Parameters!orgEmail.Value)<
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>FERHRI.Amur.Report</rd:DataSetName>
+        <rd:DataSetName>SOV.Amur.Report</rd:DataSetName>
         <rd:TableName>WaterObjDecadeDataItem</rd:TableName>
-        <rd:ObjectDataSourceType>FERHRI.Amur.Report.WaterObjReport+WaterObjDecadeDataItem, FERHRI.Amur.ReportUC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:ObjectDataSourceType>SOV.Amur.Report.WaterObjReport+WaterObjDecadeDataItem, SOV.Amur.ReportUC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

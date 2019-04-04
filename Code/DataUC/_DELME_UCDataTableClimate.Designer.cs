@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data
+﻿namespace SOV.Amur.Data
 {
     partial class _DELME_UCDataTableClimate
     {
@@ -87,7 +87,7 @@
             // settingsButton
             // 
             this.settingsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.settingsButton.Image = global::FERHRI.Amur.Data.Properties.Resources.Property_501;
+            this.settingsButton.Image = global::SOV.Amur.Data.Properties.Resources.Property_501;
             this.settingsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Size = new System.Drawing.Size(23, 22);

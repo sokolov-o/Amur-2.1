@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCVariableCodes
     {
@@ -32,7 +32,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ucVariablesList = new FERHRI.Amur.Meta.UCVariablesList();
+            this.ucVariablesList = new SOV.Amur.Meta.UCVariablesList();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvCodes = new System.Windows.Forms.DataGridView();
@@ -109,12 +109,12 @@
             this.ucVariablesList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucVariablesList.Location = new System.Drawing.Point(1, 14);
             this.ucVariablesList.Name = "ucVariablesList";
-            this.ucVariablesList.RowsViewMode = FERHRI.Amur.Meta.UCVariablesList.ROWS_VIEW.ALL;
+            this.ucVariablesList.RowsViewMode = SOV.Amur.Meta.UCVariablesList.ROWS_VIEW.ALL;
             this.ucVariablesList.ShowFilterButton = false;
             this.ucVariablesList.ShowToolBox = true;
             this.ucVariablesList.Size = new System.Drawing.Size(177, 271);
             this.ucVariablesList.TabIndex = 0;
-            this.ucVariablesList.UCVariableChangedEvent += new FERHRI.Amur.Meta.UCVariablesList.UCVariableChangedEventHandler(this.ucVariablesList_UCVariableChangedEvent);
+            this.ucVariablesList.UCVariableChangedEvent += new SOV.Amur.Meta.UCVariablesList.UCVariableChangedEventHandler(this.ucVariablesList_UCVariableChangedEvent);
             // 
             // groupBox2
             // 
@@ -166,7 +166,7 @@
             // variableCodeBindingSource
             // 
             this.variableCodeBindingSource.AllowNew = true;
-            this.variableCodeBindingSource.DataSource = typeof(FERHRI.Amur.Meta.VariableCode);
+            this.variableCodeBindingSource.DataSource = typeof(SOV.Amur.Meta.VariableCode);
             this.variableCodeBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.variableCodeBindingSource_AddingNew);
             this.variableCodeBindingSource.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.variableCodeBindingSource_ListChanged);
             // 
@@ -195,7 +195,7 @@
             // saveButton
             // 
             this.saveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.SaveBlack;
+            this.saveButton.Image = global::SOV.Amur.Meta.Properties.Resources.SaveBlack;
             this.saveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(23, 22);

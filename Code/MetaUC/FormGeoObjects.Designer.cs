@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class FormGeoObjects
     {
@@ -32,14 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGeoObjects));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.ucGeoobTree = new FERHRI.Common.UCDicTree();
+            this.ucGeoobTree = new SOV.Common.UCDicTree();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsEditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.ucStations = new FERHRI.Common.UCList();
+            this.ucStations = new SOV.Common.UCList();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -91,13 +91,13 @@
             this.ucGeoobTree.Size = new System.Drawing.Size(291, 313);
             this.ucGeoobTree.TabIndex = 1;
             this.ucGeoobTree.User = null;
-            this.ucGeoobTree.UCSelectedItemChanged += new FERHRI.Common.UCDicTree.UCSelectedItemChangedEventHandler(this.ucGeoobTree_UCSelectedItemChanged);
-            this.ucGeoobTree.UCRefresh += new FERHRI.Common.UCDicTree.UCRefreshEventHandler(this.ucGeoobTree_UCRefresh);
-            this.ucGeoobTree.UCAddNewItem += new FERHRI.Common.UCDicTree.UCAddItemEventHandler(this.ucGeoobTree_UCAddNewItem);
-            this.ucGeoobTree.UCDeleteItem += new FERHRI.Common.UCDicTree.UCDeleteItemEventHandler(this.ucGeoobTree_UCDeleteItem);
-            this.ucGeoobTree.UCCloneItem += new FERHRI.Common.UCDicTree.UCCloneItemEventHandler(this.ucGeoobTree_UCCloneItem);
-            this.ucGeoobTree.UCNodesOrderChangedEvent += new FERHRI.Common.UCDicTree.UCNodesOrderChangedEventHandler(this.ucGeoobTree_UCNodesOrderChangedEvent);
-            this.ucGeoobTree.UCEditNewItem += new FERHRI.Common.UCDicTree.UCEditItemEventHandler(this.ucGeoobTree_UCEditNewItem);
+            this.ucGeoobTree.UCSelectedItemChanged += new SOV.Common.UCDicTree.UCSelectedItemChangedEventHandler(this.ucGeoobTree_UCSelectedItemChanged);
+            this.ucGeoobTree.UCRefresh += new SOV.Common.UCDicTree.UCRefreshEventHandler(this.ucGeoobTree_UCRefresh);
+            this.ucGeoobTree.UCAddNewItem += new SOV.Common.UCDicTree.UCAddItemEventHandler(this.ucGeoobTree_UCAddNewItem);
+            this.ucGeoobTree.UCDeleteItem += new SOV.Common.UCDicTree.UCDeleteItemEventHandler(this.ucGeoobTree_UCDeleteItem);
+            this.ucGeoobTree.UCCloneItem += new SOV.Common.UCDicTree.UCCloneItemEventHandler(this.ucGeoobTree_UCCloneItem);
+            this.ucGeoobTree.UCNodesOrderChangedEvent += new SOV.Common.UCDicTree.UCNodesOrderChangedEventHandler(this.ucGeoobTree_UCNodesOrderChangedEvent);
+            this.ucGeoobTree.UCEditNewItem += new SOV.Common.UCDicTree.UCEditItemEventHandler(this.ucGeoobTree_UCEditNewItem);
             // 
             // contextMenuStrip1
             // 
@@ -193,10 +193,10 @@
             this.ucStations.ShowUpdateToolbarButton = false;
             this.ucStations.Size = new System.Drawing.Size(285, 307);
             this.ucStations.TabIndex = 0;
-            this.ucStations.UCItemOrderChangedEvent += new FERHRI.Common.UCList.UCItemOrderChangedEventHandler(this.ucStations_UCItemOrderChangedEvent);
-            this.ucStations.UCAddNewEvent += new FERHRI.Common.UCList.UCAddNewEventHandler(this.ucStations_UCAddNewEvent);
-            this.ucStations.UCDeleteEvent += new FERHRI.Common.UCList.UCDeleteEventHandler(this.ucStations_UCDeleteEvent);
-            this.ucStations.UCSaveEvent += new FERHRI.Common.UCList.UCSaveEventHandler(this.ucStations_UCSaveEvent);
+            this.ucStations.UCItemOrderChangedEvent += new SOV.Common.UCList.UCItemOrderChangedEventHandler(this.ucStations_UCItemOrderChangedEvent);
+            this.ucStations.UCAddNewEvent += new SOV.Common.UCList.UCAddNewEventHandler(this.ucStations_UCAddNewEvent);
+            this.ucStations.UCDeleteEvent += new SOV.Common.UCList.UCDeleteEventHandler(this.ucStations_UCDeleteEvent);
+            this.ucStations.UCSaveEvent += new SOV.Common.UCList.UCSaveEventHandler(this.ucStations_UCSaveEvent);
             // 
             // button1
             // 

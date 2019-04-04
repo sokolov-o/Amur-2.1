@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public partial class UCStationSites : UserControl
     {
@@ -44,7 +44,7 @@ namespace FERHRI.Amur.Meta
 
                 row.Cells["id"].Value = item.Id;
                 row.Cells["code"].Value = item.SiteCode;
-                row.Cells["siteTypeName"].Value = StationTypeRepository.GetCash().Find(x => x.Id == item.SiteTypeId).Name;
+                row.Cells["siteTypeName"].Value = SiteTypeRepository.GetCash().Find(x => x.Id == item.SiteTypeId).Name;
                 row.Cells["description"].Value = item.Description;
             }
             RaiseCurrentRowChangedEvent(this.Site);

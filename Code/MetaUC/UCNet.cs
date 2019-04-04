@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public partial class UCNet : UserControl
     {
@@ -74,7 +74,7 @@ namespace FERHRI.Amur.Meta
             }
             else
             {
-                ret.Text = Meta.Site.GetName(site, StationRepository.GetCash(), StationTypeRepository.GetCash(), 1);
+                ret.Text = Meta.Site.GetName(site, StationRepository.GetCash(), SiteTypeRepository.GetCash(), 1);
                 if (site.SiteTypeId != (int)EnumStationType.HydroPost && site.SiteTypeId != (int)EnumStationType.MeteoStation)
                     ret.NodeFont = new Font(TreeView.DefaultFont, FontStyle.Italic);
             }

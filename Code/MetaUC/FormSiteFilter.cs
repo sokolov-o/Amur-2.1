@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Social;
+using SOV.Social;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public partial class FormSiteFilter : Form
     {
@@ -21,12 +21,12 @@ namespace FERHRI.Amur.Meta
             List<Common.DicItem> dicis;
 
             dicis = (new List<Common.DicItem>(new Common.DicItem[] { dici }));
-            dicis.AddRange(StationType.ToList<Common.DicItem>(StationTypeRepository.GetCash()));
+            dicis.AddRange(StationType.ToList<Common.DicItem>(SiteTypeRepository.GetCash()));
             stationTypeComboBox.DataSource = dicis;
             stationTypeComboBox.SelectedIndex = 0;
 
             dicis = new List<Common.DicItem>(new Common.DicItem[] { dici });
-            dicis.AddRange(StationType.ToList<Common.DicItem>(StationTypeRepository.GetCash()));
+            dicis.AddRange(StationType.ToList<Common.DicItem>(SiteTypeRepository.GetCash()));
             siteTypeComboBox.AddRange(dicis);
             siteTypeComboBox.SelectedIndex = 0;
 

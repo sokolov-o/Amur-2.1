@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Amur.Meta;
+using SOV.Amur.Meta;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     /// <summary>
     /// Дерево ключей каталога данных с группами ключей- для установки фильтра и др. нужд.
@@ -38,7 +38,7 @@ namespace FERHRI.Amur.Meta
             Node0Site.ContextMenuStrip = contextMenuStrip1;
 
             List<SiteGroup> sg = Meta.DataManager.GetInstance().SiteGroupRepository.SelectGroupsFK();
-            List<StationType> siteTypes = Meta.DataManager.GetInstance().StationTypeRepository.Select();
+            List<StationType> siteTypes = Meta.DataManager.GetInstance().SiteTypeRepository.Select();
 
             foreach (var item in sg.OrderBy(x => x.Name))
             {
@@ -49,7 +49,7 @@ namespace FERHRI.Amur.Meta
 
                 foreach (var site in item.SiteList.OrderBy(x => item.StationList.Find(y => y.Id == x.StationId).Name))
                 {
-                    TreeNode node2 = node1.Nodes.Add("u", site.GetName(StationRepository.GetCash(), StationTypeRepository.GetCash(), 2));
+                    TreeNode node2 = node1.Nodes.Add("u", site.GetName(StationRepository.GetCash(), SiteTypeRepository.GetCash(), 2));
                     node2.Tag = site.Id;
                     node2.ImageIndex = node2.SelectedImageIndex = 1;
                 }

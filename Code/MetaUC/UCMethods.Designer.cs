@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCMethods
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            FERHRI.Amur.Meta.Method method1 = new FERHRI.Amur.Meta.Method();
+            SOV.Amur.Meta.Method method1 = new SOV.Amur.Meta.Method();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCMethods));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
@@ -41,7 +41,7 @@
             this.methodBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ucMethod = new FERHRI.Amur.Meta.UCMethod();
+            this.ucMethod = new SOV.Amur.Meta.UCMethod();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.showHideMethodDetailsToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.dataFilterToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -160,7 +160,7 @@
             // 
             // methodBindingSource
             // 
-            this.methodBindingSource.DataSource = typeof(FERHRI.Amur.Meta.Method);
+            this.methodBindingSource.DataSource = typeof(SOV.Amur.Meta.Method);
             // 
             // splitContainer2
             // 
@@ -221,7 +221,7 @@
             // showHideMethodDetailsToolStripButton
             // 
             this.showHideMethodDetailsToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.showHideMethodDetailsToolStripButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.Property_501;
+            this.showHideMethodDetailsToolStripButton.Image = global::SOV.Amur.Meta.Properties.Resources.Property_501;
             this.showHideMethodDetailsToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.showHideMethodDetailsToolStripButton.Name = "showHideMethodDetailsToolStripButton";
             this.showHideMethodDetailsToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -232,7 +232,7 @@
             // dataFilterToolStripButton
             // 
             this.dataFilterToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.dataFilterToolStripButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.filter_16xLG;
+            this.dataFilterToolStripButton.Image = global::SOV.Amur.Meta.Properties.Resources.filter_16xLG;
             this.dataFilterToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.dataFilterToolStripButton.Name = "dataFilterToolStripButton";
             this.dataFilterToolStripButton.Size = new System.Drawing.Size(23, 22);

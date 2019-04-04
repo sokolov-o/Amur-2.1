@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Common
+﻿namespace SOV.Common
 {
     partial class UCDicListBox
     {
@@ -173,7 +173,7 @@
             // addNewToolStripButton
             // 
             this.addNewToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addNewToolStripButton.Image = global::FERHRI.Common.Properties.Resources.add;
+            this.addNewToolStripButton.Image = global::SOV.Common.Properties.Resources.add;
             this.addNewToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addNewToolStripButton.Name = "addNewToolStripButton";
             this.addNewToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -184,7 +184,7 @@
             // updateToolStripButton
             // 
             this.updateToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.updateToolStripButton.Image = global::FERHRI.Common.Properties.Resources.edit_data;
+            this.updateToolStripButton.Image = global::SOV.Common.Properties.Resources.edit_data;
             this.updateToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.updateToolStripButton.Name = "updateToolStripButton";
             this.updateToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -195,7 +195,7 @@
             // deleteToolStripButton
             // 
             this.deleteToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.deleteToolStripButton.Image = global::FERHRI.Common.Properties.Resources.delete;
+            this.deleteToolStripButton.Image = global::SOV.Common.Properties.Resources.delete;
             this.deleteToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.deleteToolStripButton.Name = "deleteToolStripButton";
             this.deleteToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -284,7 +284,7 @@
             // saveToolStripButton
             // 
             this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveToolStripButton.Image = global::FERHRI.Common.Properties.Resources.save_black;
+            this.saveToolStripButton.Image = global::SOV.Common.Properties.Resources.save_black;
             this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripButton.Name = "saveToolStripButton";
             this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);

@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Common;
+using SOV.Common;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public partial class UCSitesSelect : UserControl
     {
@@ -24,7 +24,7 @@ namespace FERHRI.Amur.Meta
         {
             UCList3.SetDataSource(new List<IdName>() { new Common.IdName() { Id = -1, Name = "(ВСЕ)" } });
 
-            UCList3.AddRange(StationTypeRepository.GetCash().ToList<object>());
+            UCList3.AddRange(SiteTypeRepository.GetCash().ToList<object>());
         }
         List<int> _ExcludeSites = new List<int>();
         /// <summary>
@@ -51,13 +51,13 @@ namespace FERHRI.Amur.Meta
                 sites.RemoveAll(x => ExcludeSites.Exists(y => y == x.Id));
 
                 //List<Station> stations = DataManager.GetInstance().StationRepository.Select(sites.Select(x => x.StationId).Distinct().ToList());
-                //List<StationType> siteTypes = DataManager.GetInstance().StationTypeRepository.Select();
+                //List<StationType> siteTypes = DataManager.GetInstance().SiteTypeRepository.Select();
 
-                //UCList2.AddRange(Meta.Site.ToDicItemList(sites, StationRepository.GetCash(), StationTypeRepository.GetCash(), 2)
+                //UCList2.AddRange(Meta.Site.ToDicItemList(sites, StationRepository.GetCash(), SiteTypeRepository.GetCash(), 2)
                 //    .OrderBy(x => x.Name)
                 //    .ToList());
                 UCList2.AddRange(
-                    sites.Select(x => new IdName() { Id = x.Id, Name = x.GetName(StationRepository.GetCash(), StationTypeRepository.GetCash(), 1) })
+                    sites.Select(x => new IdName() { Id = x.Id, Name = x.GetName(StationRepository.GetCash(), SiteTypeRepository.GetCash(), 1) })
                     .OrderBy(x => x.Name)
                     .ToList<object>());
             }

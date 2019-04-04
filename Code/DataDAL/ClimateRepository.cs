@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Npgsql;
-using FERHRI.Common;
+using SOV.Common;
 
-namespace FERHRI.Amur.Data
+namespace SOV.Amur.Data
 {
     public class ClimateRepository : BaseRepository<Climate>
     {

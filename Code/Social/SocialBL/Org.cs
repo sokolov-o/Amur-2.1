@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
-using FERHRI.Common;
+using SOV.Common;
 
-namespace FERHRI.Social
+namespace SOV.Social
 {
     [DataContract]
     public class Org 

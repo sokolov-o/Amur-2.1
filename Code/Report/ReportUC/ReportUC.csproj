@@ -128,14 +128,6 @@
       <Project>{9ff17c08-ffd4-40fb-a371-c5907b7b4d27}</Project>
       <Name>Meta</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\ReportDAL\ReportDAL.csproj">
-      <Project>{eead327e-0113-400b-9e0d-3dc8a36ca1c4}</Project>
-      <Name>ReportDAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Report\Report.csproj">
-      <Project>{0517c974-3f2c-46ac-99a3-735088d45701}</Project>
-      <Name>Report</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FormF50ReportFilter.resx">

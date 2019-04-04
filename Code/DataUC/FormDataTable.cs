@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Amur.Sys;
+using SOV.Amur.Sys;
 
-namespace FERHRI.Amur.Data
+namespace SOV.Amur.Data
 {
     public partial class FormDataTable : Form
     {

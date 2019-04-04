@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Amur.Meta;
-using FERHRI.Amur.Data;
+using SOV.Amur.Meta;
+using SOV.Amur.Data;
 
-namespace FERHRI.Amur
+namespace SOV.Amur
 {
     public partial class FormTestChart : Form
     {
@@ -21,7 +21,7 @@ namespace FERHRI.Amur
             //ucChartHydro1.ToolbarVisible = false;
         }
 
-       // private void ucChartHydro1_UCRefreshEvent(FERHRI.Amur.Data.UCChartHydro.ChartOptions co)
+       // private void ucChartHydro1_UCRefreshEvent(SOV.Amur.Data.UCChartHydro.ChartOptions co)
       //  {
             //Dictionary<object, object> data = new Dictionary<object, object>();
             //Meta.DataManager mrep = Meta.DataManager.GetInstance();

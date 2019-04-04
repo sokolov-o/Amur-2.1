@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FERHRI.Amur.Report
+namespace SOV.Amur.Report
 {
     public partial class FormF50ReportFilter : Form
     {

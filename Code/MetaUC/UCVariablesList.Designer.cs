@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCVariablesList
     {
@@ -210,7 +210,7 @@
             // filterButton
             // 
             this.filterButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.filterButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.filter_16xLG;
+            this.filterButton.Image = global::SOV.Amur.Meta.Properties.Resources.filter_16xLG;
             this.filterButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.filterButton.Name = "filterButton";
             this.filterButton.Size = new System.Drawing.Size(23, 22);

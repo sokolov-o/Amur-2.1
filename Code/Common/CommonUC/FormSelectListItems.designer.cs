@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Common
+﻿namespace SOV.Common
 {
     partial class FormSelectListItems
     {
@@ -33,7 +33,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.ucTable = new FERHRI.Common.UCList();
+            this.ucTable = new SOV.Common.UCList();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 

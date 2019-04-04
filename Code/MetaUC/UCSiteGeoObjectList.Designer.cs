@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCSiteGeoObjectList
     {
@@ -40,7 +40,7 @@
             this.editToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.editStationToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.showDataGrpSVYMButton = new System.Windows.Forms.ToolStripButton();
-            this.siteGroupToolStripComboBox = new FERHRI.Amur.Meta.SiteGroupComboBox();
+            this.siteGroupToolStripComboBox = new SOV.Amur.Meta.SiteGroupComboBox();
             this.infoToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.findToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.findNextToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -114,7 +114,7 @@
             // 
             this.saveEditedButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.saveEditedButton.Enabled = false;
-            this.saveEditedButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.SaveBlack;
+            this.saveEditedButton.Image = global::SOV.Amur.Meta.Properties.Resources.SaveBlack;
             this.saveEditedButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveEditedButton.Name = "saveEditedButton";
             this.saveEditedButton.Size = new System.Drawing.Size(23, 22);

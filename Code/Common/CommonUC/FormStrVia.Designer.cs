@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Common
+﻿namespace SOV.Common
 {
     partial class FormStrVia
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStrVia));
-            this.ucStrVia = new FERHRI.Common.UCStrVia();
+            this.ucStrVia = new SOV.Common.UCStrVia();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();

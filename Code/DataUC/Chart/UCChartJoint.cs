@@ -9,11 +9,11 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-using FERHRI.Amur.Meta;
-using FERHRI.Common;
+using SOV.Amur.Meta;
+using SOV.Common;
 using Cursor = System.Windows.Forms.Cursor;
 
-namespace FERHRI.Amur.Data.Chart
+namespace SOV.Amur.Data.Chart
 {
     public partial class UCChartJoint : UserControl
     {

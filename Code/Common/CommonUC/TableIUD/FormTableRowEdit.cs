@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace FERHRI.Common.TableIUD
+namespace SOV.Common.TableIUD
 {
     ///<summary>
     /// Форма для изменения/создания поля таблицы БД 

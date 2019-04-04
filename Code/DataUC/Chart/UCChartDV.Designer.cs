@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data
+﻿namespace SOV.Amur.Data
 {
     partial class UCChartDV
     {
@@ -88,7 +88,7 @@
             // deleteAllToolStripButton
             // 
             this.deleteAllToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.deleteAllToolStripButton.Image = global::FERHRI.Amur.Data.Properties.Resources.DeleteHS;
+            this.deleteAllToolStripButton.Image = global::SOV.Amur.Data.Properties.Resources.DeleteHS;
             this.deleteAllToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.deleteAllToolStripButton.Name = "deleteAllToolStripButton";
             this.deleteAllToolStripButton.Size = new System.Drawing.Size(23, 22);

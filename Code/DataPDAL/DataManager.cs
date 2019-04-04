@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 
-namespace FERHRI.Amur.DataP
+namespace SOV.Amur.DataP
 {
     public class DataManager : Common.ADbNpgsql
     {
@@ -20,12 +20,12 @@ namespace FERHRI.Amur.DataP
         /// <returns></returns>
         public static DataManager GetInstance()
         {
-            return GetInstance(global::FERHRI.Amur.DataP.Properties.Settings.Default.ConnectionString);
+            return GetInstance(global::SOV.Amur.DataP.Properties.Settings.Default.ConnectionString);
         }
 
         static public void SetDefaultConnectionString(string cnns)
         {
-            FERHRI.Amur.DataP.Properties.Settings.Default["ConnectionString"] = cnns;
+            SOV.Amur.DataP.Properties.Settings.Default["ConnectionString"] = cnns;
         }
         /// <summary>
         /// Экземпляр с заданной строкой подключения.

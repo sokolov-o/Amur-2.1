@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class FormEntityGroup
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEntityGroup));
-            this.ucEntityGroup1 = new FERHRI.Amur.Meta.UCEntityGroup();
+            this.ucEntityGroup1 = new SOV.Amur.Meta.UCEntityGroup();
             this.SuspendLayout();
             // 
             // ucEntityGroup1
@@ -39,7 +39,7 @@
             this.ucEntityGroup1.Name = "ucEntityGroup1";
             this.ucEntityGroup1.Size = new System.Drawing.Size(698, 620);
             this.ucEntityGroup1.TabIndex = 0;
-            this.ucEntityGroup1.UCSelectedItemChanged += new FERHRI.Amur.Meta.UCEntityGroup.UCSelectedEntityGroupChangedEventHandler(this.ucEntityGroup1_UCSelectedItemChanged);
+            this.ucEntityGroup1.UCSelectedItemChanged += new SOV.Amur.Meta.UCEntityGroup.UCSelectedEntityGroupChangedEventHandler(this.ucEntityGroup1_UCSelectedItemChanged);
             this.ucEntityGroup1.Load += new System.EventHandler(this.ucEntityGroup1_Load);
             // 
             // FormEntityGroup

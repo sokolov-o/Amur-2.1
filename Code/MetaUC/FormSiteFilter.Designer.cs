@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class FormSiteFilter
     {
@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSiteFilter));
             this.stationTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.siteTypeComboBox = new FERHRI.Common.UCDicComboBox();
+            this.siteTypeComboBox = new SOV.Common.UCDicComboBox();
             this.stationCodeLikeTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();

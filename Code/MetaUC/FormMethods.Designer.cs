@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class FormMethods
     {
@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            FERHRI.Amur.Meta.Method method4 = new FERHRI.Amur.Meta.Method();
+            SOV.Amur.Meta.Method method4 = new SOV.Amur.Meta.Method();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMethods));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.ucMethodTree = new FERHRI.Common.UCTreeIParent();
+            this.ucMethodTree = new SOV.Common.UCTreeIParent();
             this.methodTLP = new System.Windows.Forms.TableLayoutPanel();
             this.saveMethodButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ucMethod = new FERHRI.Amur.Meta.UCMethod();
+            this.ucMethod = new SOV.Amur.Meta.UCMethod();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -138,11 +138,11 @@
             this.ucMethodTree.ShowToolStrip = true;
             this.ucMethodTree.Size = new System.Drawing.Size(212, 441);
             this.ucMethodTree.TabIndex = 1;
-            this.ucMethodTree.UCSelectedItemChanged += new FERHRI.Common.UCTreeIParent.UCSelectedItemChangedEventHandler(this.methodTree_UCSelectedItemChanged);
-            this.ucMethodTree.UCRefresh += new FERHRI.Common.UCTreeIParent.UCRefreshEventHandler(this.methodTree_UCRefresh);
-            this.ucMethodTree.UCAddNewItem += new FERHRI.Common.UCTreeIParent.UCAddItemEventHandler(this.ucMethodTree_UCAddNewItem);
-            this.ucMethodTree.UCDeleteItem += new FERHRI.Common.UCTreeIParent.UCDeleteItemEventHandler(this.ucMethodTree_UCDeleteItem);
-            this.ucMethodTree.UCCloneItem += new FERHRI.Common.UCTreeIParent.UCCloneItemEventHandler(this.ucMethodTree_UCCloneItem);
+            this.ucMethodTree.UCSelectedItemChanged += new SOV.Common.UCTreeIParent.UCSelectedItemChangedEventHandler(this.methodTree_UCSelectedItemChanged);
+            this.ucMethodTree.UCRefresh += new SOV.Common.UCTreeIParent.UCRefreshEventHandler(this.methodTree_UCRefresh);
+            this.ucMethodTree.UCAddNewItem += new SOV.Common.UCTreeIParent.UCAddItemEventHandler(this.ucMethodTree_UCAddNewItem);
+            this.ucMethodTree.UCDeleteItem += new SOV.Common.UCTreeIParent.UCDeleteItemEventHandler(this.ucMethodTree_UCDeleteItem);
+            this.ucMethodTree.UCCloneItem += new SOV.Common.UCTreeIParent.UCCloneItemEventHandler(this.ucMethodTree_UCCloneItem);
             // 
             // methodTLP
             // 
@@ -165,7 +165,7 @@
             // saveMethodButton
             // 
             this.saveMethodButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.saveMethodButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.SaveBlack;
+            this.saveMethodButton.Image = global::SOV.Amur.Meta.Properties.Resources.SaveBlack;
             this.saveMethodButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.saveMethodButton.Location = new System.Drawing.Point(3, 440);
             this.saveMethodButton.Name = "saveMethodButton";

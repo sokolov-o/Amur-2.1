@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
-using FERHRI.Common;
-using FERHRI.Social;
+using SOV.Common;
+using SOV.Social;
 
-namespace FERHRI.Amur.Report
+namespace SOV.Amur.Report
 {
     /// <summary>
     ///  Изображения отчетов

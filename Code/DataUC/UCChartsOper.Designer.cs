@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data
+﻿namespace SOV.Amur.Data
 {
     partial class UCChartsOper
     {
@@ -49,7 +49,7 @@
             this.refreshToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.optionsToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.siteGroupsCB = new FERHRI.Amur.Meta.SiteGroupComboBox();
+            this.siteGroupsCB = new SOV.Amur.Meta.SiteGroupComboBox();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -212,7 +212,7 @@
             // 
             // dateTimePeriodButton
             // 
-            this.dateTimePeriodButton.Image = global::FERHRI.Amur.Data.Properties.Resources.calendar_16xLG;
+            this.dateTimePeriodButton.Image = global::SOV.Amur.Data.Properties.Resources.calendar_16xLG;
             this.dateTimePeriodButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dateTimePeriodButton.Location = new System.Drawing.Point(9, 19);
             this.dateTimePeriodButton.Name = "dateTimePeriodButton";
@@ -256,7 +256,7 @@
             // addChartToolStrip
             // 
             this.addChartToolStrip.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addChartToolStrip.Image = global::FERHRI.Amur.Data.Properties.Resources.action_add_16xLG;
+            this.addChartToolStrip.Image = global::SOV.Amur.Data.Properties.Resources.action_add_16xLG;
             this.addChartToolStrip.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addChartToolStrip.Name = "addChartToolStrip";
             this.addChartToolStrip.Size = new System.Drawing.Size(23, 22);
@@ -267,7 +267,7 @@
             // refreshToolStripButton
             // 
             this.refreshToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshToolStripButton.Image = global::FERHRI.Amur.Data.Properties.Resources.refresh_16xLG;
+            this.refreshToolStripButton.Image = global::SOV.Amur.Data.Properties.Resources.refresh_16xLG;
             this.refreshToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.refreshToolStripButton.Name = "refreshToolStripButton";
             this.refreshToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -279,7 +279,7 @@
             // 
             this.optionsToolStripButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.optionsToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.optionsToolStripButton.Image = global::FERHRI.Amur.Data.Properties.Resources.Property_501;
+            this.optionsToolStripButton.Image = global::SOV.Amur.Data.Properties.Resources.Property_501;
             this.optionsToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.optionsToolStripButton.Name = "optionsToolStripButton";
             this.optionsToolStripButton.Size = new System.Drawing.Size(23, 22);

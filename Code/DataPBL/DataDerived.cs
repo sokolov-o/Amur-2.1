@@ -4,12 +4,12 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FERHRI.Amur.Data;
-using FERHRI.Amur.Meta;
-using FERHRI.Amur.Sys;
-using FERHRI.Common;
+using SOV.Amur.Data;
+using SOV.Amur.Meta;
+using SOV.Amur.Sys;
+using SOV.Common;
 
-namespace FERHRI.Amur.DataP
+namespace SOV.Amur.DataP
 {
 
     public static class DataDerived

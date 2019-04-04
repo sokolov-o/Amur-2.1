@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data
+﻿namespace SOV.Amur.Data
 {
     partial class FormDataTableFcs
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDataTableFcs));
-            this.ucDataFcsTable = new FERHRI.Amur.Data.UCDataTableFcs();
+            this.ucDataFcsTable = new SOV.Amur.Data.UCDataTableFcs();
             this.SuspendLayout();
             // 
             // ucDataFcsTable

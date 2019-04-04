@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data
+﻿namespace SOV.Amur.Data
 {
     partial class FormDataTable
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDataTable));
-            this.ucDataTable = new FERHRI.Amur.Data.UCDataTable();
+            this.ucDataTable = new SOV.Amur.Data.UCDataTable();
             this.SuspendLayout();
             // 
             // ucDataTable
@@ -39,7 +39,7 @@
             this.ucDataTable.CurSiteId = null;
             this.ucDataTable.Cursor = System.Windows.Forms.Cursors.Default;
             this.ucDataTable.CurVariableId = null;
-            this.ucDataTable.CurViewType = FERHRI.Amur.Data.UCDataTable.ViewType.Date_RStations_CVariables;
+            this.ucDataTable.CurViewType = SOV.Amur.Data.UCDataTable.ViewType.Date_RStations_CVariables;
             this.ucDataTable.DataFilter = null;
             this.ucDataTable.DataFilterEnabled = true;
             this.ucDataTable.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -50,7 +50,7 @@
             this.ucDataTable.ShowFilterButton = true;
             this.ucDataTable.Size = new System.Drawing.Size(620, 404);
             this.ucDataTable.TabIndex = 0;
-            this.ucDataTable.TimeType = FERHRI.Amur.Meta.EnumDateType.UTC;
+            this.ucDataTable.TimeType = SOV.Amur.Meta.EnumDateType.UTC;
             this.ucDataTable.UserDirExportSAV = null;
             this.ucDataTable.UserOrganisationId = -1;
             // 

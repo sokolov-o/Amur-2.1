@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Social
+﻿namespace SOV.Social
 {
     partial class UCAddr
     {
@@ -126,7 +126,7 @@
             // 
             // typeBindingSource
             // 
-            this.typeBindingSource.DataSource = typeof(FERHRI.Social.AddrType);
+            this.typeBindingSource.DataSource = typeof(SOV.Social.AddrType);
             // 
             // label3
             // 
@@ -151,7 +151,7 @@
             // 
             // parentBindingSource
             // 
-            this.parentBindingSource.DataSource = typeof(FERHRI.Social.Addr);
+            this.parentBindingSource.DataSource = typeof(SOV.Social.Addr);
             // 
             // UCAddr
             // 

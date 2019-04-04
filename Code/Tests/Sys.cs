@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FERHRI.Amur.Sys;
+using SOV.Amur.Sys;
 
-namespace FERHRI.UnitTest
+namespace SOV.UnitTest
 {
     [TestClass]
     public class EntityTest

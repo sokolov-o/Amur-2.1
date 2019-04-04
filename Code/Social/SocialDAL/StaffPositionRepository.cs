@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using FERHRI.Common;
+using SOV.Common;
 using Npgsql;
 
-namespace FERHRI.Social
+namespace SOV.Social
 {
     public class StaffPositionRepository : BaseRepository<StaffPosition>
     {

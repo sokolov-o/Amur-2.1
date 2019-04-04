@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
-namespace FERHRI.Common.TableIUD
+namespace SOV.Common.TableIUD
 {
     public partial class UCImageInputTableField : UCTableField
     {

@@ -106,10 +106,6 @@
       <Project>{6d9ee84f-a1eb-46ec-a797-a4f6f4dbee84}</Project>
       <Name>ParserDAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ReportDAL\ReportDAL.csproj">
-      <Project>{eead327e-0113-400b-9e0d-3dc8a36ca1c4}</Project>
-      <Name>ReportDAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Sys\Sys.csproj">
       <Project>{d8026d66-63cd-40f2-b07a-224abfa6ac5a}</Project>
       <Name>Sys</Name>

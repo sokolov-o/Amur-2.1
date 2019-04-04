@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FERHRI.Social.Properties {
+namespace SOV.Social.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,7 +26,7 @@ namespace FERHRI.Social.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=10.11.203.20;Port=5432;Database=ferhri.amur;user id=OSokolov;password=qq")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=10.11.203.20;Port=5432;Database=SOV.amur;user id=OSokolov;password=qq")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));

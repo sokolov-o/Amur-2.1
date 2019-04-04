@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data.Chart
+﻿namespace SOV.Amur.Data.Chart
 {
     partial class FormSiteAndVarSelection
     {
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucStations = new FERHRI.Amur.Meta.UCStations();
-            this.ucVariablesList = new FERHRI.Amur.Meta.UCVariablesList();
+            this.ucStations = new SOV.Amur.Meta.UCStations();
+            this.ucVariablesList = new SOV.Amur.Meta.UCVariablesList();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.saveButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -66,7 +66,7 @@
             this.ucVariablesList.AutoSize = true;
             this.ucVariablesList.Location = new System.Drawing.Point(428, 0);
             this.ucVariablesList.Name = "ucVariablesList";
-            this.ucVariablesList.RowsViewMode = FERHRI.Amur.Meta.UCVariablesList.ROWS_VIEW.MINIMUM;
+            this.ucVariablesList.RowsViewMode = SOV.Amur.Meta.UCVariablesList.ROWS_VIEW.MINIMUM;
             this.ucVariablesList.ShowFilterButton = true;
             this.ucVariablesList.ShowToolBox = true;
             this.ucVariablesList.Size = new System.Drawing.Size(180, 290);

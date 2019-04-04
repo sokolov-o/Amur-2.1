@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Common;
-using FERHRI.Amur.Meta;
-using FERHRI.Social;
+using SOV.Common;
+using SOV.Amur.Meta;
+using SOV.Social;
 
-namespace FERHRI.Amur.Data
+namespace SOV.Amur.Data
 {
     public partial class FormDataFilter : Form
     {

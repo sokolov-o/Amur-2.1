@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class FormVariablesList
     {
@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVariablesList));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.ucVariablesList = new FERHRI.Amur.Meta.UCVariablesList();
+            this.ucVariablesList = new SOV.Amur.Meta.UCVariablesList();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ucVariable = new FERHRI.Amur.Meta.UCVariable();
+            this.ucVariable = new SOV.Amur.Meta.UCVariable();
             this.button1 = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.newButton = new System.Windows.Forms.Button();
             this.new1Button = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ucVariableAttributes = new FERHRI.Amur.Meta.UCVariableAttributes();
+            this.ucVariableAttributes = new SOV.Amur.Meta.UCVariableAttributes();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -78,7 +78,7 @@
             this.ucVariablesList.ShowToolBox = true;
             this.ucVariablesList.Size = new System.Drawing.Size(562, 503);
             this.ucVariablesList.TabIndex = 0;
-            this.ucVariablesList.UCVariableChangedEvent += new FERHRI.Amur.Meta.UCVariablesList.UCVariableChangedEventHandler(this.ucVariablesList_UCVariableChangedEvent);
+            this.ucVariablesList.UCVariableChangedEvent += new SOV.Amur.Meta.UCVariablesList.UCVariableChangedEventHandler(this.ucVariablesList_UCVariableChangedEvent);
             // 
             // groupBox1
             // 

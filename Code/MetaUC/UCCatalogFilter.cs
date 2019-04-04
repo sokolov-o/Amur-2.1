@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Common;
-using FERHRI.Amur.Meta;
-using FERHRI.Social;
+using SOV.Common;
+using SOV.Amur.Meta;
+using SOV.Social;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     /// <summary>
     /// Установка фильтра для каталога данных по его ключам.
@@ -129,7 +129,7 @@ namespace FERHRI.Amur.Meta
             dm.TestConnection();
 
             // ENTITY ITEMS
-            sitesFilter.SetDicItems(sites.Select(x => new IdName() { Id = x.Id, Name = x.GetName(StationRepository.GetCash(), StationTypeRepository.GetCash(), 2) }).ToList());
+            sitesFilter.SetDicItems(sites.Select(x => new IdName() { Id = x.Id, Name = x.GetName(2, true, SiteTypeRepository.GetCash()) }).ToList());
             varsFilter.SetDicItems(Variable.ToListIdName(vars, EnumLanguage.Rus));
             methodsFilter.SetDicItems(methods.ToList<IdName>());
             sourcesFilter.SetDicItems(sources.Select(x => new IdName() { Id = x.Id, Name = x.NameRus }).ToList());
@@ -138,7 +138,7 @@ namespace FERHRI.Amur.Meta
             // ENTITY GROUPS
             if (sitesFilter.GroupsCount == 0)
             {
-                sitesFilter.SetGroups(Meta.DataManager.GetInstance().EntityGroupRepository.SelectGroupsFK("site_view"));
+                sitesFilter.SetGroups(Meta.DataManager.GetInstance().EntityGroupRepository.SelectGroupsFK("site"));
                 varsFilter.SetGroups(Meta.DataManager.GetInstance().EntityGroupRepository.SelectGroupsFK("variable"));
                 methodsFilter.SetGroups(Meta.DataManager.GetInstance().EntityGroupRepository.SelectGroupsFK("method"));
                 sourcesFilter.SetGroups(Meta.DataManager.GetInstance().EntityGroupRepository.SelectGroupsFK("source"));

@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Common.TableIUD
+﻿namespace SOV.Common.TableIUD
 {
     partial class UCImageInputTableField
     {
@@ -33,7 +33,7 @@
             this.view = new System.Windows.Forms.Button();
             this.inputPanel = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox = new FERHRI.Common.UCImage();
+            this.pictureBox = new SOV.Common.UCImage();
             this.inputPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();

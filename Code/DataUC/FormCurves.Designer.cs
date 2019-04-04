@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data
+﻿namespace SOV.Amur.Data
 {
     partial class FormCurves
     {
@@ -131,7 +131,7 @@
             // refreshButton
             // 
             this.refreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshButton.Image = global::FERHRI.Amur.Data.Properties.Resources.refresh_16xLG;
+            this.refreshButton.Image = global::SOV.Amur.Data.Properties.Resources.refresh_16xLG;
             this.refreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(23, 22);
@@ -289,7 +289,7 @@
             // 
             // pointsBindingSource
             // 
-            this.pointsBindingSource.DataSource = typeof(FERHRI.Amur.Data.Curve.Seria.Point);
+            this.pointsBindingSource.DataSource = typeof(SOV.Amur.Data.Curve.Seria.Point);
             // 
             // splitContainer3
             // 
@@ -359,7 +359,7 @@
             // 
             // coefsBindingSource
             // 
-            this.coefsBindingSource.DataSource = typeof(FERHRI.Amur.Data.Curve.Seria.Coef);
+            this.coefsBindingSource.DataSource = typeof(SOV.Amur.Data.Curve.Seria.Coef);
             // 
             // chart
             // 
@@ -417,7 +417,7 @@
             // 
             this.propertiesButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.propertiesButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.propertiesButton.Image = global::FERHRI.Amur.Data.Properties.Resources.Property_501;
+            this.propertiesButton.Image = global::SOV.Amur.Data.Properties.Resources.Property_501;
             this.propertiesButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.propertiesButton.Name = "propertiesButton";
             this.propertiesButton.Size = new System.Drawing.Size(23, 22);

@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCSiteInstruments
     {
@@ -87,11 +87,11 @@
             // 
             // instrumentBindingSource
             // 
-            this.instrumentBindingSource.DataSource = typeof(FERHRI.Amur.Meta.Instrument);
+            this.instrumentBindingSource.DataSource = typeof(SOV.Amur.Meta.Instrument);
             // 
             // siteInstrumentBindingSource
             // 
-            this.siteInstrumentBindingSource.DataSource = typeof(FERHRI.Amur.Meta.SiteInstrument);
+            this.siteInstrumentBindingSource.DataSource = typeof(SOV.Amur.Meta.SiteInstrument);
             // 
             // tableLayoutPanel1
             // 
@@ -135,7 +135,7 @@
             // addButton
             // 
             this.addButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.action_add_16xLG1;
+            this.addButton.Image = global::SOV.Amur.Meta.Properties.Resources.action_add_16xLG1;
             this.addButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addButton.Name = "addButton";
@@ -146,7 +146,7 @@
             // deleteButton
             // 
             this.deleteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.deleteButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.DeleteHS;
+            this.deleteButton.Image = global::SOV.Amur.Meta.Properties.Resources.DeleteHS;
             this.deleteButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.deleteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.deleteButton.Name = "deleteButton";
@@ -157,7 +157,7 @@
             // saveButton
             // 
             this.saveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.SaveBlack;
+            this.saveButton.Image = global::SOV.Amur.Meta.Properties.Resources.SaveBlack;
             this.saveButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.saveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveButton.Name = "saveButton";

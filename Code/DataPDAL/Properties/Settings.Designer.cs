@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FERHRI.Amur.DataP.Properties {
+namespace SOV.Amur.DataP.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,7 +26,7 @@ namespace FERHRI.Amur.DataP.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=bravo.int.ferhri.ru;Port=5432;User Id=postgres;Password=qq;Database=ferhri" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=bravo.int.SOV.ru;Port=5432;User Id=postgres;Password=qq;Database=ferhri" +
             ".amur;")]
         public string ConnectionString {
             get {

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
-namespace FERHRI.Amur.DataP
+namespace SOV.Amur.DataP
 {
     [DataContract]
     public class DataDV

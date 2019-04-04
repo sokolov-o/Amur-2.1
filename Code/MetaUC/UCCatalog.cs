@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Amur.Meta;
-using FERHRI.Common;
-using FERHRI.Social;
+using SOV.Amur.Meta;
+using SOV.Common;
+using SOV.Social;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public partial class UCCatalog : UserControl
     {
@@ -83,7 +83,7 @@ namespace FERHRI.Amur.Meta
                             break;
                         }
                     }
-                    foreach (FERHRI.Social.LegalEntity item in sourcesCombo.Items)
+                    foreach (SOV.Social.LegalEntity item in sourcesCombo.Items)
                     {
                         if (item.Id == value.SourceId)
                         {
@@ -106,7 +106,7 @@ namespace FERHRI.Amur.Meta
 
         private void UCCatalog_Load(object sender, EventArgs e)
         {
-            sitesCombo.Items.AddRange(Meta.Site.ToDicItemList(SiteRepository.GetCash(), StationRepository.GetCash(), StationTypeRepository.GetCash(), 2).OrderBy(x => x.Name).ToArray());
+            sitesCombo.Items.AddRange(Meta.Site.ToDicItemList(SiteRepository.GetCash(), StationRepository.GetCash(), SiteTypeRepository.GetCash(), 2).OrderBy(x => x.Name).ToArray());
             varsCombo.Items.AddRange(VariableRepository.GetCash().OrderBy(x => x.NameRus).ToArray());
             methodsCombo.Items.AddRange(MethodRepository.GetCash().OrderBy(x => x.Name).ToArray());
             sourcesCombo.Items.AddRange(Social.LegalEntityRepository.GetCash().OrderBy(x => x.NameRus).ToArray());

@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Common
+﻿namespace SOV.Common
 {
     partial class FormDateTimePeriod
     {
@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            FERHRI.Common.DateTimePeriod dateTimePeriod1 = new FERHRI.Common.DateTimePeriod();
+            SOV.Common.DateTimePeriod dateTimePeriod1 = new SOV.Common.DateTimePeriod();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDateTimePeriod));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.uc = new FERHRI.Common.UCDateTimePeriod();
+            this.uc = new SOV.Common.UCDateTimePeriod();
             this.SuspendLayout();
             // 
             // button1
@@ -61,7 +61,7 @@
             // 
             this.uc.CustomDateFormat = "dd.MM.yyyy HH:mm";
             dateTimePeriod1.DaysBeforeDateNow = 7;
-            dateTimePeriod1.PeriodType = FERHRI.Common.DateTimePeriod.Type.Period;
+            dateTimePeriod1.PeriodType = SOV.Common.DateTimePeriod.Type.Period;
             this.uc.DateTimePeriod = dateTimePeriod1;
             this.uc.Location = new System.Drawing.Point(9, 9);
             this.uc.Margin = new System.Windows.Forms.Padding(0);

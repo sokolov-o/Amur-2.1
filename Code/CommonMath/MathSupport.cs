@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FERHRI.Common
+namespace SOV.Common
 {
     /// <summary>
     /// Математика и статистика.

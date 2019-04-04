@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Odbc;
-using FERHRI.Common;
+using SOV.Common;
 using Npgsql;
 using System.ComponentModel;
-using FERHRI.Amur.Meta;
+using SOV.Amur.Meta;
 
-namespace FERHRI.Amur.Data
+namespace SOV.Amur.Data
 {
     public class DataValue2017Repository
     {
@@ -131,7 +131,7 @@ namespace FERHRI.Amur.Data
             List<int> methodId = null, List<int> sourceId = null,
             byte? flagAQC = null)
         {
-            List<Catalog> ctls = FERHRI.Amur.Meta.DataManager.GetInstance(_db.ConnectionString).CatalogRepository.Select(
+            List<Catalog> ctls = SOV.Amur.Meta.DataManager.GetInstance(_db.ConnectionString).CatalogRepository.Select(
                 siteId, variableId, methodId, sourceId, offsetTypeId,
                 offsetValue.HasValue ? new List<double>() { (double)offsetValue } : null);
             return SelectA(dateS, dateF, ctls.Select(x => (int)x.Id).ToList(), isOneValue, isSelectDeleted, flagAQC, dateTypeId);
@@ -163,7 +163,7 @@ namespace FERHRI.Amur.Data
             bool isOneValue = true, bool isSelectDeleted = false
         )
         {
-            List<Catalog> ctls = FERHRI.Amur.Meta.DataManager.GetInstance(_db.ConnectionString).CatalogRepository.Select(
+            List<Catalog> ctls = SOV.Amur.Meta.DataManager.GetInstance(_db.ConnectionString).CatalogRepository.Select(
                 siteId, variableId, methodId, sourceId, offsetTypeId, offsetValue);
 
             Dictionary<Catalog, List<DataValue2017>> ret = new Dictionary<Catalog, List<DataValue2017>>();

@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Social
+﻿namespace SOV.Social
 {
     partial class UCStaffPositions
     {
@@ -103,7 +103,7 @@
             // 
             // staffPositionBindingSource
             // 
-            this.staffPositionBindingSource.DataSource = typeof(FERHRI.Social.StaffPosition);
+            this.staffPositionBindingSource.DataSource = typeof(SOV.Social.StaffPosition);
             // 
             // UCStaffPositions
             // 

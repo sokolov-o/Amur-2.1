@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data.Chart
+﻿namespace SOV.Amur.Data.Chart
 {
     partial class UCChartTrend
     {
@@ -80,7 +80,7 @@
             // XAxisButton
             // 
             this.XAxisButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.XAxisButton.Image = global::FERHRI.Amur.Data.Properties.Resources.X_letter;
+            this.XAxisButton.Image = global::SOV.Amur.Data.Properties.Resources.X_letter;
             this.XAxisButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.XAxisButton.Name = "XAxisButton";
             this.XAxisButton.Size = new System.Drawing.Size(23, 22);
@@ -92,7 +92,7 @@
             // swapAsixButton
             // 
             this.swapAsixButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.swapAsixButton.Image = global::FERHRI.Amur.Data.Properties.Resources.two_side_arrow;
+            this.swapAsixButton.Image = global::SOV.Amur.Data.Properties.Resources.two_side_arrow;
             this.swapAsixButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.swapAsixButton.Name = "swapAsixButton";
             this.swapAsixButton.Size = new System.Drawing.Size(23, 22);
@@ -103,7 +103,7 @@
             // YAxisButton
             // 
             this.YAxisButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.YAxisButton.Image = global::FERHRI.Amur.Data.Properties.Resources.Y_letter;
+            this.YAxisButton.Image = global::SOV.Amur.Data.Properties.Resources.Y_letter;
             this.YAxisButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.YAxisButton.Name = "YAxisButton";
             this.YAxisButton.Size = new System.Drawing.Size(23, 22);
@@ -115,7 +115,7 @@
             // refreshButton
             // 
             this.refreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshButton.Image = global::FERHRI.Amur.Data.Properties.Resources.refresh_16xLG;
+            this.refreshButton.Image = global::SOV.Amur.Data.Properties.Resources.refresh_16xLG;
             this.refreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(23, 22);
@@ -135,7 +135,7 @@
             // dateButton
             // 
             this.dateButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.dateButton.Image = global::FERHRI.Amur.Data.Properties.Resources.calendar_16xLG;
+            this.dateButton.Image = global::SOV.Amur.Data.Properties.Resources.calendar_16xLG;
             this.dateButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.dateButton.Name = "dateButton";
             this.dateButton.Size = new System.Drawing.Size(23, 22);
@@ -203,7 +203,7 @@
             // offsetCamcelButton
             // 
             this.offsetCamcelButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.offsetCamcelButton.Image = global::FERHRI.Amur.Data.Properties.Resources.DeleteHS;
+            this.offsetCamcelButton.Image = global::SOV.Amur.Data.Properties.Resources.DeleteHS;
             this.offsetCamcelButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.offsetCamcelButton.Name = "offsetCamcelButton";
             this.offsetCamcelButton.Size = new System.Drawing.Size(23, 22);

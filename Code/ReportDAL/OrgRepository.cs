@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using FERHRI.Common;
+using SOV.Common;
 using Npgsql;
 
-namespace FERHRI.Amur.Report
+namespace SOV.Amur.Report
 {
     public class OrgRepository : BaseRepository<Org>
     {

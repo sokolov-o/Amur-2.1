@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class FormNameSets
     {
@@ -31,7 +31,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.ucNameSets = new FERHRI.Amur.Meta.UCNameSets();
+            this.ucNameSets = new SOV.Amur.Meta.UCNameSets();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 

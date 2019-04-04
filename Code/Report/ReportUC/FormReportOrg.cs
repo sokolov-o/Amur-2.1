@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using FERHRI.Common;
-using FERHRI.Common.TableIUD;
+using SOV.Common;
+using SOV.Common.TableIUD;
 
-namespace FERHRI.Amur.Report
+namespace SOV.Amur.Report
 {
     public partial class FormReportOrg : FormReportOrgTableEdit
     {

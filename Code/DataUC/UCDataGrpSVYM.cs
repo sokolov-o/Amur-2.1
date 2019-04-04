@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Amur.DataP;
-using FERHRI.Amur.Meta;
+using SOV.Amur.DataP;
+using SOV.Amur.Meta;
 using System.Windows.Forms.DataVisualization.Charting;
 
-namespace FERHRI.Amur.Data
+namespace SOV.Amur.Data
 {
     /// <summary>
     /// Отображение данных, сгрупированных по пункту, переменной, году и месяцу
@@ -108,7 +108,7 @@ namespace FERHRI.Amur.Data
                     if (filter.Sites ==    null)
                     {
                         List<Site> sites = Meta.DataManager.GetInstance().SiteRepository.Select(_datas.Select(x => x.SiteId).ToList());
-                        sitesCB.DataSource = Meta.Site.ToDicItemList(sites, StationRepository.GetCash(), StationTypeRepository.GetCash(), 1);
+                        sitesCB.DataSource = Meta.Site.ToDicItemList(sites, StationRepository.GetCash(), SiteTypeRepository.GetCash(), 1);
                     }
                     if (filter.Variables == null)
                     {
@@ -159,7 +159,7 @@ namespace FERHRI.Amur.Data
                         // DRAW CHART
                         DrawChart();
                         // END
-                        infoLabel.Text = CurSite.GetName(StationRepository.GetCash(), StationTypeRepository.GetCash(), 1) +
+                        infoLabel.Text = CurSite.GetName(StationRepository.GetCash(), SiteTypeRepository.GetCash(), 1) +
                             ", " + CurVariable.NameRus + " (" + (string)cellValueTypeCB.SelectedItem +
                             ")";
                         dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;

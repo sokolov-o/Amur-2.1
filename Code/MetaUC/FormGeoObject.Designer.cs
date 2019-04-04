@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class FormGeoObject
     {
@@ -30,10 +30,10 @@
         {
             this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.ucGeoObject = new FERHRI.Amur.Meta.UCGeoObject();
+            this.ucGeoObject = new SOV.Amur.Meta.UCGeoObject();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.ucGeoObject1 = new FERHRI.Amur.Meta.UCGeoObject();
+            this.ucGeoObject1 = new SOV.Amur.Meta.UCGeoObject();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 

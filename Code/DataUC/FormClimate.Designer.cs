@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data
+﻿namespace SOV.Amur.Data
 {
     partial class FormClimate
     {
@@ -32,8 +32,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ucMethods = new FERHRI.Amur.Meta.UCMethods();
-            this.ucDataTable = new FERHRI.Amur.Data.UCDataTable();
+            this.ucMethods = new SOV.Amur.Meta.UCMethods();
+            this.ucDataTable = new SOV.Amur.Data.UCDataTable();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -89,8 +89,8 @@
             this.ucMethods.Size = new System.Drawing.Size(349, 486);
             this.ucMethods.TabIndex = 0;
             this.ucMethods.UCToolbarVisible = true;
-            this.ucMethods.UCCurrentMethodChangedEvent += new FERHRI.Amur.Meta.UCMethods.UCCurrentMethodChangedEventHandler(this.ucMethods_UCCurrentMethodChangedEvent);
-            this.ucMethods.UCDataFilterChangedEvent += new FERHRI.Amur.Meta.UCMethods.UCDataFilterChangedEventHandler(this.ucMethods_UCDataFilterChangedEvent);
+            this.ucMethods.UCCurrentMethodChangedEvent += new SOV.Amur.Meta.UCMethods.UCCurrentMethodChangedEventHandler(this.ucMethods_UCCurrentMethodChangedEvent);
+            this.ucMethods.UCDataFilterChangedEvent += new SOV.Amur.Meta.UCMethods.UCDataFilterChangedEventHandler(this.ucMethods_UCDataFilterChangedEvent);
             // 
             // ucDataTable
             // 
@@ -99,7 +99,7 @@
             this.ucDataTable.CurSiteId = null;
             this.ucDataTable.Cursor = System.Windows.Forms.Cursors.Default;
             this.ucDataTable.CurVariableId = null;
-            this.ucDataTable.CurViewType = FERHRI.Amur.Data.UCDataTable.ViewType.Date_RStations_CVariables;
+            this.ucDataTable.CurViewType = SOV.Amur.Data.UCDataTable.ViewType.Date_RStations_CVariables;
             this.ucDataTable.DataFilter = null;
             this.ucDataTable.DataFilterEnabled = true;
             this.ucDataTable.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -110,7 +110,7 @@
             this.ucDataTable.ShowFilterButton = true;
             this.ucDataTable.Size = new System.Drawing.Size(461, 486);
             this.ucDataTable.TabIndex = 0;
-            this.ucDataTable.TimeType = FERHRI.Amur.Meta.EnumDateType.UTC;
+            this.ucDataTable.TimeType = SOV.Amur.Meta.EnumDateType.UTC;
             this.ucDataTable.UserDirExportSAV = null;
             this.ucDataTable.UserOrganisationId = -1;
             // 

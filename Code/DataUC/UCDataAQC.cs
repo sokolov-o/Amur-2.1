@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Amur.DataP;
+using SOV.Amur.DataP;
 
-namespace FERHRI.Amur.Data
+namespace SOV.Amur.Data
 {
     public partial class UCDataAQC : UserControl
     {

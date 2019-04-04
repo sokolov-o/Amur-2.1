@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class FormSite
     {
@@ -37,8 +37,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.codeTtextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.stationUCTextBox = new FERHRI.Common.UCTextBox();
-            this.siteTypeComboBox = new FERHRI.Common.UCDicComboBox();
+            this.stationUCTextBox = new SOV.Common.UCTextBox();
+            this.siteTypeComboBox = new SOV.Common.UCDicComboBox();
             this.SuspendLayout();
             // 
             // descriptionTextBox
@@ -124,7 +124,7 @@
             this.stationUCTextBox.Size = new System.Drawing.Size(320, 20);
             this.stationUCTextBox.TabIndex = 10;
             this.stationUCTextBox.Value = null;
-            this.stationUCTextBox.UCEditButtonPressedEvent += new FERHRI.Common.UCTextBox.UCEditButtonPressedEventHandler(this.stationUCTextBox_UCEditButtonPressedEvent);
+            this.stationUCTextBox.UCEditButtonPressedEvent += new SOV.Common.UCTextBox.UCEditButtonPressedEventHandler(this.stationUCTextBox_UCEditButtonPressedEvent);
             // 
             // siteTypeComboBox
             // 

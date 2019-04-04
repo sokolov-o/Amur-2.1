@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FERHRI.Amur.Parser.Properties {
+namespace SOV.Amur.Parser.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,7 +26,7 @@ namespace FERHRI.Amur.Parser.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=10.11.203.20;Port=5432;User Id=postgres;Password=qq;Database=ferhri.amur;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=10.11.203.20;Port=5432;User Id=postgres;Password=qq;Database=SOV.amur;")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));

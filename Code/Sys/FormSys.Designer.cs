@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Sys
+﻿namespace SOV.Amur.Sys
 {
     partial class FormSys
     {
@@ -224,7 +224,7 @@
             // 
             // attrBindingSource
             // 
-            this.attrBindingSource.DataSource = typeof(FERHRI.Amur.Sys.EntityAttr);
+            this.attrBindingSource.DataSource = typeof(SOV.Amur.Sys.EntityAttr);
             // 
             // valueDataGridViewTextBoxColumn
             // 
@@ -235,7 +235,7 @@
             // 
             // attrValueBindingSource
             // 
-            this.attrValueBindingSource.DataSource = typeof(FERHRI.Amur.Sys.EntityInstanceValue);
+            this.attrValueBindingSource.DataSource = typeof(SOV.Amur.Sys.EntityInstanceValue);
             // 
             // tabPage2
             // 
@@ -324,7 +324,7 @@
             // refreshToolStripButton
             // 
             this.refreshToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshToolStripButton.Image = global::FERHRI.Amur.Sys.Properties.Resources.refresh_16xMD;
+            this.refreshToolStripButton.Image = global::SOV.Amur.Sys.Properties.Resources.refresh_16xMD;
             this.refreshToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.refreshToolStripButton.Name = "refreshToolStripButton";
             this.refreshToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -335,7 +335,7 @@
             // showParentsOnlyToolStripButton
             // 
             this.showParentsOnlyToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.showParentsOnlyToolStripButton.Image = global::FERHRI.Amur.Sys.Properties.Resources.PrimaryKeyHS;
+            this.showParentsOnlyToolStripButton.Image = global::SOV.Amur.Sys.Properties.Resources.PrimaryKeyHS;
             this.showParentsOnlyToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.showParentsOnlyToolStripButton.Name = "showParentsOnlyToolStripButton";
             this.showParentsOnlyToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -357,7 +357,7 @@
             // filterLikeToolStripButton
             // 
             this.filterLikeToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.filterLikeToolStripButton.Image = global::FERHRI.Amur.Sys.Properties.Resources.filter_16xLG;
+            this.filterLikeToolStripButton.Image = global::SOV.Amur.Sys.Properties.Resources.filter_16xLG;
             this.filterLikeToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.filterLikeToolStripButton.Name = "filterLikeToolStripButton";
             this.filterLikeToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -372,7 +372,7 @@
             // deleteToolStripButton
             // 
             this.deleteToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.deleteToolStripButton.Image = global::FERHRI.Amur.Sys.Properties.Resources.DeleteHS;
+            this.deleteToolStripButton.Image = global::SOV.Amur.Sys.Properties.Resources.DeleteHS;
             this.deleteToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.deleteToolStripButton.Name = "deleteToolStripButton";
             this.deleteToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -425,7 +425,7 @@
             // 
             // logBindingSource
             // 
-            this.logBindingSource.DataSource = typeof(FERHRI.Amur.Sys.Log);
+            this.logBindingSource.DataSource = typeof(SOV.Amur.Sys.Log);
             // 
             // FormSys
             // 

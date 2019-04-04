@@ -1106,7 +1106,7 @@ DateFormat.ShortDate)</Value>
         </Field>
         <Field Name="SiteType">
           <DataField>SiteType</DataField>
-          <rd:TypeName>FERHRI.Amur.Meta.EnumSiteType</rd:TypeName>
+          <rd:TypeName>SOV.Amur.Meta.EnumSiteType</rd:TypeName>
         </Field>
         <Field Name="StationCode">
           <DataField>StationCode</DataField>
@@ -1118,9 +1118,9 @@ DateFormat.ShortDate)</Value>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>FERHRI.Amur.Report</rd:DataSetName>
+        <rd:DataSetName>SOV.Amur.Report</rd:DataSetName>
         <rd:TableName>JournalReport</rd:TableName>
-        <rd:ObjectDataSourceType>FERHRI.Amur.Report.JournalReport, FERHRI.Amur.ReportUC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:ObjectDataSourceType>SOV.Amur.Report.JournalReport, SOV.Amur.ReportUC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

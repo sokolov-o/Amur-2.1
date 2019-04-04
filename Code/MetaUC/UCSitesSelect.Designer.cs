@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCSitesSelect
     {
@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCSitesSelect));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.UCList2 = new FERHRI.Common.UCList();
+            this.UCList2 = new SOV.Common.UCList();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.UCList3 = new FERHRI.Common.UCList();
+            this.UCList3 = new SOV.Common.UCList();
             this.refreshButton = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -126,7 +126,7 @@
             // refreshButton
             // 
             this.refreshButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.refreshButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.arrow_Up_16xLG;
+            this.refreshButton.Image = global::SOV.Amur.Meta.Properties.Resources.arrow_Up_16xLG;
             this.refreshButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.refreshButton.Location = new System.Drawing.Point(3, 3);
             this.refreshButton.Name = "refreshButton";

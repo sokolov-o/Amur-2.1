@@ -16,13 +16,17 @@ namespace SOV.Amur.Meta
         }
         protected override object ParseData(NpgsqlDataReader rdr)
         {
-            return new Site(
-                 (int)rdr["id"],
-                 (int)rdr["station_id"],
-                 (int)rdr["site_type_id"],
-                 ADbNpgsql.GetValueString(rdr, "code"),
-                 ADbNpgsql.GetValueString(rdr, "description")
-             );
+            return new Site()
+            {
+                Id = (int)rdr["id"],
+                ParentId = ADbNpgsql.GetValueInt(rdr, "parent_id"),
+                TypeId = (int)rdr["site_type_id"],
+                Code = rdr["code"].ToString(),
+                Description = ADbNpgsql.GetValueString(rdr, "description"),
+                AddrRegionId = ADbNpgsql.GetValueInt(rdr, "addr_region_id"),
+                Name = rdr["name"].ToString(),
+                OrgId = ADbNpgsql.GetValueInt(rdr, "org_id")
+            };
         }
 
         /// <summary>
@@ -34,10 +38,13 @@ namespace SOV.Amur.Meta
         {
             var fields = new Dictionary<string, object>()
             {
-                {"station_id", site.StationId},
+                {"parent_id", site.ParentId},
                 {"site_type_id", site.TypeId},
                 {"code", site.Code},
-                {"description", site.Description}
+                {"description", site.Description},
+                {"addr_region_id",site.AddrRegionId },
+                {"org_id" , site.OrgId},
+                {"name",site.Name }
             };
             return InsertWithReturn(fields);
         }
@@ -50,84 +57,35 @@ namespace SOV.Amur.Meta
         {
             var fields = new Dictionary<string, object>()
             {
-                {"id", site.Id},
-                {"station_id", site.StationId},
+                {"id" , site.Id},
+                {"parent_id", site.ParentId},
                 {"site_type_id", site.TypeId},
                 {"code", site.Code},
-                {"description", site.Description}
+                {"description", site.Description},
+                {"addr_region_id",site.AddrRegionId },
+                {"org_id" , site.OrgId},
+                {"name",site.Name }
             };
             Update(fields);
-        }
-
-        /// <summary>
-        /// Выборка пункта стандартных, основных наблюдений.
-        /// </summary>
-        /// <param name="autoSite">Не основной пункт неблюдений, например АГК, АМС.</param>
-        /// <returns></returns>
-        public Site SelectReferenceSite(Site autoSite)
-        {
-            List<Site> sites = Select(autoSite.StationId, (int)EnumStationType.MeteoStation);
-            if (sites.Count > 1)
-                throw new Exception("Обнаружено более одного основного/ссылочного сайта для сайта " + autoSite);
-            if (sites.Count == 1) return sites[0];
-
-            sites = Select(autoSite.StationId, (int)EnumStationType.HydroPost);
-            if (sites.Count > 1)
-                throw new Exception("Обнаружено более одного основного/ссылочного сайта для сайта " + autoSite);
-            if (sites.Count == 1) return sites[0];
-
-            //SiteType st = DataManager.GetInstance(db.ConnectionString).SiteTypeRepository.Select(autoSite.SiteTypeId)[0];
-            //if (st.RefSiteTypeId.HasValue)
-            //{
-            //    List<Site> sites = Select(autoSite.StationId, (int)st.RefSiteTypeId);
-            //    if (sites.Count > 1)
-            //        throw new Exception("Обнаружено более одного основного/ссылочного сайта для сайта " + autoSite);
-            //    return sites[0];
-            //}
-            return null;
-        }
-
-        public virtual List<Site> Select(int stationId, int? siteTypeId)
-        {
-            var fields = new Dictionary<string, object>() { { "station_id", stationId } };
-            if (siteTypeId.HasValue)
-                fields.Add("site_type_id", siteTypeId.Value);
-            return Select(fields);
-        }
-
-        private object ParseSiteView(NpgsqlDataReader reader)
-        {
-            return new Site(
-                (int)reader["id"],
-                (int)reader["station_id"],
-                (int)reader["site_type_id"],
-                ADbNpgsql.GetValueString(reader, "site_code"),
-                ADbNpgsql.GetValueString(reader, "site_description")
-            );
         }
 
         public List<Site> Select(SiteFilter siteFilter)
         {
             var fields = new Dictionary<string, object>()
             {
-                { "station_type_id", siteFilter.StationTypeId },
-                { "site_type_id", siteFilter.SiteTypeId },
-                { "station_code", siteFilter.StationCodeLike  },
-                { "station_name", siteFilter.StationNameLike },
-                //{ "station_code", siteFilter.StationCodeLike ?? "" },
-                //{ "station_name", siteFilter.StationNameLike ?? "" },
+                { "site_type_id", siteFilter.TypeId },
+                { "code", siteFilter.CodeLike  },
+                { "name", siteFilter.NameLike },
                 { "addr_region_id", siteFilter.AddrId },
                 { "org_id", siteFilter.OrgId }
             };
-            string sql = "Select * From meta.site_view " +
-                         QueryBuilder.Where(fields);
-            return ExecQuery<Site>(sql, fields, ParseSiteView);
+            return Select(fields);
         }
         public List<Site> SelectByType(int siteTypeId)
         {
-            return SelectByType(new List<int>(new int[] { siteTypeId }));
+            return SelectByTypes(new List<int>(new int[] { siteTypeId }));
         }
-        public virtual List<Site> SelectByType(List<int> siteTypeIds)
+        public virtual List<Site> SelectByTypes(List<int> siteTypeIds)
         {
             var fields = new Dictionary<string, object>() { { "site_type_id", siteTypeIds } };
             return Select(fields);
@@ -137,15 +95,7 @@ namespace SOV.Amur.Meta
             var fields = new Dictionary<string, object>() { { "parent_id", parentIds } };
             return Select(fields);
         }
-        public List<Site> SelectByTypes(List<int> siteTypeIds)
-        {
-            var fields = new Dictionary<string, object>()
-            {
-                {"site_type_id", siteTypeIds}
-            };
-            return Select(fields);
-        }
-        public List<Site> SelectInBox(double south, double north, double west, double east)
+        public List<Site> SelectExtent(double south, double north, double west, double east)
         {
             var fields = new Dictionary<string, object>() { { "south", south }, { "north", north }, { "west", west }, { "east", east } };
             string sql = "Select * From meta.select_site_with_actual_attr" +
@@ -153,23 +103,12 @@ namespace SOV.Amur.Meta
                          "Where lat between :south and :north and lon between :west and :east";
             return ExecQuery<Site>(sql, fields);
         }
-        /// <summary>
-        /// Выборка всех пунктов связанных с данной станцией
-        /// </summary>
-        /// <param name="station_id"></param>
-        /// <returns></returns>
-        public List<Site> SelectRelated(int station_id)
-        {
-            var fields = new Dictionary<string, object>() { { "_station_id", station_id } };
-            string sql = "meta.select_related_sites";
-            return ExecQuery<Site>(sql, fields, ParseData, System.Data.CommandType.StoredProcedure);
-        }
 
-        public List<Site> SelectByIndeces(List<string> siteIndices)
+        public List<Site> SelectByCodes(List<string> siteCodes)
         {
             return Select(new Dictionary<string, object>()
                 {
-                    {"code", siteIndices}
+                    {"code", siteCodes}
                 }
             );
         }

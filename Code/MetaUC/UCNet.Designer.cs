@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCNet
     {
@@ -90,7 +90,7 @@
             // refreshToolStripButton
             // 
             this.refreshToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshToolStripButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.refresh_16xLG;
+            this.refreshToolStripButton.Image = global::SOV.Amur.Meta.Properties.Resources.refresh_16xLG;
             this.refreshToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.refreshToolStripButton.Name = "refreshToolStripButton";
             this.refreshToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -101,7 +101,7 @@
             // editDataToolStripButton
             // 
             this.editDataToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.editDataToolStripButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.Edit;
+            this.editDataToolStripButton.Image = global::SOV.Amur.Meta.Properties.Resources.Edit;
             this.editDataToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.editDataToolStripButton.Name = "editDataToolStripButton";
             this.editDataToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -112,7 +112,7 @@
             // findToolStripButton
             // 
             this.findToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.findToolStripButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.Find_5650;
+            this.findToolStripButton.Image = global::SOV.Amur.Meta.Properties.Resources.Find_5650;
             this.findToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.findToolStripButton.Name = "findToolStripButton";
             this.findToolStripButton.Size = new System.Drawing.Size(23, 22);

@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCCategorySet
     {
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ucCategorySetList = new FERHRI.Common.UCList();
+            this.ucCategorySetList = new SOV.Common.UCList();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -44,7 +44,7 @@
             this.upButton = new System.Windows.Forms.Button();
             this.downButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.ucNameItem = new FERHRI.Amur.Meta.UCNameItems();
+            this.ucNameItem = new SOV.Amur.Meta.UCNameItems();
             this.itemNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemNameShortDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Value1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -119,8 +119,8 @@
             this.ucCategorySetList.ShowUpdateToolbarButton = true;
             this.ucCategorySetList.Size = new System.Drawing.Size(203, 338);
             this.ucCategorySetList.TabIndex = 0;
-            this.ucCategorySetList.UCSelectedItemChanged += new FERHRI.Common.UCList.UCSelectedItemChangedEventHandler(this.ucCategorySetList_UCSelectedItemChanged);
-            this.ucCategorySetList.UCAddNewEvent += new FERHRI.Common.UCList.UCAddNewEventHandler(this.ucCategorySetList_UCAddNewEvent);
+            this.ucCategorySetList.UCSelectedItemChanged += new SOV.Common.UCList.UCSelectedItemChangedEventHandler(this.ucCategorySetList_UCSelectedItemChanged);
+            this.ucCategorySetList.UCAddNewEvent += new SOV.Common.UCList.UCAddNewEventHandler(this.ucCategorySetList_UCAddNewEvent);
             // 
             // groupBox2
             // 
@@ -187,7 +187,7 @@
             // addNewItemButton
             // 
             this.addNewItemButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addNewItemButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.action_add_16xLG1;
+            this.addNewItemButton.Image = global::SOV.Amur.Meta.Properties.Resources.action_add_16xLG1;
             this.addNewItemButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addNewItemButton.Name = "addNewItemButton";
             this.addNewItemButton.Size = new System.Drawing.Size(23, 22);
@@ -197,7 +197,7 @@
             // saveButton
             // 
             this.saveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.SaveBlack;
+            this.saveButton.Image = global::SOV.Amur.Meta.Properties.Resources.SaveBlack;
             this.saveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(23, 22);
@@ -207,7 +207,7 @@
             // deleteItemButton
             // 
             this.deleteItemButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.deleteItemButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.DeleteHS;
+            this.deleteItemButton.Image = global::SOV.Amur.Meta.Properties.Resources.DeleteHS;
             this.deleteItemButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.deleteItemButton.Name = "deleteItemButton";
             this.deleteItemButton.Size = new System.Drawing.Size(23, 22);
@@ -238,7 +238,7 @@
             // 
             // categoryItemBindingSource
             // 
-            this.categoryItemBindingSource.DataSource = typeof(FERHRI.Amur.Meta.CategoryItemLocalized);
+            this.categoryItemBindingSource.DataSource = typeof(SOV.Amur.Meta.CategoryItemLocalized);
             this.categoryItemBindingSource.CurrentChanged += new System.EventHandler(this.categoryItemLocalizedBindingSource_CurrentChanged);
             // 
             // upButton
@@ -328,7 +328,7 @@
             // 
             this.settingsButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.settingsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.settingsButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.Property_501;
+            this.settingsButton.Image = global::SOV.Amur.Meta.Properties.Resources.Property_501;
             this.settingsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Size = new System.Drawing.Size(23, 22);

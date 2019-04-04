@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using FERHRI.Common;
+using SOV.Common;
 using Npgsql;
 
-namespace FERHRI.Amur.Sys
+namespace SOV.Amur.Sys
 {
     public class SysEntityRepository : BaseRepository<EntityInstanceValue>
     {

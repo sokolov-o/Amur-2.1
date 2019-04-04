@@ -4902,9 +4902,9 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>FERHRI.Amur.Report</rd:DataSetName>
+        <rd:DataSetName>SOV.Amur.Report</rd:DataSetName>
         <rd:TableName>GP25Report</rd:TableName>
-        <rd:ObjectDataSourceType>FERHRI.Amur.Report.GP25Report, FERHRI.Amur.ReportUC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:ObjectDataSourceType>SOV.Amur.Report.GP25Report, SOV.Amur.ReportUC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
     <DataSet Name="GP25HeaderDataSet">
@@ -4959,9 +4959,9 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>FERHRI.Amur.Report</rd:DataSetName>
+        <rd:DataSetName>SOV.Amur.Report</rd:DataSetName>
         <rd:TableName>GP25Header</rd:TableName>
-        <rd:ObjectDataSourceType>FERHRI.Amur.Report.GP25Header, FERHRI.Amur.ReportUC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:ObjectDataSourceType>SOV.Amur.Report.GP25Header, SOV.Amur.ReportUC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

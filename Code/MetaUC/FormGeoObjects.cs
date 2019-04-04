@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Common;
+using SOV.Common;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public partial class FormGeoObjects : Form
     {
@@ -235,7 +235,7 @@ namespace FERHRI.Amur.Meta
 
         private void ucStations_UCAddNewEvent()
         {
-            List<StationType> sts = StationTypeRepository.GetCash();
+            List<StationType> sts = SiteTypeRepository.GetCash();
             FormSelectListItems frm = new FormSelectListItems("Добавить пункт к гео-объекту",
                 StationRepository.GetCash()
                 .Select(x => new IdName() { Id = x.Id, Name = x.Name + " " + x.Code + " " + sts.Find(y => y.Id == x.TypeId).NameShort })

@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data
+﻿namespace SOV.Amur.Data
 {
     partial class UCDataDetails
     {
@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucDataAQC = new FERHRI.Amur.Data.UCDataAQC();
-            this.ucDataValueList = new FERHRI.Amur.Data.UCDataValueList();
+            this.ucDataAQC = new SOV.Amur.Data.UCDataAQC();
+            this.ucDataValueList = new SOV.Amur.Data.UCDataValueList();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.ucDerived = new FERHRI.Amur.Data.UCDerived();
+            this.ucDerived = new SOV.Amur.Data.UCDerived();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -58,8 +58,8 @@
             this.ucDataValueList.Name = "ucDataValueList";
             this.ucDataValueList.Size = new System.Drawing.Size(346, 178);
             this.ucDataValueList.TabIndex = 1;
-            this.ucDataValueList.UCCurrentDataValueChangedEvent += new FERHRI.Amur.Data.UCDataValueList.UCCurrentDataValueChangedEventHandler(this.ucDataValueList_UCCurrentDataValueChangedEvent);
-            this.ucDataValueList.UCCurrentDataValueActualizedEvent += new FERHRI.Amur.Data.UCDataValueList.UCCurrentDataValueActualizedEventHandler(this.ucDataValueList_UCCurrentDataValueActualizedEvent);
+            this.ucDataValueList.UCCurrentDataValueChangedEvent += new SOV.Amur.Data.UCDataValueList.UCCurrentDataValueChangedEventHandler(this.ucDataValueList_UCCurrentDataValueChangedEvent);
+            this.ucDataValueList.UCCurrentDataValueActualizedEvent += new SOV.Amur.Data.UCDataValueList.UCCurrentDataValueActualizedEventHandler(this.ucDataValueList_UCCurrentDataValueActualizedEvent);
             // 
             // splitContainer1
             // 

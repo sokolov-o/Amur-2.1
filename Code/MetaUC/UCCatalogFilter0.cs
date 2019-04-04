@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Common;
-using FERHRI.Amur.Meta;
+using SOV.Common;
+using SOV.Amur.Meta;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     /// <summary>
     /// Прототип для фильтра каталога данных.

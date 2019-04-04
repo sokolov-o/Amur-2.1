@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data
+﻿namespace SOV.Amur.Data
 {
     partial class UCDataTable
     {
@@ -55,9 +55,9 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ucDataDetail = new FERHRI.Amur.Data.UCDataDetails();
+            this.ucDataDetail = new SOV.Amur.Data.UCDataDetails();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.ucChart = new FERHRI.Amur.Data.UCChartDV();
+            this.ucChart = new SOV.Amur.Data.UCChartDV();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -160,7 +160,7 @@
             // refreshToolStripButton
             // 
             this.refreshToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshToolStripButton.Image = global::FERHRI.Amur.Data.Properties.Resources.refresh_16xLG;
+            this.refreshToolStripButton.Image = global::SOV.Amur.Data.Properties.Resources.refresh_16xLG;
             this.refreshToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.refreshToolStripButton.Name = "refreshToolStripButton";
             this.refreshToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -171,7 +171,7 @@
             // optionsToolStripButton
             // 
             this.optionsToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.optionsToolStripButton.Image = global::FERHRI.Amur.Data.Properties.Resources.Property_501;
+            this.optionsToolStripButton.Image = global::SOV.Amur.Data.Properties.Resources.Property_501;
             this.optionsToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.optionsToolStripButton.Name = "optionsToolStripButton";
             this.optionsToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -182,7 +182,7 @@
             // dataFilterToolStripButton
             // 
             this.dataFilterToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.dataFilterToolStripButton.Image = global::FERHRI.Amur.Data.Properties.Resources.FilteredObject_13400_16x_MD;
+            this.dataFilterToolStripButton.Image = global::SOV.Amur.Data.Properties.Resources.FilteredObject_13400_16x_MD;
             this.dataFilterToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.dataFilterToolStripButton.Name = "dataFilterToolStripButton";
             this.dataFilterToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -193,7 +193,7 @@
             // add2ChartToolStripButton
             // 
             this.add2ChartToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.add2ChartToolStripButton.Image = global::FERHRI.Amur.Data.Properties.Resources.graph_performanceChart_5171_16x_LG;
+            this.add2ChartToolStripButton.Image = global::SOV.Amur.Data.Properties.Resources.graph_performanceChart_5171_16x_LG;
             this.add2ChartToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.add2ChartToolStripButton.Name = "add2ChartToolStripButton";
             this.add2ChartToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -210,7 +210,7 @@
             // showHideEmptyRowsToolStripButton
             // 
             this.showHideEmptyRowsToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.showHideEmptyRowsToolStripButton.Image = global::FERHRI.Amur.Data.Properties.Resources.Forward;
+            this.showHideEmptyRowsToolStripButton.Image = global::SOV.Amur.Data.Properties.Resources.Forward;
             this.showHideEmptyRowsToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.showHideEmptyRowsToolStripButton.Name = "showHideEmptyRowsToolStripButton";
             this.showHideEmptyRowsToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -222,7 +222,7 @@
             // 
             this.saveEditedToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.saveEditedToolStripButton.Enabled = false;
-            this.saveEditedToolStripButton.Image = global::FERHRI.Amur.Data.Properties.Resources.Save_6530;
+            this.saveEditedToolStripButton.Image = global::SOV.Amur.Data.Properties.Resources.Save_6530;
             this.saveEditedToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveEditedToolStripButton.Name = "saveEditedToolStripButton";
             this.saveEditedToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -233,7 +233,7 @@
             // exportToolStripButton
             // 
             this.exportToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.exportToolStripButton.Image = global::FERHRI.Amur.Data.Properties.Resources.Exportfilter_10563_32;
+            this.exportToolStripButton.Image = global::SOV.Amur.Data.Properties.Resources.Exportfilter_10563_32;
             this.exportToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.exportToolStripButton.Name = "exportToolStripButton";
             this.exportToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -273,7 +273,7 @@
             // timeBackwardToolStripButton
             // 
             this.timeBackwardToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.timeBackwardToolStripButton.Image = global::FERHRI.Amur.Data.Properties.Resources.arrow_back_color_16xLG;
+            this.timeBackwardToolStripButton.Image = global::SOV.Amur.Data.Properties.Resources.arrow_back_color_16xLG;
             this.timeBackwardToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.timeBackwardToolStripButton.Name = "timeBackwardToolStripButton";
             this.timeBackwardToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -307,7 +307,7 @@
             // timeForwardToolStripButton
             // 
             this.timeForwardToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.timeForwardToolStripButton.Image = global::FERHRI.Amur.Data.Properties.Resources.arrow_Forward_color_16xLG;
+            this.timeForwardToolStripButton.Image = global::SOV.Amur.Data.Properties.Resources.arrow_Forward_color_16xLG;
             this.timeForwardToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.timeForwardToolStripButton.Name = "timeForwardToolStripButton";
             this.timeForwardToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -368,7 +368,7 @@
             this.ucDataDetail.ShowDerived = true;
             this.ucDataDetail.Size = new System.Drawing.Size(332, 277);
             this.ucDataDetail.TabIndex = 0;
-            this.ucDataDetail.UCCurrentDataValueActualizedEvent += new FERHRI.Amur.Data.UCDataDetails.UCCurrentDataValueActualizedEventHandler(this.ucDataDetail_UCCurrentDataValueActualizedEvent);
+            this.ucDataDetail.UCCurrentDataValueActualizedEvent += new SOV.Amur.Data.UCDataDetails.UCCurrentDataValueActualizedEventHandler(this.ucDataDetail_UCCurrentDataValueActualizedEvent);
             // 
             // splitContainer2
             // 

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FERHRI.Common
+namespace SOV.Common
 {
     public partial class UCIdNames : UserControl
     {

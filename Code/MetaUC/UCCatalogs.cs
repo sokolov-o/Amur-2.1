@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Amur.Meta;
-using FERHRI.Common;
+using SOV.Amur.Meta;
+using SOV.Common;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public partial class UCCatalogs : UserControl
     {
@@ -40,7 +40,7 @@ namespace FERHRI.Amur.Meta
                 row.Tag = ctl;
 
                 row.Cells[0].Value = Meta.Site.GetName(
-                    SiteRepository.GetCash().Find(y => y.Id == ctl.SiteId), StationRepository.GetCash(), StationTypeRepository.GetCash(), 2);
+                    SiteRepository.GetCash().Find(y => y.Id == ctl.SiteId), StationRepository.GetCash(), SiteTypeRepository.GetCash(), 2);
                 row.Cells[1].Value = VariableRepository.GetCash().Find(x => x.Id == ctl.VariableId).NameRus;
                 row.Cells[2].Value = OffsetTypeRepository.GetCash().Find(x => x.Id == ctl.OffsetTypeId).Name;
                 row.Cells[3].Value = ctl.OffsetValue;

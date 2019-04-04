@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCStations
     {
@@ -34,7 +34,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.refreshToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.noSitesToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.siteGroupToolStripComboBox = new FERHRI.Amur.Meta.SiteGroupComboBox();
+            this.siteGroupToolStripComboBox = new SOV.Amur.Meta.SiteGroupComboBox();
             this.infoToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.findToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.findNextToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -98,7 +98,7 @@
             // refreshToolStripButton
             // 
             this.refreshToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshToolStripButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.refresh_16xLG;
+            this.refreshToolStripButton.Image = global::SOV.Amur.Meta.Properties.Resources.refresh_16xLG;
             this.refreshToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.refreshToolStripButton.Name = "refreshToolStripButton";
             this.refreshToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -109,7 +109,7 @@
             // noSitesToolStripButton
             // 
             this.noSitesToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.noSitesToolStripButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.house_16xMD;
+            this.noSitesToolStripButton.Image = global::SOV.Amur.Meta.Properties.Resources.house_16xMD;
             this.noSitesToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.noSitesToolStripButton.Name = "noSitesToolStripButton";
             this.noSitesToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -162,7 +162,7 @@
             // addNewToolStripButton
             // 
             this.addNewToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addNewToolStripButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.action_add_16xLG;
+            this.addNewToolStripButton.Image = global::SOV.Amur.Meta.Properties.Resources.action_add_16xLG;
             this.addNewToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addNewToolStripButton.Name = "addNewToolStripButton";
             this.addNewToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -173,7 +173,7 @@
             // editStationToolStripButton
             // 
             this.editStationToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.editStationToolStripButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.Home_5699;
+            this.editStationToolStripButton.Image = global::SOV.Amur.Meta.Properties.Resources.Home_5699;
             this.editStationToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.editStationToolStripButton.Name = "editStationToolStripButton";
             this.editStationToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -196,7 +196,7 @@
             // complateSelectionToolStripButton
             // 
             this.complateSelectionToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.complateSelectionToolStripButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.SaveBlack;
+            this.complateSelectionToolStripButton.Image = global::SOV.Amur.Meta.Properties.Resources.SaveBlack;
             this.complateSelectionToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.complateSelectionToolStripButton.Name = "complateSelectionToolStripButton";
             this.complateSelectionToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -270,7 +270,7 @@
             // 
             // mnuEditSiteToolStripMenuItem
             // 
-            this.mnuEditSiteToolStripMenuItem.Image = global::FERHRI.Amur.Meta.Properties.Resources.Home_5699;
+            this.mnuEditSiteToolStripMenuItem.Image = global::SOV.Amur.Meta.Properties.Resources.Home_5699;
             this.mnuEditSiteToolStripMenuItem.Name = "mnuEditSiteToolStripMenuItem";
             this.mnuEditSiteToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.mnuEditSiteToolStripMenuItem.Text = "Редактировать пункт";

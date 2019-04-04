@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.WPOper
+﻿namespace SOV.Amur.WPOper
 {
     partial class FormAboutBox
     {

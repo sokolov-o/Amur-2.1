@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Обработка данных (data processing): AQC, расчётные значения и др.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ФГБУ ДВНИГМИ")]
-[assembly: AssemblyProduct("FERHRI.Amur.DataP")]
+[assembly: AssemblyProduct("SOV.Amur.DataP")]
 [assembly: AssemblyCopyright("Copyright © Viaware 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

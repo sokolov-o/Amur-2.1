@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Social
+﻿namespace SOV.Social
 {
     partial class UCAddrs
     {
@@ -69,7 +69,7 @@
             // refreshButton
             // 
             this.refreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshButton.Image = global::FERHRI.Social.Properties.Resources.refresh_16xLG;
+            this.refreshButton.Image = global::SOV.Social.Properties.Resources.refresh_16xLG;
             this.refreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(23, 22);
@@ -80,7 +80,7 @@
             // 
             this.addNewButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.addNewButton.Enabled = false;
-            this.addNewButton.Image = global::FERHRI.Social.Properties.Resources.action_add_16xLG;
+            this.addNewButton.Image = global::SOV.Social.Properties.Resources.action_add_16xLG;
             this.addNewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addNewButton.Name = "addNewButton";
             this.addNewButton.Size = new System.Drawing.Size(23, 22);

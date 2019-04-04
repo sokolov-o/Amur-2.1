@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Social
+﻿namespace SOV.Social
 {
     partial class UCLegalEntitiesTree
     {
@@ -110,7 +110,7 @@
             // refreshButton
             // 
             this.refreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshButton.Image = global::FERHRI.Social.Properties.Resources.refresh_16xLG;
+            this.refreshButton.Image = global::SOV.Social.Properties.Resources.refresh_16xLG;
             this.refreshButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.refreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.refreshButton.Name = "refreshButton";
@@ -121,7 +121,7 @@
             // addNewLEButton
             // 
             this.addNewLEButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addNewLEButton.Image = global::FERHRI.Social.Properties.Resources.action_add_16xLG;
+            this.addNewLEButton.Image = global::SOV.Social.Properties.Resources.action_add_16xLG;
             this.addNewLEButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addNewLEButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addNewLEButton.Name = "addNewLEButton";
@@ -132,7 +132,7 @@
             // deleteButton
             // 
             this.deleteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.deleteButton.Image = global::FERHRI.Social.Properties.Resources.delete_12x12;
+            this.deleteButton.Image = global::SOV.Social.Properties.Resources.delete_12x12;
             this.deleteButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.deleteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.deleteButton.Name = "deleteButton";
@@ -167,7 +167,7 @@
             // findNextButton
             // 
             this.findNextButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.findNextButton.Image = global::FERHRI.Social.Properties.Resources.Find_5650;
+            this.findNextButton.Image = global::SOV.Social.Properties.Resources.Find_5650;
             this.findNextButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.findNextButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.findNextButton.Name = "findNextButton";
@@ -188,7 +188,7 @@
             this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuShowDivisionsToolStripMenuItem});
-            this.toolStripSplitButton1.Image = global::FERHRI.Social.Properties.Resources.Property_501;
+            this.toolStripSplitButton1.Image = global::SOV.Social.Properties.Resources.Property_501;
             this.toolStripSplitButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton1.Name = "toolStripSplitButton1";

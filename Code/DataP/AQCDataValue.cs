@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FERHRI.Amur.DataP
+namespace SOV.Amur.DataP
 {
     /// <summary>
     /// Правила AQC для значения.

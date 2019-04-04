@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data
+﻿namespace SOV.Amur.Data
 {
     partial class UCDataTableFcs
     {
@@ -86,7 +86,7 @@
             // filterToolStripButton
             // 
             this.filterToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.filterToolStripButton.Image = global::FERHRI.Amur.Data.Properties.Resources.FilteredObject_13400_16x_MD;
+            this.filterToolStripButton.Image = global::SOV.Amur.Data.Properties.Resources.FilteredObject_13400_16x_MD;
             this.filterToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.filterToolStripButton.Name = "filterToolStripButton";
             this.filterToolStripButton.Size = new System.Drawing.Size(23, 22);

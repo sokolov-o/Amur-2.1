@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Social;
+using SOV.Social;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public partial class FormMethodFcsSelect : Form
     {
@@ -18,7 +18,7 @@ namespace FERHRI.Amur.Meta
             InitializeComponent();
         }
 
-        public void Fill(List<MethodForecast> methods, List<FERHRI.Social.LegalEntity> sources)
+        public void Fill(List<MethodForecast> methods, List<SOV.Social.LegalEntity> sources)
         {
             methodComboBox.Items.AddRange(methods.ToArray());
             sourceComboBox.Items.AddRange(sources.ToArray());

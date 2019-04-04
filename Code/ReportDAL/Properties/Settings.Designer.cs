@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FERHRI.Amur.Report.Properties {
+namespace SOV.Amur.Report.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,7 +26,7 @@ namespace FERHRI.Amur.Report.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=192.168.203.163;Port=5432;User Id=postgres;Password=qq;Database=ferhri.amu" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=192.168.203.163;Port=5432;User Id=postgres;Password=qq;Database=SOV.amu" +
             "r;")]
         public string ConnectionString {
             get {

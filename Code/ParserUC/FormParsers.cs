@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FERHRI.Amur.Parser
+namespace SOV.Amur.Parser
 {
     public partial class FormParsers : Form
     {
-        public FormParsers(FERHRI.Amur.Parser.DataManager parserDM, FERHRI.Amur.Meta.DataManager metaDM)
+        public FormParsers(SOV.Amur.Parser.DataManager parserDM, SOV.Amur.Meta.DataManager metaDM)
         {
             InitializeComponent();
 

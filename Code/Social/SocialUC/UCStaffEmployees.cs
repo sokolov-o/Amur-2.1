@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
-using FERHRI.Common;
+using SOV.Common;
 
-namespace FERHRI.Social
+namespace SOV.Social
 {
     public partial class UCStaffEmployees : UserControl
     {

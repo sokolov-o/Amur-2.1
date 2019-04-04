@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Odbc;
-using FERHRI.Common;
+using SOV.Common;
 
-namespace FERHRI.Amur.DataP
+namespace SOV.Amur.DataP
 {
     public class AQCRepository
     {

@@ -11,14 +11,12 @@ namespace SOV.Amur.Meta
     /// </summary>
     public class SiteFilter
     {
-        string _StationCodeLike;
-        public string StationCodeLike { get { return _StationCodeLike; } set { _StationCodeLike = string.IsNullOrEmpty(value) ? null : value; } }
-        string _StationNameLike;
-        public string StationNameLike { get { return _StationNameLike; } set { _StationNameLike = string.IsNullOrEmpty(value) ? null : value; } }
-        int? _StationTypeId;
-        public int? StationTypeId { get { return _StationTypeId; } set { _StationTypeId = value < 1 ? null : value; } }
-        int? _SiteTypeId;
-        public int? SiteTypeId { get { return _SiteTypeId; } set { _SiteTypeId = value < 1 ? null : value; } }
+        string _CodeLike;
+        public string CodeLike { get { return _CodeLike; } set { _CodeLike = string.IsNullOrEmpty(value) ? null : value; } }
+        string _NameLike;
+        public string NameLike { get { return _NameLike; } set { _NameLike = string.IsNullOrEmpty(value) ? null : value; } }
+        int? _TypeId;
+        public int? TypeId { get { return _TypeId; } set { _TypeId = value < 1 ? null : value; } }
         int? _AddrId;
         public int? AddrId { get { return _AddrId; } set { _AddrId = value < 1 ? null : value; } }
         int? _OrgId;

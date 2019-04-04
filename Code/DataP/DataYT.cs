@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FERHRI.Amur.DataP
+namespace SOV.Amur.DataP
 {
     public class DataStat
     {
@@ -87,7 +87,7 @@ namespace FERHRI.Amur.DataP
                 });
 
             List<DataYT> ret = query.Select(x => x.DataYT).ToList();
-            ret.ForEach(x => x.Std = x.Count < 2 ? double.NaN : FERHRI.Common.MathSupport.Stdev(x.Sum, x.Sum2, x.Count));
+            ret.ForEach(x => x.Std = x.Count < 2 ? double.NaN : SOV.Common.MathSupport.Stdev(x.Sum, x.Sum2, x.Count));
             return ret;
         }
         new public string Splitter = ";";

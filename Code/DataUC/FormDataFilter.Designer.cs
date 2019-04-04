@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data
+﻿namespace SOV.Amur.Data
 {
     partial class FormDataFilter
     {
@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            FERHRI.Common.DateTimePeriod dateTimePeriod1 = new FERHRI.Common.DateTimePeriod();
-            FERHRI.Amur.Meta.CatalogFilter catalogFilter1 = new FERHRI.Amur.Meta.CatalogFilter();
+            SOV.Common.DateTimePeriod dateTimePeriod1 = new SOV.Common.DateTimePeriod();
+            SOV.Amur.Meta.CatalogFilter catalogFilter1 = new SOV.Amur.Meta.CatalogFilter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDataFilter));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ucDateTimePeriod = new FERHRI.Common.UCDateTimePeriod();
+            this.ucDateTimePeriod = new SOV.Common.UCDateTimePeriod();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ucCatalogFilter = new FERHRI.Amur.Meta.UCCatalogFilter();
+            this.ucCatalogFilter = new SOV.Amur.Meta.UCCatalogFilter();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.selectDeletedDataValuesCheckBox = new System.Windows.Forms.CheckBox();
@@ -107,7 +107,7 @@
             // 
             this.ucDateTimePeriod.CustomDateFormat = "dd.MM.yyyy HH:mm";
             dateTimePeriod1.DaysBeforeDateNow = 7;
-            dateTimePeriod1.PeriodType = FERHRI.Common.DateTimePeriod.Type.Period;
+            dateTimePeriod1.PeriodType = SOV.Common.DateTimePeriod.Type.Period;
             this.ucDateTimePeriod.DateTimePeriod = dateTimePeriod1;
             this.ucDateTimePeriod.Location = new System.Drawing.Point(3, 16);
             this.ucDateTimePeriod.Margin = new System.Windows.Forms.Padding(0);
@@ -330,7 +330,7 @@
         private System.Windows.Forms.CheckBox isActualValueOnlyCheckBox;
         private System.Windows.Forms.TextBox flagAQCTextBox;
         private System.Windows.Forms.CheckBox refSiteCheckBox;
-        private FERHRI.Amur.Meta.UCCatalogFilter ucCatalogFilter;
+        private SOV.Amur.Meta.UCCatalogFilter ucCatalogFilter;
         private System.Windows.Forms.CheckBox selectDeletedDataValuesCheckBox;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;

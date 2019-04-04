@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class FormCategorySetList
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucCategoryDefinition = new FERHRI.Amur.Meta.UCCategorySet();
+            this.ucCategoryDefinition = new SOV.Amur.Meta.UCCategorySet();
             this.SuspendLayout();
             // 
             // ucCategoryDefinition

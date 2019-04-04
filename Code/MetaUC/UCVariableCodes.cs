@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public partial class UCVariableCodes : UserControl
     {
@@ -93,7 +93,7 @@ namespace FERHRI.Amur.Meta
                 {
                     if (err.Count() > 0)
                     {
-                        string mess = "Обратитесь OSokolov@ferhri.ru\n" + string.Concat(err.ToArray());
+                        string mess = "Обратитесь OSokolov@SOV.ru\n" + string.Concat(err.ToArray());
                         MessageBox.Show(mess, "Ошибки при сохранении изменений!", MessageBoxButtons.OK);
                     }
                     _itemsChanged = new Dictionary<VariableCode, ListChangedType>();

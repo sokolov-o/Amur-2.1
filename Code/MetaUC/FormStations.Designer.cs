@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class FormStations
     {
@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            FERHRI.Amur.Meta.Station station1 = new FERHRI.Amur.Meta.Station();
+            SOV.Amur.Meta.Station station1 = new SOV.Amur.Meta.Station();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStations));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ucStations = new FERHRI.Amur.Meta.UCStations();
+            this.ucStations = new SOV.Amur.Meta.UCStations();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ucStationEdit = new FERHRI.Amur.Meta.UCStationEdit();
+            this.ucStationEdit = new SOV.Amur.Meta.UCStationEdit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -89,9 +89,9 @@
             this.ucStations.VisibleEditStationButton = true;
             this.ucStations.VisibleNoSiteButton = true;
             this.ucStations.VisibleSiteGroups = true;
-            this.ucStations.UCSelectedStationChangedEvent += new FERHRI.Amur.Meta.UCStations.UCSelectedStationChangedEventHandler(this.ucStations_UCSelectedStationChangedEvent);
-            this.ucStations.UCEditStationEvent += new FERHRI.Amur.Meta.UCStations.UCEditStationEventHandler(this.ucStations_UCEditStationEvent);
-            this.ucStations.UCNewStationEvent += new FERHRI.Amur.Meta.UCStations.UCNewStationEventHandler(this.ucStations_UCNewStationEvent);
+            this.ucStations.UCSelectedStationChangedEvent += new SOV.Amur.Meta.UCStations.UCSelectedStationChangedEventHandler(this.ucStations_UCSelectedStationChangedEvent);
+            this.ucStations.UCEditStationEvent += new SOV.Amur.Meta.UCStations.UCEditStationEventHandler(this.ucStations_UCEditStationEvent);
+            this.ucStations.UCNewStationEvent += new SOV.Amur.Meta.UCStations.UCNewStationEventHandler(this.ucStations_UCNewStationEvent);
             // 
             // groupBox2
             // 

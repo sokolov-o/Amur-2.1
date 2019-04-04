@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FERHRI.Amur.Parser
+namespace SOV.Amur.Parser
 {
     public partial class UCSysObj : UserControl
     {
@@ -16,8 +16,8 @@ namespace FERHRI.Amur.Parser
         {
             InitializeComponent();
         }
-        public FERHRI.Amur.Parser.DataManager ParserDM { get; set; }
-        public FERHRI.Amur.Meta.DataManager MetaDM { get; set; }
+        public SOV.Amur.Parser.DataManager ParserDM { get; set; }
+        public SOV.Amur.Meta.DataManager MetaDM { get; set; }
 
         public SysObj SysObj
         {

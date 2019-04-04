@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FERHRI.Amur.Data
+namespace SOV.Amur.Data
 {
     public class DataValue2_2017
     {

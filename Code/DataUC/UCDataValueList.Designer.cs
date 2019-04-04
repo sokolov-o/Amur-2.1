@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data
+﻿namespace SOV.Amur.Data
 {
     partial class UCDataValueList
     {
@@ -37,7 +37,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonColumnsVisible = new System.Windows.Forms.Button();
-            this.ucDicColumnsVisible = new FERHRI.Common.UCList();
+            this.ucDicColumnsVisible = new SOV.Common.UCList();
             this.mnuActualizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuShowTelegrammToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDeleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,7 +84,7 @@
             // 
             // mnuColumnsVisibleToolStripMenuItem
             // 
-            this.mnuColumnsVisibleToolStripMenuItem.Image = global::FERHRI.Amur.Data.Properties.Resources._3_three_columns_9714;
+            this.mnuColumnsVisibleToolStripMenuItem.Image = global::SOV.Amur.Data.Properties.Resources._3_three_columns_9714;
             this.mnuColumnsVisibleToolStripMenuItem.Name = "mnuColumnsVisibleToolStripMenuItem";
             this.mnuColumnsVisibleToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
             this.mnuColumnsVisibleToolStripMenuItem.Text = "Отобразить столбцы...";
@@ -173,7 +173,7 @@
             // 
             // mnuActualizeToolStripMenuItem
             // 
-            this.mnuActualizeToolStripMenuItem.Image = global::FERHRI.Amur.Data.Properties.Resources.base_exclamationmark_32;
+            this.mnuActualizeToolStripMenuItem.Image = global::SOV.Amur.Data.Properties.Resources.base_exclamationmark_32;
             this.mnuActualizeToolStripMenuItem.Name = "mnuActualizeToolStripMenuItem";
             this.mnuActualizeToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
             this.mnuActualizeToolStripMenuItem.Text = "Актуализировать значение";
@@ -181,7 +181,7 @@
             // 
             // mnuShowTelegrammToolStripMenuItem
             // 
-            this.mnuShowTelegrammToolStripMenuItem.Image = global::FERHRI.Amur.Data.Properties.Resources.text_16xLG;
+            this.mnuShowTelegrammToolStripMenuItem.Image = global::SOV.Amur.Data.Properties.Resources.text_16xLG;
             this.mnuShowTelegrammToolStripMenuItem.Name = "mnuShowTelegrammToolStripMenuItem";
             this.mnuShowTelegrammToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
             this.mnuShowTelegrammToolStripMenuItem.Text = "Телеграмма";
@@ -197,7 +197,7 @@
             // 
             // mnuShowDeletedToolStripMenuItem
             // 
-            this.mnuShowDeletedToolStripMenuItem.Image = global::FERHRI.Amur.Data.Properties.Resources.CheckBoxChecked;
+            this.mnuShowDeletedToolStripMenuItem.Image = global::SOV.Amur.Data.Properties.Resources.CheckBoxChecked;
             this.mnuShowDeletedToolStripMenuItem.Name = "mnuShowDeletedToolStripMenuItem";
             this.mnuShowDeletedToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
             this.mnuShowDeletedToolStripMenuItem.Text = "Показывать удалённые";
@@ -230,7 +230,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button buttonColumnsVisible;
-        private FERHRI.Common.UCList ucDicColumnsVisible;
+        private SOV.Common.UCList ucDicColumnsVisible;
         private System.Windows.Forms.ToolStripMenuItem mnuColumnsVisibleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuActualizeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuShowTelegrammToolStripMenuItem;

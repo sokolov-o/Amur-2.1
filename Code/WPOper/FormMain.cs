@@ -7,19 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Amur.Data;
-using FERHRI.Amur.Meta;
+using SOV.Amur.Data;
+using SOV.Amur.Meta;
 using System.Reflection;
-using FERHRI.Amur.Data.Chart;
-using FERHRI.Amur.Properties;
-using FERHRI.Amur.Sys;
-using FERHRI.Amur.Report;
-using FERHRI.Common;
-using FERHRI.Common.TableIUD;
-using FERHRI.Social;
+using SOV.Amur.Data.Chart;
+using SOV.Amur.Properties;
+using SOV.Amur.Sys;
+using SOV.Amur.Report;
+using SOV.Common;
+using SOV.Common.TableIUD;
+using SOV.Social;
 using System.Diagnostics;
 
-namespace FERHRI.Amur
+namespace SOV.Amur
 {
     public partial class FormMain : Form
     {
@@ -486,7 +486,7 @@ namespace FERHRI.Amur
                     uc.Fill(DataFilter);
                     DataFilter.CatalogFilter.Sites = siteOld;
 
-                    tabPage.Text = site.GetName(Meta.StationRepository.GetCash(), Meta.StationTypeRepository.GetCash(), 1);
+                    tabPage.Text = site.GetName(Meta.StationRepository.GetCash(), Meta.SiteTypeRepository.GetCash(), 1);
                     tc.SelectedTab = tabPage;
                 }
             }
@@ -604,7 +604,7 @@ namespace FERHRI.Amur
                 UCReport ucR = new UCReport((int)repId, dataFilter, Program.User.Name);
                 Report.Report rep = Report.DataManager.GetInstance().ReportRepository.Select(repId);
                 new FormSingleUC(ucR, rep.NameFull).Show();
-                //Report.Report rep = FERHRI.Amur.Report.DataManager.Reports.GetReport((int)repId);
+                //Report.Report rep = SOV.Amur.Report.DataManager.Reports.GetReport((int)repId);
                 //frm.Text = "ОТЧЕТ: \"" + rep.Name + " (" + rep.NameShort + ") " + "\"";
             }
         }
@@ -636,7 +636,7 @@ namespace FERHRI.Amur
             }
 
             TabPage tp = GetDataTabPage(site);
-            // todo: Необходимо клонировать фильтр OSokolov@ferhri.ru, 201805
+            // todo: Необходимо клонировать фильтр OSokolov@SOV.ru, 201805
             DataFilter.CatalogFilter.Sites = new List<int>(new int[] { site.Id });
             ((UCDataTable)tp.Controls[0]).Fill(DataFilter);
             tc.SelectedTab = tp;
@@ -652,7 +652,7 @@ namespace FERHRI.Amur
         {
             TabPage tabPage = null;
             Station station = Meta.StationRepository.GetCash().First(x => x.Id == site.StationId);
-            StationType siteType = Meta.StationTypeRepository.GetCash().First(x => x.Id == site.SiteTypeId);
+            StationType siteType = Meta.SiteTypeRepository.GetCash().First(x => x.Id == site.SiteTypeId);
 
             if (ucSites.IsOneDataTable)
             {
@@ -800,7 +800,7 @@ namespace FERHRI.Amur
                 UCDataGrpSVYM uc = new UCDataGrpSVYM();
                 uc.Dock = DockStyle.Fill;
 
-                tabPage = new TabPage(site.GetName(Meta.StationRepository.GetCash(), Meta.StationTypeRepository.GetCash(), 2));
+                tabPage = new TabPage(site.GetName(Meta.StationRepository.GetCash(), Meta.SiteTypeRepository.GetCash(), 2));
                 tabPage.Name = tabPageName;
                 tabPage.ImageIndex = 4;
                 tabPage.Controls.Add(uc);

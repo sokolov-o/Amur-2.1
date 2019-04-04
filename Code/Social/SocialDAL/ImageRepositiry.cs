@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
-using FERHRI.Common;
+using SOV.Common;
 using Npgsql;
 
-namespace FERHRI.Social
+namespace SOV.Social
 {
     public class ImageRepository : BaseRepository<Image>
     {

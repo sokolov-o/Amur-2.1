@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace FERHRI.Common.TableIUD
+namespace SOV.Common.TableIUD
 {
     public delegate void TableViewerMouseEvent(object sender, MouseEventArgs e);
     public delegate void TableViewerDragEvent(object sender, DragEventArgs e);

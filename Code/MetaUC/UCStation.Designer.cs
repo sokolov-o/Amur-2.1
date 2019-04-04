@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCStation
     {
@@ -215,7 +215,7 @@
             // 
             // stationTypeBindingSource
             // 
-            this.stationTypeBindingSource.DataSource = typeof(FERHRI.Amur.Meta.StationType);
+            this.stationTypeBindingSource.DataSource = typeof(SOV.Amur.Meta.StationType);
             // 
             // UCStation
             // 

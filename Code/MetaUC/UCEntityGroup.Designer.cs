@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCEntityGroup
     {
@@ -44,10 +44,10 @@
             this.insertGroupItemButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.freeItemsList = new FERHRI.Common.UCList();
+            this.freeItemsList = new SOV.Common.UCList();
             this.freeItemsFilterButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupItemsList = new FERHRI.Common.UCList();
+            this.groupItemsList = new SOV.Common.UCList();
             this.saveGroupItemsBtton = new System.Windows.Forms.Button();
             this.deleteGroupItemButton = new System.Windows.Forms.Button();
             this.groupContextMenuStrip.SuspendLayout();
@@ -89,7 +89,7 @@
             // 
             // addToolStripMenuItem
             // 
-            this.addToolStripMenuItem.Image = global::FERHRI.Amur.Meta.Properties.Resources.action_add_16xLG;
+            this.addToolStripMenuItem.Image = global::SOV.Amur.Meta.Properties.Resources.action_add_16xLG;
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
             this.addToolStripMenuItem.Text = "Создать группу...";
@@ -97,7 +97,7 @@
             // 
             // deleteToolStripMenuItem
             // 
-            this.deleteToolStripMenuItem.Image = global::FERHRI.Amur.Meta.Properties.Resources.delete_12x12;
+            this.deleteToolStripMenuItem.Image = global::SOV.Amur.Meta.Properties.Resources.delete_12x12;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
             this.deleteToolStripMenuItem.Text = "Удалить группу...";
@@ -105,7 +105,7 @@
             // 
             // renameToolStripMenuItem
             // 
-            this.renameToolStripMenuItem.Image = global::FERHRI.Amur.Meta.Properties.Resources.Edit;
+            this.renameToolStripMenuItem.Image = global::SOV.Amur.Meta.Properties.Resources.Edit;
             this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
             this.renameToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
             this.renameToolStripMenuItem.Text = "Переименовать группу...";
@@ -118,7 +118,7 @@
             // 
             // refreshToolStripMenuItem
             // 
-            this.refreshToolStripMenuItem.Image = global::FERHRI.Amur.Meta.Properties.Resources.refresh_16xLG;
+            this.refreshToolStripMenuItem.Image = global::SOV.Amur.Meta.Properties.Resources.refresh_16xLG;
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
             this.refreshToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
             this.refreshToolStripMenuItem.Text = "Обновить группы справочника";
@@ -258,7 +258,7 @@
             // freeItemsFilterButton
             // 
             this.freeItemsFilterButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.freeItemsFilterButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.filter_16xLG;
+            this.freeItemsFilterButton.Image = global::SOV.Amur.Meta.Properties.Resources.filter_16xLG;
             this.freeItemsFilterButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.freeItemsFilterButton.Location = new System.Drawing.Point(3, 355);
             this.freeItemsFilterButton.Name = "freeItemsFilterButton";
@@ -306,7 +306,7 @@
             // saveGroupItemsBtton
             // 
             this.saveGroupItemsBtton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.saveGroupItemsBtton.Image = global::FERHRI.Amur.Meta.Properties.Resources.SaveBlack;
+            this.saveGroupItemsBtton.Image = global::SOV.Amur.Meta.Properties.Resources.SaveBlack;
             this.saveGroupItemsBtton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.saveGroupItemsBtton.Location = new System.Drawing.Point(3, 409);
             this.saveGroupItemsBtton.Name = "saveGroupItemsBtton";

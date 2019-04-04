@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FERHRI.Amur.Data
+namespace SOV.Amur.Data
 {
     /// <summary>
     /// Таблица значений с выводом кол, ср, суммы, мин, макс в примечании к заголовку первого столбца.
     /// Используется, например, для отображения derived и parent значений.
     /// 
-    /// OSokolov@ferhri.ru
+    /// OSokolov@SOV.ru
     /// 20160313
     /// </summary>
     public partial class UCDataValuesCMMC : UserControl

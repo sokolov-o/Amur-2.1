@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Social
+﻿namespace SOV.Social
 {
     partial class FormLegalEntitiesTree
     {
@@ -45,12 +45,12 @@
             this.imagesPage = new System.Windows.Forms.TabPage();
             this.deleteImgButton = new System.Windows.Forms.Button();
             this.infoTextBox = new System.Windows.Forms.TextBox();
-            this.ucLegalEntitiesTree = new FERHRI.Social.UCLegalEntitiesTree();
-            this.ucLegalEntity = new FERHRI.Social.UCLegalEntity();
-            this.ucStaffs = new FERHRI.Social.UCStaffs();
-            this.ucStaffEmployees1 = new FERHRI.Social.UCStaffEmployees();
-            this.ucImageGalleryLoader = new FERHRI.Common.UCImageGalleryLoader();
-            this.ucImageGallery = new FERHRI.Common.UCImageGallery();
+            this.ucLegalEntitiesTree = new SOV.Social.UCLegalEntitiesTree();
+            this.ucLegalEntity = new SOV.Social.UCLegalEntity();
+            this.ucStaffs = new SOV.Social.UCStaffs();
+            this.ucStaffEmployees1 = new SOV.Social.UCStaffEmployees();
+            this.ucImageGalleryLoader = new SOV.Common.UCImageGalleryLoader();
+            this.ucImageGallery = new SOV.Common.UCImageGallery();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -281,9 +281,9 @@
             this.ucLegalEntitiesTree.ShowToolbar = true;
             this.ucLegalEntitiesTree.Size = new System.Drawing.Size(203, 454);
             this.ucLegalEntitiesTree.TabIndex = 0;
-            this.ucLegalEntitiesTree.UCRefreshEvent += new FERHRI.Social.UCLegalEntitiesTree.UCRefreshEventHandler(this.ucLegalEntitiesTree_UCRefreshEvent);
-            this.ucLegalEntitiesTree.UCSelectedNodeChangedEvent += new FERHRI.Social.UCLegalEntitiesTree.UCSelectedNodeChangedEventHandler(this.ucLegalEntitiesTree_UCSelectedNodeChangedEvent);
-            this.ucLegalEntitiesTree.UCAddNewLEEvent += new FERHRI.Social.UCLegalEntitiesTree.UCAddNewLEEventHandler(this.ucLegalEntitiesTree_UCAddNewLEEvent);
+            this.ucLegalEntitiesTree.UCRefreshEvent += new SOV.Social.UCLegalEntitiesTree.UCRefreshEventHandler(this.ucLegalEntitiesTree_UCRefreshEvent);
+            this.ucLegalEntitiesTree.UCSelectedNodeChangedEvent += new SOV.Social.UCLegalEntitiesTree.UCSelectedNodeChangedEventHandler(this.ucLegalEntitiesTree_UCSelectedNodeChangedEvent);
+            this.ucLegalEntitiesTree.UCAddNewLEEvent += new SOV.Social.UCLegalEntitiesTree.UCAddNewLEEventHandler(this.ucLegalEntitiesTree_UCAddNewLEEvent);
             // 
             // ucLegalEntity
             // 

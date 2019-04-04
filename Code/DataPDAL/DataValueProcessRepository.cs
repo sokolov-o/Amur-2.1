@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
 
-namespace FERHRI.Amur.DataP
+namespace SOV.Amur.DataP
 {
     public class DataValueProcessRepository
     {

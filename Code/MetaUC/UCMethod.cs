@@ -1,9 +1,9 @@
 ﻿using System.Windows.Forms;
 using System.Linq;
-using FERHRI.Social;
+using SOV.Social;
 using System;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public partial class UCMethod : UserControl
     {
@@ -34,7 +34,7 @@ namespace FERHRI.Amur.Meta
                     idTextBox.Text = value.Id.ToString();
 
                     ucLESource.Value = value.SourceLegalEntityId.HasValue
-                        ? FERHRI.Social.DataManager.GetInstance().LegalEntityRepository.Select((int)value.SourceLegalEntityId)
+                        ? SOV.Social.DataManager.GetInstance().LegalEntityRepository.Select((int)value.SourceLegalEntityId)
                         : null;
                     ucParentMethod.Value = value.ParentId.HasValue
                         ? DataManager.GetInstance().MethodRepository.Select((int)value.ParentId)

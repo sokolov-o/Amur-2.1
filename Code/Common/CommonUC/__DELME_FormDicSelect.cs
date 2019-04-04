@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace FERHRI.Common
+namespace SOV.Common
 {
     public partial class __DELME_FormDicSelect : Form
     {

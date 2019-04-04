@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace FERHRI.Common.TableIUD
+namespace SOV.Common.TableIUD
 {
     public partial class UCGridTableViewer<T> : UserControl, TableViewer<T> where T : class
     {

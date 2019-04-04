@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCMethodForecast
     {
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucMethod = new FERHRI.Common.UCTextBox();
-            this.leadTimeUnitUC = new FERHRI.Common.UCTextBox();
+            this.ucMethod = new SOV.Common.UCTextBox();
+            this.leadTimeUnitUC = new SOV.Common.UCTextBox();
             this.leadTimesTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -65,7 +65,7 @@
             this.leadTimeUnitUC.Size = new System.Drawing.Size(165, 20);
             this.leadTimeUnitUC.TabIndex = 1;
             this.leadTimeUnitUC.Value = null;
-            this.leadTimeUnitUC.UCEditButtonPressedEvent += new FERHRI.Common.UCTextBox.UCEditButtonPressedEventHandler(this.leadTimeUnitUC_UCEditButtonPressedEvent);
+            this.leadTimeUnitUC.UCEditButtonPressedEvent += new SOV.Common.UCTextBox.UCEditButtonPressedEventHandler(this.leadTimeUnitUC_UCEditButtonPressedEvent);
             // 
             // leadTimesTextBox
             // 

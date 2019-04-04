@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Common;
-using FERHRI.Amur.Meta;
+using SOV.Common;
+using SOV.Amur.Meta;
 
-namespace FERHRI.Amur.Data
+namespace SOV.Amur.Data
 {
     public partial class UCDataValueList : UserControl
     {
@@ -154,7 +154,7 @@ namespace FERHRI.Amur.Data
                 row.Cells["utcOffset"].Value = dv.UTCOffset;
 
                 row.Cells["siteName"].Value = SiteRepository.GetCash().FirstOrDefault(x => x.Id == ctl.SiteId).GetName(
-                    StationRepository.GetCash(), StationTypeRepository.GetCash(), 2);
+                    StationRepository.GetCash(), SiteTypeRepository.GetCash(), 2);
                 row.Cells["variableName"].Value = VariableRepository.GetCash().FirstOrDefault(x => x.Id == ctl.VariableId).NameRus;
                 row.Cells["offsetTypeName"].Value = OffsetTypeRepository.GetCash().FirstOrDefault(x => x.Id == ctl.OffsetTypeId).Name;
                 row.Cells["methodName"].Value = MethodRepository.GetCash().FirstOrDefault(x => x.Id == ctl.MethodId).Name;

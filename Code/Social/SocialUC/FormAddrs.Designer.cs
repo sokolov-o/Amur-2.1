@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Social
+﻿namespace SOV.Social
 {
     partial class FormAddrs
     {
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            FERHRI.Social.Addr addr1 = new FERHRI.Social.Addr();
+            SOV.Social.Addr addr1 = new SOV.Social.Addr();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddrs));
-            this.ucAddrs = new FERHRI.Social.UCAddrs();
-            this.ucAddr = new FERHRI.Social.UCAddr();
+            this.ucAddrs = new SOV.Social.UCAddrs();
+            this.ucAddr = new SOV.Social.UCAddr();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -52,8 +52,8 @@
             this.ucAddrs.Name = "ucAddrs";
             this.ucAddrs.Size = new System.Drawing.Size(583, 262);
             this.ucAddrs.TabIndex = 0;
-            this.ucAddrs.UCSelectedItemChanged += new FERHRI.Social.UCAddrs.UCSelectedItemChangedEventHandler(this.ucAddrs_UCSelectedItemChanged);
-            this.ucAddrs.UCAddNewItem += new FERHRI.Social.UCAddrs.UCAddNewItemEventHandler(this.ucAddrs_UCAddNewItem);
+            this.ucAddrs.UCSelectedItemChanged += new SOV.Social.UCAddrs.UCSelectedItemChangedEventHandler(this.ucAddrs_UCSelectedItemChanged);
+            this.ucAddrs.UCAddNewItem += new SOV.Social.UCAddrs.UCAddNewItemEventHandler(this.ucAddrs_UCAddNewItem);
             // 
             // ucAddr
             // 

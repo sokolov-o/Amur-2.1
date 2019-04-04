@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public partial class UCStations : UserControl
     {
@@ -109,7 +109,7 @@ namespace FERHRI.Amur.Meta
                 dgv.Rows.Clear();
 
                 // GeoObjects, Stations, Types
-                List<StationType> sts = DataManager.GetInstance().StationTypeRepository.Select();
+                List<StationType> sts = DataManager.GetInstance().SiteTypeRepository.Select();
                 List<StationGeoObject> sgos = DataManager.GetInstance().StationGeoObjectRepository.SelectByStations(stations.Select(x => x.Id).ToList());
                 if (sgos.Count > 0)
                 {

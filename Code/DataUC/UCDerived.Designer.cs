@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data
+﻿namespace SOV.Amur.Data
 {
     partial class UCDerived
     {
@@ -31,8 +31,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.derivedDataValues = new FERHRI.Amur.Data.UCDataValuesCMMC();
-            this.parentDataValues = new FERHRI.Amur.Data.UCDataValuesCMMC();
+            this.derivedDataValues = new SOV.Amur.Data.UCDataValuesCMMC();
+            this.parentDataValues = new SOV.Amur.Data.UCDataValuesCMMC();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();

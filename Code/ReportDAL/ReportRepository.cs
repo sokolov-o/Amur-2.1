@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using FERHRI.Common;
+using SOV.Common;
 using Npgsql;
 
-namespace FERHRI.Amur.Report
+namespace SOV.Amur.Report
 {
     public class ReportRepository : BaseRepository<Report>
     {

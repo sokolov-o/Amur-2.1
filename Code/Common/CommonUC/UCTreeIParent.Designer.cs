@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FERHRI.Common
+namespace SOV.Common
 {
     partial class UCTreeIParent
     {
@@ -81,7 +81,7 @@ namespace FERHRI.Common
             // refreshButton
             // 
             this.refreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshButton.Image = global::FERHRI.Common.Properties.Resources.refresh;
+            this.refreshButton.Image = global::SOV.Common.Properties.Resources.refresh;
             this.refreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(23, 22);
@@ -92,7 +92,7 @@ namespace FERHRI.Common
             // editButton
             // 
             this.editButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.editButton.Image = global::FERHRI.Common.Properties.Resources.edit_data;
+            this.editButton.Image = global::SOV.Common.Properties.Resources.edit_data;
             this.editButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(23, 22);
@@ -102,7 +102,7 @@ namespace FERHRI.Common
             // addItemButton
             // 
             this.addItemButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addItemButton.Image = global::FERHRI.Common.Properties.Resources.add;
+            this.addItemButton.Image = global::SOV.Common.Properties.Resources.add;
             this.addItemButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addItemButton.Name = "addItemButton";
             this.addItemButton.Size = new System.Drawing.Size(23, 22);
@@ -112,7 +112,7 @@ namespace FERHRI.Common
             // cloneItemButton
             // 
             this.cloneItemButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.cloneItemButton.Image = global::FERHRI.Common.Properties.Resources.clone;
+            this.cloneItemButton.Image = global::SOV.Common.Properties.Resources.clone;
             this.cloneItemButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.cloneItemButton.Name = "cloneItemButton";
             this.cloneItemButton.Size = new System.Drawing.Size(23, 22);
@@ -122,7 +122,7 @@ namespace FERHRI.Common
             // deleteItemButton
             // 
             this.deleteItemButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.deleteItemButton.Image = global::FERHRI.Common.Properties.Resources.delete;
+            this.deleteItemButton.Image = global::SOV.Common.Properties.Resources.delete;
             this.deleteItemButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.deleteItemButton.Name = "deleteItemButton";
             this.deleteItemButton.Size = new System.Drawing.Size(23, 22);

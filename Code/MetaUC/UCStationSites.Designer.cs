@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCStationSites
     {
@@ -73,7 +73,7 @@
             // addNewToolStripButton
             // 
             this.addNewToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addNewToolStripButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.action_add_16xLG1;
+            this.addNewToolStripButton.Image = global::SOV.Amur.Meta.Properties.Resources.action_add_16xLG1;
             this.addNewToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addNewToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addNewToolStripButton.Name = "addNewToolStripButton";
@@ -97,7 +97,7 @@
             // deleteToolStripButton
             // 
             this.deleteToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.deleteToolStripButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.DeleteHS;
+            this.deleteToolStripButton.Image = global::SOV.Amur.Meta.Properties.Resources.DeleteHS;
             this.deleteToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.deleteToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.deleteToolStripButton.Name = "deleteToolStripButton";

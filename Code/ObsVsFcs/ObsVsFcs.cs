@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FERHRI.Amur.Data;
-using FERHRI.Amur.Meta;
-using FERHRI.Common;
+using SOV.Amur.Data;
+using SOV.Amur.Meta;
+using SOV.Common;
 using System.Diagnostics;
 
-namespace FERHRI.Amur.ObsVsFcs
+namespace SOV.Amur.ObsVsFcs
 {
     public partial class ObsVsFcs
     {

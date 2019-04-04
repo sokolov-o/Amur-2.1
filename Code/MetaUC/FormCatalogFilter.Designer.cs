@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class FormCatalogFilter
     {
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            FERHRI.Amur.Meta.CatalogFilter catalogFilter1 = new FERHRI.Amur.Meta.CatalogFilter();
+            SOV.Amur.Meta.CatalogFilter catalogFilter1 = new SOV.Amur.Meta.CatalogFilter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCatalogFilter));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.ucCatalogFilter = new FERHRI.Amur.Meta.UCCatalogFilter();
+            this.ucCatalogFilter = new SOV.Amur.Meta.UCCatalogFilter();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();

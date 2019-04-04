@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FERHRI.Amur.Data;
+using SOV.Amur.Data;
 
-namespace FERHRI.UnitTest
+namespace SOV.UnitTest
 {
     [TestClass]
     public class DataValueTest

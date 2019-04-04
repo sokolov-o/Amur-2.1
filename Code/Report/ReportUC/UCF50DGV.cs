@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Amur.Meta;
-using FERHRI.Common;
+using SOV.Amur.Meta;
+using SOV.Common;
 
-namespace FERHRI.Amur.Report
+namespace SOV.Amur.Report
 {
     public partial class UCF50DGV : UserControl
     {

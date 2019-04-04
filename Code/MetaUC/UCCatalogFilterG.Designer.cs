@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCCatalogFilterG
     {
@@ -155,7 +155,7 @@
             // findNextToolStripButton
             // 
             this.findNextToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.findNextToolStripButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.Find_5650;
+            this.findNextToolStripButton.Image = global::SOV.Amur.Meta.Properties.Resources.Find_5650;
             this.findNextToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.findNextToolStripButton.Name = "findNextToolStripButton";
             this.findNextToolStripButton.Size = new System.Drawing.Size(23, 22);

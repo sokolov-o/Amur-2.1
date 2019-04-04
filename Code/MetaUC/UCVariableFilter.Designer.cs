@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCVariableFilter
     {
@@ -59,13 +59,13 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.allSamplesCheckBox = new System.Windows.Forms.CheckBox();
-            this.varTypeListBox = new FERHRI.Common.UCList();
-            this.valueTypeListBox = new FERHRI.Common.UCList();
-            this.timeListBox = new FERHRI.Common.UCList();
-            this.unitListBox = new FERHRI.Common.UCList();
-            this.generalCategsListBox = new FERHRI.Common.UCList();
-            this.dataTypesListBox = new FERHRI.Common.UCList();
-            this.samplesListBox = new FERHRI.Common.UCList();
+            this.varTypeListBox = new SOV.Common.UCList();
+            this.valueTypeListBox = new SOV.Common.UCList();
+            this.timeListBox = new SOV.Common.UCList();
+            this.unitListBox = new SOV.Common.UCList();
+            this.generalCategsListBox = new SOV.Common.UCList();
+            this.dataTypesListBox = new SOV.Common.UCList();
+            this.samplesListBox = new SOV.Common.UCList();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();

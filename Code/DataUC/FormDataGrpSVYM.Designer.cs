@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data
+﻿namespace SOV.Amur.Data
 {
     partial class FormDataGrpSVYM
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucDataGrpSVYM1 = new FERHRI.Amur.Data.UCDataGrpSVYM();
+            this.ucDataGrpSVYM1 = new SOV.Amur.Data.UCDataGrpSVYM();
             this.SuspendLayout();
             // 
             // ucDataGrpSVYM1

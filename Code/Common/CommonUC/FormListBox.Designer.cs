@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Common
+﻿namespace SOV.Common
 {
     partial class FormListBox
     {
@@ -33,7 +33,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.lb = new FERHRI.Common.UCList();
+            this.lb = new SOV.Common.UCList();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,7 +112,7 @@
             this.lb.ShowUpdateToolbarButton = true;
             this.lb.Size = new System.Drawing.Size(317, 293);
             this.lb.TabIndex = 3;
-            this.lb.UCDoubleClick += new FERHRI.Common.UCList.UCDoubleClickEventHandler(this.ucListBox_UCDoubleClick);
+            this.lb.UCDoubleClick += new SOV.Common.UCList.UCDoubleClickEventHandler(this.ucListBox_UCDoubleClick);
             // 
             // FormListBox
             // 

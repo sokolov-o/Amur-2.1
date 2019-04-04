@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.IO;
-using FERHRI.Amur.Meta;
-using FERHRI.Common;
+using SOV.Amur.Meta;
+using SOV.Common;
 using System.Drawing.Printing;
 
-namespace FERHRI.Amur.Data
+namespace SOV.Amur.Data
 {
     /// <summary>
     /// Графики: x - дата, y - значения.
@@ -66,8 +66,6 @@ namespace FERHRI.Amur.Data
 
         public class ChartOptions
         {
-            public Station Station { get; set; }
-
             /// <summary>
             /// Первые два сайта - ГП ? АГК, далее опорные по осадкам и др.
             /// </summary>
@@ -162,11 +160,11 @@ namespace FERHRI.Amur.Data
                 double maxGageHeight = double.MinValue,
                        minGageHeight = double.MaxValue,
                        maxPercip = double.MinValue;
-                Site hydroPost = chartOptions.Sites.Where(x => x.SiteTypeId == (int)EnumStationType.HydroPost).FirstOrDefault();
+                Site hydroPost = chartOptions.Sites.Where(x => x.TypeId == (int)EnumStationType.HydroPost).FirstOrDefault();
                 List<DataValue> dailyGageHeight = SubData(hydroPost, (int)EnumVariable.GageHeightF);
                 AddSeriaGageHeight(ref dailyGageHeight, true, ref maxGageHeight, ref minGageHeight);
 
-                Site ahk = chartOptions.Sites.Where(x => x.SiteTypeId == (int)EnumStationType.AHK).FirstOrDefault();
+                Site ahk = chartOptions.Sites.Where(x => x.TypeId == (int)EnumStationType.AHK).FirstOrDefault();
                 List<DataValue> hourlyGageHeight = SubData(ahk, (int)EnumVariable.GageHeightF);
                 AddSeriaGageHeight(ref hourlyGageHeight, false, ref maxGageHeight, ref minGageHeight);
 
@@ -174,8 +172,8 @@ namespace FERHRI.Amur.Data
 
                 #region Заголовок
                 //chart.Legends[0].Docking = Docking.Bottom;
-                List<StationGeoObject> geoObjId = Meta.DataManager.GetInstance().StationGeoObjectRepository.SelectByStations(
-                                                    new List<int>() { chartOptions.Station.Id }
+                List<SiteGeoObject> geoObjId = Meta.DataManager.GetInstance().SiteGeoObjectRepository.SelectBySites(
+                                                    new List<int>() { hydroPost.Id }
                                                 );
                 string geoObj = geoObjId.Count == 0 ? "" : Meta.DataManager.GetInstance().GeoObjectRepository.Select(
                                                                 geoObjId[0].GeoObjectId
@@ -319,7 +317,7 @@ namespace FERHRI.Amur.Data
 
                 if (datas.Count == 0) continue;
 
-                Series seria = new Series(var.NameRus + " (" + StationRepository.GetCash().FirstOrDefault(x => x.Id == sites[j].StationId).Code + ")");
+                Series seria = new Series(var.NameRus + " (" + sites[j].Code + ")");
                 seria.Tag = var;
                 seria.XAxisType = AxisType.Primary;
                 seria.YAxisType = AxisType.Secondary;
@@ -340,7 +338,7 @@ namespace FERHRI.Amur.Data
                         "Пункт: {2}\nВремя наблюдения: {0}\nЗначение: {1}",
                         date.ToString("dd.MM.yy HH:mm"),
                         datas[i].Value,
-                        sites[j].GetName(StationRepository.GetCash(), StationTypeRepository.GetCash(), 2)
+                        sites[j].GetName(2, true, SiteTypeRepository.GetCash())
                     );
                     seria.Points.Add(point);
 
@@ -359,13 +357,13 @@ namespace FERHRI.Amur.Data
 
             // CREATE SERIA
 
-            Dictionary<byte, dataStyles.GageHeightDot> stylesByAQC = new Dictionary<byte, dataStyles.GageHeightDot> 
+            Dictionary<byte, dataStyles.GageHeightDot> stylesByAQC = new Dictionary<byte, dataStyles.GageHeightDot>
             {
                 {(byte)EnumFlagAQC.NoAQC, dataStyles.NoAQCDot},
-                {(byte)EnumFlagAQC.Success, daily ? dataStyles.DailyGageHeightDot : dataStyles.HourlyGageHeightDot}, 
+                {(byte)EnumFlagAQC.Success, daily ? dataStyles.DailyGageHeightDot : dataStyles.HourlyGageHeightDot},
                 {(byte)EnumFlagAQC.Error, dataStyles.ErrorDot},
                 {(byte)EnumFlagAQC.Deleted, dataStyles.DeletedDot},
-                {(byte)EnumFlagAQC.Approved, daily ? dataStyles.DailyGageHeightDot : dataStyles.HourlyGageHeightDot}, 
+                {(byte)EnumFlagAQC.Approved, daily ? dataStyles.DailyGageHeightDot : dataStyles.HourlyGageHeightDot},
             };
 
             Series seria = new Series("Уровень воды, " + (daily ? "дневной" : "часовой"));

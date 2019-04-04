@@ -1,7 +1,7 @@
 ﻿using Npgsql;
 using System;
 
-namespace FERHRI.UnitTest
+namespace SOV.UnitTest
 {
     internal static class CommonFuncs
     {

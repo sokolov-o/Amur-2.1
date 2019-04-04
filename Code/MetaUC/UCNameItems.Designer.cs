@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCNameItems
     {
@@ -91,21 +91,21 @@
             // 
             // langBindingSource
             // 
-            this.langBindingSource.DataSource = typeof(FERHRI.Common.IdName);
+            this.langBindingSource.DataSource = typeof(SOV.Common.IdName);
             // 
             // nameTypeBindingSource
             // 
-            this.nameTypeBindingSource.DataSource = typeof(FERHRI.Common.IdName);
+            this.nameTypeBindingSource.DataSource = typeof(SOV.Common.IdName);
             // 
             // nameItemBindingSource
             // 
-            this.nameItemBindingSource.DataSource = typeof(FERHRI.Amur.Meta.NameItem);
+            this.nameItemBindingSource.DataSource = typeof(SOV.Amur.Meta.NameItem);
             this.nameItemBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.nameItemBindingSource_AddingNew);
             // 
             // saveButton
             // 
             this.saveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.SaveBlack;
+            this.saveButton.Image = global::SOV.Amur.Meta.Properties.Resources.SaveBlack;
             this.saveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(23, 22);

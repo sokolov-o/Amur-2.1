@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur
+﻿namespace SOV.Amur
 {
     partial class FormMain
     {
@@ -91,11 +91,11 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.ucSites = new FERHRI.Amur.Meta.UCSiteGeoObjectList();
+            this.ucSites = new SOV.Amur.Meta.UCSiteGeoObjectList();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.ucNet = new FERHRI.Amur.Meta.UCNet();
+            this.ucNet = new SOV.Amur.Meta.UCNet();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.ucStations1 = new FERHRI.Amur.Meta.UCStations();
+            this.ucStations1 = new SOV.Amur.Meta.UCStations();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tc = new System.Windows.Forms.TabControl();
             this.mnuDicCategoryDefinitionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -282,7 +282,7 @@
             // 
             // mnuDicLegacyTreeViewToolStripMenuItem
             // 
-            this.mnuDicLegacyTreeViewToolStripMenuItem.Image = global::FERHRI.Amur.Properties.Resources.TreeView_713;
+            this.mnuDicLegacyTreeViewToolStripMenuItem.Image = global::SOV.Amur.Properties.Resources.TreeView_713;
             this.mnuDicLegacyTreeViewToolStripMenuItem.Name = "mnuDicLegacyTreeViewToolStripMenuItem";
             this.mnuDicLegacyTreeViewToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
             this.mnuDicLegacyTreeViewToolStripMenuItem.Text = "Субъекты права (дерево отношений)";
@@ -368,7 +368,7 @@
             // 
             // mnuDataCurveToolStripMenuItem
             // 
-            this.mnuDataCurveToolStripMenuItem.Image = global::FERHRI.Amur.Properties.Resources.CurveTool_210;
+            this.mnuDataCurveToolStripMenuItem.Image = global::SOV.Amur.Properties.Resources.CurveTool_210;
             this.mnuDataCurveToolStripMenuItem.Name = "mnuDataCurveToolStripMenuItem";
             this.mnuDataCurveToolStripMenuItem.Size = new System.Drawing.Size(331, 22);
             this.mnuDataCurveToolStripMenuItem.Text = "Кривые расходов";
@@ -665,13 +665,13 @@
             this.ucSites.Size = new System.Drawing.Size(285, 456);
             this.ucSites.TabIndex = 0;
             this.ucSites.UCDGVSelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ucSites.UCSelectedSiteChangedEvent += new FERHRI.Amur.Meta.UCSiteGeoObjectList.UCSelectedSiteChangedEventHandler(this.ucSiteGeoObjectList1_UCSelectedSiteChangedEvent);
-            this.ucSites.UCEditDataEvent += new FERHRI.Amur.Meta.UCSiteGeoObjectList.UCEditDataEventHandler(this.ucSiteGeoObjectList1_UCEditDataEvent);
-            this.ucSites.UCEditSiteEvent += new FERHRI.Amur.Meta.UCSiteGeoObjectList.UCEditSiteEventHandler(this.ucSiteGeoObjectList1_UCEditSiteEvent);
-            this.ucSites.UCShowClimateEvent += new FERHRI.Amur.Meta.UCSiteGeoObjectList.UCShowClimateEventHandler(this.ucSiteGeoObjectList1_UCShowClimateEvent);
-            this.ucSites.UCShowDataGrpEvent += new FERHRI.Amur.Meta.UCSiteGeoObjectList.UCShowDataGrpEventHandler(this.ucSites_UCShowDataGrpEvent);
-            this.ucSites.UCShowSiteDataGrpEvent += new FERHRI.Amur.Meta.UCSiteGeoObjectList.UCShowSiteDataGrpEventHandler(this.ucSites_UCShowSiteDataGrpEvent);
-            this.ucSites.UCAddSiteChartEvent += new FERHRI.Amur.Meta.UCSiteGeoObjectList.UCAddSiteChartEventHandler(this.ucSites_UCAddSiteChartEvent);
+            this.ucSites.UCSelectedSiteChangedEvent += new SOV.Amur.Meta.UCSiteGeoObjectList.UCSelectedSiteChangedEventHandler(this.ucSiteGeoObjectList1_UCSelectedSiteChangedEvent);
+            this.ucSites.UCEditDataEvent += new SOV.Amur.Meta.UCSiteGeoObjectList.UCEditDataEventHandler(this.ucSiteGeoObjectList1_UCEditDataEvent);
+            this.ucSites.UCEditSiteEvent += new SOV.Amur.Meta.UCSiteGeoObjectList.UCEditSiteEventHandler(this.ucSiteGeoObjectList1_UCEditSiteEvent);
+            this.ucSites.UCShowClimateEvent += new SOV.Amur.Meta.UCSiteGeoObjectList.UCShowClimateEventHandler(this.ucSiteGeoObjectList1_UCShowClimateEvent);
+            this.ucSites.UCShowDataGrpEvent += new SOV.Amur.Meta.UCSiteGeoObjectList.UCShowDataGrpEventHandler(this.ucSites_UCShowDataGrpEvent);
+            this.ucSites.UCShowSiteDataGrpEvent += new SOV.Amur.Meta.UCSiteGeoObjectList.UCShowSiteDataGrpEventHandler(this.ucSites_UCShowSiteDataGrpEvent);
+            this.ucSites.UCAddSiteChartEvent += new SOV.Amur.Meta.UCSiteGeoObjectList.UCAddSiteChartEventHandler(this.ucSites_UCAddSiteChartEvent);
             // 
             // tabPage2
             // 
@@ -692,8 +692,8 @@
             this.ucNet.Name = "ucNet";
             this.ucNet.Size = new System.Drawing.Size(285, 456);
             this.ucNet.TabIndex = 0;
-            this.ucNet.UCSelectedNodeChangedEvent += new FERHRI.Amur.Meta.UCNet.UCSelectedNodeChangedEventHandler(this.ucNet_UCSelectedNodeChangedEvent);
-            this.ucNet.UCEditDataEvent += new FERHRI.Amur.Meta.UCNet.UCEditDataEventHandler(this.ucNet_UCEditDataEvent);
+            this.ucNet.UCSelectedNodeChangedEvent += new SOV.Amur.Meta.UCNet.UCSelectedNodeChangedEventHandler(this.ucNet_UCSelectedNodeChangedEvent);
+            this.ucNet.UCEditDataEvent += new SOV.Amur.Meta.UCNet.UCEditDataEventHandler(this.ucNet_UCEditDataEvent);
             // 
             // tabPage3
             // 
@@ -724,7 +724,7 @@
             this.ucStations1.VisibleEditStationButton = false;
             this.ucStations1.VisibleNoSiteButton = false;
             this.ucStations1.VisibleSiteGroups = false;
-            this.ucStations1.UCEditStationEvent += new FERHRI.Amur.Meta.UCStations.UCEditStationEventHandler(this.ucStations1_UCEditStationEvent);
+            this.ucStations1.UCEditStationEvent += new SOV.Amur.Meta.UCStations.UCEditStationEventHandler(this.ucStations1_UCEditStationEvent);
             // 
             // groupBox2
             // 

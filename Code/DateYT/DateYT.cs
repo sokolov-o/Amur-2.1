@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using FERHRI.Amur.Meta;
+using SOV.Amur.Meta;
 
-namespace FERHRI.Amur
+namespace SOV.Amur
 {
     public class DateYT : IComparable<DateYT>
     {

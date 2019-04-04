@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FERHRI.Amur.Data;
-using FERHRI.Amur.Meta;
-using FERHRI.Common;
+using SOV.Amur.Data;
+using SOV.Amur.Meta;
+using SOV.Common;
 
-namespace FERHRI.Amur.Report
+namespace SOV.Amur.Report
 {
     /// <summary>
     /// 
@@ -19,7 +19,7 @@ namespace FERHRI.Amur.Report
     /// В отчёте приводятся стат. параметры уровня на ГП за период с отклонением от нормы, 
     /// с кол. дней и периодами затопления поймы и др.
     /// 
-    /// OSokolov@ferhri.ru, 201511-201601
+    /// OSokolov@SOV.ru, 201511-201601
     /// </summary>
     public class F50Collection : List<F50Row>
     {

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using FERHRI.Amur.Sys;
-using FERHRI.Amur.Meta;
-using FERHRI.Common;
+using SOV.Amur.Sys;
+using SOV.Amur.Meta;
+using SOV.Common;
 
-namespace FERHRI.Amur
+namespace SOV.Amur
 {
     static class Program
     {
@@ -22,14 +22,14 @@ namespace FERHRI.Amur
 
             // USER & connection string
 
-            string suser = global::FERHRI.Amur.Properties.Settings.Default.User;
+            string suser = global::SOV.Amur.Properties.Settings.Default.User;
             if (!string.IsNullOrEmpty(suser))
             {
                 User = new Common.User(suser.Split(';')[0], suser.Split(';')[1]);
             }
 
             Common.FormUserPassword frm = new Common.FormUserPassword(
-                StrVia.ToDictionaryPairs(global::FERHRI.Amur.Properties.Settings.Default.AmurConnectionString, '/'), 
+                StrVia.ToDictionaryPairs(global::SOV.Amur.Properties.Settings.Default.AmurConnectionString, '/'), 
                 User);
             if (frm.ShowDialog() != DialogResult.OK) return;
             User = frm.User;

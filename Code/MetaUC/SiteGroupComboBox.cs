@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Common;
+using SOV.Common;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public static class SiteGroupControls
     {
@@ -26,18 +26,19 @@ namespace FERHRI.Amur.Meta
             ReloadItems();
             SiteGroupControls.SiteGroupComboBoxList.Add(this);
         }
-        List<SiteGroup> _specGroups = new List<SiteGroup>
+        const string TAB_NAME = "meta.site";
+        List<EntityGroup> _specGroups = new List<EntityGroup>
         {
-            new SiteGroup(0,0,"(_Все пункты)"),
-            new SiteGroup(-((int)Meta.EnumStationType.HydroPost),0,"(_Все гидрологические посты)"),
-            new SiteGroup(-((int)Meta.EnumStationType.MeteoStation),0,"(_Все метеорологические станции)"),
-            new SiteGroup(-((int)Meta.EnumStationType.GeoObject),0,"(_Все гео-объекты)"),
-            new SiteGroup(-((int)Meta.EnumStationType.MorePost),0,"(_Все морские посты)")
+            new EntityGroup(0,"(_Все пункты)",TAB_NAME),
+            new EntityGroup(-((int)Meta.EnumStationType.HydroPost),"(_Все гидрологические посты)",TAB_NAME),
+            new EntityGroup(-((int)Meta.EnumStationType.MeteoStation),"(_Все метеорологические станции)",TAB_NAME),
+            new EntityGroup(-((int)Meta.EnumStationType.GeoObject),"(_Все гео-объекты)",TAB_NAME),
+            new EntityGroup(-((int)Meta.EnumStationType.MorePost),"(_Все морские посты)",TAB_NAME)
         };
         public void ReloadItems()
         {
             Items.Clear();
-            List<SiteGroup> groups = Meta.DataManager.GetInstance().SiteGroupRepository.SelectGroups();
+            List<EntityGroup> groups = Meta.DataManager.GetInstance().EntityGroupRepository.SelectGroups(TAB_NAME);
             groups.AddRange(_specGroups);
             Items.AddRange(groups.OrderBy(x => x.Name).ToArray());
         }
@@ -50,7 +51,7 @@ namespace FERHRI.Amur.Meta
 
         public List<Site> GetGroupSites()
         {
-            SiteGroup siteGroup = this.SiteGroup;
+            EntityGroup siteGroup = this.SiteGroup;
             if (siteGroup != null)
                 return GetGroupSites(siteGroup.Id);
             return new List<Site>();
@@ -62,9 +63,14 @@ namespace FERHRI.Amur.Meta
                 if (siteGroupId == 0)
                     return Meta.SiteRepository.GetCash();
                 else if (siteGroupId < 0)
-                    return Meta.SiteRepository.GetCash().Where(x => x.SiteTypeId == -siteGroupId).ToList();
+                    return Meta.SiteRepository.GetCash().Where(x => x.TypeId == -siteGroupId).OrderBy(x => x.Name).ToList();
                 else
-                    return Meta.DataManager.GetInstance().SiteGroupRepository.SelectGroupFK((int)siteGroupId).SiteList;
+                {
+                    List<int[]> idOrder = Meta.DataManager.GetInstance().EntityGroupRepository.SelectEntities((int)siteGroupId);
+                    List<Site> sites = DataManager.GetInstance().SiteRepository.Select(idOrder.Select(x => x[0]).ToList());
+                    sites = sites.OrderBy(x => idOrder.First(y => y[0] == x.Id)[1]).ToList();
+                    return sites;
+                }
             }
             return new List<Site>();
         }
@@ -72,7 +78,7 @@ namespace FERHRI.Amur.Meta
         {
             for (int i = 0; i < Items.Count; i++)
             {
-                if (((SiteGroup)Items[i]).Id == id)
+                if (((EntityGroup)Items[i]).Id == id)
                 {
                     SelectedIndex = i;
                     return;
@@ -80,9 +86,9 @@ namespace FERHRI.Amur.Meta
             }
             SelectedIndex = -1;
         }
-        public SiteGroup SiteGroup
+        public EntityGroup SiteGroup
         {
-            get { return SelectedItem == null ? null : (SiteGroup)SelectedItem; }
+            get { return SelectedItem == null ? null : (EntityGroup)SelectedItem; }
             set
             {
                 SelectedIndex = (value == null) ? -1 : Items.IndexOf(value);

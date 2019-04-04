@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FERHRI.Amur.Data
+namespace SOV.Amur.Data
 {
     public class DataManager : Common.BaseDataManager
     {
@@ -39,14 +39,14 @@ namespace FERHRI.Amur.Data
         /// <returns></returns>
         public static DataManager GetInstance()
         {
-            return (DataManager)GetInstance(GetDefaultConnectionString(), Type.GetType("FERHRI.Amur.Data.DataManager"));
+            return (DataManager)GetInstance(GetDefaultConnectionString(), Type.GetType("SOV.Amur.Data.DataManager"));
         }
         /// <summary>
         /// Экземпляр с заданной строкой подключения.
         /// </summary>
         public static DataManager GetInstance(string connectionString)
         {
-            return (DataManager)GetInstance(connectionString, Type.GetType("FERHRI.Amur.Data.DataManager"));
+            return (DataManager)GetInstance(connectionString, Type.GetType("SOV.Amur.Data.DataManager"));
         }
     }
 }

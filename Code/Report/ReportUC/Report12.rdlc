@@ -46,9 +46,9 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>FERHRI.Amur.Report</rd:DataSetName>
+        <rd:DataSetName>SOV.Amur.Report</rd:DataSetName>
         <rd:TableName>DiffReport</rd:TableName>
-        <rd:ObjectDataSourceType>FERHRI.Amur.Report.DiffReport, FERHRI.Amur.ReportBL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:ObjectDataSourceType>SOV.Amur.Report.DiffReport, SOV.Amur.ReportBL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

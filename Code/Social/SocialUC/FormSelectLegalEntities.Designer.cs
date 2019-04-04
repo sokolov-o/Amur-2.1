@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Social
+﻿namespace SOV.Social
 {
     partial class FormSelectLegalEntities
     {
@@ -31,7 +31,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.ucLegalEntitiesTree = new FERHRI.Social.UCLegalEntitiesTree();
+            this.ucLegalEntitiesTree = new SOV.Social.UCLegalEntitiesTree();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,7 +83,7 @@
             this.ucLegalEntitiesTree.Name = "ucLegalEntitiesTree";
             this.ucLegalEntitiesTree.Size = new System.Drawing.Size(295, 496);
             this.ucLegalEntitiesTree.TabIndex = 0;
-            this.ucLegalEntitiesTree.UCDoubleClickEvent += new FERHRI.Social.UCLegalEntitiesTree.UCDoubleClickEventHandler(this.ucLegalEntitiesTree_UCDoubleClickEvent);
+            this.ucLegalEntitiesTree.UCDoubleClickEvent += new SOV.Social.UCLegalEntitiesTree.UCDoubleClickEventHandler(this.ucLegalEntitiesTree_UCDoubleClickEvent);
             // 
             // FormSelectLegalEntities
             // 

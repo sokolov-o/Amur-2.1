@@ -4,9 +4,9 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
-using FERHRI.Common;
+using SOV.Common;
 
-namespace FERHRI.Social
+namespace SOV.Social
 {
     [DataContract]
     public class Person

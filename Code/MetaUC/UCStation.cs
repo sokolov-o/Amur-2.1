@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Common;
+using SOV.Common;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public partial class UCStation : UserControl
     {
@@ -42,7 +42,7 @@ namespace FERHRI.Amur.Meta
                 nameTextBox.Text = value.Name;
                 nameEngTextBox.Text = value.NameEng;
 
-                object o = StationTypeRepository.GetCash().FirstOrDefault(x => x.Id == value.TypeId);
+                object o = SiteTypeRepository.GetCash().FirstOrDefault(x => x.Id == value.TypeId);
                 stationTypeComboBox.SelectedIndex = o == null ? -1 : stationTypeComboBox.Items.IndexOf(o);
                 //stationTypeBindingSource.Position = stationTypeBindingSource.Find("Id", value.TypeId);
 
@@ -58,8 +58,8 @@ namespace FERHRI.Amur.Meta
         {
             if (!DesignMode)
             {
-                //stationTypeComboBox.DataSource = StationTypeRepository.GetCash().OrderBy(x => x.Name).ToList();
-                stationTypeBindingSource.DataSource = StationTypeRepository.GetCash().Select(x => new IdName() { Id = x.Id, Name = x.Name }).OrderBy(x => x.Name).ToList();
+                //stationTypeComboBox.DataSource = SiteTypeRepository.GetCash().OrderBy(x => x.Name).ToList();
+                stationTypeBindingSource.DataSource = SiteTypeRepository.GetCash().Select(x => new IdName() { Id = x.Id, Name = x.Name }).OrderBy(x => x.Name).ToList();
                 regionComboBox.DataSource = Social.AddrRepository.GetCash().OrderBy(x => x.Name).ToList();
                 orgComboBox.DataSource = Social.LegalEntityRepository.GetCash().Where(x => x.Type == 'o').OrderBy(x => x.NameRus).ToList();
             }

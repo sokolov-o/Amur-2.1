@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public partial class UCSiteXSites : UserControl
     {
@@ -72,14 +72,14 @@ namespace FERHRI.Amur.Meta
                 DataGridViewRow row = dgv.Rows[dgv.Rows.Add()];
                 row.Cells[_iColRelation].Value = sxsTypes.FirstOrDefault(x => x.Id == item.RelationTypeId).Name;
                 row.Cells[_iColSite].Value = sites.FirstOrDefault(x => x.Id == ((SiteNum1Or2 == 1) ? item.SiteId2 : item.SiteId1))
-                    .GetName(StationRepository.GetCash(), StationTypeRepository.GetCash(), 1);
+                    .GetName(StationRepository.GetCash(), SiteTypeRepository.GetCash(), 1);
                 row.Tag = item;
             }
         }
 
         private void addToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Not implemented yet. OSokolov@ferhri.ru, 2016/12/12");
+            MessageBox.Show("Not implemented yet. OSokolov@SOV.ru, 2016/12/12");
         }
     }
 }

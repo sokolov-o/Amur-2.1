@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FERHRI.Common;
+using SOV.Common;
 using System.Runtime.Serialization;
 
-namespace FERHRI.Social
+namespace SOV.Social
 {
     [DataContract]
     public class Addr : IdClass

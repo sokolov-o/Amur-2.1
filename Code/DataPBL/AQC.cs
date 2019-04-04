@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FERHRI.Amur.Meta;
-using FERHRI.Amur.Data;
+using SOV.Amur.Meta;
+using SOV.Amur.Data;
 
-namespace FERHRI.Amur.DataP
+namespace SOV.Amur.DataP
 {
     /// <summary>
     /// Automatic Quality Control (AQC)
@@ -268,7 +268,7 @@ namespace FERHRI.Amur.DataP
                     return;
             }
             // ОБЯЗАТЕЛЬНО ЛИ правило для данного типа пункта?
-            if (!sat.Mandatories.Exists(x => x == site.SiteTypeId))
+            if (!sat.Mandatories.Exists(x => x == site.TypeId))
                 return;
 
             EntityAttrValue sav = _savs.Find(x => x.AttrTypeId == sat.Id);
@@ -278,7 +278,7 @@ namespace FERHRI.Amur.DataP
 
                 Sys.DataManager.GetInstance().LogRepository.Insert(THIS_SYS_ENTITY_ID,
                     "Для пункта отсутствует обязательный атрибут " + sat.Name + "."
-                    + "\nПункт: " + Site.GetName(SiteRepository.GetCash().Find(x => x.Id == site.Id), StationRepository.GetCash(), StationTypeRepository.GetCash(), 2)
+                    + "\nПункт: " + Site.GetName(SiteRepository.GetCash().Find(x => x.Id == site.Id), 2, true, SiteTypeRepository.GetCash())
                     + "(id=" + site.Id + ")"
                     , _rootLogId, true
                 );
@@ -309,17 +309,21 @@ namespace FERHRI.Amur.DataP
             if (df.CatalogFilter.Sites.Count != 1) throw new Exception("ALGORITHMIC ERROR: (df.SiteIdList.Count != 1)");
 
             List<DataValue> ret = new List<DataValue>();
-            Site refSite = Meta.DataManager.GetInstance().SiteRepository.SelectReferenceSite(site);
 
-            if (refSite != null)
+            if (site.ParentId.HasValue)
             {
-                List<int> id = df.CatalogFilter.Sites;
-                df.CatalogFilter.Sites = new List<int>(new int[] { refSite.Id });
-                bool isOneValue = df.IsActualValueOnly; df.IsActualValueOnly = true;
+                Site refSite = Meta.DataManager.GetInstance().SiteRepository.Select((int)site.ParentId);
 
-                ret = Data.DataManager.GetInstance().DataValueRepository.SelectA(df);
+                if (refSite != null)
+                {
+                    List<int> id = df.CatalogFilter.Sites;
+                    df.CatalogFilter.Sites = new List<int>(new int[] { refSite.Id });
+                    bool isOneValue = df.IsActualValueOnly; df.IsActualValueOnly = true;
 
-                df.CatalogFilter.Sites = id; df.IsActualValueOnly = isOneValue;
+                    ret = Data.DataManager.GetInstance().DataValueRepository.SelectA(df);
+
+                    df.CatalogFilter.Sites = id; df.IsActualValueOnly = isOneValue;
+                }
             }
             return ret;
         }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FERHRI.Amur.DataP
+namespace SOV.Amur.DataP
 {
     public class DataGrpSVYM
     {

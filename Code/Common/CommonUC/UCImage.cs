@@ -3,7 +3,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace FERHRI.Common
+namespace SOV.Common
 {
     public partial class UCImage : UserControl
     {

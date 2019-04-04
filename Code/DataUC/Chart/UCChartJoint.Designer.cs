@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data.Chart
+﻿namespace SOV.Amur.Data.Chart
 {
     partial class UCChartJoint
     {
@@ -34,7 +34,7 @@
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.siteGroupComboBox = new FERHRI.Amur.Meta.SiteGroupComboBox();
+            this.siteGroupComboBox = new SOV.Amur.Meta.SiteGroupComboBox();
             this.addSiteButton = new System.Windows.Forms.ToolStripButton();
             this.refreshButton = new System.Windows.Forms.ToolStripButton();
             this.dateLabel = new System.Windows.Forms.ToolStripLabel();
@@ -67,7 +67,7 @@
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.varToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ucVariablesList = new FERHRI.Amur.Meta.UCVariablesList();
+            this.ucVariablesList = new SOV.Amur.Meta.UCVariablesList();
             this.siteLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -125,7 +125,7 @@
             // addSiteButton
             // 
             this.addSiteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addSiteButton.Image = global::FERHRI.Amur.Data.Properties.Resources.action_add_16xLG;
+            this.addSiteButton.Image = global::SOV.Amur.Data.Properties.Resources.action_add_16xLG;
             this.addSiteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addSiteButton.Name = "addSiteButton";
             this.addSiteButton.Size = new System.Drawing.Size(23, 22);
@@ -135,7 +135,7 @@
             // refreshButton
             // 
             this.refreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshButton.Image = global::FERHRI.Amur.Data.Properties.Resources.refresh_16xLG;
+            this.refreshButton.Image = global::SOV.Amur.Data.Properties.Resources.refresh_16xLG;
             this.refreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(23, 22);
@@ -155,7 +155,7 @@
             // dateButton
             // 
             this.dateButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.dateButton.Image = global::FERHRI.Amur.Data.Properties.Resources.calendar_16xLG;
+            this.dateButton.Image = global::SOV.Amur.Data.Properties.Resources.calendar_16xLG;
             this.dateButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.dateButton.Name = "dateButton";
             this.dateButton.Size = new System.Drawing.Size(23, 22);
@@ -169,7 +169,7 @@
             this.jointMenuItem,
             this.separateMenuItem,
             this.trendToolStripMenuItem});
-            this.viewSplitButton.Image = global::FERHRI.Amur.Data.Properties.Resources.Property_501;
+            this.viewSplitButton.Image = global::SOV.Amur.Data.Properties.Resources.Property_501;
             this.viewSplitButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.viewSplitButton.Name = "viewSplitButton";
             this.viewSplitButton.Size = new System.Drawing.Size(32, 22);

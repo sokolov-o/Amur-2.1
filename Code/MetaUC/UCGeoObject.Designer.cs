@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCGeoObject
     {
@@ -37,9 +37,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.orderTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.childsDicListBox = new FERHRI.Common.UCList();
-            this.fallIntoDicComboBox = new FERHRI.Common.UCDicComboBox();
-            this.geoTypeDicComboBox = new FERHRI.Common.UCDicComboBox();
+            this.childsDicListBox = new SOV.Common.UCList();
+            this.fallIntoDicComboBox = new SOV.Common.UCDicComboBox();
+            this.geoTypeDicComboBox = new SOV.Common.UCDicComboBox();
             this.refreshTypeList = new System.Windows.Forms.Button();
             this.refreshGeoobList = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -196,7 +196,7 @@
             // refreshTypeList
             // 
             this.refreshTypeList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.refreshTypeList.Image = global::FERHRI.Amur.Meta.Properties.Resources.refresh_16xLG;
+            this.refreshTypeList.Image = global::SOV.Amur.Meta.Properties.Resources.refresh_16xLG;
             this.refreshTypeList.Location = new System.Drawing.Point(245, 29);
             this.refreshTypeList.Name = "refreshTypeList";
             this.refreshTypeList.Size = new System.Drawing.Size(25, 23);
@@ -207,7 +207,7 @@
             // refreshGeoobList
             // 
             this.refreshGeoobList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.refreshGeoobList.Image = global::FERHRI.Amur.Meta.Properties.Resources.refresh_16xLG;
+            this.refreshGeoobList.Image = global::SOV.Amur.Meta.Properties.Resources.refresh_16xLG;
             this.refreshGeoobList.Location = new System.Drawing.Point(245, 58);
             this.refreshGeoobList.Name = "refreshGeoobList";
             this.refreshGeoobList.Size = new System.Drawing.Size(25, 23);

@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Report
+﻿namespace SOV.Amur.Report
 {
     partial class FormF50ReportFilter
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormF50ReportFilter));
-            this.ucF50ReportFilter1 = new FERHRI.Amur.Report.UCF50ReportFilter();
+            this.ucF50ReportFilter1 = new SOV.Amur.Report.UCF50ReportFilter();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();

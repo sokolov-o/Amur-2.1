@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data
+﻿namespace SOV.Amur.Data
 {
     partial class UCDataValuesCMMC
     {
@@ -58,7 +58,7 @@
             // 
             // dataValueBindingSource
             // 
-            this.dataValueBindingSource.DataSource = typeof(FERHRI.Amur.Data.DataValue);
+            this.dataValueBindingSource.DataSource = typeof(SOV.Amur.Data.DataValue);
             // 
             // idDataGridViewTextBoxColumn
             // 

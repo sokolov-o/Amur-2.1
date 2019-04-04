@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Social
+﻿namespace SOV.Social
 {
     partial class UCLegalEntity
     {
@@ -352,7 +352,7 @@
             // 
             // editAddressButton
             // 
-            this.editAddressButton.Image = global::FERHRI.Social.Properties.Resources.Editdatasetwithdesigner_8449;
+            this.editAddressButton.Image = global::SOV.Social.Properties.Resources.Editdatasetwithdesigner_8449;
             this.editAddressButton.Location = new System.Drawing.Point(373, 81);
             this.editAddressButton.Name = "editAddressButton";
             this.editAddressButton.Size = new System.Drawing.Size(23, 23);
@@ -362,7 +362,7 @@
             // 
             // editParentButton
             // 
-            this.editParentButton.Image = global::FERHRI.Social.Properties.Resources.Editdatasetwithdesigner_8449;
+            this.editParentButton.Image = global::SOV.Social.Properties.Resources.Editdatasetwithdesigner_8449;
             this.editParentButton.Location = new System.Drawing.Point(575, 188);
             this.editParentButton.Name = "editParentButton";
             this.editParentButton.Size = new System.Drawing.Size(23, 23);

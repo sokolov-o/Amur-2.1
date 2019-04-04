@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Social
+﻿namespace SOV.Social
 {
     partial class UCStaffs
     {
@@ -85,7 +85,7 @@
             // refreshButton
             // 
             this.refreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshButton.Image = global::FERHRI.Social.Properties.Resources.refresh_16xLG;
+            this.refreshButton.Image = global::SOV.Social.Properties.Resources.refresh_16xLG;
             this.refreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(40, 40);
@@ -122,7 +122,7 @@
             // 
             // bindingSource
             // 
-            this.bindingSource.DataSource = typeof(FERHRI.Social.Staff);
+            this.bindingSource.DataSource = typeof(SOV.Social.Staff);
             this.bindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.StaffBindingSource_AddingNew);
             // 
             // dataGridViewTextBoxColumn1

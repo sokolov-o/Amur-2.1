@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCNameSets
     {
@@ -41,10 +41,10 @@
             this.findLikeButton = new System.Windows.Forms.ToolStripButton();
             this.addNewFromSearchBoxButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.existsListBox = new FERHRI.Common.UCList();
+            this.existsListBox = new SOV.Common.UCList();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.settingsButton = new System.Windows.Forms.ToolStripButton();
-            this.ucNameItem = new FERHRI.Amur.Meta.UCNameItems();
+            this.ucNameItem = new SOV.Amur.Meta.UCNameItems();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -122,7 +122,7 @@
             // addNewNameSetButton
             // 
             this.addNewNameSetButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addNewNameSetButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.action_add_16xLG1;
+            this.addNewNameSetButton.Image = global::SOV.Amur.Meta.Properties.Resources.action_add_16xLG1;
             this.addNewNameSetButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addNewNameSetButton.Name = "addNewNameSetButton";
             this.addNewNameSetButton.Size = new System.Drawing.Size(23, 22);
@@ -132,7 +132,7 @@
             // saveOrderButton
             // 
             this.saveOrderButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveOrderButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.SaveBlack;
+            this.saveOrderButton.Image = global::SOV.Amur.Meta.Properties.Resources.SaveBlack;
             this.saveOrderButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveOrderButton.Name = "saveOrderButton";
             this.saveOrderButton.Size = new System.Drawing.Size(23, 22);
@@ -165,7 +165,7 @@
             // findLikeButton
             // 
             this.findLikeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.findLikeButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.Find_5650;
+            this.findLikeButton.Image = global::SOV.Amur.Meta.Properties.Resources.Find_5650;
             this.findLikeButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.findLikeButton.Name = "findLikeButton";
             this.findLikeButton.Size = new System.Drawing.Size(23, 22);
@@ -175,7 +175,7 @@
             // addNewFromSearchBoxButton
             // 
             this.addNewFromSearchBoxButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addNewFromSearchBoxButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.action_add_16xLG;
+            this.addNewFromSearchBoxButton.Image = global::SOV.Amur.Meta.Properties.Resources.action_add_16xLG;
             this.addNewFromSearchBoxButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addNewFromSearchBoxButton.Name = "addNewFromSearchBoxButton";
             this.addNewFromSearchBoxButton.Size = new System.Drawing.Size(23, 22);
@@ -211,7 +211,7 @@
             this.existsListBox.ShowUpdateToolbarButton = false;
             this.existsListBox.Size = new System.Drawing.Size(454, 192);
             this.existsListBox.TabIndex = 1;
-            this.existsListBox.UCSelectedItemChanged += new FERHRI.Common.UCList.UCSelectedItemChangedEventHandler(this.existsListBox_UCSelectedItemChanged);
+            this.existsListBox.UCSelectedItemChanged += new SOV.Common.UCList.UCSelectedItemChangedEventHandler(this.existsListBox_UCSelectedItemChanged);
             // 
             // groupBox1
             // 
@@ -228,7 +228,7 @@
             // 
             this.settingsButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.settingsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.settingsButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.Property_501;
+            this.settingsButton.Image = global::SOV.Amur.Meta.Properties.Resources.Property_501;
             this.settingsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Size = new System.Drawing.Size(23, 22);

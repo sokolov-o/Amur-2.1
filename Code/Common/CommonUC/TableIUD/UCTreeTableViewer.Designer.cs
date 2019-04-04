@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Common.TableIUD
+﻿namespace SOV.Common.TableIUD
 {
     partial class UCTreeTableViewer<T>
     {

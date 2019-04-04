@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Amur.Meta;
+using SOV.Amur.Meta;
 
-namespace FERHRI.Amur.Data.Chart
+namespace SOV.Amur.Data.Chart
 {
     public partial class FormSiteAndVarSelection : Form
     {

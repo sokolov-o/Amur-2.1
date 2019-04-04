@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FERHRI.Amur.Properties {
+namespace SOV.Amur.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,9 +26,9 @@ namespace FERHRI.Amur.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("ДВНИГМИ/Server=10.11.203.20;Port=5432;Database=ferhri.amur;/ДВ УГМС/Server=10.8.3" +
-            ".180;Port=5432;Database=ferhri.amur;/localhost/Server=localhost;Port=5432;Databa" +
-            "se=ferhri.amur;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("ДВНИГМИ/Server=10.11.203.20;Port=5432;Database=SOV.amur;/ДВ УГМС/Server=10.8.3" +
+            ".180;Port=5432;Database=SOV.amur;/localhost/Server=localhost;Port=5432;Databa" +
+            "se=SOV.amur;")]
         public string AmurConnectionString {
             get {
                 return ((string)(this["AmurConnectionString"]));

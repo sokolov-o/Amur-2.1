@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCVariable
     {
@@ -41,13 +41,13 @@
             this.label9 = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.ucValueType = new FERHRI.Common.UCDicComboBox();
-            this.ucSampleMedium = new FERHRI.Common.UCDicComboBox();
-            this.ucGeneralCategory = new FERHRI.Common.UCDicComboBox();
-            this.ucDataType = new FERHRI.Common.UCDicComboBox();
-            this.ucTime = new FERHRI.Common.UCDicComboBox();
-            this.ucUnit = new FERHRI.Common.UCDicComboBox();
-            this.ucVariableType = new FERHRI.Common.UCDicComboBox();
+            this.ucValueType = new SOV.Common.UCDicComboBox();
+            this.ucSampleMedium = new SOV.Common.UCDicComboBox();
+            this.ucGeneralCategory = new SOV.Common.UCDicComboBox();
+            this.ucDataType = new SOV.Common.UCDicComboBox();
+            this.ucTime = new SOV.Common.UCDicComboBox();
+            this.ucUnit = new SOV.Common.UCDicComboBox();
+            this.ucVariableType = new SOV.Common.UCDicComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.nameEngTextBox = new System.Windows.Forms.TextBox();
             this.codeNoDataTextBox = new System.Windows.Forms.TextBox();

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using FERHRI.Amur.Meta;
+using SOV.Amur.Meta;
 
-namespace FERHRI.Amur
+namespace SOV.Amur
 {
     /// <summary>
     /// Сканирование временных интервалов. Пример использования:

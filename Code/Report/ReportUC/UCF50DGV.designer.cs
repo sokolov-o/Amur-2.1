@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Report
+﻿namespace SOV.Amur.Report
 {
     partial class UCF50DGV
     {
@@ -257,7 +257,7 @@
             // 
             // f50CollectionBindingSource
             // 
-            this.f50CollectionBindingSource.DataSource = typeof(FERHRI.Amur.Report.F50Collection);
+            this.f50CollectionBindingSource.DataSource = typeof(SOV.Amur.Report.F50Collection);
             // 
             // UCF50DGV
             // 

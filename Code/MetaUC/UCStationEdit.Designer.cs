@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCStationEdit
     {
@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            FERHRI.Amur.Meta.Station station2 = new FERHRI.Amur.Meta.Station();
+            SOV.Amur.Meta.Station station2 = new SOV.Amur.Meta.Station();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.ucStation = new FERHRI.Amur.Meta.UCStation();
+            this.ucStation = new SOV.Amur.Meta.UCStation();
             this.saveButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.ucStationSites = new FERHRI.Amur.Meta.UCStationSites();
+            this.ucStationSites = new SOV.Amur.Meta.UCStationSites();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.ucEntityAttrValues = new FERHRI.Amur.Meta.UCEntityAttrValues();
+            this.ucEntityAttrValues = new SOV.Amur.Meta.UCEntityAttrValues();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.ucCatalogs = new FERHRI.Amur.Meta.UCCatalogs();
+            this.ucCatalogs = new SOV.Amur.Meta.UCCatalogs();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.ucSiteInstruments = new FERHRI.Amur.Meta.UCSiteInstruments();
+            this.ucSiteInstruments = new SOV.Amur.Meta.UCSiteInstruments();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.ucSiteXSites1 = new FERHRI.Amur.Meta.UCSiteXSites();
+            this.ucSiteXSites1 = new SOV.Amur.Meta.UCSiteXSites();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.ucSiteXSites2 = new FERHRI.Amur.Meta.UCSiteXSites();
+            this.ucSiteXSites2 = new SOV.Amur.Meta.UCSiteXSites();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.geoObjectsListBox = new FERHRI.Common.UCList();
+            this.geoObjectsListBox = new SOV.Common.UCList();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -200,7 +200,7 @@
             this.ucStationSites.Size = new System.Drawing.Size(178, 336);
             this.ucStationSites.StationId = 0;
             this.ucStationSites.TabIndex = 0;
-            this.ucStationSites.UCCurrentRowChangedEvent += new FERHRI.Amur.Meta.UCStationSites.UCCurrentRowChangedEventHandler(this.ucStationSites_UCCurrentRowChangedEvent);
+            this.ucStationSites.UCCurrentRowChangedEvent += new SOV.Amur.Meta.UCStationSites.UCCurrentRowChangedEventHandler(this.ucStationSites_UCCurrentRowChangedEvent);
             // 
             // tabControl1
             // 
@@ -401,8 +401,8 @@
             this.geoObjectsListBox.ShowUpdateToolbarButton = false;
             this.geoObjectsListBox.Size = new System.Drawing.Size(741, 340);
             this.geoObjectsListBox.TabIndex = 0;
-            this.geoObjectsListBox.UCAddNewEvent += new FERHRI.Common.UCList.UCAddNewEventHandler(this.geoObjectsListBox_UCAddNewEvent);
-            this.geoObjectsListBox.UCDeleteEvent += new FERHRI.Common.UCList.UCDeleteEventHandler(this.geoObjectsListBox_UCDeleteEvent);
+            this.geoObjectsListBox.UCAddNewEvent += new SOV.Common.UCList.UCAddNewEventHandler(this.geoObjectsListBox_UCAddNewEvent);
+            this.geoObjectsListBox.UCDeleteEvent += new SOV.Common.UCList.UCDeleteEventHandler(this.geoObjectsListBox_UCDeleteEvent);
             // 
             // UCStationEdit
             // 

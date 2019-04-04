@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace FERHRI.Social
+namespace SOV.Social
 {
     [DataContract]
     public class LegalEntityXImage

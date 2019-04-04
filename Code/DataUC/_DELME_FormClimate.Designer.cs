@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data
+﻿namespace SOV.Amur.Data
 {
     partial class _DELME_FormClimate
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_DELME_FormClimate));
-            this.ucDataTableClimate = new FERHRI.Amur.Data._DELME_UCDataTableClimate();
+            this.ucDataTableClimate = new SOV.Amur.Data._DELME_UCDataTableClimate();
             this.SuspendLayout();
             // 
             // ucDataTableClimate

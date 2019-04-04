@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Common
+﻿namespace SOV.Common
 {
     partial class UCComboBox
     {
@@ -52,7 +52,7 @@
             // 
             // idNamesBindingSource
             // 
-            this.idNamesBindingSource.DataSource = typeof(FERHRI.Common.IdNames);
+            this.idNamesBindingSource.DataSource = typeof(SOV.Common.IdNames);
             // 
             // tableLayoutPanel1
             // 

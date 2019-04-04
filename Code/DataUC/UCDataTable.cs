@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Amur.Meta;
-using FERHRI.Common;
-using FERHRI.Amur.Sys;
+using SOV.Amur.Meta;
+using SOV.Common;
+using SOV.Amur.Sys;
 using System.Windows.Forms.DataVisualization.Charting;
 
-namespace FERHRI.Amur.Data
+namespace SOV.Amur.Data
 {
     /// <summary>
     /// Табличная форма представления данных: НЕСКОЛЬКО станций, НЕСКОЛЬКО переменных за ПЕРИОД времени
@@ -175,7 +175,7 @@ namespace FERHRI.Amur.Data
 
                 _sites = Meta.DataManager.GetInstance().SiteRepository.Select(DataFilter.CatalogFilter.Sites);
                 _stations = Meta.DataManager.GetInstance().StationRepository.Select(_sites.Select(x => x.StationId).Distinct().ToList());
-                _siteTypes = Meta.DataManager.GetInstance().StationTypeRepository.Select();
+                _siteTypes = Meta.DataManager.GetInstance().SiteTypeRepository.Select();
                 _vars = Meta.DataManager.GetInstance().VariableRepository.Select(DataFilter.CatalogFilter.Variables);
 
                 _datesLOC = _dvs.Select(x => x.DateLOC).Distinct().OrderBy(x => x).ToList();
@@ -399,7 +399,7 @@ namespace FERHRI.Amur.Data
             {
                 foreach (var item in _sites)
                 {
-                    sitesComboBox.Items.Add(new Common.DicItem(item.Id, Meta.Site.GetName(item, StationRepository.GetCash(), StationTypeRepository.GetCash(), 1)));
+                    sitesComboBox.Items.Add(new Common.DicItem(item.Id, Meta.Site.GetName(item, StationRepository.GetCash(), SiteTypeRepository.GetCash(), 1)));
                 }
                 sitesComboBox.SelectedIndex = 0;
             }
@@ -1182,7 +1182,7 @@ namespace FERHRI.Amur.Data
                true, false, null, null, null);
 
             if (dvs.Count != 1)
-                throw new Exception("(dvs.Count != 1) OSokolov@ferhri.ru 2017.01");
+                throw new Exception("(dvs.Count != 1) OSokolov@SOV.ru 2017.01");
 
             CellDataValue.SetDataValue(dgv.CurrentCell, dvs);
 

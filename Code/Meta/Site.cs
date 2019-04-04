@@ -16,9 +16,9 @@ namespace SOV.Amur.Meta
         [DataMember]
         public int TypeId { get; set; }
         [DataMember]
-        public int OrgId { get; set; }
+        public int? OrgId { get; set; }
         [DataMember]
-        public int AddrRegionId { get; set; }
+        public int? AddrRegionId { get; set; }
         [DataMember]
         public string Description { get; set; }
 
@@ -37,6 +37,10 @@ namespace SOV.Amur.Meta
         {
             string ret = site.Name + (showTypeNameShort ? " (" + siteTypes.First(x => x.Id == site.TypeId).NameShort + ")" : "");
             return (codeSide == 1 ? site.Code + " " + ret : codeSide == 2 ? ret + " " + site.Code : ret);
+        }
+        public string GetName(int codeSide, bool showTypeNameShort, List<SiteType> siteTypes)
+        {
+            return GetName(this, codeSide, showTypeNameShort, siteTypes);
         }
         public static List<DicItem> ToDicItemList(List<Site> sites, int codeSide, bool showTypeNameShort, List<SiteType> siteTypes, Common.DicItem parent = null)
         {

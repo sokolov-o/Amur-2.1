@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FERHRI.Amur.Data;
-using FERHRI.Amur.Meta;
+using SOV.Amur.Data;
+using SOV.Amur.Meta;
 using System.Diagnostics;
 
-namespace FERHRI.Amur.DataP
+namespace SOV.Amur.DataP
 {
     public class Observations
     {
@@ -206,7 +206,7 @@ namespace FERHRI.Amur.DataP
                 siteIds, new List<int> { varIdWW, varIdW1W2 },
                 new List<int> { (int)EnumMethod.ObservationInSitu }, null,
                 new List<int> { (int)EnumOffsetType.NoOffset }, 0);
-            if (ctls.Count > 2) throw new Exception("Algorithmic error (ctls.Count > 2). OSokolov@ferhri.ru");
+            if (ctls.Count > 2) throw new Exception("Algorithmic error (ctls.Count > 2). OSokolov@SOV.ru");
             if (ctls.Count < 2) return null;
             int ctlWW = ctls.Find(x => x.VariableId == varIdWW).Id;
             int ctlW1W2 = ctls.Find(x => x.VariableId == varIdW1W2).Id;

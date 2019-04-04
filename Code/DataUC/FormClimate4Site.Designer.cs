@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data
+﻿namespace SOV.Amur.Data
 {
     partial class FormClimate4Site
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClimate4Site));
-            this.ucDataTableClimate = new FERHRI.Amur.Data.UCDataTableClimate2Site();
+            this.ucDataTableClimate = new SOV.Amur.Data.UCDataTableClimate2Site();
             this.SuspendLayout();
             // 
             // ucDataTableClimate

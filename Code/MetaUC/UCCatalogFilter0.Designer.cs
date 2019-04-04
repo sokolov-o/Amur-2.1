@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCCatalogFilter0
     {
@@ -44,7 +44,7 @@
             this.handsetRadioButton = new System.Windows.Forms.RadioButton();
             this.groupRadioButton = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ucList = new FERHRI.Common.UCList();
+            this.ucList = new SOV.Common.UCList();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FERHRI.Common;
-using FERHRI.Social;
+using SOV.Common;
+using SOV.Social;
 using Npgsql;
 
-namespace FERHRI.Social
+namespace SOV.Social
 {
     public class DivisionRepository : BaseRepository<Division>
     {
@@ -55,7 +55,7 @@ namespace FERHRI.Social
 
         public List<Division> UpdateFK(List<Division> ret)
         {
-            List<LegalEntity> emps = FERHRI.Social.DataManager.GetInstance().LegalEntityRepository.Select(ret.Select(x => x.Employer.Id).ToList());
+            List<LegalEntity> emps = SOV.Social.DataManager.GetInstance().LegalEntityRepository.Select(ret.Select(x => x.Employer.Id).ToList());
             ret.ForEach(x => x.Employer = emps.Find(y => y.Id == x.Employer.Id));
 
             ret.ForEach(x => x.ParentDivision = x.ParentDivision == null ? null : ret.Find(y => y.Id == x.ParentDivision.Id));

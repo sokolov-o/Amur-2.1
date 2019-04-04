@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Common
+﻿namespace SOV.Common
 {
     partial class UCTextBox
     {
@@ -66,7 +66,7 @@
             // editButton
             // 
             this.editButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.editButton.Image = global::FERHRI.Common.Properties.Resources.edit_data;
+            this.editButton.Image = global::SOV.Common.Properties.Resources.edit_data;
             this.editButton.Location = new System.Drawing.Point(174, 0);
             this.editButton.Margin = new System.Windows.Forms.Padding(0);
             this.editButton.Name = "editButton";
@@ -79,7 +79,7 @@
             // nullButton
             // 
             this.nullButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nullButton.Image = global::FERHRI.Common.Properties.Resources.delete;
+            this.nullButton.Image = global::SOV.Common.Properties.Resources.delete;
             this.nullButton.Location = new System.Drawing.Point(194, 0);
             this.nullButton.Margin = new System.Windows.Forms.Padding(0);
             this.nullButton.Name = "nullButton";

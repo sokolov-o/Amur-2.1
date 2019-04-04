@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Report
+﻿namespace SOV.Amur.Report
 {
     partial class UCReport
     {

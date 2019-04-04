@@ -6,10 +6,10 @@ using System.Runtime.InteropServices;
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
 [assembly: AssemblyTitle("АРМ Амур")]
-[assembly: AssemblyDescription("Автоматизированное рабочее место оперативного гидролога. \n\nКонтакт OSokolov@ferhri.ru")]
+[assembly: AssemblyDescription("Автоматизированное рабочее место оперативного гидролога. \n\nКонтакт OSokolov@SOV.ru")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("ФГБУ ДВНИГМИ www.ferhri.ru")]
-[assembly: AssemblyProduct("FERHRI.Amur20")]
+[assembly: AssemblyCompany("ФГБУ ДВНИГМИ www.SOV.ru")]
+[assembly: AssemblyProduct("SOV.Amur20")]
 [assembly: AssemblyCopyright("ДВНИГМИ©  2015-2016")]
 [assembly: AssemblyTrademark("Viaware")]
 [assembly: AssemblyCulture("")]

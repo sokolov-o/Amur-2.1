@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Amur.Meta;
+using SOV.Amur.Meta;
 
-namespace FERHRI.Amur.Data
+namespace SOV.Amur.Data
 {
     public partial class FormClimate4Site : Form
     {
@@ -23,7 +23,7 @@ namespace FERHRI.Amur.Data
             this.Site = site;
             YearSF = yearSF;
 
-            Text = "Климатические данные " + site.GetName(StationRepository.GetCash(), StationTypeRepository.GetCash(), 1);
+            Text = "Климатические данные " + site.GetName(StationRepository.GetCash(), SiteTypeRepository.GetCash(), 1);
         }
         public void Fill()
         {

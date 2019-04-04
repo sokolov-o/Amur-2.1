@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FERHRI.Common
+namespace SOV.Common
 {
     partial class FormTree
     {
@@ -32,7 +32,7 @@ namespace FERHRI.Common
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTree));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.ucTreeIdParent = new FERHRI.Common.UCTreeIParent();
+            this.ucTreeIdParent = new SOV.Common.UCTreeIParent();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -72,7 +72,7 @@ namespace FERHRI.Common
             this.ucTreeIdParent.ShowToolStrip = true;
             this.ucTreeIdParent.Size = new System.Drawing.Size(316, 259);
             this.ucTreeIdParent.TabIndex = 0;
-            this.ucTreeIdParent.UCDoubleClickEvent += new FERHRI.Common.UCTreeIParent.UCDoubleClickEventHandler(this.ucTreeIdParent_UCDoubleClickEvent);
+            this.ucTreeIdParent.UCDoubleClickEvent += new SOV.Common.UCTreeIParent.UCDoubleClickEventHandler(this.ucTreeIdParent_UCDoubleClickEvent);
             // 
             // button1
             // 

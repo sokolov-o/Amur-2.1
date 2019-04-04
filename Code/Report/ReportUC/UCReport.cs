@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using FERHRI.Amur.Data;
-using FERHRI.Amur.Meta;
-using FERHRI.Common;
-using FERHRI.Social;
+using SOV.Amur.Data;
+using SOV.Amur.Meta;
+using SOV.Common;
+using SOV.Social;
 using Microsoft.Reporting.WinForms;
 
-namespace FERHRI.Amur.Report
+namespace SOV.Amur.Report
 {
     public class BaseReportHandler
     {
@@ -18,7 +18,7 @@ namespace FERHRI.Amur.Report
         public virtual void initViewerSettings(ref ReportViewer viewer)
         {
             viewer.LocalReport.DataSources.Clear();
-            viewer.LocalReport.ReportEmbeddedResource = "FERHRI.Amur.Report.Report" + reportObj.Id + ".rdlc";
+            viewer.LocalReport.ReportEmbeddedResource = "SOV.Amur.Report.Report" + reportObj.Id + ".rdlc";
             viewer.LocalReport.DisplayName = reportObj.NameFull;
             foreach (ReportDataSource dataSource in dataSources)
                 viewer.LocalReport.DataSources.Add(dataSource);
@@ -527,7 +527,7 @@ namespace FERHRI.Amur.Report
             gp25Data.LoadReport(); // Формирования структуры отчета
 
             reportViewer.LocalReport.DataSources.Clear();
-            reportViewer.LocalReport.ReportEmbeddedResource = "FERHRI.Amur.Report.ReportGP25.rdlc";
+            reportViewer.LocalReport.ReportEmbeddedResource = "SOV.Amur.Report.ReportGP25.rdlc";
             GP25ReportItem firstItem = gp25Data.FirstOrDefault(); // предыдущий день
 
             if (gp25Data.Count > 1)
@@ -573,10 +573,10 @@ namespace FERHRI.Amur.Report
 
         private void OnLoadDiffRR()
         {
-            ReportRepository rep = FERHRI.Amur.Report.DataManager.GetInstance().ReportRepository;
-            DataValueRepository dvR = FERHRI.Amur.Data.DataManager.GetInstance().DataValueRepository;
-            SiteRepository siteR = FERHRI.Amur.Meta.DataManager.GetInstance().SiteRepository;
-            VariableRepository varR = FERHRI.Amur.Meta.DataManager.GetInstance().VariableRepository;
+            ReportRepository rep = SOV.Amur.Report.DataManager.GetInstance().ReportRepository;
+            DataValueRepository dvR = SOV.Amur.Data.DataManager.GetInstance().DataValueRepository;
+            SiteRepository siteR = SOV.Amur.Meta.DataManager.GetInstance().SiteRepository;
+            VariableRepository varR = SOV.Amur.Meta.DataManager.GetInstance().VariableRepository;
             Report _report = rep.Select(_repId);
             if (_dataFilter.DateTimePeriod.DateS == null || _dataFilter.DateTimePeriod.DateF == null || _dataFilter.CatalogFilter.Variables.Count != 1)
                 throw new Exception("Не заданы даты или кол-во параметров не равно 1!");
@@ -631,7 +631,7 @@ namespace FERHRI.Amur.Report
             }
 
             reportViewer.LocalReport.DataSources.Clear();
-            reportViewer.LocalReport.ReportEmbeddedResource = "FERHRI.Amur.Report.Report" + _repId + ".rdlc";
+            reportViewer.LocalReport.ReportEmbeddedResource = "SOV.Amur.Report.Report" + _repId + ".rdlc";
             var grpP = dr.GroupBy(t => t.ParamId);
             if (grpP.Count() > 1)
                 throw new Exception("Параметров >1");
@@ -700,7 +700,7 @@ namespace FERHRI.Amur.Report
             }
 
             reportViewer.LocalReport.DataSources.Clear();
-            reportViewer.LocalReport.ReportEmbeddedResource = "FERHRI.Amur.Report.Report" + _repId + ".rdlc";
+            reportViewer.LocalReport.ReportEmbeddedResource = "SOV.Amur.Report.Report" + _repId + ".rdlc";
             var grpP = jr.GroupBy(t => t.ParamId);
             if (grpP.Count() > 1)
                 throw new Exception("Параметров >1");

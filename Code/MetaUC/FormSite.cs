@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Common;
+using SOV.Common;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public partial class FormSite : Form
     {
@@ -21,7 +21,7 @@ namespace FERHRI.Amur.Meta
         {
             InitializeComponent();
 
-            siteTypeComboBox.AddRange(StationType.ToList<DicItem>(StationTypeRepository.GetCash()));
+            siteTypeComboBox.AddRange(StationType.ToList<DicItem>(SiteTypeRepository.GetCash()));
         }
         Site _site = null;
         public Site Site
@@ -56,7 +56,7 @@ namespace FERHRI.Amur.Meta
         {
             InitializeComponent();
 
-            siteTypeComboBox.AddRange(StationType.ToList<DicItem>(StationTypeRepository.GetCash()));
+            siteTypeComboBox.AddRange(StationType.ToList<DicItem>(SiteTypeRepository.GetCash()));
             Site = site;
         }
         private void button1_Click(object sender, EventArgs e)

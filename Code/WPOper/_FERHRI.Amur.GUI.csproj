@@ -223,18 +223,6 @@
       <Project>{253c989a-d966-4973-81d1-1ef7135f2e75}</Project>
       <Name>ObsVsFcs</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ReportDAL\ReportDAL.csproj">
-      <Project>{eead327e-0113-400b-9e0d-3dc8a36ca1c4}</Project>
-      <Name>ReportDAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Report\ReportUC\ReportUC.csproj">
-      <Project>{8a5617ae-ed37-480a-a4d2-ef99e209bb7f}</Project>
-      <Name>ReportUC</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Report\Report\Report.csproj">
-      <Project>{0517c974-3f2c-46ac-99a3-735088d45701}</Project>
-      <Name>Report</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Sys\Sys.csproj">
       <Project>{d8026d66-63cd-40f2-b07a-224abfa6ac5a}</Project>
       <Name>Sys</Name>
@@ -276,7 +264,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 и x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

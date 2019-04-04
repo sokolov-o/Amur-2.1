@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class FormCatalogs
     {
@@ -32,7 +32,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.okButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.ucCatalogs = new FERHRI.Amur.Meta.UCCatalogs();
+            this.ucCatalogs = new SOV.Amur.Meta.UCCatalogs();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,7 +90,7 @@
             this.ucCatalogs.UCCatalogVisible = true;
             this.ucCatalogs.UCDeleteCatalogButtonVisible = true;
             this.ucCatalogs.UCShowOrderbyButtons = false;
-            this.ucCatalogs.UCDeleteButtonClick += new FERHRI.Amur.Meta.UCCatalogs.UCDeleteButtonClickEventHandler(this.ucCatalogs_UCDeleteButtonClick);
+            this.ucCatalogs.UCDeleteButtonClick += new SOV.Amur.Meta.UCCatalogs.UCDeleteButtonClickEventHandler(this.ucCatalogs_UCDeleteButtonClick);
             // 
             // FormCatalogs
             // 

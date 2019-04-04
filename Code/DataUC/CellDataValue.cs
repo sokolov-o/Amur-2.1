@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
-using FERHRI.Common;
+using SOV.Common;
 
-namespace FERHRI.Amur.Data
+namespace SOV.Amur.Data
 {
     public class CellDataValue
     {

@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Data
+﻿namespace SOV.Amur.Data
 {
     partial class UCChartHydro
     {
@@ -110,7 +110,7 @@
             // 
             this.clearToolStripButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.clearToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.clearToolStripButton.Image = global::FERHRI.Amur.Data.Properties.Resources.DeleteHS;
+            this.clearToolStripButton.Image = global::SOV.Amur.Data.Properties.Resources.DeleteHS;
             this.clearToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.clearToolStripButton.Name = "clearToolStripButton";
             this.clearToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -121,7 +121,7 @@
             // refreshToolStripButton
             // 
             this.refreshToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshToolStripButton.Image = global::FERHRI.Amur.Data.Properties.Resources.RefreshDocViewHS;
+            this.refreshToolStripButton.Image = global::SOV.Amur.Data.Properties.Resources.RefreshDocViewHS;
             this.refreshToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.refreshToolStripButton.Name = "refreshToolStripButton";
             this.refreshToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -131,7 +131,7 @@
             // legendEnabledToolStripButton
             // 
             this.legendEnabledToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.legendEnabledToolStripButton.Image = global::FERHRI.Amur.Data.Properties.Resources.LegendHS;
+            this.legendEnabledToolStripButton.Image = global::SOV.Amur.Data.Properties.Resources.LegendHS;
             this.legendEnabledToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.legendEnabledToolStripButton.Name = "legendEnabledToolStripButton";
             this.legendEnabledToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -141,7 +141,7 @@
             // axesTitleEnableToolStripButton
             // 
             this.axesTitleEnableToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.axesTitleEnableToolStripButton.Image = global::FERHRI.Amur.Data.Properties.Resources.List_NumberedVertTHS;
+            this.axesTitleEnableToolStripButton.Image = global::SOV.Amur.Data.Properties.Resources.List_NumberedVertTHS;
             this.axesTitleEnableToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.axesTitleEnableToolStripButton.Name = "axesTitleEnableToolStripButton";
             this.axesTitleEnableToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -152,7 +152,7 @@
             // showPointLabelsToolStripButton
             // 
             this.showPointLabelsToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.showPointLabelsToolStripButton.Image = global::FERHRI.Amur.Data.Properties.Resources.ShowAllCommentsHS;
+            this.showPointLabelsToolStripButton.Image = global::SOV.Amur.Data.Properties.Resources.ShowAllCommentsHS;
             this.showPointLabelsToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.showPointLabelsToolStripButton.Name = "showPointLabelsToolStripButton";
             this.showPointLabelsToolStripButton.Size = new System.Drawing.Size(23, 22);

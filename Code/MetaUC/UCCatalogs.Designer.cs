@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCCatalogs
     {
@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            FERHRI.Amur.Meta.CatalogFilter catalogFilter1 = new FERHRI.Amur.Meta.CatalogFilter();
+            SOV.Amur.Meta.CatalogFilter catalogFilter1 = new SOV.Amur.Meta.CatalogFilter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCatalogs));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ucCatalogFilter = new FERHRI.Amur.Meta.UCCatalogFilter();
+            this.ucCatalogFilter = new SOV.Amur.Meta.UCCatalogFilter();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.downButton = new System.Windows.Forms.Button();
@@ -59,7 +59,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.newButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
-            this.ucCatalog = new FERHRI.Amur.Meta.UCCatalog();
+            this.ucCatalog = new SOV.Amur.Meta.UCCatalog();
             this.catalogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -139,7 +139,7 @@
             this.ucCatalogFilter.ShowToolStrip = true;
             this.ucCatalogFilter.Size = new System.Drawing.Size(238, 356);
             this.ucCatalogFilter.TabIndex = 0;
-            this.ucCatalogFilter.UCFilterButtonClickEvent += new FERHRI.Amur.Meta.UCCatalogFilter.UCFilterButtonClickEventHandler(this.ucCatalogFilter_UCFilterButtonClickEvent);
+            this.ucCatalogFilter.UCFilterButtonClickEvent += new SOV.Amur.Meta.UCCatalogFilter.UCFilterButtonClickEventHandler(this.ucCatalogFilter_UCFilterButtonClickEvent);
             // 
             // splitContainer2
             // 
@@ -315,7 +315,7 @@
             // 
             this.settingsButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.settingsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.settingsButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.Property_501;
+            this.settingsButton.Image = global::SOV.Amur.Meta.Properties.Resources.Property_501;
             this.settingsButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.settingsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.settingsButton.Name = "settingsButton";
@@ -327,7 +327,7 @@
             // addCatalogButton
             // 
             this.addCatalogButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addCatalogButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.action_add_16xLG1;
+            this.addCatalogButton.Image = global::SOV.Amur.Meta.Properties.Resources.action_add_16xLG1;
             this.addCatalogButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addCatalogButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addCatalogButton.Name = "addCatalogButton";
@@ -339,7 +339,7 @@
             // deleteCatalogButton
             // 
             this.deleteCatalogButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.deleteCatalogButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.DeleteHS;
+            this.deleteCatalogButton.Image = global::SOV.Amur.Meta.Properties.Resources.DeleteHS;
             this.deleteCatalogButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.deleteCatalogButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.deleteCatalogButton.Name = "deleteCatalogButton";
@@ -351,7 +351,7 @@
             // saveCatalogOrderbyButton
             // 
             this.saveCatalogOrderbyButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveCatalogOrderbyButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.SaveBlack;
+            this.saveCatalogOrderbyButton.Image = global::SOV.Amur.Meta.Properties.Resources.SaveBlack;
             this.saveCatalogOrderbyButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.saveCatalogOrderbyButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveCatalogOrderbyButton.Name = "saveCatalogOrderbyButton";
@@ -363,7 +363,7 @@
             // showDataButton
             // 
             this.showDataButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.showDataButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.Edit;
+            this.showDataButton.Image = global::SOV.Amur.Meta.Properties.Resources.Edit;
             this.showDataButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.showDataButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.showDataButton.Name = "showDataButton";
@@ -385,7 +385,7 @@
             // 
             // button1
             // 
-            this.button1.Image = global::FERHRI.Amur.Meta.Properties.Resources.action_add_16xLG1;
+            this.button1.Image = global::SOV.Amur.Meta.Properties.Resources.action_add_16xLG1;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(3, 229);
             this.button1.Name = "button1";
@@ -397,7 +397,7 @@
             // 
             // newButton
             // 
-            this.newButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.action_add_16xLG;
+            this.newButton.Image = global::SOV.Amur.Meta.Properties.Resources.action_add_16xLG;
             this.newButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.newButton.Location = new System.Drawing.Point(3, 200);
             this.newButton.Name = "newButton";
@@ -410,7 +410,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.SaveBlack;
+            this.saveButton.Image = global::SOV.Amur.Meta.Properties.Resources.SaveBlack;
             this.saveButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.saveButton.Location = new System.Drawing.Point(84, 200);
             this.saveButton.Name = "saveButton";
@@ -434,7 +434,7 @@
             // 
             // catalogBindingSource
             // 
-            this.catalogBindingSource.DataSource = typeof(FERHRI.Amur.Meta.Catalog);
+            this.catalogBindingSource.DataSource = typeof(SOV.Amur.Meta.Catalog);
             // 
             // UCCatalogs
             // 

@@ -1,20 +1,20 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FERHRI.UnitTest.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SOV.UnitTest.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="local_ConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Server=localhost;Port=5432;User Id=postgres;Password=qq;Database=ferhri.amur;&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Server=localhost;Port=5432;User Id=postgres;Password=qq;Database=SOV.amur;&lt;/ConnectionString&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Server=localhost;Port=5432;User Id=postgres;Password=qq;Database=ferhri.amur;</Value>
+      <Value Profile="(Default)">Server=localhost;Port=5432;User Id=postgres;Password=qq;Database=SOV.amur;</Value>
     </Setting>
     <Setting Name="DVNIGMI_ConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Server=10.11.203.20;Port=5432;User Id=postgres;Password=qq;Database=ferhri.amur;&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Server=10.11.203.20;Port=5432;User Id=postgres;Password=qq;Database=SOV.amur;&lt;/ConnectionString&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Server=10.11.203.20;Port=5432;User Id=postgres;Password=qq;Database=ferhri.amur;</Value>
+      <Value Profile="(Default)">Server=10.11.203.20;Port=5432;User Id=postgres;Password=qq;Database=SOV.amur;</Value>
     </Setting>
   </Settings>
 </SettingsFile>

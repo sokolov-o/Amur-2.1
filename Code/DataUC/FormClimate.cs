@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FERHRI.Amur.Meta;
+using SOV.Amur.Meta;
 
-namespace FERHRI.Amur.Data
+namespace SOV.Amur.Data
 {
     public partial class FormClimate : Form
     {
@@ -52,9 +52,9 @@ namespace FERHRI.Amur.Data
                 DateTimePeriod = new Common.DateTimePeriod(
                     new DateTime(mc.YearS, 1, 1),
                     (new DateTime(mc.YearS + 1, 1, 1)).AddMilliseconds(-1),
-                    FERHRI.Common.DateTimePeriod.Type.Period, 0
+                    SOV.Common.DateTimePeriod.Type.Period, 0
                 ),
-                DateTypeId = (int)FERHRI.Amur.Meta.EnumDateType.UTC,
+                DateTypeId = (int)SOV.Amur.Meta.EnumDateType.UTC,
                 FlagAQC = null,
                 IsActualValueOnly = true,
                 IsDateLOC = false,

@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FERHRI.Amur.Data
+namespace SOV.Amur.Data
 {
     [DataContract]
     public class Curve

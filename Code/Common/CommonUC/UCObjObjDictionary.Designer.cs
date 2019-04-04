@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Common
+﻿namespace SOV.Common
 {
     partial class UCObjObjDictionary
     {
@@ -93,7 +93,7 @@
             // addButton
             // 
             this.addButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addButton.Image = global::FERHRI.Common.Properties.Resources.add;
+            this.addButton.Image = global::SOV.Common.Properties.Resources.add;
             this.addButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(23, 22);

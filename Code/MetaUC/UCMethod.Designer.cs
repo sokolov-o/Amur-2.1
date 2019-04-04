@@ -1,4 +1,4 @@
-﻿namespace FERHRI.Amur.Meta
+﻿namespace SOV.Amur.Meta
 {
     partial class UCMethod
     {
@@ -45,8 +45,8 @@
             this.orderTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.idTextBox = new System.Windows.Forms.TextBox();
-            this.ucLESource = new FERHRI.Common.UCTextBox();
-            this.ucParentMethod = new FERHRI.Common.UCTextBox();
+            this.ucLESource = new SOV.Common.UCTextBox();
+            this.ucParentMethod = new SOV.Common.UCTextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -143,7 +143,7 @@
             // deleteMethodDetailsButton
             // 
             this.deleteMethodDetailsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.deleteMethodDetailsButton.Image = global::FERHRI.Amur.Meta.Properties.Resources.DeleteHS;
+            this.deleteMethodDetailsButton.Image = global::SOV.Amur.Meta.Properties.Resources.DeleteHS;
             this.deleteMethodDetailsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.deleteMethodDetailsButton.Name = "deleteMethodDetailsButton";
             this.deleteMethodDetailsButton.Size = new System.Drawing.Size(23, 22);
@@ -262,7 +262,7 @@
             this.ucLESource.Size = new System.Drawing.Size(277, 20);
             this.ucLESource.TabIndex = 16;
             this.ucLESource.Value = null;
-            this.ucLESource.UCEditButtonPressedEvent += new FERHRI.Common.UCTextBox.UCEditButtonPressedEventHandler(this.ucLESource_UCEditButtonPressedEvent);
+            this.ucLESource.UCEditButtonPressedEvent += new SOV.Common.UCTextBox.UCEditButtonPressedEventHandler(this.ucLESource_UCEditButtonPressedEvent);
             // 
             // ucParentMethod
             // 
@@ -276,7 +276,7 @@
             this.ucParentMethod.Size = new System.Drawing.Size(277, 20);
             this.ucParentMethod.TabIndex = 17;
             this.ucParentMethod.Value = null;
-            this.ucParentMethod.UCEditButtonPressedEvent += new FERHRI.Common.UCTextBox.UCEditButtonPressedEventHandler(this.parentMethodTextBox_UCEditButtonPressedEvent);
+            this.ucParentMethod.UCEditButtonPressedEvent += new SOV.Common.UCTextBox.UCEditButtonPressedEventHandler(this.parentMethodTextBox_UCEditButtonPressedEvent);
             // 
             // splitContainer1
             // 

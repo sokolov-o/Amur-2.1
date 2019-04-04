@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FERHRI.UnitTest.Properties {
+namespace SOV.UnitTest.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,7 +26,7 @@ namespace FERHRI.UnitTest.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=localhost;Port=5432;User Id=postgres;Password=qq;Database=ferhri.amur;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=localhost;Port=5432;User Id=postgres;Password=qq;Database=SOV.amur;")]
         public string local_ConnectionString {
             get {
                 return ((string)(this["local_ConnectionString"]));
@@ -36,7 +36,7 @@ namespace FERHRI.UnitTest.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=10.11.203.20;Port=5432;User Id=postgres;Password=qq;Database=ferhri.amur;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=10.11.203.20;Port=5432;User Id=postgres;Password=qq;Database=SOV.amur;")]
         public string DVNIGMI_ConnectionString {
             get {
                 return ((string)(this["DVNIGMI_ConnectionString"]));

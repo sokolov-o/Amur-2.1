@@ -1,13 +1,13 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FERHRI.Amur.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SOV.Amur.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="AmurConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;ДВНИГМИ/Server=10.11.203.20;Port=5432;Database=ferhri.amur;/ДВ УГМС/Server=10.8.3.180;Port=5432;Database=ferhri.amur;/localhost/Server=localhost;Port=5432;Database=ferhri.amur;&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;ДВНИГМИ/Server=10.11.203.20;Port=5432;Database=SOV.amur;/ДВ УГМС/Server=10.8.3.180;Port=5432;Database=SOV.amur;/localhost/Server=localhost;Port=5432;Database=SOV.amur;&lt;/ConnectionString&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">ДВНИГМИ/Server=10.11.203.20;Port=5432;Database=ferhri.amur;/ДВ УГМС/Server=10.8.3.180;Port=5432;Database=ferhri.amur;/localhost/Server=localhost;Port=5432;Database=ferhri.amur;</Value>
+      <Value Profile="(Default)">ДВНИГМИ/Server=10.11.203.20;Port=5432;Database=SOV.amur;/ДВ УГМС/Server=10.8.3.180;Port=5432;Database=SOV.amur;/localhost/Server=localhost;Port=5432;Database=SOV.amur;</Value>
     </Setting>
     <Setting Name="User" Type="System.String" Scope="User">
       <Value Profile="(Default)">OSokolov;qq</Value>
