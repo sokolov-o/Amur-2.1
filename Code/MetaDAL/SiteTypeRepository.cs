@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Odbc;
-using FERHRI.Common;
+using SOV.Common;
 using Npgsql;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
-    public class StationTypeRepository : BaseRepository<SiteType>
+    public class SiteTypeRepository : BaseRepository<SiteType>
     {
-        internal StationTypeRepository(Common.ADbNpgsql db) : base(db, "meta.station_type") { }
+        internal SiteTypeRepository(Common.ADbNpgsql db) : base(db, "meta.station_type") { }
 
-        public static List<SiteType> GetCash() { return GetCash(DataManager.GetInstance().StationTypeRepository); }
+        public static List<SiteType> GetCash() { return GetCash(DataManager.GetInstance().SiteTypeRepository); }
 
         protected override object ParseData(NpgsqlDataReader rdr)
         {

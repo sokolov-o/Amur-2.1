@@ -83,11 +83,11 @@
     <Compile Include="CodeForm.cs" />
     <Compile Include="GeoType.cs" />
     <Compile Include="GeoObject.cs" />
-    <Compile Include="StationGeoObject.cs" />
-    <Compile Include="SiteGroup.cs" />
+    <Compile Include="SiteGeoObject.cs" />
+    <Compile Include="_DELME_SiteGroup.cs" />
     <Compile Include="EntityGroup.cs" />
     <Compile Include="OffsetType.cs" />
-    <Compile Include="StationAddrRegion.cs" />
+    <Compile Include="SiteAddrRegion.cs" />
     <Compile Include="VariableFilter.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FERHRI.Common;
+using SOV.Common;
 using Npgsql;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public class EntityAttrRepository : BaseRepository<EntityAttrValue>
     {
@@ -185,7 +185,7 @@ namespace FERHRI.Amur.Meta
                 }
             }
             else
-                throw new Exception("Ошибка алгоритма! OSokolov@ferhri.ru");
+                throw new Exception("Ошибка алгоритма! OSokolov@SOV.ru");
         }
         public void InsertValue(string EntityName, int entityId, int attrTypeId, DateTime dateS, string value)
         {

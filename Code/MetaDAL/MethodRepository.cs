@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Odbc;
-using FERHRI.Common;
+using SOV.Common;
 using Npgsql;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public class MethodRepository : BaseRepository<Method>
     {

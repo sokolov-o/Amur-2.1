@@ -68,7 +68,7 @@
     <Compile Include="MeteoZoneRepository.cs" />
     <Compile Include="DataManager.cs" />
     <Compile Include="EntityAttrRepository.cs" />
-    <Compile Include="StationTypeRepository.cs" />
+    <Compile Include="SiteTypeRepository.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -90,8 +90,7 @@
     <Compile Include="CodeFormRepository.cs" />
     <Compile Include="GeoTypeRepository.cs" />
     <Compile Include="GeoObjectRepository.cs" />
-    <Compile Include="StationGeoObjectRepository.cs" />
-    <Compile Include="SiteGroupRepository.cs" />
+    <Compile Include="SiteGeoObjectRepository.cs" />
     <Compile Include="EntityGroupRepository.cs" />
     <Compile Include="OffsetTypeRepository.cs" />
     <Compile Include="StationAddrRegionRepository.cs" />

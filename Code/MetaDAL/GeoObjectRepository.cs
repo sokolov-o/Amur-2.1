@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Odbc;
-using FERHRI.Common;
+using SOV.Common;
 using Npgsql;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public class GeoObjectRepository : BaseRepository<GeoObject>
     {
@@ -37,7 +37,7 @@ namespace FERHRI.Amur.Meta
                     cmd.Parameters.AddWithValue(":name", item.Name);
                     cmd.Parameters.AddWithValue(":geo_type_id", item.GeoTypeId);
                     cmd.Parameters.Add(ADbNpgsql.GetParameter(":fall_into_id", item.FallIntoId));
-                    cmd.Parameters.AddWithValue(":order", item.Order);
+                    cmd.Parameters.AddWithValue(":order", item.OrderBy);
 
                     ret = int.Parse(cmd.ExecuteScalar().ToString());
                 }
@@ -66,7 +66,7 @@ namespace FERHRI.Amur.Meta
                     cmd.Parameters.AddWithValue(":name", go.Name);
                     cmd.Parameters.AddWithValue(":geo_type_id", go.GeoTypeId);
                     cmd.Parameters.Add(ADbNpgsql.GetParameter(":fall_into_id", go.FallIntoId));
-                    cmd.Parameters.AddWithValue(":order", go.Order);
+                    cmd.Parameters.AddWithValue(":order", go.OrderBy);
 
                     cmd.ExecuteNonQuery();
                 }

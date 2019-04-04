@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Odbc;
-using FERHRI.Common;
+using SOV.Common;
 using Npgsql;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public class StationAddrRegionRepository
     {
@@ -21,9 +21,9 @@ namespace FERHRI.Amur.Meta
         /// </summary>
         /// <param name="stationId">Код для выборки или все, если null.</param>
         /// <returns></returns>
-        public List<StationAddrRegion> Select(List<int> stationId = null)
+        public List<SiteAddrRegion> Select(List<int> stationId = null)
         {
-            List<StationAddrRegion> ret = new List<StationAddrRegion>();
+            List<SiteAddrRegion> ret = new List<SiteAddrRegion>();
 
             using (NpgsqlConnection cnn = _db.Connection)
             {
@@ -34,21 +34,21 @@ namespace FERHRI.Amur.Meta
                     {
                         while (rdr.Read())
                         {
-                            ret.Add(new StationAddrRegion((int)rdr["station_id"], (int)rdr["addr_region_id"]));
+                            ret.Add(new SiteAddrRegion((int)rdr["station_id"], (int)rdr["addr_region_id"]));
                         }
                     }
                 }
             }
             return ret;
         }
-        public void InsertUpdate(StationAddrRegion item)
+        public void InsertUpdate(SiteAddrRegion item)
         {
             if (Select(new List<int>(new int[] { item.StationId })) == null)
                 Insert(item);
             else
                 Update(item);
         }
-        public void Insert(StationAddrRegion item)
+        public void Insert(SiteAddrRegion item)
         {
             using (NpgsqlConnection cnn = _db.Connection)
             {
@@ -63,7 +63,7 @@ namespace FERHRI.Amur.Meta
                 }
             }
         }
-        public void Update(StationAddrRegion item)
+        public void Update(SiteAddrRegion item)
         {
             using (NpgsqlConnection cnn = _db.Connection)
             {

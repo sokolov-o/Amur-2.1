@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace SOV.Amur.Meta
 {
-    public class StationGeoObject
+    public class SiteGeoObject
     {
-        public int StationId { get; set; }
+        public int SiteId { get; set; }
         public int GeoObjectId { get; set; }
-        public int Order { get; set; }
+        public int OrderBy { get; set; }
 
-        public StationGeoObject(int stationId, int geoObjectId, int order)
+        public SiteGeoObject(int stationId, int geoObjectId, int order)
         {
-            StationId = stationId;
+            SiteId = stationId;
             GeoObjectId = geoObjectId;
-            Order = order;
+            OrderBy = order;
         }
     }
 }

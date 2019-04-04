@@ -16,7 +16,7 @@ namespace SOV.Amur.Meta
         [DataMember]
         public int? FallIntoId { get; set; }
         [DataMember]
-        public int Order { get; set; }
+        public int OrderBy { get; set; }
         public double[,] Shape { get; set; }
         /// <summary>
         /// Нужен, т.к. WCF не использует n-мерные массивы.
@@ -39,14 +39,14 @@ namespace SOV.Amur.Meta
                 return ret;
             }
         }
-
+        public GeoObject() { }
         public GeoObject(int id, int geoTypeId, string name, int? fallIntoId = null, int order = int.MinValue)
         {
             Id = id;
             GeoTypeId = geoTypeId;
             Name = name;
             FallIntoId = fallIntoId;
-            Order = order;
+            OrderBy = order;
         }
 
         public static List<Common.DicItem> ToDicItemList(List<GeoObject> gos)
@@ -86,7 +86,7 @@ namespace SOV.Amur.Meta
         }
         public DicItem ToDicItem()
         {
-            return new DicItem() { Id = Id, Name = Name, NameShort = this.Order.ToString(), Entity = this };
+            return new DicItem() { Id = Id, Name = Name, NameShort = this.OrderBy.ToString(), Entity = this };
         }
 
         public int? GetParentId()

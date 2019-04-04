@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Odbc;
-using FERHRI.Common;
+using SOV.Common;
 using Npgsql;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public class _DELME_StationRepository : BaseRepository<_DELME_Station>
     {
@@ -98,13 +98,13 @@ namespace FERHRI.Amur.Meta
                                 sites = ret[station];
                             }
                             if (!rdr.IsDBNull(rdr.GetOrdinal("site_id")))
-                                sites.Add(new Site(
-                                    (int)rdr["site_id"],
-                                    id,
-                                    (int)rdr["site_type_id"],
-                                    ADbNpgsql.GetValueString(rdr, "site_code"),
-                                    ADbNpgsql.GetValueString(rdr, "site_description")
-                                    ));
+                                sites.Add(new Site()
+                                {
+                                    Id = (int)rdr["site_id"],
+                                    TypeId = (int)rdr["site_type_id"],
+                                    Code = ADbNpgsql.GetValueString(rdr, "site_code"),
+                                    Description = ADbNpgsql.GetValueString(rdr, "site_description")
+                                });
                         }
                     }
                 }

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Odbc;
-using FERHRI.Common;
+using SOV.Common;
 using Npgsql;
-using FERHRI.Amur.Meta;
+using SOV.Amur.Meta;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public class CatalogRepository : BaseRepository<Catalog>
     {

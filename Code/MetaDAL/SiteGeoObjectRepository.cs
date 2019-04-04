@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Odbc;
-using FERHRI.Common;
+using SOV.Common;
 using Npgsql;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
-    public class StationGeoObjectRepository
+    public class SiteGeoObjectRepository
     {
         Common.ADbNpgsql _db;
-        internal StationGeoObjectRepository(Common.ADbNpgsql db)
+        internal SiteGeoObjectRepository(Common.ADbNpgsql db)
         {
             _db = db;
         }
@@ -21,17 +21,17 @@ namespace FERHRI.Amur.Meta
         /// </summary>
         /// <param name="item">Экземпляр класса.</param>
         /// <returns></returns>
-        public void Insert(StationGeoObject item)
+        public void Insert(SiteGeoObject item)
         {
             using (NpgsqlConnection cnn = _db.Connection)
             {
                 using (NpgsqlCommand cmd = new NpgsqlCommand("insert into meta.station_x_geoobject"
-                                + "(station_id, geo_object_id, \"order\")"
-                                + " values (:station_id,:geo_object_id,:order)", cnn))
+                                + "(site_id, geo_object_id, \"order_by\")"
+                                + " values (:site_id,:geo_object_id,:order_by)", cnn))
                 {
-                    cmd.Parameters.AddWithValue("station_id", item.StationId);
+                    cmd.Parameters.AddWithValue("site_id", item.SiteId);
                     cmd.Parameters.AddWithValue("geo_object_id", item.GeoObjectId);
-                    cmd.Parameters.Add(ADbNpgsql.GetParameter("order", item.Order));
+                    cmd.Parameters.Add(ADbNpgsql.GetParameter("order_by", item.OrderBy));
 
                     cmd.ExecuteNonQuery();
                 }
@@ -45,15 +45,15 @@ namespace FERHRI.Amur.Meta
         /// <param name="stationId">Код станции.</param>
         public void Insert(int geoObjectId, int stationId)
         {
-            int? order = SelectMinOrder(geoObjectId);
-            Insert(new StationGeoObject(stationId, geoObjectId, order.HasValue ? (int)order - 1 : 0));
+            int? order_by = SelectMinorder_by(geoObjectId);
+            Insert(new SiteGeoObject(stationId, geoObjectId, order_by.HasValue ? (int)order_by - 1 : 0));
         }
 
-        private int? SelectMinOrder(int geoObjectId)
+        private int? SelectMinorder_by(int geoObjectId)
         {
             using (NpgsqlConnection cnn = _db.Connection)
             {
-                using (NpgsqlCommand cmd = new NpgsqlCommand("select min(\"order\") from meta.station_x_geoobject"
+                using (NpgsqlCommand cmd = new NpgsqlCommand("select min(\"order_by\") from meta.station_x_geoobject"
                                 + " where geo_object_id = " + geoObjectId, cnn))
                 {
                     object o = cmd.ExecuteScalar();
@@ -62,53 +62,53 @@ namespace FERHRI.Amur.Meta
             }
         }
 
-        public Dictionary<Station, List<GeoObject>> SelectWithFK(int stationId)
+        public Dictionary<Site, List<GeoObject>> SelectWithFK(int stationId)
         {
             return SelectByStationsFK(new List<int>(new int[] { stationId }));
         }
-        public Dictionary<Station, List<GeoObject>> SelectByStationsFK(List<int> stationIdList)
+        public Dictionary<Site, List<GeoObject>> SelectByStationsFK(List<int> stationIdList)
         {
-            Dictionary<Station, List<GeoObject>> ret = new Dictionary<Station, List<GeoObject>>();
+            Dictionary<Site, List<GeoObject>> ret = new Dictionary<Site, List<GeoObject>>();
 
-            List<StationGeoObject> sgo = SelectByStations(stationIdList);
+            List<SiteGeoObject> sgo = SelectByStations(stationIdList);
             foreach (var item in sgo)
             {
-                IEnumerable<Station> stationi = ret.Keys.Where(x => x.Id == item.StationId);
-                Station station;
+                IEnumerable<Site> stationi = ret.Keys.Where(x => x.Id == item.SiteId);
+                Site site;
                 if (stationi.Count() == 0)
                 {
-                    station = DataManager.GetInstance(_db.ConnectionString).StationRepository.Select(item.StationId);
-                    ret.Add(station, new List<GeoObject>());
+                    site = DataManager.GetInstance(_db.ConnectionString).SiteRepository.Select(item.SiteId);
+                    ret.Add(site, new List<GeoObject>());
                 }
                 else
-                    station = stationi.ElementAt(0);
+                    site = stationi.ElementAt(0);
 
-                if (!ret[station].Exists(x => x.Id == item.GeoObjectId))
+                if (!ret[site].Exists(x => x.Id == item.GeoObjectId))
                 {
-                    ret[station].Add(DataManager.GetInstance(_db.ConnectionString).GeoObjectRepository.Select(item.GeoObjectId));
+                    ret[site].Add(DataManager.GetInstance(_db.ConnectionString).GeoObjectRepository.Select(item.GeoObjectId));
                 }
             }
             return ret;
         }
-        public List<StationGeoObject> SelectByStations(List<int> stationIdList)
+        public List<SiteGeoObject> SelectByStations(List<int> stationIdList)
         {
-            List<StationGeoObject> ret = new List<StationGeoObject>();
+            List<SiteGeoObject> ret = new List<SiteGeoObject>();
             if (stationIdList != null && stationIdList.Count > 0)
             {
                 string sqlIn = StrVia.ToString(stationIdList);
 
                 using (NpgsqlConnection cnn = _db.Connection)
                 {
-                    using (NpgsqlCommand cmd = new NpgsqlCommand("select * from meta.station_x_geoobject where station_id in (" + sqlIn + ")", cnn))
+                    using (NpgsqlCommand cmd = new NpgsqlCommand("select * from meta.station_x_geoobject where site_id in (" + sqlIn + ")", cnn))
                     {
                         using (NpgsqlDataReader rdr = cmd.ExecuteReader())
                         {
                             while (rdr.Read())
                             {
-                                ret.Add(new StationGeoObject(
-                                    (int)rdr["station_id"],
+                                ret.Add(new SiteGeoObject(
+                                    (int)rdr["site_id"],
                                     (int)rdr["geo_object_id"],
-                                    (int)rdr["order"]
+                                    (int)rdr["order_by"]
                                 ));
                             }
                         }
@@ -118,29 +118,29 @@ namespace FERHRI.Amur.Meta
             return ret;
         }
         /// <summary>
-        /// Выборка с сортировкой по order.
+        /// Выборка с сортировкой по order_by.
         /// </summary>
         /// <param name="goIds">Коды гео-объектов для выборки.</param>
         /// <returns></returns>
-        public List<StationGeoObject> SelectByGeoObjects(List<int> goIds = null)
+        public List<SiteGeoObject> SelectByGeoObjects(List<int> goIds = null)
         {
-            List<StationGeoObject> ret = new List<StationGeoObject>();
+            List<SiteGeoObject> ret = new List<SiteGeoObject>();
 
             using (NpgsqlConnection cnn = _db.Connection)
             {
                 using (NpgsqlCommand cmd = new NpgsqlCommand("select * from meta.station_x_geoobject"
                     + ((goIds == null) ? "" : " where geo_object_id = ANY(:geo_object_id)")
-                    + " order by \"order\"", cnn))
+                    + " order_by by \"order_by\"", cnn))
                 {
                     cmd.Parameters.AddWithValue("geo_object_id", goIds);
                     using (NpgsqlDataReader rdr = cmd.ExecuteReader())
                     {
                         while (rdr.Read())
                         {
-                            ret.Add(new StationGeoObject(
-                                (int)rdr["station_id"],
+                            ret.Add(new SiteGeoObject(
+                                (int)rdr["site_id"],
                                 (int)rdr["geo_object_id"],
-                                (int)rdr["order"]
+                                (int)rdr["order_by"]
                             ));
                         }
                         return ret;
@@ -149,15 +149,15 @@ namespace FERHRI.Amur.Meta
             }
         }
         /// <summary>
-        /// Выборка с сортировкой по order.
+        /// Выборка с сортировкой по order_by.
         /// </summary>
         /// <param name="goIds">Коды гео-объектов для выборки.</param>
         /// <returns></returns>
-        public Dictionary<GeoObject, List<Station>> SelectByGeoObjectsFK(List<int> goIds = null)
+        public Dictionary<GeoObject, List<Site>> SelectByGeoObjectsFK(List<int> goIds = null)
         {
-            Dictionary<GeoObject, List<Station>> ret = new Dictionary<GeoObject, List<Station>>();
+            Dictionary<GeoObject, List<Site>> ret = new Dictionary<GeoObject, List<Site>>();
 
-            List<StationGeoObject> sgo = SelectByGeoObjects(goIds);
+            List<SiteGeoObject> sgo = SelectByGeoObjects(goIds);
             foreach (var item in sgo)
             {
                 IEnumerable<GeoObject> goi = ret.Keys.Where(x => x.Id == item.GeoObjectId);
@@ -165,30 +165,30 @@ namespace FERHRI.Amur.Meta
                 if (goi.Count() == 0)
                 {
                     go = DataManager.GetInstance(_db.ConnectionString).GeoObjectRepository.Select(item.GeoObjectId);
-                    ret.Add(go, new List<Station>());
+                    ret.Add(go, new List<Site>());
                 }
                 else
                     go = goi.ElementAt(0);
 
-                if (!ret[go].Exists(x => x.Id == item.StationId))
+                if (!ret[go].Exists(x => x.Id == item.SiteId))
                 {
-                    ret[go].Add(DataManager.GetInstance(_db.ConnectionString).StationRepository.Select(item.StationId));
+                    ret[go].Add(DataManager.GetInstance(_db.ConnectionString).SiteRepository.Select(item.SiteId));
                 }
             }
             return ret;
         }
 
-        public void UpdateStationOrder(int geoObjectId, List<int> stationIds)
+        public void UpdateStationorder_by(int geoObjectId, List<int> stationIds)
         {
             using (NpgsqlConnection cnn = _db.Connection)
             {
                 using (NpgsqlCommand cmd = new NpgsqlCommand("update meta.station_x_geoobject"
-                    + " set \"order\" = :order"
-                    + " where station_id = :station_id and geo_object_id = :geo_object_id", cnn))
+                    + " set \"order_by\" = :order_by"
+                    + " where site_id = :site_id and geo_object_id = :geo_object_id", cnn))
                 {
-                    cmd.Parameters.AddWithValue("station_id", 0);
+                    cmd.Parameters.AddWithValue("site_id", 0);
                     cmd.Parameters.AddWithValue("geo_object_id", geoObjectId);
-                    cmd.Parameters.AddWithValue("order", 0);
+                    cmd.Parameters.AddWithValue("order_by", 0);
 
                     try
                     {
@@ -225,19 +225,21 @@ namespace FERHRI.Amur.Meta
             using (NpgsqlConnection cnn = _db.Connection)
             {
                 using (NpgsqlCommand cmd = new NpgsqlCommand("delete from meta.station_x_geoobject"
-                    + " where station_id = " + stationId + " and geo_object_id = " + geoObjectId, cnn))
+                    + " where site_id = " + stationId + " and geo_object_id = " + geoObjectId, cnn))
                 {
                     cmd.ExecuteNonQuery();
                 }
             }
         }
-        public Dictionary<GeoObject, List<Station>> SelectGeoObjectsXStations(List<int> goIds = null)
+        public Dictionary<GeoObject, List<Site>> SelectGeoObjectsXSites(List<int> goIds = null)
         {
-            Dictionary<GeoObject, List<Station>> ret = new Dictionary<GeoObject, List<Station>>();
+            Dictionary<GeoObject, List<Site>> ret = new Dictionary<GeoObject, List<Site>>();
+            List<Site> sites;
+
             using (NpgsqlConnection cnn = _db.Connection)
             {
                 using (NpgsqlCommand cmd = new NpgsqlCommand(
-                    "select * from meta.geo_object_x_stations_view where :goids is null or geo_object_id = ANY(:goids)", cnn))
+                    "select site_id, geoob_id, order_by from meta.site_x_geo_object where :goids is null or geo_object_id = ANY(:goids)", cnn))
                 {
                     cmd.Parameters.AddWithValue("goids", goIds);
 
@@ -245,41 +247,34 @@ namespace FERHRI.Amur.Meta
                     {
                         while (rdr.Read())
                         {
-                            int goId = (int)rdr["geo_object_id"];
-                            List<Station> stations = null;
+                            int goId = (int)rdr[1];
+                            sites = null;
                             GeoObject go = ret.Keys.FirstOrDefault(x => x.Id == goId);
                             if (go == null)
                             {
-                                stations = new List<Station>();
-                                ret.Add(
-                                    new GeoObject(
-                                        goId,
-                                        (int)rdr["geo_type_id"],
-                                        rdr["geo_object_name"].ToString(),
-                                        (rdr.IsDBNull(rdr.GetOrdinal("fall_into_id"))) ? null : (int?)(int)rdr["fall_into_id"],
-                                        (int)rdr["geo_object_order"]),
-                                    stations);
+                                sites = new List<Site>();
+                                ret.Add(new GeoObject() { Id = goId, OrderBy }, sites);
                             }
                             else
                             {
-                                stations = ret[go];
+                                sites = ret[go];
                             }
-                            if (!rdr.IsDBNull(rdr.GetOrdinal("station_id")))
-                                stations.Add(new Station(
-                                    (int)rdr["station_id"],
-                                    rdr["station_code"].ToString(),
-                                    rdr["station_name"].ToString(),
-                                    (int)rdr["station_type_id"],
-                                    rdr["station_name_eng"].ToString(),
-                                    ADbNpgsql.GetValueInt(rdr, "addr_region_id"),
-                                    ADbNpgsql.GetValueInt(rdr, "org_id")
-                                ));
+                            sites.Add(new Site() { Id = (int)rdr[0] });
                         }
-                        return ret;
                     }
                 }
             }
+
+            // UPDATE GEOOB & SITES
+            sites = DataManager.GetInstance().SiteRepository.Select( ret.SelectMany(x => x.Value).Select(x=>x.Id).Distinct().ToList());
+
+            foreach (var kvp in ret)
+            {
+                kvp.Value.ForEach(x => x = sites.FirstOrDefault(y => y.Id == x.Id));
+            }
+            return ret;
         }
+
         public Dictionary<Site, List<GeoObject>> SelectSiteXGeoObjects(List<int> siteIdList = null)
         {
             Dictionary<Site, List<GeoObject>> ret = new Dictionary<Site, List<GeoObject>>();
@@ -304,7 +299,7 @@ namespace FERHRI.Amur.Meta
                                 ret.Add(
                                     new Site(
                                         siteId,
-                                        (int)rdr["station_id"],
+                                        (int)rdr["site_id"],
                                         (int)rdr["site_type_id"],
                                         ADbNpgsql.GetValueString(rdr, "site_code"),
                                         ADbNpgsql.GetValueString(rdr, "description")
@@ -323,6 +318,7 @@ namespace FERHRI.Amur.Meta
                 }
             }
         }
+
         public object ParseDataGeoob(NpgsqlDataReader rdr)
         {
             return new GeoObject
@@ -331,7 +327,7 @@ namespace FERHRI.Amur.Meta
                 (int)rdr["geo_type_id"],
                 rdr["geo_object_name"].ToString(),
                 (rdr.IsDBNull(rdr.GetOrdinal("fall_into_id"))) ? null : (int?)(int)rdr["fall_into_id"],
-                (int)rdr["geo_object_order"]
+                (int)rdr["geo_object_order_by"]
             )
             {
                 Shape = (double[,])rdr["geo_shape"]

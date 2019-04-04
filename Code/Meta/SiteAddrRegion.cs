@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace SOV.Amur.Meta
 {
-    public class StationAddrRegion
+    public class SiteAddrRegion
     {
         public int StationId { get; set; }
         public int AddrRegionId { get; set; }
 
-        public StationAddrRegion(int stationId, int addrRegionId)
+        public SiteAddrRegion(int stationId, int addrRegionId)
         {
             StationId = stationId;
             AddrRegionId = addrRegionId;

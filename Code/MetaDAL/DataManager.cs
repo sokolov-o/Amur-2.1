@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
-using FERHRI.Common;
+using SOV.Common;
 using Npgsql;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public class DataManager : Common.BaseDataManager
     {
@@ -28,10 +28,9 @@ namespace FERHRI.Amur.Meta
         public MethodClimateRepository MethodClimateRepository;
         public OffsetTypeRepository OffsetTypeRepository;
         public SampleMediumRepository SampleMediumRepository;
-        public SiteGroupRepository SiteGroupRepository;
         public SiteAttrTypeRepository SiteAttrTypeRepository;
-        public StationGeoObjectRepository StationGeoObjectRepository;
-        public StationTypeRepository StationTypeRepository;
+        public SiteGeoObjectRepository SiteGeoObjectRepository;
+        public SiteTypeRepository SiteTypeRepository;
         public StationAddrRegionRepository StationAddrRegionRepository;
         public UnitRepository UnitRepository;
         public ValueTypeRepository ValueTypeRepository;
@@ -63,7 +62,7 @@ namespace FERHRI.Amur.Meta
             MethodRepository.ClearCache();
             OffsetTypeRepository.ClearCache();
             SampleMediumRepository.ClearCache();
-            StationTypeRepository.ClearCache();
+            SiteTypeRepository.ClearCache();
             UnitRepository.ClearCache();
             ValueTypeRepository.ClearCache();
             VariableTypeRepository.ClearCache();
@@ -92,10 +91,9 @@ namespace FERHRI.Amur.Meta
             MethodClimateRepository = new MethodClimateRepository(this);
             OffsetTypeRepository = new OffsetTypeRepository(this);
             SampleMediumRepository = new SampleMediumRepository(this);
-            SiteGroupRepository = new SiteGroupRepository(this);
             SiteAttrTypeRepository = new SiteAttrTypeRepository(this);
-            StationGeoObjectRepository = new StationGeoObjectRepository(this);
-            StationTypeRepository = new StationTypeRepository(this);
+            SiteGeoObjectRepository = new SiteGeoObjectRepository(this);
+            SiteTypeRepository = new SiteTypeRepository(this);
             StationAddrRegionRepository = new StationAddrRegionRepository(this);
             UnitRepository = new UnitRepository(this);
             ValueTypeRepository = new ValueTypeRepository(this);
@@ -131,14 +129,14 @@ namespace FERHRI.Amur.Meta
         /// </summary>
         public static DataManager GetInstance()
         {
-            return (DataManager)GetInstance(GetDefaultConnectionString(), Type.GetType("FERHRI.Amur.Meta.DataManager"));
+            return (DataManager)GetInstance(GetDefaultConnectionString(), Type.GetType("SOV.Amur.Meta.DataManager"));
         }
         /// <summary>
         /// Экземпляр с заданной строкой подключения.
         /// </summary>
         public static DataManager GetInstance(string connectionString)
         {
-            return (DataManager)GetInstance(connectionString, Type.GetType("FERHRI.Amur.Meta.DataManager"));
+            return (DataManager)GetInstance(connectionString, Type.GetType("SOV.Amur.Meta.DataManager"));
         }
 
         public CatalogFilter GetCatalogFilter(string filterDumpString)

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
 
-namespace FERHRI.Amur.Meta
+namespace SOV.Amur.Meta
 {
     public class EntityRepository
     {
