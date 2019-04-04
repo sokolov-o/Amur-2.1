@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9FF17C08-FFD4-40FB-A371-C5907B7B4D27}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FERHRI.Amur.Meta</RootNamespace>
+    <AssemblyName>FERHRI.Amur.Meta</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Catalog.cs" />
+    <Compile Include="CatalogFilter.cs" />
+    <Compile Include="CategorySet.cs" />
+    <Compile Include="ChartsFilter.cs" />
+    <Compile Include="CategoryItem.cs" />
+    <Compile Include="NameItem.cs" />
+    <Compile Include="Instrument.cs" />
+    <Compile Include="MathVar.cs" />
+    <Compile Include="MethodClimate.cs" />
+    <Compile Include="PileSet.cs" />
+    <Compile Include="SiteNewFilter.cs" />
+    <Compile Include="SiteNew.cs" />
+    <Compile Include="SiteAttrType.cs" />
+    <Compile Include="SiteInstrument.cs" />
+    <Compile Include="SiteXSite.cs" />
+    <Compile Include="SiteXSiteType.cs" />
+    <Compile Include="SiteFilter.cs" />
+    <Compile Include="VariableAttributes.cs" />
+    <Compile Include="DataFilter.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="MethodForecast.cs" />
+    <Compile Include="EntityAttrType.cs" />
+    <Compile Include="EntityAttrValue.cs" />
+    <Compile Include="MeteoZone.cs" />
+    <Compile Include="SiteType.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="_DELME_Station.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.cs" />
+    <Compile Include="Method.cs" />
+    <Compile Include="Time.cs" />
+    <Compile Include="VariableCode.cs" />
+    <Compile Include="VariableType.cs" />
+    <Compile Include="Unit.cs" />
+    <Compile Include="DataType.cs" />
+    <Compile Include="GeneralCategory.cs" />
+    <Compile Include="Variable.cs" />
+    <Compile Include="ValueType.cs" />
+    <Compile Include="SampleMedium.cs" />
+    <Compile Include="CodeForm.cs" />
+    <Compile Include="GeoType.cs" />
+    <Compile Include="GeoObject.cs" />
+    <Compile Include="StationGeoObject.cs" />
+    <Compile Include="SiteGroup.cs" />
+    <Compile Include="EntityGroup.cs" />
+    <Compile Include="OffsetType.cs" />
+    <Compile Include="StationAddrRegion.cs" />
+    <Compile Include="VariableFilter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Geo\Geo.csproj">
+      <Project>{34f63caa-4627-4434-be40-16ac1b3d2541}</Project>
+      <Name>Geo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

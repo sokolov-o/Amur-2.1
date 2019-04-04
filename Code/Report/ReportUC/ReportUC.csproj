@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8A5617AE-ED37-480A-A4D2-EF99E209BB7F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FERHRI.Amur.Report</RootNamespace>
+    <AssemblyName>FERHRI.Amur.ReportUC</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ReportViewer.2015.Runtime.12.0.2.2402\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ReportViewer.2015.Runtime.12.0.2.2402\lib\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ReportViewer.VS2015.WinForms.12.0.2.2402\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums.cs" />
+    <Compile Include="F50.cs" />
+    <Compile Include="F51.cs" />
+    <Compile Include="FormF50ReportFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormF50ReportFilter.designer.cs">
+      <DependentUpon>FormF50ReportFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports.cs" />
+    <Compile Include="FormReportOrg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportOrg.Designer.cs">
+      <DependentUpon>FormReportOrg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCF50DGV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCF50DGV.designer.cs">
+      <DependentUpon>UCF50DGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCF50ReportFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCF50ReportFilter.designer.cs">
+      <DependentUpon>UCF50ReportFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCReport.cs" />
+    <Compile Include="UCReport.Designer.cs">
+      <DependentUpon>UCReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWaterObjectReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWaterObjectReport.Designer.cs">
+      <DependentUpon>FormWaterObjectReport.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Social\SocialBL\SocialBL.csproj">
+      <Project>{da541fab-7762-49a4-bc85-f6ff4d74e28b}</Project>
+      <Name>SocialBL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Social\SocialDAL\SocialDAL.csproj">
+      <Project>{81804cf3-0bf8-459c-8e8e-b9f81e52cf57}</Project>
+      <Name>SocialDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Common.csproj">
+      <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\CommonUC\CommonUC.csproj">
+      <Project>{bb34a841-7cbe-4c0d-8268-6aece9b7271e}</Project>
+      <Name>CommonUC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataDAL\DataDAL.csproj">
+      <Project>{7372cb1e-d1a2-4021-813d-0d02c1271a8c}</Project>
+      <Name>DataDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\Data.csproj">
+      <Project>{38258d30-ae31-4a2b-a22b-65f39f136bfc}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MetaDAL\MetaDAL.csproj">
+      <Project>{73194647-7254-44fe-86a1-97aaf2b47f88}</Project>
+      <Name>MetaDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Meta\Meta.csproj">
+      <Project>{9ff17c08-ffd4-40fb-a371-c5907b7b4d27}</Project>
+      <Name>Meta</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ReportDAL\ReportDAL.csproj">
+      <Project>{eead327e-0113-400b-9e0d-3dc8a36ca1c4}</Project>
+      <Name>ReportDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Report\Report.csproj">
+      <Project>{0517c974-3f2c-46ac-99a3-735088d45701}</Project>
+      <Name>Report</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormF50ReportFilter.resx">
+      <DependentUpon>FormF50ReportFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormWaterObjectReport.resx">
+      <DependentUpon>FormWaterObjectReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report10.rdlc" />
+    <EmbeddedResource Include="Report11.rdlc" />
+    <EmbeddedResource Include="Report11Sub.rdlc" />
+    <EmbeddedResource Include="Report12.rdlc" />
+    <EmbeddedResource Include="Report12Sub.rdlc" />
+    <EmbeddedResource Include="Report30.rdlc" />
+    <EmbeddedResource Include="ReportGP25.rdlc" />
+    <EmbeddedResource Include="FormReportOrg.resx">
+      <DependentUpon>FormReportOrg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCF50DGV.resx">
+      <DependentUpon>UCF50DGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCF50ReportFilter.resx">
+      <DependentUpon>UCF50ReportFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCReport.resx">
+      <DependentUpon>UCReport.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\GP25Header.datasource" />
+    <None Include="Properties\DataSources\GP25Report.datasource" />
+    <None Include="Properties\DataSources\WaterObjReport.WaterObjDailyDataItem.datasource" />
+    <None Include="Properties\DataSources\WaterObjReport.WaterObjDecadeDataItem.datasource" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

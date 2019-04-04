@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A4E58F27-F533-437D-9745-755B3B1A8C8A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FERHRI.Amur.Data</RootNamespace>
+    <AssemblyName>FERHRI.Amur.DataUC</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Npgsql, Version=3.2.5.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.3.2.5\lib\net45\Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CellDataValue.cs" />
+    <Compile Include="CellDataForecast.cs" />
+    <Compile Include="Chart\FormSiteAndVarSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chart\FormSiteAndVarSelection.Designer.cs">
+      <DependentUpon>FormSiteAndVarSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\UCChartJoint.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chart\UCChartJoint.Designer.cs">
+      <DependentUpon>UCChartJoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\UCChartDV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chart\UCChartDV.Designer.cs">
+      <DependentUpon>UCChartDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\UCChartHydro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chart\UCChartHydro.Designer.cs">
+      <DependentUpon>UCChartHydro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\UCChartTrend.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chart\UCChartTrend.Designer.cs">
+      <DependentUpon>UCChartTrend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormClimate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClimate.Designer.cs">
+      <DependentUpon>FormClimate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCurveProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCurveProperties.Designer.cs">
+      <DependentUpon>FormCurveProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCurves.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCurves.Designer.cs">
+      <DependentUpon>FormCurves.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDataGrpSVYM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDataGrpSVYM.Designer.cs">
+      <DependentUpon>FormDataGrpSVYM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDataTableFcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDataTableFcs.Designer.cs">
+      <DependentUpon>FormDataTableFcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UCChartsOper.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCChartsOper.Designer.cs">
+      <DependentUpon>UCChartsOper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRichTextBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRichTextBox.Designer.cs">
+      <DependentUpon>FormRichTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptionsDataEdit.cs" />
+    <Compile Include="FormDataTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDataTable.Designer.cs">
+      <DependentUpon>FormDataTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCDataGrpSVYM.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDataGrpSVYM.Designer.cs">
+      <DependentUpon>UCDataGrpSVYM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCDataTableFcs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDataTableFcs.Designer.cs">
+      <DependentUpon>UCDataTableFcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCDataValue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDataValue.Designer.cs">
+      <DependentUpon>UCDataValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCDataValuesCMMC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDataValuesCMMC.Designer.cs">
+      <DependentUpon>UCDataValuesCMMC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCDataTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDataTable.Designer.cs">
+      <DependentUpon>UCDataTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_DELME_UCDataTableClimate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_DELME_UCDataTableClimate.Designer.cs">
+      <DependentUpon>_DELME_UCDataTableClimate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_DELME_FormClimate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_DELME_FormClimate.Designer.cs">
+      <DependentUpon>_DELME_FormClimate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormClimate4Site.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClimate4Site.Designer.cs">
+      <DependentUpon>FormClimate4Site.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDataFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDataFilter.Designer.cs">
+      <DependentUpon>FormDataFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOptionsUCDataEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOptionsUCDataEdit.Designer.cs">
+      <DependentUpon>FormOptionsUCDataEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UCDataAQC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDataAQC.Designer.cs">
+      <DependentUpon>UCDataAQC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCDataTableClimate2Site.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDataTableClimate2Site.Designer.cs">
+      <DependentUpon>UCDataTableClimate2Site.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCDataDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDataDetails.Designer.cs">
+      <DependentUpon>UCDataDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCDataValueList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDataValueList.designer.cs">
+      <DependentUpon>UCDataValueList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCDerived.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDerived.Designer.cs">
+      <DependentUpon>UCDerived.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Chart\FormSiteAndVarSelection.resx">
+      <DependentUpon>FormSiteAndVarSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chart\UCChartDV.resx">
+      <DependentUpon>UCChartDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chart\UCChartJoint.resx">
+      <DependentUpon>UCChartJoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chart\UCChartHydro.resx">
+      <DependentUpon>UCChartHydro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chart\UCChartTrend.resx">
+      <DependentUpon>UCChartTrend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClimate.resx">
+      <DependentUpon>FormClimate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCurveProperties.resx">
+      <DependentUpon>FormCurveProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCurves.resx">
+      <DependentUpon>FormCurves.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDataGrpSVYM.resx">
+      <DependentUpon>FormDataGrpSVYM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDataTableFcs.resx">
+      <DependentUpon>FormDataTableFcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDataTable.resx">
+      <DependentUpon>FormDataTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCChartsOper.resx">
+      <DependentUpon>UCChartsOper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRichTextBox.resx">
+      <DependentUpon>FormRichTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDataGrpSVYM.resx">
+      <DependentUpon>UCDataGrpSVYM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDataTableFcs.resx">
+      <DependentUpon>UCDataTableFcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDataValue.resx">
+      <DependentUpon>UCDataValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDataValuesCMMC.resx">
+      <DependentUpon>UCDataValuesCMMC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDataTable.resx">
+      <DependentUpon>UCDataTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_DELME_UCDataTableClimate.resx">
+      <DependentUpon>_DELME_UCDataTableClimate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_DELME_FormClimate.resx">
+      <DependentUpon>_DELME_FormClimate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClimate4Site.resx">
+      <DependentUpon>FormClimate4Site.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDataFilter.resx">
+      <DependentUpon>FormDataFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOptionsUCDataEdit.resx">
+      <DependentUpon>FormOptionsUCDataEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDataAQC.resx">
+      <DependentUpon>UCDataAQC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDataTableClimate2Site.resx">
+      <DependentUpon>UCDataTableClimate2Site.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDataDetails.resx">
+      <DependentUpon>UCDataDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDataValueList.resx">
+      <DependentUpon>UCDataValueList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDerived.resx">
+      <DependentUpon>UCDerived.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Social\SocialBL\SocialBL.csproj">
+      <Project>{da541fab-7762-49a4-bc85-f6ff4d74e28b}</Project>
+      <Name>SocialBL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Social\SocialDAL\SocialDAL.csproj">
+      <Project>{81804cf3-0bf8-459c-8e8e-b9f81e52cf57}</Project>
+      <Name>SocialDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\CommonUC\CommonUC.csproj">
+      <Project>{bb34a841-7cbe-4c0d-8268-6aece9b7271e}</Project>
+      <Name>CommonUC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataDAL\DataDAL.csproj">
+      <Project>{7372cb1e-d1a2-4021-813d-0d02c1271a8c}</Project>
+      <Name>DataDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataPBL\DataPBL.csproj">
+      <Project>{3f29ce4d-8949-4d9d-ac7a-d3650d27d1c3}</Project>
+      <Name>DataPBL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataPDAL\DataPDAL.csproj">
+      <Project>{e82ebd52-acb7-4b6d-bb18-04f691211a00}</Project>
+      <Name>DataPDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataP\DataP.csproj">
+      <Project>{66ca86b9-31a3-45a4-ba10-99628678fa71}</Project>
+      <Name>DataP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{38258d30-ae31-4a2b-a22b-65f39f136bfc}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetaDAL\MetaDAL.csproj">
+      <Project>{73194647-7254-44fe-86a1-97aaf2b47f88}</Project>
+      <Name>MetaDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetaUC\MetaUC.csproj">
+      <Project>{c4931b62-231a-4b86-9a36-8e42b3a174d8}</Project>
+      <Name>MetaUC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Meta\Meta.csproj">
+      <Project>{9ff17c08-ffd4-40fb-a371-c5907b7b4d27}</Project>
+      <Name>Meta</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObsVsFcs\ObsVsFcs.csproj">
+      <Project>{253c989a-d966-4973-81d1-1ef7135f2e75}</Project>
+      <Name>ObsVsFcs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sys\Sys.csproj">
+      <Project>{d8026d66-63cd-40f2-b07a-224abfa6ac5a}</Project>
+      <Name>Sys</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Catalog.datasource" />
+    <None Include="Properties\DataSources\Curve.Seria.Coef.datasource" />
+    <None Include="Properties\DataSources\Curve.Seria.Point.datasource" />
+    <None Include="Properties\DataSources\DataValue.datasource" />
+    <None Include="Resources\FilteredObject_13400_16x_MD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_6530.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckBox_669.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Property_501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Box_10401_24.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exportfilter_10563_32.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_Forward_color_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_back_color_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_12x12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graph_performanceChart_5171_16x_LG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Find_5650.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\action_add_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\action_add_16xLG1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\base_exclamationmark_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3%28three%29columns_9714.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deleteAllGraphs.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deleteAllGraphs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LegendHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\List_NumberedVertTHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RefreshDocViewHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowAllCommentsHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X_letter.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Y_letter.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X_letter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Y_letter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X__letter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Y__letter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X_letter_attention.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Y_letter_attention.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\two_side_arrow.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

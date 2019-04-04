@@ -1,0 +1,642 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C4931B62-231A-4B86-9A36-8E42B3A174D8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FERHRI.Amur.Meta</RootNamespace>
+    <AssemblyName>FERHRI.Amur.MetaUC</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Npgsql, Version=3.2.5.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.3.2.5\lib\net45\Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormCatalogFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCatalogFilter.Designer.cs">
+      <DependentUpon>FormCatalogFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCatalogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCatalogs.Designer.cs">
+      <DependentUpon>FormCatalogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCategorySetList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCategorySetList.Designer.cs">
+      <DependentUpon>FormCategorySetList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEntityAttrValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEntityAttrValue.Designer.cs">
+      <DependentUpon>FormEntityAttrValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGeoObject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGeoObject.Designer.cs">
+      <DependentUpon>FormGeoObject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMethodFcsSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMethodFcsSelect.Designer.cs">
+      <DependentUpon>FormMethodFcsSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMethods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMethods.Designer.cs">
+      <DependentUpon>FormMethods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNameItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNameItem.Designer.cs">
+      <DependentUpon>FormNameItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNameSets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNameSets.Designer.cs">
+      <DependentUpon>FormNameSets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSiteFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSiteFilter.Designer.cs">
+      <DependentUpon>FormSiteFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSitesAttrs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSitesAttrs.Designer.cs">
+      <DependentUpon>FormSitesAttrs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCCategorySet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCategorySet.Designer.cs">
+      <DependentUpon>UCCategorySet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCEntityAttrValue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCEntityAttrValue.Designer.cs">
+      <DependentUpon>UCEntityAttrValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStations.Designer.cs">
+      <DependentUpon>FormStations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFilterId.cs" />
+    <Compile Include="FormVariableCodes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVariableCodes.Designer.cs">
+      <DependentUpon>FormVariableCodes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVariableFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVariableFilter.Designer.cs">
+      <DependentUpon>FormVariableFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SiteGroupComboBox.cs" />
+    <Compile Include="UCCatalog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCatalog.Designer.cs">
+      <DependentUpon>UCCatalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCCatalogFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCatalogFilter.Designer.cs">
+      <DependentUpon>UCCatalogFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCCatalogFilter0.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCatalogFilter0.Designer.cs">
+      <DependentUpon>UCCatalogFilter0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCCatalogFilterG.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCatalogFilterG.Designer.cs">
+      <DependentUpon>UCCatalogFilterG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCCatalogs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCatalogs.Designer.cs">
+      <DependentUpon>UCCatalogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCMethod.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCMethod.Designer.cs">
+      <DependentUpon>UCMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCMethodClimate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCMethodClimate.Designer.cs">
+      <DependentUpon>UCMethodClimate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCMethodForecast.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCMethodForecast.Designer.cs">
+      <DependentUpon>UCMethodForecast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCMethods.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCMethods.Designer.cs">
+      <DependentUpon>UCMethods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCNameItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCNameItems.Designer.cs">
+      <DependentUpon>UCNameItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCNameSets.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCNameSets.Designer.cs">
+      <DependentUpon>UCNameSets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSiteGroupsSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSiteGroupsSelect.Designer.cs">
+      <DependentUpon>UCSiteGroupsSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSiteInstruments.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSiteInstruments.Designer.cs">
+      <DependentUpon>UCSiteInstruments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSiteXSites.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSiteXSites.Designer.cs">
+      <DependentUpon>UCSiteXSites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCStations.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCStations.Designer.cs">
+      <DependentUpon>UCStations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEntityGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEntityGroup.Designer.cs">
+      <DependentUpon>FormEntityGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCEntityGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCEntityGroup.Designer.cs">
+      <DependentUpon>UCEntityGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSite.Designer.cs">
+      <DependentUpon>FormSite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVariablesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVariablesList.designer.cs">
+      <DependentUpon>FormVariablesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGeoObjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGeoObjects.Designer.cs">
+      <DependentUpon>FormGeoObjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UCEntityAttrValues.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCEntityAttrValues.Designer.cs">
+      <DependentUpon>UCEntityAttrValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCGeoObject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCGeoObject.Designer.cs">
+      <DependentUpon>UCGeoObject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCNet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCNet.Designer.cs">
+      <DependentUpon>UCNet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSiteGeoObjectList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSiteGeoObjectList.Designer.cs">
+      <DependentUpon>UCSiteGeoObjectList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCVariableAttributes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCVariableAttributes.Designer.cs">
+      <DependentUpon>UCVariableAttributes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCVariableCodes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCVariableCodes.Designer.cs">
+      <DependentUpon>UCVariableCodes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCVariableFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCVariableFilter.Designer.cs">
+      <DependentUpon>UCVariableFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSitesSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSitesSelect.designer.cs">
+      <DependentUpon>UCSitesSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCStation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCStation.Designer.cs">
+      <DependentUpon>UCStation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCStationEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCStationEdit.Designer.cs">
+      <DependentUpon>UCStationEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCStationSites.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCStationSites.Designer.cs">
+      <DependentUpon>UCStationSites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCVariable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCVariable.designer.cs">
+      <DependentUpon>UCVariable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCVariablesList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCVariablesList.designer.cs">
+      <DependentUpon>UCVariablesList.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormCatalogFilter.resx">
+      <DependentUpon>FormCatalogFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCatalogs.resx">
+      <DependentUpon>FormCatalogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCategorySetList.resx">
+      <DependentUpon>FormCategorySetList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEntityAttrValue.resx">
+      <DependentUpon>FormEntityAttrValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGeoObject.resx">
+      <DependentUpon>FormGeoObject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMethodFcsSelect.resx">
+      <DependentUpon>FormMethodFcsSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMethods.resx">
+      <DependentUpon>FormMethods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNameItem.resx">
+      <DependentUpon>FormNameItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNameSets.resx">
+      <DependentUpon>FormNameSets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSiteFilter.resx">
+      <DependentUpon>FormSiteFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSitesAttrs.resx">
+      <DependentUpon>FormSitesAttrs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCategorySet.resx">
+      <DependentUpon>UCCategorySet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCEntityAttrValue.resx">
+      <DependentUpon>UCEntityAttrValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStations.resx">
+      <DependentUpon>FormStations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVariableCodes.resx">
+      <DependentUpon>FormVariableCodes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVariableFilter.resx">
+      <DependentUpon>FormVariableFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCatalog.resx">
+      <DependentUpon>UCCatalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCatalogFilter.resx">
+      <DependentUpon>UCCatalogFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCatalogFilter0.resx">
+      <DependentUpon>UCCatalogFilter0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCatalogFilterG.resx">
+      <DependentUpon>UCCatalogFilterG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCatalogs.resx">
+      <DependentUpon>UCCatalogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCMethod.resx">
+      <DependentUpon>UCMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCMethodClimate.resx">
+      <DependentUpon>UCMethodClimate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCMethodForecast.resx">
+      <DependentUpon>UCMethodForecast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCMethods.resx">
+      <DependentUpon>UCMethods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCNameItems.resx">
+      <DependentUpon>UCNameItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCNameSets.resx">
+      <DependentUpon>UCNameSets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSiteGroupsSelect.resx">
+      <DependentUpon>UCSiteGroupsSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSiteInstruments.resx">
+      <DependentUpon>UCSiteInstruments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSiteXSites.resx">
+      <DependentUpon>UCSiteXSites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCStations.resx">
+      <DependentUpon>UCStations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEntityGroup.resx">
+      <DependentUpon>FormEntityGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCEntityGroup.resx">
+      <DependentUpon>UCEntityGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSite.resx">
+      <DependentUpon>FormSite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVariablesList.resx">
+      <DependentUpon>FormVariablesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGeoObjects.resx">
+      <DependentUpon>FormGeoObjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCEntityAttrValues.resx">
+      <DependentUpon>UCEntityAttrValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCGeoObject.resx">
+      <DependentUpon>UCGeoObject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCNet.resx">
+      <DependentUpon>UCNet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSiteGeoObjectList.resx">
+      <DependentUpon>UCSiteGeoObjectList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCVariableAttributes.resx">
+      <DependentUpon>UCVariableAttributes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCVariableCodes.resx">
+      <DependentUpon>UCVariableCodes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCVariableFilter.resx">
+      <DependentUpon>UCVariableFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSitesSelect.resx">
+      <DependentUpon>UCSitesSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCStation.resx">
+      <DependentUpon>UCStation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCStationEdit.resx">
+      <DependentUpon>UCStationEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCStationSites.resx">
+      <DependentUpon>UCStationSites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCVariable.resx">
+      <DependentUpon>UCVariable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCVariablesList.resx">
+      <DependentUpon>UCVariablesList.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Social\SocialBL\SocialBL.csproj">
+      <Project>{da541fab-7762-49a4-bc85-f6ff4d74e28b}</Project>
+      <Name>SocialBL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Social\SocialDAL\SocialDAL.csproj">
+      <Project>{81804cf3-0bf8-459c-8e8e-b9f81e52cf57}</Project>
+      <Name>SocialDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Social\SocialUC\SocialUC.csproj">
+      <Project>{ad3354de-84c3-49b0-bf6f-b3c4d2f381da}</Project>
+      <Name>SocialUC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\CommonUC\CommonUC.csproj">
+      <Project>{bb34a841-7cbe-4c0d-8268-6aece9b7271e}</Project>
+      <Name>CommonUC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetaDAL\MetaDAL.csproj">
+      <Project>{73194647-7254-44fe-86a1-97aaf2b47f88}</Project>
+      <Name>AmurMetaDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Meta\Meta.csproj">
+      <Project>{9ff17c08-ffd4-40fb-a371-c5907b7b4d27}</Project>
+      <Name>AmurMeta</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sys\Sys.csproj">
+      <Project>{d8026d66-63cd-40f2-b07a-224abfa6ac5a}</Project>
+      <Name>Sys</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\AddrRegion.datasource" />
+    <None Include="Properties\DataSources\AddrRegionType.datasource" />
+    <None Include="Properties\DataSources\CategoryItemLocalized.datasource" />
+    <None Include="Properties\DataSources\Entity.datasource" />
+    <None Include="Properties\DataSources\EntityGroup.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Common.IdName.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Social.Addr.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Social.LegalEntity.datasource" />
+    <None Include="Properties\DataSources\Instrument.datasource" />
+    <None Include="Properties\DataSources\Method.datasource" />
+    <None Include="Properties\DataSources\NameItem.datasource" />
+    <None Include="Properties\DataSources\SiteInstrument.datasource" />
+    <None Include="Properties\DataSources\StationType.datasource" />
+    <None Include="Properties\DataSources\VariableCode.datasource" />
+    <None Include="Resources\Editdatasetwithdesigner_8449.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_5699.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_6530.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNewItem_6273.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChangeQueryType_deletequery_274.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FindNext_13243.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_Up_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\action_add_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\action_add_16xLG1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_12x12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChangeQueryType_updatequery_273.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Find_5650.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlagThread-NotFlagged,NotHot,NotSelected_10391_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house_16xMD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\note-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrange_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FilteredObject_13400_16x_MD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter_16xLG1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Property_501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_16xLG1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditDocument.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

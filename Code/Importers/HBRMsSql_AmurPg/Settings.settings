@@ -1,0 +1,20 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="HBRMsSql_AmurPg" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="AmurConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Server=bravo.int.ferhri.ru;Port=5432;Database=ferhri.amur;user id=OSokolov;password=qq&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Server=bravo.int.ferhri.ru;Port=5432;Database=ferhri.amur;user id=OSokolov;password=qq</Value>
+    </Setting>
+    <Setting Name="HBRMsSqlDataFilePath" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;D:\Temp\FERHRI\Amur\Import\HBRMsSqlData.csv&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">D:\Temp\FERHRI\Amur\Import\HBRMsSqlData.csv</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

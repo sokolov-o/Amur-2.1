@@ -1,0 +1,8 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<config>
+    <DbErrors>
+        <error_23503 text="Нарушение внешнего ключа" />
+        <error_23505 text="Ошибка дубликатов ключей" />
+        <error_42501 text="Права доступа не соответствуюит требованиям" />
+    </DbErrors>
+</config>

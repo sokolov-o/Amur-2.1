@@ -1,0 +1,86 @@
+<XMLDiagram>
+  <TDBADiagramController Locked="0">
+    <Elements>
+      <TDBADiagramObject id="1" propertiesclass="TDiagramMetaTableProperties" objectname="data.data_forecast">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="20" top="30" width="200" height="111"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="2" propertiesclass="TDiagramMetaTableProperties" objectname="data.catalog">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="260" top="10" width="200" height="167"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="3" propertiesclass="TDiagramForeignKeyProperties" objectname="data.catalog.catalog_fk">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="48" top="48" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="360" y="94"/>
+                <Point x="480" y="164"/>
+                <Point x="480" y="194"/>
+                <Point x="450" y="194"/>
+                <Point x="360" y="94"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="4" propertiesclass="TDiagramForeignKeyProperties" objectname="data.data_forecast.fk_df_c">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="64" top="64" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="120" y="88"/>
+                <Point x="360" y="94"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="5" propertiesclass="TDiagramMetaTableProperties" objectname="meta.method">
+        <TDiagramMetaTableProperties>
+          <Glyph>
+            <Geometry left="490" top="10" width="200" height="167"/>
+          </Glyph>
+        </TDiagramMetaTableProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="6" propertiesclass="TDiagramForeignKeyProperties" objectname="meta.method.method_fk">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="96" top="96" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="590" y="90"/>
+                <Point x="710" y="160"/>
+                <Point x="710" y="190"/>
+                <Point x="680" y="190"/>
+                <Point x="590" y="90"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+      <TDBADiagramObject id="7" propertiesclass="TDiagramForeignKeyProperties" objectname="data.catalog.FK_Catalog_Method">
+        <TDiagramForeignKeyProperties>
+          <Relation>
+            <Geometry left="112" top="112" width="200" height="100"/>
+            <Glyph>
+              <Geometry>
+                <Point x="360" y="94"/>
+                <Point x="590" y="90"/>
+              </Geometry>
+            </Glyph>
+          </Relation>
+        </TDiagramForeignKeyProperties>
+      </TDBADiagramObject>
+    </Elements>
+    <Surface zoom="100" scrollx="0" scrolly="0"/>
+  </TDBADiagramController>
+</XMLDiagram>

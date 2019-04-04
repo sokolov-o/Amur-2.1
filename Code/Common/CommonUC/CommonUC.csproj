@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BB34A841-7CBE-4C0D-8268-6AECE9B7271E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FERHRI.Common</RootNamespace>
+    <AssemblyName>FERHRI.CommonUC</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Npgsql, Version=3.2.5.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DLL\Npgsql 3.2.5\net451\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormDateTimePeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDateTimePeriod.Designer.cs">
+      <DependentUpon>FormDateTimePeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="__DELME_FormDicSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="__DELME_FormDicSelect.Designer.cs">
+      <DependentUpon>__DELME_FormDicSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelectListItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectListItems.designer.cs">
+      <DependentUpon>FormSelectListItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormExceptionMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExceptionMessage.Designer.cs">
+      <DependentUpon>FormExceptionMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListBox.Designer.cs">
+      <DependentUpon>FormListBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStrVia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStrVia.Designer.cs">
+      <DependentUpon>FormStrVia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTree.Designer.cs">
+      <DependentUpon>FormTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParentChild.cs" />
+    <Compile Include="TableIUD\FormTableView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableIUD\FormTableView.Designer.cs">
+      <DependentUpon>FormTableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEnterString.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEnterString.Designer.cs">
+      <DependentUpon>FormEnterString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSingleUC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSingleUC.Designer.cs">
+      <DependentUpon>FormSingleUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUserPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUserPassword.designer.cs">
+      <DependentUpon>FormUserPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TableIUD\FormTableRowEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableIUD\FormTableRowEdit.Designer.cs">
+      <DependentUpon>FormTableRowEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableIUD\TableViewerInterface.cs" />
+    <Compile Include="TableIUD\UCComboBoxTableField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TableIUD\UCComboBoxTableField.Designer.cs">
+      <DependentUpon>UCComboBoxTableField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableIUD\UCImageInputTableField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TableIUD\UCImageInputTableField.Designer.cs">
+      <DependentUpon>UCImageInputTableField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableIUD\UCImageGalleryTableField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TableIUD\UCImageGalleryTableField.Designer.cs">
+      <DependentUpon>UCImageGalleryTableField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableIUD\UCTableField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TableIUD\UCTableField.Designer.cs">
+      <DependentUpon>UCTableField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableIUD\UCGridTableViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TableIUD\UCGridTableViewer.Designer.cs">
+      <DependentUpon>UCGridTableViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableIUD\UCTextTableField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TableIUD\UCTextTableField.Designer.cs">
+      <DependentUpon>UCTextTableField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableIUD\UCTreeTableField.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TableIUD\UCTreeTableField.Designer.cs">
+      <DependentUpon>UCTreeTableField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableIUD\UCTreeTableViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TableIUD\UCTreeTableViewer.Designer.cs">
+      <DependentUpon>UCTreeTableViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCDateTimePeriod.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDateTimePeriod.designer.cs">
+      <DependentUpon>UCDateTimePeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCComboBox.designer.cs">
+      <DependentUpon>UCComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCDicComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDicComboBox.designer.cs">
+      <DependentUpon>UCDicComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCDicListBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDicListBox.designer.cs">
+      <DependentUpon>UCDicListBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCImageGalleryLoader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCImageGalleryLoader.Designer.cs">
+      <DependentUpon>UCImageGalleryLoader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCInterval.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCInterval.Designer.cs">
+      <DependentUpon>UCInterval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCList.designer.cs">
+      <DependentUpon>UCList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCObjObjDictionary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCObjObjDictionary.Designer.cs">
+      <DependentUpon>UCObjObjDictionary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCStrVia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCStrVia.Designer.cs">
+      <DependentUpon>UCStrVia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCTreeIParent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCTreeIParent.Designer.cs">
+      <DependentUpon>UCTreeIParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCDicTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDicTree.Designer.cs">
+      <DependentUpon>UCDicTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCIdNames.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCIdNames.Designer.cs">
+      <DependentUpon>UCIdNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCImage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCImage.Designer.cs">
+      <DependentUpon>UCImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCImageGallery.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCImageGallery.Designer.cs">
+      <DependentUpon>UCImageGallery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCTextBox.Designer.cs">
+      <DependentUpon>UCTextBox.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormDateTimePeriod.resx">
+      <DependentUpon>FormDateTimePeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="__DELME_FormDicSelect.resx">
+      <DependentUpon>__DELME_FormDicSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectListItems.resx">
+      <DependentUpon>FormSelectListItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListBox.resx">
+      <DependentUpon>FormListBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStrVia.resx">
+      <DependentUpon>FormStrVia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTree.resx">
+      <DependentUpon>FormTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableIUD\FormTableView.resx">
+      <DependentUpon>FormTableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEnterString.resx">
+      <DependentUpon>FormEnterString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSingleUC.resx">
+      <DependentUpon>FormSingleUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUserPassword.resx">
+      <DependentUpon>FormUserPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableIUD\FormTableRowEdit.resx">
+      <DependentUpon>FormTableRowEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableIUD\UCComboBoxTableField.resx">
+      <DependentUpon>UCComboBoxTableField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableIUD\UCImageInputTableField.resx">
+      <DependentUpon>UCImageInputTableField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableIUD\UCImageGalleryTableField.resx">
+      <DependentUpon>UCImageGalleryTableField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableIUD\UCTableField.resx">
+      <DependentUpon>UCTableField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableIUD\UCGridTableViewer.resx">
+      <DependentUpon>UCGridTableViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableIUD\UCTextTableField.resx">
+      <DependentUpon>UCTextTableField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableIUD\UCTreeTableField.resx">
+      <DependentUpon>UCTreeTableField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableIUD\UCTreeTableViewer.resx">
+      <DependentUpon>UCTreeTableViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDateTimePeriod.resx">
+      <DependentUpon>UCDateTimePeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCComboBox.resx">
+      <DependentUpon>UCComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDicComboBox.resx">
+      <DependentUpon>UCDicComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDicListBox.resx">
+      <DependentUpon>UCDicListBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCImageGalleryLoader.resx">
+      <DependentUpon>UCImageGalleryLoader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCInterval.resx">
+      <DependentUpon>UCInterval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCList.resx">
+      <DependentUpon>UCList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCObjObjDictionary.resx">
+      <DependentUpon>UCObjObjDictionary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCStrVia.resx">
+      <DependentUpon>UCStrVia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCTreeIParent.resx">
+      <DependentUpon>UCTreeIParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDicTree.resx">
+      <DependentUpon>UCDicTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCIdNames.resx">
+      <DependentUpon>UCIdNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCImage.resx">
+      <DependentUpon>UCImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCImageGallery.resx">
+      <DependentUpon>UCImageGallery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCTextBox.resx">
+      <DependentUpon>UCTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\IdClass.datasource" />
+    <None Include="Properties\DataSources\IDic.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\IdNames.datasource" />
+    <None Include="Resources\UpdatedJscriptIntelliSense_10740.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_12x12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChangeQueryType_updatequery_273.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\action_add_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\action_add_16xLG1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\126_Edit_16x16_72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common.csproj">
+      <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_16xLG1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SysBtn_Minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thumb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckMark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\i_checkered_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkerboard.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

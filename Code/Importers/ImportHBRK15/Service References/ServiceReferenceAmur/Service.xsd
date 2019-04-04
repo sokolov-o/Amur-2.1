@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/FERHRI.Social" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FERHRI.Social" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://10.11.203.34:8001/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://10.11.203.34:8001/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FERHRI.Common" />
+  <xs:complexType name="Org">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LegalEntityId" type="xs:int" />
+      <xs:element minOccurs="0" name="StaffIdFirstFace" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Org" nillable="true" type="tns:Org" />
+  <xs:complexType name="ArrayOfOrg">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Org" nillable="true" type="tns:Org" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrg" nillable="true" type="tns:ArrayOfOrg" />
+  <xs:complexType name="Person">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LegalEntityId" type="xs:int" />
+      <xs:element minOccurs="0" name="Sex" nillable="true" type="ser:char" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="ArrayOfPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Person" nillable="true" type="tns:Person" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPerson" nillable="true" type="tns:ArrayOfPerson" />
+  <xs:complexType name="ArrayOfAddr">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Addr" nillable="true" type="tns:Addr" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddr" nillable="true" type="tns:ArrayOfAddr" />
+  <xs:complexType name="Addr">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/FERHRI.Common" base="q1:IdClass">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Childs" nillable="true" type="tns:ArrayOfAddr" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NameShort" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TypeId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Addr" nillable="true" type="tns:Addr" />
+  <xs:complexType name="LegalEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/FERHRI.Common" base="q2:IdNames">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddrAdd" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AddrId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Entity" nillable="true" type="xs:anyType" />
+          <xs:element minOccurs="0" name="ParentId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Phones" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" type="ser:char" />
+          <xs:element minOccurs="0" name="WebSite" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LegalEntity" nillable="true" type="tns:LegalEntity" />
+  <xs:complexType name="ArrayOfLegalEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LegalEntity" nillable="true" type="tns:LegalEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLegalEntity" nillable="true" type="tns:ArrayOfLegalEntity" />
+</xs:schema>

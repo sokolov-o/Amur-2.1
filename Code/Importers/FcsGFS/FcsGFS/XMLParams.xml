@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<taskImportFcsGFS>
+  <date_fcs>
+    <date_ini>
+      <value format="yyyyMMdd HHmm">20160803 0000</value>
+      <date_ini_s from_data_src="false" format="yyyyMMdd HHmm" day_now_add="-2">20160801 0006</date_ini_s>
+      <date_ini_f format="yyyyMMdd HHmm" day_now_add="0"></date_ini_f>
+      <hours_date_ini>0,6,12,18</hours_date_ini>
+    </date_ini>
+    <predict_time start="0" finish="120" step="3"></predict_time>
+  </date_fcs>
+  <gfs_file path="ftp://10.11.203.28/data/NOAA/NCEP/FTPPRD/pub/data/nccf/com/gfs/prod"
+           file_store_type="1"
+           >
+
+    <catalog
+    catalog_id="42854,42855,42859,59692"
+    type_interpolate="5,5,5,5"
+    variable_type="WDIR"
+    gfs_count_params="2"
+    gfs_IsDiscipline="0"
+    gfs_IDCenter_id="7"
+    gfs_PDSProductDefinition="0"
+    gfs_PDSParameterCategory="2"
+    gfs_PDSParameterNumber="2,3"
+    gfs_PDSTypeFirstFixedSurface="103"
+    gfs_PDSTypeSecondFixedSurface="255"
+    gfs_PDSValueFirstFixedSurface="10"
+    gfs_PDSValueSecondFixedSurface="0"
+    gfs_GDSGdtn="0"/>
+    <catalog
+    catalog_id="42856,42857,42858,59693"
+    type_interpolate="5,5,5,5"
+    variable_type="WIND"
+    gfs_count_params="2"
+    gfs_IsDiscipline="0"
+    gfs_IDCenter_id="7"
+    gfs_PDSProductDefinition="0"
+    gfs_PDSParameterCategory="2"
+    gfs_PDSParameterNumber="2,3"
+    gfs_PDSTypeFirstFixedSurface="103"
+    gfs_PDSTypeSecondFixedSurface="255"
+    gfs_PDSValueFirstFixedSurface="10"
+    gfs_PDSValueSecondFixedSurface="0"
+    gfs_GDSGdtn="0"/>
+    <catalog
+    catalog_id="42861,42853,42860,58820"
+    type_interpolate="5,5,5,5"
+    variable_type="TA2m"
+    val2real_add="-273.15"
+    val2real_multip="1"
+    gfs_count_params="1"
+    gfs_IsDiscipline="0"
+    gfs_IDCenter_id="7"
+    gfs_PDSProductDefinition="0"
+    gfs_PDSParameterCategory="0"
+    gfs_PDSParameterNumber="0"
+    gfs_PDSTypeFirstFixedSurface="103"
+    gfs_PDSTypeSecondFixedSurface="255"
+    gfs_PDSValueFirstFixedSurface="2"
+    gfs_PDSValueSecondFixedSurface="0"
+    gfs_GDSGdtn="0"/>
+    <catalog
+    catalog_id="59694,59695,59696,59697"
+    type_interpolate="5,5,5,5"
+    variable_type="WGUST"
+    gfs_count_params="1"
+    gfs_IsDiscipline="0"
+    gfs_IDCenter_id="7"
+    gfs_PDSProductDefinition="0"
+    gfs_PDSParameterCategory="2"
+    gfs_PDSParameterNumber="22"
+    gfs_PDSTypeFirstFixedSurface="1"
+    gfs_PDSTypeSecondFixedSurface="255"
+    gfs_PDSValueFirstFixedSurface="0"
+    gfs_PDSValueSecondFixedSurface="0"
+    gfs_GDSGdtn="0"/>
+
+    <catalog
+    catalog_id="42862,42863,42864,59698"
+    type_interpolate="5,5,5,5"
+    variable_type="PRMSL"
+    val2real_add="0"
+    val2real_multip="0.01"
+    gfs_count_params="1"
+    gfs_IsDiscipline="0"
+    gfs_IDCenter_id="7"
+    gfs_PDSProductDefinition="0"
+    gfs_PDSParameterCategory="3"
+    gfs_PDSParameterNumber="1"
+    gfs_PDSTypeFirstFixedSurface="101"
+    gfs_PDSTypeSecondFixedSurface="255"
+    gfs_PDSValueFirstFixedSurface="0"
+    gfs_PDSValueSecondFixedSurface="0"
+    gfs_GDSGdtn="0"/>
+    <catalog
+    catalog_id="59699,59700,59701,59702"
+    type_interpolate="5,5,5,5"
+    variable_type="RH"
+    gfs_count_params="1"
+    gfs_IsDiscipline="0"
+    gfs_IDCenter_id="7"
+    gfs_PDSProductDefinition="0"
+    gfs_PDSParameterCategory="1"
+    gfs_PDSParameterNumber="1"
+    gfs_PDSTypeFirstFixedSurface="103"
+    gfs_PDSTypeSecondFixedSurface="255"
+    gfs_PDSValueFirstFixedSurface="2"
+    gfs_PDSValueSecondFixedSurface="0"
+    gfs_GDSGdtn="0"/>
+  </gfs_file>
+</taskImportFcsGFS>

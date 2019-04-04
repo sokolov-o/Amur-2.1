@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfCurve">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Curve" nillable="true" type="tns:Curve" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCurve" nillable="true" type="tns:ArrayOfCurve" />
+  <xs:complexType name="Curve">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CatalogIdX" type="xs:int" />
+      <xs:element minOccurs="0" name="CatalogIdY" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Series" nillable="true" type="tns:ArrayOfCurve.Seria" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Curve" nillable="true" type="tns:Curve" />
+  <xs:complexType name="ArrayOfCurve.Seria">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Curve.Seria" nillable="true" type="tns:Curve.Seria" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCurve.Seria" nillable="true" type="tns:ArrayOfCurve.Seria" />
+  <xs:complexType name="Curve.Seria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Coefs" nillable="true" type="tns:ArrayOfCurve.Seria.Coef" />
+      <xs:element minOccurs="0" name="CurveId" type="xs:int" />
+      <xs:element minOccurs="0" name="DateS" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Points" nillable="true" type="tns:ArrayOfCurve.Seria.Point" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Curve.Seria" nillable="true" type="tns:Curve.Seria" />
+  <xs:complexType name="ArrayOfCurve.Seria.Coef">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Curve.Seria.Coef" nillable="true" type="tns:Curve.Seria.Coef" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCurve.Seria.Coef" nillable="true" type="tns:ArrayOfCurve.Seria.Coef" />
+  <xs:complexType name="Curve.Seria.Coef">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Day" type="xs:int" />
+      <xs:element minOccurs="0" name="Month" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Curve.Seria.Coef" nillable="true" type="tns:Curve.Seria.Coef" />
+  <xs:complexType name="ArrayOfCurve.Seria.Point">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Curve.Seria.Point" nillable="true" type="tns:Curve.Seria.Point" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCurve.Seria.Point" nillable="true" type="tns:ArrayOfCurve.Seria.Point" />
+  <xs:complexType name="Curve.Seria.Point">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="X" type="xs:double" />
+      <xs:element minOccurs="0" name="Y" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Curve.Seria.Point" nillable="true" type="tns:Curve.Seria.Point" />
+  <xs:complexType name="ArrayOfDataForecast">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataForecast" nillable="true" type="tns:DataForecast" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataForecast" nillable="true" type="tns:ArrayOfDataForecast" />
+  <xs:complexType name="DataForecast">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CatalogId" type="xs:int" />
+      <xs:element minOccurs="0" name="DateFcs" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateIni" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateInsert" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LagFcs" type="xs:double" />
+      <xs:element minOccurs="0" name="Value" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataForecast" nillable="true" type="tns:DataForecast" />
+  <xs:complexType name="DataSource">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeFormId" type="xs:int" />
+      <xs:element minOccurs="0" name="DateLOCInsert" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateUTC" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateUTCRecieve" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Hash" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataSource" nillable="true" type="tns:DataSource" />
+  <xs:complexType name="ArrayOfDataValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataValue" nillable="true" type="tns:DataValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataValue" nillable="true" type="tns:ArrayOfDataValue" />
+  <xs:complexType name="DataValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CatalogId" type="xs:int" />
+      <xs:element minOccurs="0" name="DateLOC" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateUTC" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FlagAQC" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="UTCOffset" type="xs:float" />
+      <xs:element minOccurs="0" name="Value" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataValue" nillable="true" type="tns:DataValue" />
+</xs:schema>

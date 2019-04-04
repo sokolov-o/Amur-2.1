@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_ECA.FERHRI.Amur.Import.Files", "_ECA.FERHRI.Amur.Import.Files.csproj", "{90DB596A-70B3-4E9C-B69A-F0B412C1DEEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "..\..\Common\Common.csproj", "{31660004-130A-4001-A6D0-F8209EE3A3E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90DB596A-70B3-4E9C-B69A-F0B412C1DEEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90DB596A-70B3-4E9C-B69A-F0B412C1DEEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90DB596A-70B3-4E9C-B69A-F0B412C1DEEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90DB596A-70B3-4E9C-B69A-F0B412C1DEEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31660004-130A-4001-A6D0-F8209EE3A3E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31660004-130A-4001-A6D0-F8209EE3A3E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31660004-130A-4001-A6D0-F8209EE3A3E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31660004-130A-4001-A6D0-F8209EE3A3E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
