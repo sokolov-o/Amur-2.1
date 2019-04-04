@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.203.165:8074/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta" />
+  <xs:import schemaLocation="http://192.168.203.165:8074/Service.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://192.168.203.165:8074/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data" />
+  <xs:element name="Open">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OpenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OpenResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Close">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloseResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteAttrValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:int" />
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="siteAttrTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="dateActual" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteAttrValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta" minOccurs="0" name="GetSiteAttrValueResult" nillable="true" type="q1:EntityAttrValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSitesByType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:int" />
+        <xs:element minOccurs="0" name="siteTypeId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSitesByTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta" minOccurs="0" name="GetSitesByTypeResult" nillable="true" type="q2:ArrayOfSite" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStationByIndex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:int" />
+        <xs:element minOccurs="0" name="index" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStationByIndexResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta" minOccurs="0" name="GetStationByIndexResult" nillable="true" type="q3:Station" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStationsByList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:int" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="stationIdList" nillable="true" type="q4:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStationsByListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta" minOccurs="0" name="GetStationsByListResult" nillable="true" type="q5:ArrayOfStation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStationTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStationTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta" minOccurs="0" name="GetStationTypesResult" nillable="true" type="q6:ArrayOfStationType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSitesByStation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:int" />
+        <xs:element minOccurs="0" name="stationId" type="xs:int" />
+        <xs:element minOccurs="0" name="siteTypeId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSitesByStationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta" minOccurs="0" name="GetSitesByStationResult" nillable="true" type="q7:ArrayOfSite" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta" minOccurs="0" name="GetSiteTypesResult" nillable="true" type="q8:ArrayOfSiteType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSitesByList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:int" />
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="siteIdList" nillable="true" type="q9:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSitesByListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta" minOccurs="0" name="GetSitesByListResult" nillable="true" type="q10:ArrayOfSite" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVariablesByList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:int" />
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="variableIdList" nillable="true" type="q11:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVariablesByListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta" minOccurs="0" name="GetVariablesByListResult" nillable="true" type="q12:ArrayOfVariable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVariablesAll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVariablesAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta" minOccurs="0" name="GetVariablesAllResult" nillable="true" type="q13:ArrayOfVariable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValues">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:int" />
+        <xs:element minOccurs="0" name="dateSLOC" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateFLOC" type="xs:dateTime" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="siteId" nillable="true" type="q14:ArrayOfint" />
+        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="variableId" nillable="true" type="q15:ArrayOfint" />
+        <xs:element minOccurs="0" name="offsetTypeId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetValue" nillable="true" type="xs:double" />
+        <xs:element minOccurs="0" name="isOneValue" type="xs:boolean" />
+        <xs:element minOccurs="0" name="isSelectDeleted" type="xs:boolean" />
+        <xs:element minOccurs="0" name="methodId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="sourceId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="flagAQC" nillable="true" type="xs:unsignedByte" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataValuesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data" minOccurs="0" name="GetDataValuesResult" nillable="true" type="q16:ArrayOfDataValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestDataValues">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TestDataValuesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data" minOccurs="0" name="TestDataValuesResult" nillable="true" type="q17:ArrayOfDataValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatalogListById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:int" />
+        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ctlId" nillable="true" type="q18:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatalogListByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data" minOccurs="0" name="GetCatalogListByIdResult" nillable="true" type="q19:ArrayOfCatalog" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatalogList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:int" />
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="siteId" nillable="true" type="q20:ArrayOfint" />
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="varId" nillable="true" type="q21:ArrayOfint" />
+        <xs:element minOccurs="0" name="offsetTypeId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="methodId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="sourceId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetValue" nillable="true" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatalogListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data" minOccurs="0" name="GetCatalogListResult" nillable="true" type="q22:ArrayOfCatalog" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatalog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:int" />
+        <xs:element minOccurs="0" name="siteId" type="xs:int" />
+        <xs:element minOccurs="0" name="varId" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetTypeId" type="xs:int" />
+        <xs:element minOccurs="0" name="methodId" type="xs:int" />
+        <xs:element minOccurs="0" name="sourceId" type="xs:int" />
+        <xs:element minOccurs="0" name="offsetValue" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatalogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data" minOccurs="0" name="GetCatalogResult" nillable="true" type="q23:Catalog" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveStation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:int" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta" minOccurs="0" name="station" nillable="true" type="q24:Station" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveStationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveStationResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDataValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:int" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data" minOccurs="0" name="dv" nillable="true" type="q25:DataValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDataValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveDataValueResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDataValueXSource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:int" />
+        <xs:element minOccurs="0" name="dataValueId" type="xs:int" />
+        <xs:element minOccurs="0" name="dataSourceId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDataValueXSourceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveDataValueXSourceResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCatalog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:int" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data" minOccurs="0" name="catalog" nillable="true" type="q26:Catalog" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCatalogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data" minOccurs="0" name="SaveCatalogResult" nillable="true" type="q27:Catalog" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDataSource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hSvc" type="xs:int" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Data" minOccurs="0" name="dataSource" nillable="true" type="q28:DataSource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDataSourceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveDataSourceResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

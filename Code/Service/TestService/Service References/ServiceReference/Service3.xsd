@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.Meta" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="EntityAttrValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttrTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="DateS" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EntityId" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntityAttrValue" nillable="true" type="tns:EntityAttrValue" />
+  <xs:complexType name="ArrayOfSite">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Site" nillable="true" type="tns:Site" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSite" nillable="true" type="tns:ArrayOfSite" />
+  <xs:complexType name="Site">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="StationId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Site" nillable="true" type="tns:Site" />
+  <xs:complexType name="Station">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Station" nillable="true" type="tns:Station" />
+  <xs:complexType name="ArrayOfStation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Station" nillable="true" type="tns:Station" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStation" nillable="true" type="tns:ArrayOfStation" />
+  <xs:complexType name="ArrayOfStationType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StationType" nillable="true" type="tns:StationType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStationType" nillable="true" type="tns:ArrayOfStationType" />
+  <xs:complexType name="StationType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameShort" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StationType" nillable="true" type="tns:StationType" />
+  <xs:complexType name="ArrayOfSiteType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteType" nillable="true" type="tns:SiteType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSiteType" nillable="true" type="tns:ArrayOfSiteType" />
+  <xs:complexType name="SiteType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameShort" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SiteType" nillable="true" type="tns:SiteType" />
+  <xs:complexType name="ArrayOfVariable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Variable" nillable="true" type="tns:Variable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVariable" nillable="true" type="tns:ArrayOfVariable" />
+  <xs:complexType name="Variable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="GeneralCategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SampleMediumId" type="xs:int" />
+      <xs:element minOccurs="0" name="TimeId" type="xs:int" />
+      <xs:element minOccurs="0" name="TimeSupport" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitId" type="xs:int" />
+      <xs:element minOccurs="0" name="ValueTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="VariableTypeId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Variable" nillable="true" type="tns:Variable" />
+</xs:schema>

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="FERHRI.Amur.ServiceRH16.Service" CodeBehind="Service.svc.cs" %>

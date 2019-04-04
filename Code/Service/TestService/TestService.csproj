@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{324B519C-ACE9-416E-AECC-B61B11DEB4AE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestService</RootNamespace>
+    <AssemblyName>TestService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LegalEntity.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleServiceR.cs" />
+    <Compile Include="SampleServiceW.cs" />
+    <Compile Include="Service References\AmurServiceRWReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="StationExt.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.AddrRegion.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.Catalog.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.CatalogFilter.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.DataType.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.EntityAttrValue.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.GeneralCategory.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.GeoObject.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.GeoType.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.MeteoZone.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.Method.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.MethodForecast.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.OffsetType.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.Site.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.SiteType.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.SiteXSite.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.SiteXSiteType.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.Source.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.Station.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.StationType.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.Unit.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.ValueType.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.Variable.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.VariableCode.datasource" />
+    <None Include="Properties\DataSources\FERHRI.Amur.Meta.VariableType.datasource" />
+    <None Include="Service References\AmurServiceRWReference\Service10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\Service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\Service14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\Service15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\Service16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\Service17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\Service18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\Service19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\Service2.wsdl" />
+    <None Include="Service References\AmurServiceRWReference\Service20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\Service21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.Addr.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.AQCDataValue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.Catalog.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.Curve.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.DataForecast.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.DataSource.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.DataType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.DataValue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.EntityAttrValue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.GeneralCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.GeoObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.GeoPoint.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.GeoType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.LegalEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.MeteoZone.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.Method.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.MethodForecast.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.OffsetType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.Org.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.Person.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.SampleMedium.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.Site.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.SiteAttrType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.SiteXSite.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.SiteXSiteType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.Station.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.StationType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.SysObj.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.SysParsersParams.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.SysParsersXSites.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.Unit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.ValueType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.Variable.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.VariableCode.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.VariableType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AmurServiceRWReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AmurServiceRWReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AmurServiceRWReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AmurServiceRWReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AmurServiceRWReference\Service2.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

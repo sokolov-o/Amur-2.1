@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://10.8.3.180:8875/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://10.8.3.180:8875/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://10.8.3.180:8875/Service.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://10.8.3.180:8875/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FERHRI.Amur.ServiceRH16" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_Open_InputMessage">
+    <wsdl:part name="parameters" element="tns:Open" />
+  </wsdl:message>
+  <wsdl:message name="IService_Open_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OpenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Close_InputMessage">
+    <wsdl:part name="parameters" element="tns:Close" />
+  </wsdl:message>
+  <wsdl:message name="IService_Close_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetAvailableTimePeriod_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableTimePeriod" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetAvailableTimePeriod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableTimePeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetAvailableStations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableStations" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetAvailableStations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableStationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetAvailableVariables_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableVariables" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetAvailableVariables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableVariablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDataObservation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataObservation" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDataObservation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataObservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDataObservations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataObservations" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDataObservations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataObservationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDataForecast_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataForecast" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDataForecast_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataForecastResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDataForecasts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataForecasts" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDataForecasts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataForecastsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="Open">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Open" message="tns:IService_Open_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/OpenResponse" message="tns:IService_Open_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Close">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Close" message="tns:IService_Close_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CloseResponse" message="tns:IService_Close_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableTimePeriod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAvailableTimePeriod" message="tns:IService_GetAvailableTimePeriod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetAvailableTimePeriodResponse" message="tns:IService_GetAvailableTimePeriod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableStations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAvailableStations" message="tns:IService_GetAvailableStations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetAvailableStationsResponse" message="tns:IService_GetAvailableStations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableVariables">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAvailableVariables" message="tns:IService_GetAvailableVariables_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetAvailableVariablesResponse" message="tns:IService_GetAvailableVariables_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataObservation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetDataObservation" message="tns:IService_GetDataObservation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetDataObservationResponse" message="tns:IService_GetDataObservation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataObservations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetDataObservations" message="tns:IService_GetDataObservations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetDataObservationsResponse" message="tns:IService_GetDataObservations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataForecast">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetDataForecast" message="tns:IService_GetDataForecast_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetDataForecastResponse" message="tns:IService_GetDataForecast_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataForecasts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetDataForecasts" message="tns:IService_GetDataForecasts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetDataForecastsResponse" message="tns:IService_GetDataForecasts_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Open">
+      <soap:operation soapAction="http://tempuri.org/IService/Open" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Close">
+      <soap:operation soapAction="http://tempuri.org/IService/Close" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableTimePeriod">
+      <soap:operation soapAction="http://tempuri.org/IService/GetAvailableTimePeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableStations">
+      <soap:operation soapAction="http://tempuri.org/IService/GetAvailableStations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableVariables">
+      <soap:operation soapAction="http://tempuri.org/IService/GetAvailableVariables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataObservation">
+      <soap:operation soapAction="http://tempuri.org/IService/GetDataObservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataObservations">
+      <soap:operation soapAction="http://tempuri.org/IService/GetDataObservations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataForecast">
+      <soap:operation soapAction="http://tempuri.org/IService/GetDataForecast" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataForecasts">
+      <soap:operation soapAction="http://tempuri.org/IService/GetDataForecasts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://10.8.3.180:8875/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
