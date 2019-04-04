@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AD3354DE-84C3-49B0-BF6F-B3C4D2F381DA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FERHRI.Social</RootNamespace>
+    <AssemblyName>FERHRI.SocialUC</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormSelectLegalEntities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectLegalEntities.Designer.cs">
+      <DependentUpon>FormSelectLegalEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLegalEntitiesTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLegalEntitiesTree.Designer.cs">
+      <DependentUpon>FormLegalEntitiesTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddrs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddrs.Designer.cs">
+      <DependentUpon>FormAddrs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelectStaffPosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectStaffPosition.Designer.cs">
+      <DependentUpon>FormSelectStaffPosition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TableFields.cs" />
+    <Compile Include="UCAddr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCAddr.Designer.cs">
+      <DependentUpon>UCAddr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCAddrs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCAddrs.Designer.cs">
+      <DependentUpon>UCAddrs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCLegalEntitiesTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCLegalEntitiesTree.Designer.cs">
+      <DependentUpon>UCLegalEntitiesTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCLegalEntity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCLegalEntity.Designer.cs">
+      <DependentUpon>UCLegalEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCStaffPositions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCStaffPositions.Designer.cs">
+      <DependentUpon>UCStaffPositions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCStaffEmployees.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCStaffEmployees.Designer.cs">
+      <DependentUpon>UCStaffEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCStaffs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCStaffs.Designer.cs">
+      <DependentUpon>UCStaffs.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormSelectLegalEntities.resx">
+      <DependentUpon>FormSelectLegalEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLegalEntitiesTree.resx">
+      <DependentUpon>FormLegalEntitiesTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddrs.resx">
+      <DependentUpon>FormAddrs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectStaffPosition.resx">
+      <DependentUpon>FormSelectStaffPosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCAddr.resx">
+      <DependentUpon>UCAddr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCAddrs.resx">
+      <DependentUpon>UCAddrs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCLegalEntitiesTree.resx">
+      <DependentUpon>UCLegalEntitiesTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCLegalEntity.resx">
+      <DependentUpon>UCLegalEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCStaffPositions.resx">
+      <DependentUpon>UCStaffPositions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCStaffEmployees.resx">
+      <DependentUpon>UCStaffEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCStaffs.resx">
+      <DependentUpon>UCStaffs.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Amur.20\Common\Common.csproj">
+      <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Amur.20\Common\CommonUC\CommonUC.csproj">
+      <Project>{BB34A841-7CBE-4C0D-8268-6AECE9B7271E}</Project>
+      <Name>CommonUC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SocialBL\SocialBL.csproj">
+      <Project>{da541fab-7762-49a4-bc85-f6ff4d74e28b}</Project>
+      <Name>SocialBL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SocialDAL\SocialDAL.csproj">
+      <Project>{81804cf3-0bf8-459c-8e8e-b9f81e52cf57}</Project>
+      <Name>SocialDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\LegalEntity.datasource" />
+    <None Include="Properties\DataSources\Staff.datasource" />
+    <None Include="Properties\DataSources\StaffEmployee.datasource" />
+    <None Include="Properties\DataSources\StaffPosition.datasource" />
+    <None Include="Properties\DataSources\StaffSOV.datasource" />
+    <None Include="Resources\action_add_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\action_add_16xLG1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNewItem_6273.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrange_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_Up_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChangeQueryType_deletequery_274.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChangeQueryType_updatequery_273.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_12x12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Editdatasetwithdesigner_8449.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter_16xLG1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FilteredObject_13400_16x_MD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Find_5650.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FindNext_13243.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FlagThread-NotFlagged,NotHot,NotSelected_10391_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_5699.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house_16xMD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\note-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Property_501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_16xLG1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_6530.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
