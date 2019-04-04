@@ -7,8 +7,8 @@
     <ProjectGuid>{31660004-130A-4001-A6D0-F8209EE3A3E6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FERHRI.Common</RootNamespace>
-    <AssemblyName>FERHRI.Common</AssemblyName>
+    <RootNamespace>SOV.Common</RootNamespace>
+    <AssemblyName>SOV.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

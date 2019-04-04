@@ -4,18 +4,17 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using FERHRI.Amur.Meta;
-using FERHRI.Amur.Data;
-using FERHRI.Amur.DataP;
-using FERHRI.Social;
+using SOV.Amur.Meta;
+using SOV.Amur.Data;
+using SOV.Social;
 
-namespace FERHRI.Amur.Service
+namespace SOV.Amur.Service
 {
     /// <summary>
     /// 
     /// Интерфейс управления обработкой данных БД "Амур", ДВНИГМИ
     /// 
-    /// ДВНИГМИ 2016, OSokolov@ferhri.ru
+    /// ДВНИГМИ 2016, OSokolov@SOV.ru
     /// </summary>
     [ServiceContract]
     public partial interface IService
@@ -51,7 +50,7 @@ namespace FERHRI.Amur.Service
         /// <param name="siteIndices">Список кодов станций.</param>
         /// <returns>Список станций.</returns>
         [OperationContract]
-        List<Site> GetSitesByIndices(long hSvc, List<string> siteIndices);
+        List<Site> GetSitesByCodes(long hSvc, List<string> siteIndices);
         /// <summary>
         /// Поиск первого родительского метода прогноза, у которого MethodOutputStoreParameters != null.
         /// </summary>
@@ -75,7 +74,7 @@ namespace FERHRI.Amur.Service
         /// </summary>
         /// <returns>Набор географических объектов.</returns>
         [OperationContract]
-        Dictionary<int, GeoObject> GetGeoObjectsByStationIds(long hSvc, List<int> stationIds);
+        Dictionary<int, GeoObject> GetGeoObjectsBySiteIds(long hSvc, List<int> stationIds);
         /// <summary>
         /// Получить все типы атрибутов пункта.
         /// </summary>
@@ -306,7 +305,7 @@ namespace FERHRI.Amur.Service
         /// </summary>
         /// <returns>Набор типов значений.</returns>
         [OperationContract]
-        List<FERHRI.Amur.Meta.ValueType> GetValueTypesAll(long hSvc);
+        List<SOV.Amur.Meta.ValueType> GetValueTypesAll(long hSvc);
         /// <summary>
         /// Получить набор кодов значений для переменной.
         /// </summary>
@@ -461,19 +460,19 @@ namespace FERHRI.Amur.Service
             int offsetTypeId, int methodId, int sourceId, double offsetValue);
         #endregion
 
-        #region DATAP
-        [OperationContract]
-        List<AQCDataValue> GetDataPDataValueAQC(long hSvc, long dvId);
-        #endregion DATAP
+        //////#region DATAP
+        //////[OperationContract]
+        //////List<AQCDataValue> GetDataPDataValueAQC(long hSvc, long dvId);
+        //////#endregion DATAP
 
-        #region PARSER
-        [OperationContract]
-        Parser.SysObj GetParserSysObj(long hSvc, int sysObjId);
-        [OperationContract]
-        List<Parser.SysParsersXSites> GetParserSysParsersXSites(long hSvc, int sysObjId);
-        [OperationContract]
-        List<Parser.SysParsersParams> GetParserSysParsersParams(long hSvc, List<int> sysParsersParamsSetIds);
-        #endregion PARSER
+        //////#region PARSER
+        //////[OperationContract]
+        //////Parser.SysObj GetParserSysObj(long hSvc, int sysObjId);
+        //////[OperationContract]
+        //////List<Parser.SysParsersXSites> GetParserSysParsersXSites(long hSvc, int sysObjId);
+        //////[OperationContract]
+        //////List<Parser.SysParsersParams> GetParserSysParsersParams(long hSvc, List<int> sysParsersParamsSetIds);
+        //////#endregion PARSER
 
         #region SOCIAL
 

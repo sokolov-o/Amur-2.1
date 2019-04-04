@@ -7,8 +7,8 @@
     <ProjectGuid>{DA541FAB-7762-49A4-BC85-F6FF4D74E28B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FERHRI.Social</RootNamespace>
-    <AssemblyName>FERHRI.SocialBL</AssemblyName>
+    <RootNamespace>SOV.Social</RootNamespace>
+    <AssemblyName>SOV.SocialBL</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

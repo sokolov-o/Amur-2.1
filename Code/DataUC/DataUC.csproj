@@ -320,11 +320,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Social\SocialBL\SocialBL.csproj">
+    <ProjectReference Include="..\Social\SocialBL\SocialBL.csproj">
       <Project>{da541fab-7762-49a4-bc85-f6ff4d74e28b}</Project>
       <Name>SocialBL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Social\SocialDAL\SocialDAL.csproj">
+    <ProjectReference Include="..\Social\SocialDAL\SocialDAL.csproj">
       <Project>{81804cf3-0bf8-459c-8e8e-b9f81e52cf57}</Project>
       <Name>SocialDAL</Name>
     </ProjectReference>

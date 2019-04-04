@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
-using FERHRI.Amur.Meta;
-using FERHRI.Amur.Data;
-using FERHRI.Amur.DataP;
-using FERHRI.Social;
+using SOV.Amur.Meta;
+using SOV.Amur.Data;
+using SOV.Social;
 
-namespace FERHRI.Amur.Service
+namespace SOV.Amur.Service
 {
     //[ServiceBehavior(IncludeExceptionDetailInFaults = true)]
     public partial class Service : IService
@@ -35,7 +34,7 @@ namespace FERHRI.Amur.Service
         /// <returns>Набор образцов.</returns>
         public List<Site> GetSitesInBox(long hSvc, double south, double north, double west, double east)
         {
-            return DataManagerMeta(hSvc).SiteRepository.SelectInBox(south, north, west, east);
+            return DataManagerMeta(hSvc).SiteRepository.SelectExtent(south, north, west, east);
         }
         /// <summary>
         /// Получить набор всех образцов.
@@ -221,20 +220,20 @@ namespace FERHRI.Amur.Service
         /// Получить набор географических объектов.
         /// </summary>
         /// <returns>Набор географических объектов.</returns>
-        public Dictionary<int, GeoObject> GetGeoObjectsByStationIds(long hSvc, List<int> stationIds)
+        public Dictionary<int, GeoObject> GetGeoObjectsBySiteIds(long hSvc, List<int> siteIds)
         {
             Meta.DataManager dm = DataManagerMeta(hSvc);
 
-            List<StationGeoObject> sgos = dm.StationGeoObjectRepository.SelectByStations(stationIds);
+            List<SiteGeoObject> sgos = dm.SiteGeoObjectRepository.SelectBySites(siteIds);
             List<GeoObject> gos = dm.GeoObjectRepository.Select(sgos.Select(x => x.GeoObjectId).Distinct().ToList());
 
             Dictionary<int, GeoObject> ret = new Dictionary<int, GeoObject>();
-            foreach (var stationId in stationIds)
+            foreach (var siteId in siteIds)
             {
                 GeoObject go = null;
-                if (sgos.FirstOrDefault(x => x.StationId == stationId) != null)
+                if (sgos.FirstOrDefault(x => x.SiteId == siteId) != null)
                     go = gos.FirstOrDefault(x => x.Id == go.Id);
-                ret.Add(stationId, go);
+                ret.Add(siteId, go);
             }
             return ret;
         }
@@ -346,7 +345,7 @@ namespace FERHRI.Amur.Service
         /// Получить набор всех типов значений.
         /// </summary>
         /// <returns>Набор типов значений.</returns>
-        public List<FERHRI.Amur.Meta.ValueType> GetValueTypesAll(long hSvc)
+        public List<SOV.Amur.Meta.ValueType> GetValueTypesAll(long hSvc)
         {
             return DataManagerMeta(hSvc).ValueTypeRepository.Select(null);
         }
@@ -362,9 +361,9 @@ namespace FERHRI.Amur.Service
         /// Получить пункты по их индексам/кодам.
         /// </summary>
         /// <returns>Пункты с указанными кодами.</returns>
-        public List<Site> GetSitesByIndices(long hSvc, List<string> siteIndices)
+        public List<Site> GetSitesByCodes(long hSvc, List<string> siteCodes)
         {
-            return DataManagerMeta(hSvc).SiteRepository.SelectByIndeces(siteIndices);
+            return DataManagerMeta(hSvc).SiteRepository.SelectByCodes(siteCodes);
         }
         /// <summary>
         /// Выбрать пункты заданного региона.
@@ -383,7 +382,7 @@ namespace FERHRI.Amur.Service
         /// <returns>Список типов станций.</returns>
         public List<SiteType> GetSiteTypes(long hSvc)
         {
-            return DataManagerMeta(hSvc).StationTypeRepository.Select();
+            return DataManagerMeta(hSvc).SiteTypeRepository.Select();
         }
         /// <summary>
         /// Список наблюдательных пунктов указанной станции.
@@ -410,9 +409,15 @@ namespace FERHRI.Amur.Service
         {
             return DataManagerMeta(hSvc).SiteRepository.SelectByType(siteTypeId);
         }
+        /// <summary>
+        /// Выбрать пункты, относящиеся к группе и отсортировать их в порядке, указанном в группе.
+        /// </summary>
+        /// <param name="hSvc">Ручка сервиса.</param>
+        /// <param name="siteGroupId">Код группы пунктов.</param>
+        /// <returns>Список пунктов группы, отсортированные в порядке, указанном в группе.</returns>
         public List<Site> GetSitesByGroup(long hSvc, int siteGroupId)
         {
-            return DataManagerMeta(hSvc).SiteGroupRepository.SelectGroupFK(siteGroupId).SiteList;
+            return DataManagerMeta(hSvc).SiteRepository.SelectSitesByGroup(siteGroupId);
         }
         /////// <summary>
         /////// Получить список всех типов наблюдательных пунктов.
@@ -618,25 +623,25 @@ namespace FERHRI.Amur.Service
         #endregion DATA
 
         #region DATAP
-        public List<AQCDataValue> GetDataPDataValueAQC(long hSvc, long dvId)
-        {
-            return DataManagerDataP(hSvc).AQCRepository.SelectDataValueAQC(dvId);
-        }
+        //////public List<AQCDataValue> GetDataPDataValueAQC(long hSvc, long dvId)
+        //////{
+        //////    return DataManagerDataP(hSvc).AQCRepository.SelectDataValueAQC(dvId);
+        //////}
         #endregion DATAP
 
         #region PARSER
-        public Parser.SysObj GetParserSysObj(long hSvc, int sysObjId)
-        {
-            return DataManagerParser(hSvc).SysObjRepository.Select(new List<int>(new int[] { sysObjId }))[0];
-        }
-        public List<Parser.SysParsersXSites> GetParserSysParsersXSites(long hSvc, int sysObjId)
-        {
-            return DataManagerParser(hSvc).SysParsersXSitesRepository.Select(sysObjId);
-        }
-        public List<Parser.SysParsersParams> GetParserSysParsersParams(long hSvc, List<int> sysParsersParamsSetIds)
-        {
-            return DataManagerParser(hSvc).SysParsersParamsRepository.Select(sysParsersParamsSetIds);
-        }
+        //////public Parser.SysObj GetParserSysObj(long hSvc, int sysObjId)
+        //////{
+        //////    return DataManagerParser(hSvc).SysObjRepository.Select(new List<int>(new int[] { sysObjId }))[0];
+        //////}
+        //////public List<Parser.SysParsersXSites> GetParserSysParsersXSites(long hSvc, int sysObjId)
+        //////{
+        //////    return DataManagerParser(hSvc).SysParsersXSitesRepository.Select(sysObjId);
+        //////}
+        //////public List<Parser.SysParsersParams> GetParserSysParsersParams(long hSvc, List<int> sysParsersParamsSetIds)
+        //////{
+        //////    return DataManagerParser(hSvc).SysParsersParamsRepository.Select(sysParsersParamsSetIds);
+        //////}
 
         #endregion PARSER
     }

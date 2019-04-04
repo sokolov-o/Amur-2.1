@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="FERHRI.Amur.Service.Service" CodeBehind="Service.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SOV.Amur.Service.Service" CodeBehind="Service.svc.cs" %>

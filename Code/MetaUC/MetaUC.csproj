@@ -508,7 +508,15 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Social\SocialUC\SocialUC.csproj">
+    <ProjectReference Include="..\MetaDAL\MetaDAL.csproj">
+      <Project>{73194647-7254-44fe-86a1-97aaf2b47f88}</Project>
+      <Name>MetaDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Meta\Meta.csproj">
+      <Project>{9ff17c08-ffd4-40fb-a371-c5907b7b4d27}</Project>
+      <Name>Meta</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Social\SocialUC\SocialUC.csproj">
       <Project>{ad3354de-84c3-49b0-bf6f-b3c4d2f381da}</Project>
       <Name>SocialUC</Name>
     </ProjectReference>
@@ -519,14 +527,6 @@
     <ProjectReference Include="..\Common\CommonUC\CommonUC.csproj">
       <Project>{bb34a841-7cbe-4c0d-8268-6aece9b7271e}</Project>
       <Name>CommonUC</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MetaDAL\MetaDAL.csproj">
-      <Project>{73194647-7254-44fe-86a1-97aaf2b47f88}</Project>
-      <Name>MetaDAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Meta\Meta.csproj">
-      <Project>{9ff17c08-ffd4-40fb-a371-c5907b7b4d27}</Project>
-      <Name>Meta</Name>
     </ProjectReference>
     <ProjectReference Include="..\Social\SocialBL\SocialBL.csproj">
       <Project>{da541fab-7762-49a4-bc85-f6ff4d74e28b}</Project>

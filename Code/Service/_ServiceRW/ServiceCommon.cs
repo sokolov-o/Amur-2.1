@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
-using FERHRI.Amur.Meta;
-using FERHRI.Amur.Data;
+using SOV.Amur.Meta;
+using SOV.Amur.Data;
 using System.Configuration;
 
-namespace FERHRI.Amur.Service
+namespace SOV.Amur.Service
 {
     //[ServiceBehavior(IncludeExceptionDetailInFaults = true)]
     /// <summary>
@@ -117,10 +117,10 @@ namespace FERHRI.Amur.Service
                 return ret;
             throw new Exception("Указанный идентификатор сессии не зарегистрирован в сервисе " + hSvc);
         }
-        static public DataP.DataManager DataManagerDataP(long hSvc)
-        {
-            return DataP.DataManager.GetInstance(GetConnectionString(hSvc));
-        }
+        //static public DataP.DataManager DataManagerDataP(long hSvc)
+        //{
+        //    return DataP.DataManager.GetInstance(GetConnectionString(hSvc));
+        //}
         static public Meta.DataManager DataManagerMeta(long hSvc)
         {
             return Meta.DataManager.GetInstance(GetConnectionString(hSvc));
@@ -129,9 +129,9 @@ namespace FERHRI.Amur.Service
         {
             return Social.DataManager.GetInstance(GetConnectionString(hSvc));
         }
-        static public Parser.DataManager DataManagerParser(long hSvc)
-        {
-            return Parser.DataManager.GetInstance(GetConnectionString(hSvc));
-        }
+        //static public Parser.DataManager DataManagerParser(long hSvc)
+        //{
+        //    return Parser.DataManager.GetInstance(GetConnectionString(hSvc));
+        //}
     }
 }

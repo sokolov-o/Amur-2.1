@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using SOV.Common;
 using Npgsql;
+using SOV.Amur.Meta;
+
 
 namespace SOV.Amur.Meta
 {

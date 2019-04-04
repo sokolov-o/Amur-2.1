@@ -7,7 +7,7 @@ using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Text;
 
-namespace FERHRI.Amur.Service
+namespace SOV.Amur.Service
 {
     //[ServiceContract(Namespace = "")]
     //[AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]

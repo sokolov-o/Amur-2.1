@@ -4,27 +4,27 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using FERHRI.Amur;
-using FERHRI.Amur.Meta;
-using FERHRI.Amur.Data;
+using SOV.Amur;
+using SOV.Amur.Meta;
+using SOV.Amur.Data;
 
-namespace FERHRI.Amur.Service
+namespace SOV.Amur.Service
 {
     [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
     public partial class Service : IService
     {
         #region DATAP
-        /// <summary>
-        /// Сохранить правило обработки данных.
-        /// </summary>
-        /// <param name="hSvc"></param>
-        /// <param name="dvId"></param>
-        /// <param name="roleId"></param>
-        /// <param name="isAQCApplied"></param>
-        public void SaveDataPRole(long hSvc, long dvId, int roleId, bool isAQCApplied)
-        {
-            DataManagerDataP(hSvc).AQCRepository.InsertDataValueAQC(dvId, roleId, isAQCApplied);
-        }
+        ///////// <summary>
+        ///////// Сохранить правило обработки данных.
+        ///////// </summary>
+        ///////// <param name="hSvc"></param>
+        ///////// <param name="dvId"></param>
+        ///////// <param name="roleId"></param>
+        ///////// <param name="isAQCApplied"></param>
+        //////public void SaveDataPRole(long hSvc, long dvId, int roleId, bool isAQCApplied)
+        //////{
+        //////    DataManagerDataP(hSvc).AQCRepository.InsertDataValueAQC(dvId, roleId, isAQCApplied);
+        //////}
         #endregion DATAP
 
         #region DATA
@@ -32,7 +32,7 @@ namespace FERHRI.Amur.Service
         /// Актуализация значения - Установить значению с кодом _id ЕДИНСТВЕННЫЙ СРЕДИ ВСЕХ ЗНАЧЕНИЙ флаг 40 (Подтверждено специалистом)..
         /// 1) Всем значения с флагом 40 (Подтверждено специалистом) переопределить флаг в 1 (Успешный критконтроль).
         /// 2) Установить значению с кодом _id флаг 40 (Подтверждено специалистом).
-        /// OSokolov@ferhri.ru 2017.01
+        /// OSokolov@SOV.ru 2017.01
         /// </summary>
         /// <param name="hSvc">Ручка сервиса.</param>
         /// <param name="dataValueId">Код актуализируемого значения.</param>
@@ -86,10 +86,6 @@ namespace FERHRI.Amur.Service
             DataManagerMeta(hSvc).VariableCodeRepository.Insert(vc);
         }
 
-        public int SaveStation(long hSvc, Station station)
-        {
-            return DataManagerMeta(hSvc).StationRepository.Insert(station);
-        }
         public int SaveSite(long hSvc, Site site)
         {
             return DataManagerMeta(hSvc).SiteRepository.Insert(site);
@@ -98,17 +94,13 @@ namespace FERHRI.Amur.Service
         {
             DataManagerMeta(hSvc).EntityAttrRepository.InsertUpdateValue("site", eav.EntityId, eav.AttrTypeId, (DateTime)eav.DateS, eav.Value);
         }
-        public void UpdateStation(long hSvc, Station station)
-        {
-            DataManagerMeta(hSvc).StationRepository.Update(station);
-        }
         #endregion META
 
         #region PARSER
-        public void SaveParserSysObjLastStartParam(long hSvc, int sysObjId, string lastStartParam)
-        {
-            DataManagerParser(hSvc).SysObjRepository.UpdateLastStartParam(sysObjId, lastStartParam);
-        }
+        //////public void SaveParserSysObjLastStartParam(long hSvc, int sysObjId, string lastStartParam)
+        //////{
+        //////    DataManagerParser(hSvc).SysObjRepository.UpdateLastStartParam(sysObjId, lastStartParam);
+        //////}
         #endregion PARSER
     }
 }

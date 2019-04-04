@@ -22,7 +22,7 @@ namespace SOV.Amur.Meta
         {
             Id = id;
             Name = name;
-            Mandatories = Common.StrVia.ToListInt(mandatories);
+            Mandatories = SOV.Common.StrVia.ToListInt(mandatories);
         }
         public EntityAttrType(int id, string name, List<int> mandatories)
         {

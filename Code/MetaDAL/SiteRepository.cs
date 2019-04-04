@@ -121,5 +121,18 @@ namespace SOV.Amur.Meta
             );
 
         }
+        /// <summary>
+        /// Выбрать пункты, относящиеся к группе и отсортировать их в порядке, указанном в группе.
+        /// </summary>
+        /// <param name="siteGroupId">Код группы пунктов.</param>
+        /// <returns>Список пунктов группы, отсортированные в порядке, указанном в группе.</returns>
+        public List<Site> SelectSitesByGroup(int siteGroupId)
+        {
+            List<int[]> idOrder = DataManager.GetInstance().EntityGroupRepository.SelectEntities(siteGroupId);
+            return Select(idOrder.Select(x => x[0]).ToList())
+                .OrderBy(x => idOrder.First(y => y[0] == x.Id)[1])
+                .ToList();
+        }
+
     }
 }

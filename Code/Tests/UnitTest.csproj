@@ -78,7 +78,7 @@
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <ProjectReference Include="..\..\Social\SocialDAL\SocialDAL.csproj">
+    <ProjectReference Include="..\Social\SocialDAL\SocialDAL.csproj">
       <Project>{81804cf3-0bf8-459c-8e8e-b9f81e52cf57}</Project>
       <Name>SocialDAL</Name>
     </ProjectReference>

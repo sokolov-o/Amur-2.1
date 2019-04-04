@@ -4,10 +4,10 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using FERHRI.Amur.Meta;
-using FERHRI.Amur.Data;
+using SOV.Amur.Meta;
+using SOV.Amur.Data;
 
-namespace FERHRI.Amur.Service
+namespace SOV.Amur.Service
 {
     public partial interface IService
     {
@@ -20,13 +20,6 @@ namespace FERHRI.Amur.Service
         [OperationContract]
         void SaveVariableCode(long hSvc, VariableCode vc);
         /// <summary>
-        /// Изменить параметры станции.
-        /// </summary>
-        /// <param name="hSvc">Ручка сервиса.</param>
-        /// <param name="station">Станция.</param>
-        [OperationContract]
-        void UpdateStation(long hSvc, Station station);
-        /// <summary>
         /// Вставить или обновить атрибут пункта.
         /// </summary>
         /// <param name="hSvc">Ручка сервиса.</param>
@@ -35,8 +28,6 @@ namespace FERHRI.Amur.Service
         void SaveSiteAttribute(long hSvc, EntityAttrValue eav);
         [OperationContract]
         int SaveSite(long hSvc, Site site);
-        [OperationContract]
-        int SaveStation(long hSvc, Station station);
         [OperationContract]
         Catalog SaveCatalog(long hSvc, Catalog catalog);
         #endregion META
@@ -55,7 +46,7 @@ namespace FERHRI.Amur.Service
         /// 1) Всем значения с флагом 40 (Подтверждено специалистом) переопределить флаг в 1 (Успешный критконтроль).
         /// 2) Установить значению с указанным кодом флаг 40 (Подтверждено специалистом).
         /// 
-        /// OSokolov@ferhri.ru 2017.01
+        /// OSokolov@SOV.ru 2017.01
         /// </summary>
         /// <param name="hSvc">Ручка сервиса.</param>
         /// <param name="dataValueId">Код актуализируемого значения.</param>
@@ -76,13 +67,13 @@ namespace FERHRI.Amur.Service
         #endregion DATA
 
         #region DATAP
-        [OperationContract]
-        void SaveDataPRole(long hSvc, long dvId, int roleId, bool isAQCApplied);
+        //[OperationContract]
+        //void SaveDataPRole(long hSvc, long dvId, int roleId, bool isAQCApplied);
         #endregion DATAP
 
         #region PARSER
-        [OperationContract]
-        void SaveParserSysObjLastStartParam(long hSvc, int sysObjId, string lastStartParam);
+        //[OperationContract]
+        //void SaveParserSysObjLastStartParam(long hSvc, int sysObjId, string lastStartParam);
         #endregion PARSER
 
     }

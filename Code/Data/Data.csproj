@@ -7,8 +7,8 @@
     <ProjectGuid>{05E27F14-D92F-415D-B6AC-6EC2A28ACF98}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Data1</RootNamespace>
-    <AssemblyName>Data1</AssemblyName>
+    <RootNamespace>SOV.Meta.Data</RootNamespace>
+    <AssemblyName>SOV.Meta.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -7,8 +7,8 @@
     <ProjectGuid>{81804CF3-0BF8-459C-8E8E-B9F81E52CF57}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FERHRI.Social</RootNamespace>
-    <AssemblyName>FERHRI.SocialDAL</AssemblyName>
+    <RootNamespace>SOV.Social</RootNamespace>
+    <AssemblyName>SOV.SocialDAL</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

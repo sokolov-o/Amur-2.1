@@ -7,8 +7,8 @@
     <ProjectGuid>{9FF17C08-FFD4-40FB-A371-C5907B7B4D27}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FERHRI.Amur.Meta</RootNamespace>
-    <AssemblyName>FERHRI.Amur.Meta</AssemblyName>
+    <RootNamespace>SOV.Amur.Meta</RootNamespace>
+    <AssemblyName>SOV.Amur.Meta</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
