@@ -530,11 +530,11 @@
     </ProjectReference>
     <ProjectReference Include="..\MetaDAL\MetaDAL.csproj">
       <Project>{73194647-7254-44fe-86a1-97aaf2b47f88}</Project>
-      <Name>AmurMetaDAL</Name>
+      <Name>MetaDAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Meta\Meta.csproj">
       <Project>{9ff17c08-ffd4-40fb-a371-c5907b7b4d27}</Project>
-      <Name>AmurMeta</Name>
+      <Name>Meta</Name>
     </ProjectReference>
     <ProjectReference Include="..\Sys\Sys.csproj">
       <Project>{d8026d66-63cd-40f2-b07a-224abfa6ac5a}</Project>

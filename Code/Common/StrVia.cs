@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace FERHRI.Common
+namespace SOV.Common
 {
     public class StrVia
     {

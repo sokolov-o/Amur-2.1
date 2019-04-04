@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Npgsql;
 
-namespace FERHRI.Common
+namespace SOV.Common
 {
     /// <summary>
     /// Базовый репозиторий. Содержит общие функции работы с БД. T - основной класс-обертка для результатов запроса. 

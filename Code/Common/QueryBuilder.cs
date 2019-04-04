@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace FERHRI.Common
+namespace SOV.Common
 {
     public enum QueryPredicate
     {

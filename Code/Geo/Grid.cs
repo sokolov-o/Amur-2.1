@@ -4,9 +4,9 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
-//using FERHRI.Common;
+//using SOV.Common;
 
-namespace FERHRI.Geo
+namespace SOV.Geo
 {
     /// <summary>
     /// 
@@ -107,9 +107,9 @@ namespace FERHRI.Geo
             LonsMin = ToArrayLonMin(lonQ);
             LatsMin = ToArrayLatMin(latQ);
 
-            switch ((FERHRI.Geo.EnumProjection)TypeId)
+            switch ((SOV.Geo.EnumProjection)TypeId)
             {
-                case FERHRI.Geo.EnumProjection.LATLON:
+                case SOV.Geo.EnumProjection.LATLON:
                     Test();
                     break;
                 default:
@@ -126,7 +126,7 @@ namespace FERHRI.Geo
             if (gaussLatsGrd[0] < gaussLatsGrd[gaussLatsGrd.Length - 1]) throw new Exception("(gaussLatsGrd[0] < gaussLatsGrd[gaussLatsGrd.Length - 1])");
 
             this.Id = id;
-            this.TypeId = (int)FERHRI.Geo.EnumProjection.GAUSS;
+            this.TypeId = (int)SOV.Geo.EnumProjection.GAUSS;
 
             this.LonStepMin = lonStepMin;
             this.LonStartMin = lonStartMin;

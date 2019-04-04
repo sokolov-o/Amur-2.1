@@ -7,7 +7,7 @@ using Npgsql;
 using System.IO;
 using System.Xml.Linq;
 
-namespace FERHRI.Common
+namespace SOV.Common
 {
     public class RuDbException : DbException
     {

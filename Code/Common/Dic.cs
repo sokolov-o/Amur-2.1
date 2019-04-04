@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace FERHRI.Common
+namespace SOV.Common
 {
     /// <summary>
     /// Словарь: id, name, nameShort, Description

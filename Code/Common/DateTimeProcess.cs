@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 //using Viaware.Sakura.Meta;
 
-namespace FERHRI.Common
+namespace SOV.Common
 {
     public class DateTimeProcess
     {

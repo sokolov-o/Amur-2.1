@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
 
-namespace FERHRI.Common
+namespace SOV.Common
 {
     public static class ObjectHandler
     {

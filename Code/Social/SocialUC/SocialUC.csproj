@@ -157,11 +157,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Amur.20\Common\Common.csproj">
+    <ProjectReference Include="..\..\Common\Common.csproj">
       <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Amur.20\Common\CommonUC\CommonUC.csproj">
+    <ProjectReference Include="..\..\Common\CommonUC\CommonUC.csproj">
       <Project>{BB34A841-7CBE-4C0D-8268-6AECE9B7271E}</Project>
       <Name>CommonUC</Name>
     </ProjectReference>

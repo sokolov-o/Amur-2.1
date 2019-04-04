@@ -7,8 +7,8 @@
     <ProjectGuid>{34F63CAA-4627-4434-BE40-16AC1B3D2541}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FERHRI.Geo</RootNamespace>
-    <AssemblyName>FERHRI.Geo</AssemblyName>
+    <RootNamespace>SOV.Geo</RootNamespace>
+    <AssemblyName>SOV.Geo</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -49,7 +49,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Amur.20\Common\Common.csproj">
+    <ProjectReference Include="..\Common\Common.csproj">
       <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
       <Name>Common</Name>
     </ProjectReference>

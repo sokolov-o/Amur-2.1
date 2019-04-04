@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using FERHRI.Common.Properties;
+using SOV.Common.Properties;
 
-namespace FERHRI.Common
+namespace SOV.Common
 {
     public enum TableFieldUCType
     {

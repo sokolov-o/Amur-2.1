@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
-namespace FERHRI.Common
+namespace SOV.Common
 {
     /// <summary>
     /// Доступ к БД через бибдиотеку MSSql

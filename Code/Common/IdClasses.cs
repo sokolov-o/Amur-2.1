@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 
-namespace FERHRI.Common
+namespace SOV.Common
 {
     [DataContract]
     public class IdNameParent : IdName

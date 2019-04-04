@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using FERHRI.Common;
+using SOV.Common;
 using System.Runtime.Serialization;
 
-namespace FERHRI.Geo
+namespace SOV.Geo
 {
     /// <summary>
     /// Географический регион (трапеция на сфере).

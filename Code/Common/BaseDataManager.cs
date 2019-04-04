@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FERHRI.Common
+namespace SOV.Common
 {
     public class BaseDataManager : Common.ADbNpgsql
     {

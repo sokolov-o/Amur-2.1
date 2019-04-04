@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
 
-namespace FERHRI.Common
+namespace SOV.Common
 {
     /// <summary>
     /// Доступ к БД Postgre через бибдиотеку Npgsql
