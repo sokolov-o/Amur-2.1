@@ -21,10 +21,10 @@ namespace SOV.Amur.Service
         ///////// <param name="dvId"></param>
         ///////// <param name="roleId"></param>
         ///////// <param name="isAQCApplied"></param>
-        //////public void SaveDataPRole(long hSvc, long dvId, int roleId, bool isAQCApplied)
-        //////{
-        //////    DataManagerDataP(hSvc).AQCRepository.InsertDataValueAQC(dvId, roleId, isAQCApplied);
-        //////}
+        public void SaveDataPRole(long hSvc, long dvId, int roleId, bool isAQCApplied)
+        {
+            DataManagerDataP(hSvc).AQCRepository.InsertDataValueAQC(dvId, roleId, isAQCApplied);
+        }
         #endregion DATAP
 
         #region DATA

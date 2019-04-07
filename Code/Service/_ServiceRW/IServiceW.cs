@@ -67,8 +67,8 @@ namespace SOV.Amur.Service
         #endregion DATA
 
         #region DATAP
-        //[OperationContract]
-        //void SaveDataPRole(long hSvc, long dvId, int roleId, bool isAQCApplied);
+        [OperationContract]
+        void SaveDataPRole(long hSvc, long dvId, int roleId, bool isAQCApplied);
         #endregion DATAP
 
         #region PARSER

@@ -47,7 +47,7 @@ namespace FERHRI.Amur.GISMeteo
             if (node.Attributes["dateS"].Value != string.Empty)
             {
                 DateTime date;
-                if (!Common.DateTimeProcess.TryParse(node.Attributes["dateS"].Value, "yyyyMMdd HH:mm", out date))
+                if (!SOV.Common.DateTimeProcess.TryParse(node.Attributes["dateS"].Value, "yyyyMMdd HH:mm", out date))
                     throw new Exception("Не удалось определить период пополнения данных из файла Settings: " + node.Attributes["dateS"].Value);
                 dateS = date;
             }
@@ -69,15 +69,16 @@ namespace FERHRI.Amur.GISMeteo
                         case "siteGroupId":
                             int siteGroupId = Convert.ToInt32(opt.InnerText);
                             List<Site> sites = svc.GetSitesByGroup(hSvc, siteGroupId);
-                            List<Station> stations = svc.GetStationsByList(hSvc, sites.Select(x => x.StationId).Distinct().ToList());
+                           // List<Station> stations = svc.GetStationsByList(hSvc, sites.Select(x => x.StationId).Distinct().ToList());
                             List<EntityAttrValue> utsOffsets = svc.GetSitesAttrValue(hSvc, sites.Select(x => x.Id).Distinct().ToList(), 1003, DateTime.Now);
-                            List<Station> withoutUTCOffset = new List<Station>();
+                            List<Site> siteNoOffset = new List<Site>();
                             foreach (Site site in sites)
                             {
                                 // STATION CODE
                                 int siteCode = 0;
-                                Station st = stations.Find(x => x.Id == site.StationId);
-                                if (!int.TryParse(st.Code, out siteCode))
+                                ////Station st = stations.Find(x => x.Id == site.StationId);
+                                ////if (!int.TryParse(st.Code, out siteCode))
+                                if (!int.TryParse(site.Code, out siteCode))
                                 {
                                     continue;
                                 }
@@ -86,23 +87,23 @@ namespace FERHRI.Amur.GISMeteo
                                 if (utcOffset == null)
                                 {
                                     utcOffset = new EntityAttrValue() { Value = "10" };
-                                    withoutUTCOffset.Add(st);
+                                    siteNoOffset.Add(site);
                                 }
                                 config.StationGMList.Add(new StationGM()
                                 {
                                     StationIndex = siteCode,
                                     SiteIdAmur = site.Id,
-                                    Name = st.Name,
+                                    Name = site.Name,
                                     UTCOffset = float.Parse(utcOffset.Value)
                                 }
                                 );
                             }
-                            if (withoutUTCOffset.Count > 0)
+                            if (siteNoOffset.Count > 0)
                             {
                                 string msg = "Ошибка. Отсутствует сдвиг от UTC для следующих пунктов:";
-                                for (int i = 0; i < withoutUTCOffset.Count; i++)
+                                for (int i = 0; i < siteNoOffset.Count; i++)
                                 {
-                                    msg += "\n" + (i + 1) + ".\t" + withoutUTCOffset[i].Code + " " + withoutUTCOffset[i].Name;
+                                    msg += "\n" + (i + 1) + ".\t" + siteNoOffset[i].Code + " " + siteNoOffset[i].Name;
                                 }
                                 throw new Exception(msg);
                             }

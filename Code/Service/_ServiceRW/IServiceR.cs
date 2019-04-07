@@ -7,6 +7,7 @@ using System.Text;
 using SOV.Amur.Meta;
 using SOV.Amur.Data;
 using SOV.Social;
+using SOV.Amur.DataP;
 
 namespace SOV.Amur.Service
 {
@@ -461,8 +462,8 @@ namespace SOV.Amur.Service
         #endregion
 
         //////#region DATAP
-        //////[OperationContract]
-        //////List<AQCDataValue> GetDataPDataValueAQC(long hSvc, long dvId);
+        [OperationContract]
+        List<AQCDataValue> GetDataPDataValueAQC(long hSvc, long dvId);
         //////#endregion DATAP
 
         //////#region PARSER

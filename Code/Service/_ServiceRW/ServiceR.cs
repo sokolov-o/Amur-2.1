@@ -7,6 +7,7 @@ using System.ServiceModel;
 using SOV.Amur.Meta;
 using SOV.Amur.Data;
 using SOV.Social;
+using SOV.Amur.DataP;
 
 namespace SOV.Amur.Service
 {
@@ -623,10 +624,10 @@ namespace SOV.Amur.Service
         #endregion DATA
 
         #region DATAP
-        //////public List<AQCDataValue> GetDataPDataValueAQC(long hSvc, long dvId)
-        //////{
-        //////    return DataManagerDataP(hSvc).AQCRepository.SelectDataValueAQC(dvId);
-        //////}
+        public List<AQCDataValue> GetDataPDataValueAQC(long hSvc, long dvId)
+        {
+            return DataManagerDataP(hSvc).AQCRepository.SelectDataValueAQC(dvId);
+        }
         #endregion DATAP
 
         #region PARSER

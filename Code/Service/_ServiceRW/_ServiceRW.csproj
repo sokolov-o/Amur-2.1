@@ -96,6 +96,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\DataPDAL\DataPDAL.csproj">
+      <Project>{e82ebd52-acb7-4b6d-bb18-04f691211a00}</Project>
+      <Name>DataPDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataP\DataP.csproj">
+      <Project>{66ca86b9-31a3-45a4-ba10-99628678fa71}</Project>
+      <Name>DataP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DateYT\DateYT.csproj">
+      <Project>{0ec0624d-6f7b-422f-8ddc-5c8de0e669c7}</Project>
+      <Name>DateYT</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Geo\Geo.csproj">
       <Project>{34f63caa-4627-4434-be40-16ac1b3d2541}</Project>
       <Name>Geo</Name>

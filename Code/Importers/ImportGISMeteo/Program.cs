@@ -19,7 +19,7 @@ namespace FERHRI.Amur.Importer.GISMeteo
         static System.Threading.Timer timer;
         static List<Settings> configList = null;
         static bool isBusy = false;
-        static Common.User user = null;
+        static SOV.Common.User user = null;
 
         static readonly string EVENT_LOG_NAME = "SOV";
         static readonly string EVENT_LOG_SOURCE = "Amur.Import.GisMeteo";
@@ -37,7 +37,7 @@ namespace FERHRI.Amur.Importer.GISMeteo
             // INITIALIZE Amur service
 
             string[] suser = global::FERHRI.Amur.Importer.GISMeteo.Properties.Settings.Default.User.Split(';');
-            user = new Common.User(suser[0], suser[1]);
+            user = new SOV.Common.User(suser[0], suser[1]);
             svc = new ServiceClient();
             svc.Open();
             hSvc = svc.Open(user.Name, user.Password);
@@ -510,119 +510,119 @@ namespace FERHRI.Amur.Importer.GISMeteo
         /// <param name="stationIndex">Индекс станции. Из телеграммы.</param>
         /// <param name="stationName">Наименование станции. Не должно быть null.</param>
         /// <returns>Экземпляр каталога из которого для записи значения в БД Амур будет нужен только Id.</returns>
-        static Catalog GetCatalog_KH02_4_DIstomin(ServiceClient svc, long hSvc, List<Catalog> catalogs, int stationIndex, string stationName, int observObjectCode, int variableId)
-        {
-            // Определяем ключ записи каталога.
+        //////static Catalog GetCatalog_KH02_4_DIstomin(ServiceClient svc, long hSvc, List<Catalog> catalogs, int stationIndex, string stationName, int observObjectCode, int variableId)
+        //////{
+        //////    // Определяем ключ записи каталога.
 
-            // 1. Код типа смещения в пункте измерения (табл. offset_type). 0 - нет смещения.
-            int offsetTypeId = 0;
-            // 2. Значение смещения в пункте измерения. 
-            int offsetValue = 0;
-            // 3. Код метода измерения (табл. method). 0 - наблюдения.
-            int methodId = 0;
-            // 4. Код источника данных (табл. source). 0 - ДВ УГМС. 
-            // Можно заменить на источник "Телеграмма КН-02". Не принципиально.
-            int sourceId = 0;
-            // 5. Код переменной известен из вх. параметров и равен variableId. Он берётся из известного документа...
-            // 6. Код наблюдательного пункта - ниже будем его искать, 
-            // используя информацию об индексе станции (stationIndex) и кода объекта наблюдения (observObjectCode) из вх. параметров метода.
-            int siteId;
+        //////    // 1. Код типа смещения в пункте измерения (табл. offset_type). 0 - нет смещения.
+        //////    int offsetTypeId = 0;
+        //////    // 2. Значение смещения в пункте измерения. 
+        //////    int offsetValue = 0;
+        //////    // 3. Код метода измерения (табл. method). 0 - наблюдения.
+        //////    int methodId = 0;
+        //////    // 4. Код источника данных (табл. source). 0 - ДВ УГМС. 
+        //////    // Можно заменить на источник "Телеграмма КН-02". Не принципиально.
+        //////    int sourceId = 0;
+        //////    // 5. Код переменной известен из вх. параметров и равен variableId. Он берётся из известного документа...
+        //////    // 6. Код наблюдательного пункта - ниже будем его искать, 
+        //////    // используя информацию об индексе станции (stationIndex) и кода объекта наблюдения (observObjectCode) из вх. параметров метода.
+        //////    int siteId;
 
-            // Всё, что выше - это и есть ключ записи каталога данных.
+        //////    // Всё, что выше - это и есть ключ записи каталога данных.
 
-            // Найдём или создадим запись каталога, если её нет. 
-            // А потом, в другом месте, "не в нашем районе",  запишем значение из телеграммы с этим кодом.
+        //////    // Найдём или создадим запись каталога, если её нет. 
+        //////    // А потом, в другом месте, "не в нашем районе",  запишем значение из телеграммы с этим кодом.
 
-            //
-            // Единственное что неизвестно в записи каталога - код пункта.
-            // Ищем станцию и её пункт (station & site) в базе или создадим их.
-            //
+        //////    //
+        //////    // Единственное что неизвестно в записи каталога - код пункта.
+        //////    // Ищем станцию и её пункт (station & site) в базе или создадим их.
+        //////    //
 
-            // Определяем тип станции. Это морской пост, понятно. 
-            // Но, он может идти под индексом метеорологической станции.
-            // 1 - мет. станция, 3 - морской пост. Код из таблицы station_type.
-            int stationType = stationIndex >= 90000 ? 3 : 1;
+        //////    // Определяем тип станции. Это морской пост, понятно. 
+        //////    // Но, он может идти под индексом метеорологической станции.
+        //////    // 1 - мет. станция, 3 - морской пост. Код из таблицы station_type.
+        //////    int stationType = stationIndex >= 90000 ? 3 : 1;
 
-            Station station = svc.GetStationByIndex(hSvc, stationIndex.ToString());
+        //////    Station station = svc.GetStationByIndex(hSvc, stationIndex.ToString());
 
-            // Нет такой станции?
-            if (station == null)
-            {
-                // Нет станции. Создаём её.
-                int stationId = svc.SaveStation(hSvc, new Station() { Id = -1, Code = stationIndex.ToString(), Name = stationName, TypeId = stationType });
-                // Создаём пункт наблюдений для станции. В код пункта вставляем объект наблюдений.
-                // Нужно сделать методом, т.к. дублируется ниже.
-                siteId = svc.SaveSite(hSvc, new Site()
-                {
-                    Id = -1,
-                    SiteCode = "KH02-" + observObjectCode, // Например, так. Можно как попало, лишь бы потом можно было взять код объекта.
-                    StationId = stationId,
-                    SiteTypeId = 3, // Всегда морской пост
-                    Description = "Import procedure auto-created site." // Например, так. Можно как попало. Можно null.
-                });
-            }
-            // Есть такая станция
-            else
-            {
-                // Ищем пункт (сайт) станции с нужным кодом, в котором "сидит" объект наблюдений.
-                List<Site> sites = svc.GetSitesByStation(hSvc, station.Id, 3);
-                Site site = sites.FirstOrDefault(x => x.SiteCode == "КН02-" + observObjectCode);
+        //////    // Нет такой станции?
+        //////    if (station == null)
+        //////    {
+        //////        // Нет станции. Создаём её.
+        //////        int stationId = svc.SaveStation(hSvc, new Station() { Id = -1, Code = stationIndex.ToString(), Name = stationName, TypeId = stationType });
+        //////        // Создаём пункт наблюдений для станции. В код пункта вставляем объект наблюдений.
+        //////        // Нужно сделать методом, т.к. дублируется ниже.
+        //////        siteId = svc.SaveSite(hSvc, new Site()
+        //////        {
+        //////            Id = -1,
+        //////            SiteCode = "KH02-" + observObjectCode, // Например, так. Можно как попало, лишь бы потом можно было взять код объекта.
+        //////            StationId = stationId,
+        //////            SiteTypeId = 3, // Всегда морской пост
+        //////            Description = "Import procedure auto-created site." // Например, так. Можно как попало. Можно null.
+        //////        });
+        //////    }
+        //////    // Есть такая станция
+        //////    else
+        //////    {
+        //////        // Ищем пункт (сайт) станции с нужным кодом, в котором "сидит" объект наблюдений.
+        //////        List<Site> sites = svc.GetSitesByStation(hSvc, station.Id, 3);
+        //////        Site site = sites.FirstOrDefault(x => x.SiteCode == "КН02-" + observObjectCode);
 
-                // Нет пункта?
-                if (site == null)
-                {
-                    // Создаём пункт наблюдений для станции. В код которого вставляем объект наблюдений.
-                    // Нужно сделать методом, т.к. дублируется выше.
-                    siteId = svc.SaveSite(hSvc, new Site()
-                    {
-                        Id = -1,
-                        SiteCode = "KH02-" + observObjectCode,
-                        StationId = station.Id,
-                        SiteTypeId = 3, // Всегда морской пост
-                        Description = "Import procedure auto-created site."
-                    });
-                }
-                // Есть пункт. Ну, хорошо.
-                else
-                {
-                    siteId = site.Id;
-                }
-            }
+        //////        // Нет пункта?
+        //////        if (site == null)
+        //////        {
+        //////            // Создаём пункт наблюдений для станции. В код которого вставляем объект наблюдений.
+        //////            // Нужно сделать методом, т.к. дублируется выше.
+        //////            siteId = svc.SaveSite(hSvc, new Site()
+        //////            {
+        //////                Id = -1,
+        //////                SiteCode = "KH02-" + observObjectCode,
+        //////                StationId = station.Id,
+        //////                SiteTypeId = 3, // Всегда морской пост
+        //////                Description = "Import procedure auto-created site."
+        //////            });
+        //////        }
+        //////        // Есть пункт. Ну, хорошо.
+        //////        else
+        //////        {
+        //////            siteId = site.Id;
+        //////        }
+        //////    }
 
-            // Нашли или создали пункт (сайт).
-            // Теперь ищем в списке или создаём в базе запись каталога для полного ключа.
+        //////    // Нашли или создали пункт (сайт).
+        //////    // Теперь ищем в списке или создаём в базе запись каталога для полного ключа.
 
-            Catalog catalog = catalogs.FirstOrDefault(x =>
-                x.OffsetTypeId == offsetTypeId
-                && x.OffsetValue == offsetValue
-                && x.MethodId == methodId
-                && x.SourceId == sourceId
-                && x.SiteId == siteId
-                && x.VariableId == variableId);
+        //////    Catalog catalog = catalogs.FirstOrDefault(x =>
+        //////        x.OffsetTypeId == offsetTypeId
+        //////        && x.OffsetValue == offsetValue
+        //////        && x.MethodId == methodId
+        //////        && x.SourceId == sourceId
+        //////        && x.SiteId == siteId
+        //////        && x.VariableId == variableId);
 
-            // Нет такой записи каталога? 
-            if (catalog == null)
-            {
-                // Нет. Создаём запись каталога
-                catalog = svc.SaveCatalog(hSvc, new Catalog()
-                {
-                    Id = -1,
-                    OffsetTypeId = offsetTypeId,
-                    OffsetValue = offsetValue,
-                    MethodId = methodId,
-                    SourceId = sourceId,
-                    SiteId = siteId,
-                    VariableId = variableId
-                });
-                // И добавляем созданную запись каталога в список, чтобы потом не читать по 100 раз.
-                // Можно не держать этот список и не таскать его за собой, 
-                // но тогда придётся каждый раз читать таблицу catalog. На каждое значение из телеграммы... а это дорого.
-                catalogs.Add(catalog);
-            }
+        //////    // Нет такой записи каталога? 
+        //////    if (catalog == null)
+        //////    {
+        //////        // Нет. Создаём запись каталога
+        //////        catalog = svc.SaveCatalog(hSvc, new Catalog()
+        //////        {
+        //////            Id = -1,
+        //////            OffsetTypeId = offsetTypeId,
+        //////            OffsetValue = offsetValue,
+        //////            MethodId = methodId,
+        //////            SourceId = sourceId,
+        //////            SiteId = siteId,
+        //////            VariableId = variableId
+        //////        });
+        //////        // И добавляем созданную запись каталога в список, чтобы потом не читать по 100 раз.
+        //////        // Можно не держать этот список и не таскать его за собой, 
+        //////        // но тогда придётся каждый раз читать таблицу catalog. На каждое значение из телеграммы... а это дорого.
+        //////        catalogs.Add(catalog);
+        //////    }
 
-            return catalog;
-            // Для вставки значения из телеграммы в таблицу data_value нужен catalog.id, дата и само значение.
-            // Это где-то в другом месте.
-        }
+        //////    return catalog;
+        //////    // Для вставки значения из телеграммы в таблицу data_value нужен catalog.id, дата и само значение.
+        //////    // Это где-то в другом месте.
+        //////}
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_ServiceRW", "_ServiceRW\_ServiceRW.csproj", "{983D54D8-263D-4BD3-A8A5-965CFCB4912D}"
 EndProject
@@ -20,6 +20,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialDAL", "..\Social\SocialDAL\SocialDAL.csproj", "{81804CF3-0BF8-459C-8E8E-B9F81E52CF57}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geo", "..\Geo\Geo.csproj", "{34F63CAA-4627-4434-BE40-16AC1B3D2541}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataP", "..\DataP\DataP.csproj", "{66CA86B9-31A3-45A4-BA10-99628678FA71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateYT", "..\DateYT\DateYT.csproj", "{0EC0624D-6F7B-422F-8DDC-5C8DE0E669C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataPDAL", "..\DataPDAL\DataPDAL.csproj", "{E82EBD52-ACB7-4B6D-BB18-04F691211A00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +69,18 @@ Global
 		{34F63CAA-4627-4434-BE40-16AC1B3D2541}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34F63CAA-4627-4434-BE40-16AC1B3D2541}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34F63CAA-4627-4434-BE40-16AC1B3D2541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66CA86B9-31A3-45A4-BA10-99628678FA71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66CA86B9-31A3-45A4-BA10-99628678FA71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66CA86B9-31A3-45A4-BA10-99628678FA71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66CA86B9-31A3-45A4-BA10-99628678FA71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EC0624D-6F7B-422F-8DDC-5C8DE0E669C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EC0624D-6F7B-422F-8DDC-5C8DE0E669C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EC0624D-6F7B-422F-8DDC-5C8DE0E669C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EC0624D-6F7B-422F-8DDC-5C8DE0E669C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E82EBD52-ACB7-4B6D-BB18-04F691211A00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E82EBD52-ACB7-4B6D-BB18-04F691211A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E82EBD52-ACB7-4B6D-BB18-04F691211A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E82EBD52-ACB7-4B6D-BB18-04F691211A00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

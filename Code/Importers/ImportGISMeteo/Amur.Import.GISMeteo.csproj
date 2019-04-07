@@ -68,6 +68,7 @@
     <ApplicationIcon>112_DownArrowLong_Blue.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SOV.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -179,25 +180,13 @@
     <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.SiteAttrType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.SiteType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.SiteXSite.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.SiteXSiteType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.Station.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.StationType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.SysObj.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.SysParsersParams.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.SysParsersXSites.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.Unit.datasource">
@@ -232,9 +221,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AmurService\Service16.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AmurService\Service17.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AmurService\Service18.xsd">
@@ -297,7 +283,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 и x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -314,22 +300,22 @@
   <ItemGroup>
     <PublishFile Include="SettingsKHB.xml">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="SettingsVVO.xml">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

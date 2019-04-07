@@ -7,8 +7,8 @@
     <ProjectGuid>{E82EBD52-ACB7-4B6D-BB18-04F691211A00}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FERHRI.Amur.DataP</RootNamespace>
-    <AssemblyName>FERHRI.Amur.DataP.DataPDAL</AssemblyName>
+    <RootNamespace>SOV.Amur.DataP</RootNamespace>
+    <AssemblyName>SOV.Amur.DataP.DataPDAL</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

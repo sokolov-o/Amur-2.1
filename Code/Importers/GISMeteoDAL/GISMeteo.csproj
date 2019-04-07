@@ -7,8 +7,8 @@
     <ProjectGuid>{FB18DD70-50F8-4FC7-B0EA-7F53ADB092E1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FERHRI.Amur.GISMeteo</RootNamespace>
-    <AssemblyName>FERHRI.Amur.GISMeteo</AssemblyName>
+    <RootNamespace>SOV.Amur.GISMeteo</RootNamespace>
+    <AssemblyName>SOV.Amur.GISMeteo</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

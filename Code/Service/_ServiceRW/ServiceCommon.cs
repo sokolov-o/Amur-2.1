@@ -117,10 +117,10 @@ namespace SOV.Amur.Service
                 return ret;
             throw new Exception("Указанный идентификатор сессии не зарегистрирован в сервисе " + hSvc);
         }
-        //static public DataP.DataManager DataManagerDataP(long hSvc)
-        //{
-        //    return DataP.DataManager.GetInstance(GetConnectionString(hSvc));
-        //}
+        static public DataP.DataManager DataManagerDataP(long hSvc)
+        {
+            return DataP.DataManager.GetInstance(GetConnectionString(hSvc));
+        }
         static public Meta.DataManager DataManagerMeta(long hSvc)
         {
             return Meta.DataManager.GetInstance(GetConnectionString(hSvc));
