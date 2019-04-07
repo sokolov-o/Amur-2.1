@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_ServiceRW", "_ServiceRW\_ServiceRW.csproj", "{983D54D8-263D-4BD3-A8A5-965CFCB4912D}"
 EndProject
@@ -26,6 +26,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateYT", "..\DateYT\DateYT.csproj", "{0EC0624D-6F7B-422F-8DDC-5C8DE0E669C7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataPDAL", "..\DataPDAL\DataPDAL.csproj", "{E82EBD52-ACB7-4B6D-BB18-04F691211A00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonMath", "..\CommonMath\CommonMath.csproj", "{FFE71285-3013-4590-8130-6D5C559153CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{E82EBD52-ACB7-4B6D-BB18-04F691211A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E82EBD52-ACB7-4B6D-BB18-04F691211A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E82EBD52-ACB7-4B6D-BB18-04F691211A00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFE71285-3013-4590-8130-6D5C559153CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFE71285-3013-4590-8130-6D5C559153CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFE71285-3013-4590-8130-6D5C559153CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFE71285-3013-4590-8130-6D5C559153CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
