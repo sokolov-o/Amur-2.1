@@ -40,6 +40,10 @@ namespace TestService
                 //client = GetClient(@"http://10.8.3.180:8001/Service.svc");
                 client = GetClient(@"http://localhost:8001/Service.svc");
 
+                // TEST SERVICE CONNETION
+                string answer = client.TestServiceConnection(UserName, UserPassword);
+                Console.WriteLine(answer);
+
                 // Дескриптор сеанса/сессии сервиса
                 hSvc = client.Open(UserName, UserPassword);  // Корректный идентификатор сессии
                 if (hSvc < 1)
