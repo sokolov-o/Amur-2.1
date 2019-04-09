@@ -90,11 +90,6 @@ namespace SOV.Amur.Meta
             var fields = new Dictionary<string, object>() { { "site_type_id", siteTypeIds } };
             return Select(fields);
         }
-        public virtual List<Site> SelectByParents(List<int> parentIds)
-        {
-            var fields = new Dictionary<string, object>() { { "parent_id", parentIds } };
-            return Select(fields);
-        }
         public List<Site> SelectExtent(double south, double north, double west, double east)
         {
             var fields = new Dictionary<string, object>() { { "south", south }, { "north", north }, { "west", west }, { "east", east } };

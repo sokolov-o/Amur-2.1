@@ -14,17 +14,16 @@ namespace SOV.Amur.DataP
         {
             _db = db;
         }
-        public DerivedDayAttr Select(int methodDerId,int dateTypeDstId, int stationTypeId, int siteTypeId, int meteoZoneId, int varId, int offsetTypeId, double offsetValue)
+        public DerivedDayAttr Select(int methodDerId,int dateTypeDstId, int siteTypeId, int meteoZoneId, int varId, int offsetTypeId, double offsetValue)
         {
             using (NpgsqlConnection cnn = _db.Connection)
             {
                 using (NpgsqlCommand cmd = new NpgsqlCommand("select * from datap.derived_day_attr  " +
-                    " where method_id=:methodDerId and station_type_id=:stationTypeId and site_type_id=:siteTypeId " +
+                    " where method_id=:methodDerId and site_type_id=:siteTypeId " +
                     " and meteo_zone=:meteoZoneId and variable_id=:variableId and offset_type_id=:offsetTypeId and offset_value=:offsetValue"+
                     " and dst_date_type_id=:dateTypeDstId", cnn))
                 {
                     cmd.Parameters.AddWithValue(":methodDerId", methodDerId);
-                    cmd.Parameters.AddWithValue(":stationTypeId", stationTypeId);
                     cmd.Parameters.AddWithValue(":siteTypeId", siteTypeId);
                     cmd.Parameters.AddWithValue(":meteoZoneId", meteoZoneId);
                     cmd.Parameters.AddWithValue(":variableId", varId);
@@ -41,7 +40,6 @@ namespace SOV.Amur.DataP
                                 (int)rdr["id"],
                                 rdr["name"].ToString(),
                                 (int)rdr["method_id"],
-                                (int)rdr["station_type_id"],
                                 (int)rdr["site_type_id"],
                                 (int)rdr["meteo_zone"],
                                 (int)rdr["variable_id"],

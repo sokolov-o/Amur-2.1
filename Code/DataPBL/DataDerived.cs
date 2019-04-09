@@ -101,29 +101,28 @@ namespace SOV.Amur.DataP
 
         public static void CalcDerived(DerivedTask dt, DateTime? dateS, DateTime? dateF, bool isWriterLog)
         {
-            SiteRepository siteR = Meta.DataManager.GetInstance().SiteRepository;
+            SiteRepository siteRepos = Meta.DataManager.GetInstance().SiteRepository;
             int? siteGroupId = dt.GetSiteGroupId();
             List<Site> sites;
 
+            // Расчет либо для группы пунктов, либо для отдельного пункта.
+            // Если не задана ни группа, ни отдельный пункт, то расчет выполняется для всех пунктов заданного в dt типа.
+            // Если и типа нет - excewption
+
             if (siteGroupId != null)
             {
-                EntityGroupRepository egr = Meta.DataManager.GetInstance().EntityGroupRepository;
-                var sitesId = egr.SelectEntities((int)siteGroupId);
-                List<int> siteIdArr = new List<int>();
-                foreach (var siteId in sitesId)
-                {
-                    siteIdArr.Add(siteId[0]);
-                }
-                sites = siteR.Select(siteIdArr);
+                List<int[]> sitesId = Meta.DataManager.GetInstance().EntityGroupRepository.SelectEntities((int)siteGroupId);
+                sites = siteRepos.Select(sitesId.Select(x => x[0]).ToList());
             }
             else
             {
                 int? siteId = dt.GetSiteId();
                 if (siteId != null)
-                    sites = siteR.Select(new List<int>() { (int)siteId });
+                    sites = siteRepos.Select(new List<int>() { (int)siteId });
                 else
-                    sites = siteR.SelectByType(dt.StationTypeId, dt.SiteTypeId);
+                    sites = siteRepos.SelectByType(dt.SiteTypeId);
             }
+
             #region DateSF
             if (!dt.IsFcsData)
             {
@@ -150,6 +149,7 @@ namespace SOV.Amur.DataP
 
             }
             #endregion
+
             int logId = isWriterLog ? Sys.DataManager.GetInstance().LogRepository.Insert(3, "START task=" + dt.Id, null, false) : -1;
 
             switch (dt.MethodDerId)
@@ -495,7 +495,7 @@ namespace SOV.Amur.DataP
             {
                 int countRow = 0;
                 Console.WriteLine();
-                Console.Write("site " + site.SiteCode + ".");
+                Console.Write("site " + site.Code + ".");
                 //определить catalogId для обеих переменных
                 Catalog ctlHSrc, ctlQSrc, ctlDst;
                 if (!catalogSrcH.TryGetValue(site.Id, out ctlHSrc) || !catalogSrcQ.TryGetValue(site.Id, out ctlQSrc))
@@ -985,6 +985,7 @@ namespace SOV.Amur.DataP
                 InsertLog(LogId, false, "Finish whith error.");
                 return;
             }
+
             #region catalog Dictionary Dst
             Dictionary<Variable, Catalog> ctlDstDic = new Dictionary<Variable, Catalog>();
             foreach (var v in varDst)
@@ -1007,6 +1008,7 @@ namespace SOV.Amur.DataP
                 }
             }
             #endregion
+
             MethodForecast methodFcsDst = metaDM.MethodForecastRepository.Select(MethodDstId);
             MethodForecast methodFcsSrc = metaDM.MethodForecastRepository.Select(MethodSrcSetId);
             Variable varSrc = metaDM.VariableRepository.Select(VariableId);
@@ -1018,7 +1020,7 @@ namespace SOV.Amur.DataP
             int countMaxNull = (int)Math.Round((double)countFcsInDay * percentNullMax / 100);
 
             Site site = metaDM.SiteRepository.Select(SiteId);
-            Station stn = metaDM.StationRepository.Select(site.StationId);
+            //////Station stn = metaDM.StationRepository.Select(site.StationId);
             var mz = metaDM.EntityAttrRepository.SelectAttrValues("site", new List<int>() { SiteId }, new List<int>() { (int)EnumSiteAttrType.MeteoZoneId }, DateS);
             int meteoZoneId;
             if (mz.Count != 1 || !int.TryParse(mz[0].Value, out meteoZoneId))
@@ -1031,9 +1033,9 @@ namespace SOV.Amur.DataP
                 new List<int>() { (int)EnumSiteAttrType.UTCOffset });
             EntityAttrValue meteoZoneEAV = EntityAttrValue.GetEntityAttrValue(siteAttrValue, SiteId, (int)EnumSiteAttrType.MeteoZoneId, DateS);
 
-            DerivedDayAttr dda = dataPDM.DerivedDayAttrRepository.Select(MethodDstId, DateTypeDstId, stn.TypeId, site.SiteTypeId, meteoZoneId, VariableId, OffsetTypeId, OffsetValue);
+            DerivedDayAttr dda = dataPDM.DerivedDayAttrRepository.Select(MethodDstId, DateTypeDstId, site.TypeId, meteoZoneId, VariableId, OffsetTypeId, OffsetValue);
             if (!(dda != null))
-                dda = dataPDM.DerivedDayAttrRepository.Select(MethodDstId, DateTypeDstId, stn.TypeId, site.SiteTypeId, -1, VariableId, OffsetTypeId, OffsetValue);
+                dda = dataPDM.DerivedDayAttrRepository.Select(MethodDstId, DateTypeDstId, site.TypeId, -1, VariableId, OffsetTypeId, OffsetValue);
             if (!(dda != null))
             {
                 InsertLog(LogId, true, "Нет записи в таблице datap.derived_day_site_attr. "

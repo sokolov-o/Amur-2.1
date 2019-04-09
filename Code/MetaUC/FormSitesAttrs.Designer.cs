@@ -42,7 +42,6 @@
             this.eavGroupBox = new System.Windows.Forms.GroupBox();
             this.saveEAVButton = new System.Windows.Forms.Button();
             this.ucSites = new SOV.Amur.Meta.UCSiteGeoObjectList();
-            this.ucEntityAttrValue = new SOV.Amur.Meta.UCEntityAttrValue();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -179,7 +178,6 @@
             // 
             // eavGroupBox
             // 
-            this.eavGroupBox.Controls.Add(this.ucEntityAttrValue);
             this.eavGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.eavGroupBox.Location = new System.Drawing.Point(0, 0);
             this.eavGroupBox.Name = "eavGroupBox";
@@ -216,16 +214,6 @@
             this.ucSites.TabIndex = 0;
             this.ucSites.UCEntityAttrValueChangedEvent += new SOV.Amur.Meta.UCSiteGeoObjectList.UCEntityAttrValueChangedEventHandler(this.ucSites_UCEntityAttrValueChangedEvent);
             this.ucSites.Load += new System.EventHandler(this.ucSiteObjects_Load);
-            // 
-            // ucEntityAttrValue
-            // 
-            this.ucEntityAttrValue.DateTimeFormat = "dd.MM.yyyy HH:mm";
-            this.ucEntityAttrValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucEntityAttrValue.EntityAttrTypes = ((System.Collections.Generic.List<SOV.Amur.Meta.EntityAttrType>)(resources.GetObject("ucEntityAttrValue.EntityAttrTypes")));
-            this.ucEntityAttrValue.Location = new System.Drawing.Point(3, 16);
-            this.ucEntityAttrValue.Name = "ucEntityAttrValue";
-            this.ucEntityAttrValue.Size = new System.Drawing.Size(241, 215);
-            this.ucEntityAttrValue.TabIndex = 0;
             // 
             // FormSitesAttrs
             // 
@@ -269,6 +257,5 @@
         private System.Windows.Forms.GroupBox eavGroupBox;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Button saveEAVButton;
-        private UCEntityAttrValue ucEntityAttrValue;
     }
 }

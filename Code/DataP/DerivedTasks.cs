@@ -24,7 +24,7 @@ namespace SOV.Amur.DataP
         public DerivedTask(int id, int methodDerId, int stationTypeId, int siteTypeId, int[] variableSrcId, int unitTimeId, int offsetTypeId, double offsetValue,
             int? methodId, int? sourceId, int timeSupport, int[] dataTypeId, string param, bool isSchedule, bool isFcsData)
         {
-            Id = id; MethodDerId = methodDerId; StationTypeId = stationTypeId; SiteTypeId = siteTypeId; VariableSrcId = variableSrcId;
+            Id = id; MethodDerId = methodDerId; SiteTypeId = siteTypeId; VariableSrcId = variableSrcId;
             UnitTimeId = unitTimeId; OffsetTypeId = offsetTypeId; OffsetValue = offsetValue;
             MethodSrc = methodId; SourceSrc = sourceId; TimeSupport = timeSupport; DataTypeId = dataTypeId; Param = param;
             IsSchedule = isSchedule; IsFcsData = isFcsData;
@@ -133,7 +133,7 @@ namespace SOV.Amur.DataP
 
         public int SiteTypeId { get; set; }
 
-        public int StationTypeId { get; set; }
+        //////public int StationTypeId { get; set; }
 
         public int[] VariableSrcId { get; set; }
 

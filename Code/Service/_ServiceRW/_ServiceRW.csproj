@@ -90,8 +90,6 @@
   <ItemGroup>
     <None Include="Properties\PublishProfiles\AmurServiceRW_HBR.pubxml" />
     <None Include="Properties\PublishProfiles\AmurSeviceRW 10.11.203.34.pubxml" />
-    <None Include="Properties\PublishProfiles\AmurSeviceRW.pubxml" />
-    <None Include="Properties\PublishProfiles\LocalIISService.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -100,18 +98,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DataPDAL\DataPDAL.csproj">
-      <Project>{e82ebd52-acb7-4b6d-bb18-04f691211a00}</Project>
-      <Name>DataPDAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\DataP\DataP.csproj">
-      <Project>{66ca86b9-31a3-45a4-ba10-99628678fa71}</Project>
-      <Name>DataP</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\DateYT\DateYT.csproj">
-      <Project>{0ec0624d-6f7b-422f-8ddc-5c8de0e669c7}</Project>
-      <Name>DateYT</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Geo\Geo.csproj">
       <Project>{34f63caa-4627-4434-be40-16ac1b3d2541}</Project>
       <Name>Geo</Name>
@@ -132,6 +118,14 @@
       <Project>{7372cb1e-d1a2-4021-813d-0d02c1271a8c}</Project>
       <Name>DataDAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\DataPDAL\DataPDAL.csproj">
+      <Project>{e82ebd52-acb7-4b6d-bb18-04f691211a00}</Project>
+      <Name>DataPDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataP\DataP.csproj">
+      <Project>{66ca86b9-31a3-45a4-ba10-99628678fa71}</Project>
+      <Name>DataP</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Data\Data.csproj">
       <Project>{05e27f14-d92f-415d-b6ac-6ec2a28acf98}</Project>
       <Name>Data</Name>
@@ -143,6 +137,10 @@
     <ProjectReference Include="..\..\Meta\Meta.csproj">
       <Project>{9ff17c08-ffd4-40fb-a371-c5907b7b4d27}</Project>
       <Name>Meta</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sys\Sys.csproj">
+      <Project>{d8026d66-63cd-40f2-b07a-224abfa6ac5a}</Project>
+      <Name>Sys</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
