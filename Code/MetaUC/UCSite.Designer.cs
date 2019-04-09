@@ -1,6 +1,6 @@
 ﻿namespace SOV.Amur.Meta
 {
-    partial class UCStation
+    partial class UCSite
     {
         /// <summary> 
         /// Требуется переменная конструктора.
@@ -32,7 +32,8 @@
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.codeTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.stationTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.siteTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.stationTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameEngTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,11 +46,10 @@
             this.legalEntityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.stationTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.stationTypeBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addrBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.legalEntityBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stationTypeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // idTextBox
@@ -79,14 +79,18 @@
             this.nameTextBox.Size = new System.Drawing.Size(171, 20);
             this.nameTextBox.TabIndex = 2;
             // 
-            // stationTypeComboBox
+            // siteTypeComboBox
             // 
-            this.stationTypeComboBox.DataSource = this.stationTypeBindingSource;
-            this.stationTypeComboBox.FormattingEnabled = true;
-            this.stationTypeComboBox.Location = new System.Drawing.Point(325, 3);
-            this.stationTypeComboBox.Name = "stationTypeComboBox";
-            this.stationTypeComboBox.Size = new System.Drawing.Size(171, 21);
-            this.stationTypeComboBox.TabIndex = 1;
+            this.siteTypeComboBox.DataSource = this.stationTypeBindingSource;
+            this.siteTypeComboBox.FormattingEnabled = true;
+            this.siteTypeComboBox.Location = new System.Drawing.Point(325, 3);
+            this.siteTypeComboBox.Name = "siteTypeComboBox";
+            this.siteTypeComboBox.Size = new System.Drawing.Size(171, 21);
+            this.siteTypeComboBox.TabIndex = 1;
+            // 
+            // stationTypeBindingSource
+            // 
+            this.stationTypeBindingSource.DataSource = typeof(SOV.Amur.Meta.SiteType);
             // 
             // nameEngTextBox
             // 
@@ -95,6 +99,7 @@
             this.nameEngTextBox.Name = "nameEngTextBox";
             this.nameEngTextBox.Size = new System.Drawing.Size(171, 20);
             this.nameEngTextBox.TabIndex = 3;
+            this.nameEngTextBox.Text = "Не реализовано...";
             // 
             // label1
             // 
@@ -131,7 +136,7 @@
             this.tableLayoutPanel1.Controls.Add(this.orgComboBox, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.nameTextBox, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.stationTypeComboBox, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.siteTypeComboBox, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.label5, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.nameEngTextBox, 4, 1);
@@ -144,7 +149,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(499, 71);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(499, 80);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // label3
@@ -213,22 +218,18 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Индекс:";
             // 
-            // stationTypeBindingSource
-            // 
-            this.stationTypeBindingSource.DataSource = typeof(SOV.Amur.Meta.StationType);
-            // 
-            // UCStation
+            // UCSite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "UCStation";
-            this.Size = new System.Drawing.Size(499, 71);
+            this.Name = "UCSite";
+            this.Size = new System.Drawing.Size(499, 80);
+            ((System.ComponentModel.ISupportInitialize)(this.stationTypeBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addrBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.legalEntityBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stationTypeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -238,7 +239,7 @@
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.TextBox codeTextBox;
         private System.Windows.Forms.TextBox nameTextBox;
-        private System.Windows.Forms.ComboBox stationTypeComboBox;
+        private System.Windows.Forms.ComboBox siteTypeComboBox;
         private System.Windows.Forms.TextBox nameEngTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

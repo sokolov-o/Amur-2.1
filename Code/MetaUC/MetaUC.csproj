@@ -322,17 +322,17 @@
     <Compile Include="UCSitesSelect.designer.cs">
       <DependentUpon>UCSitesSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCStation.cs">
+    <Compile Include="UCSite.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCStation.Designer.cs">
-      <DependentUpon>UCStation.cs</DependentUpon>
+    <Compile Include="UCSite.Designer.cs">
+      <DependentUpon>UCSite.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCStationEdit.cs">
+    <Compile Include="UCSiteEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCStationEdit.Designer.cs">
-      <DependentUpon>UCStationEdit.cs</DependentUpon>
+    <Compile Include="UCSiteEdit.Designer.cs">
+      <DependentUpon>UCSiteEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="UCStationSites.cs">
       <SubType>UserControl</SubType>
@@ -491,11 +491,11 @@
     <EmbeddedResource Include="UCSitesSelect.resx">
       <DependentUpon>UCSitesSelect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCStation.resx">
-      <DependentUpon>UCStation.cs</DependentUpon>
+    <EmbeddedResource Include="UCSite.resx">
+      <DependentUpon>UCSite.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCStationEdit.resx">
-      <DependentUpon>UCStationEdit.cs</DependentUpon>
+    <EmbeddedResource Include="UCSiteEdit.resx">
+      <DependentUpon>UCSiteEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCStationSites.resx">
       <DependentUpon>UCStationSites.cs</DependentUpon>

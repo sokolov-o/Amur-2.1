@@ -25,15 +25,15 @@ namespace SOV.Amur.Meta
         private void ucStations_UCEditStationEvent(int stationId)
         {
             ucStationEdit.Clear();
-            ucStationEdit.Fill(ucStations.Station.Id);
+            ucStationEdit.Fill(ucStations.Site.Id);
             ucStationEdit.Focus();
         }
 
         private void ucStations_UCSelectedStationChangedEvent(Station station)
         {
             ucStationEdit.Clear();
-            if (ucStations.Station != null)
-                ucStationEdit.Fill(ucStations.Station.Id);
+            if (ucStations.Site != null)
+                ucStationEdit.Fill(ucStations.Site.Id);
         }
     }
 }

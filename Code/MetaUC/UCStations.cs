@@ -85,8 +85,8 @@ namespace SOV.Amur.Meta
                 dgv.Rows.Clear();
                 if (siteGroupId.HasValue)
                 {
-                    FillStations(DataManager.GetInstance().StationRepository.Select(
-                        SiteGroupComboBox.GetGroupSites(siteGroupId).Select(x => x.StationId).ToList())
+                    FillStations(DataManager.GetInstance().SiteRepository.Select(
+                        SiteGroupComboBox.GetGroupSites(siteGroupId).Select(x => x.Id).ToList())
                     );
                 }
             }
@@ -97,60 +97,60 @@ namespace SOV.Amur.Meta
                 RaiseSelectedStationChangedEvent();
             }
         }
-        public void FillStations(List<Station> stations)
+        public void FillStations(List<Site> sites)
         {
             Cursor cs = this.Cursor;
             this.Cursor = Cursors.WaitCursor;
             _isFilled = true;
             try
             {
-                dgv.Columns["stationName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
-                dgv.Columns["stationTypeName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+                dgv.Columns["siteName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
+                dgv.Columns["siteTypeName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
                 dgv.Rows.Clear();
 
                 // GeoObjects, Stations, Types
-                List<StationType> sts = DataManager.GetInstance().SiteTypeRepository.Select();
-                List<StationGeoObject> sgos = DataManager.GetInstance().StationGeoObjectRepository.SelectByStations(stations.Select(x => x.Id).ToList());
+                List<SiteType> sts = DataManager.GetInstance().SiteTypeRepository.Select();
+                List<SiteGeoObject> sgos = DataManager.GetInstance().SiteGeoObjectRepository.SelectBySites(sites.Select(x => x.Id).ToList());
                 if (sgos.Count > 0)
                 {
                     List<GeoObject> gos = DataManager.GetInstance().GeoObjectRepository.Select(sgos.Select(x => x.GeoObjectId).Distinct().ToList());
 
                     // FILL DGV - GO WITH SITES
-                    foreach (var go in gos.OrderBy(x => x.Order))
+                    foreach (var go in gos.OrderBy(x => x.OrderBy))
                     {
-                        foreach (var sgo in sgos.Where(x => x.GeoObjectId == go.Id).OrderBy(x => x.Order))
+                        foreach (var sgo in sgos.Where(x => x.GeoObjectId == go.Id).OrderBy(x => x.OrderBy))
                         {
-                            Station station = stations.Find(x => x.Id == sgo.StationId);
-                            StationType sType = sts.Find(x => x.Id == station.TypeId);
+                            Site site = sites.Find(x => x.Id == sgo.SiteId);
+                            SiteType sType = sts.Find(x => x.Id == site.TypeId);
 
                             DataGridViewRow row = dgv.Rows[dgv.Rows.Add()];
-                            row.Tag = new object[] { station, go };
+                            row.Tag = new object[] { site, go };
 
-                            row.Cells["id"].Value = station.Id;
+                            row.Cells["id"].Value = site.Id;
                             row.Cells["geoObjectName"].Value = go.Name;
-                            row.Cells["stationName"].Value = station.Name;
-                            row.Cells["stationCode"].Value = station.Code;
-                            row.Cells["stationTypeName"].Value = sType.NameShort;
+                            row.Cells["siteName"].Value = site.Name;
+                            row.Cells["siteCode"].Value = site.Code;
+                            row.Cells["siteTypeName"].Value = sType.NameShort;
                         }
                     }
                 }
 
                 // FILL DGV - SITES WITHOUT GO
-                List<Station> stnNoGOList = stations.Where(x => !sgos.Exists(y => y.StationId == x.Id)).ToList();
-                foreach (Station station in stnNoGOList.OrderBy(x => x.Name))
+                List<Site> stnNoGOList = sites.Where(x => !sgos.Exists(y => y.SiteId == x.Id)).ToList();
+                foreach (Site station in stnNoGOList.OrderBy(x => x.Name))
                 {
                     DataGridViewRow row = dgv.Rows[dgv.Rows.Add()];
                     row.Tag = new object[] { station, null };
 
                     row.Cells["id"].Value = station.Id;
                     row.Cells["geoObjectName"].Value = string.Empty;
-                    row.Cells["stationName"].Value = station.Name;
-                    row.Cells["stationCode"].Value = station.Code;
-                    row.Cells["stationTypeName"].Value = sts.Find(x => x.Id == station.TypeId).NameShort;
+                    row.Cells["siteName"].Value = station.Name;
+                    row.Cells["siteCode"].Value = station.Code;
+                    row.Cells["siteTypeName"].Value = sts.Find(x => x.Id == station.TypeId).NameShort;
                 }
 
-                dgv.Columns["stationName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgv.Columns["stationTypeName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+                dgv.Columns["siteName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgv.Columns["siteTypeName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
 
                 infoToolStripLabel.Text = dgv.Rows.Count.ToString();
             }
@@ -162,11 +162,11 @@ namespace SOV.Amur.Meta
             }
         }
 
-        public Station Station
+        public Site Site
         {
             get
             {
-                return dgv.SelectedRows.Count == 0 ? null : (Station)((object[])dgv.SelectedRows[0].Tag)[0];
+                return dgv.SelectedRows.Count == 0 ? null : (Site)((object[])dgv.SelectedRows[0].Tag)[0];
             }
         }
         GeoObject GeoObject
@@ -186,19 +186,19 @@ namespace SOV.Amur.Meta
         {
             get
             {
-                return siteGroupToolStripComboBox.SelectedItem == null ? (int?)null : ((SiteGroup)siteGroupToolStripComboBox.SelectedItem).Id;
+                return siteGroupToolStripComboBox.SelectedItem == null ? (int?)null : ((EntityGroup)siteGroupToolStripComboBox.SelectedItem).Id;
             }
             set
             {
-                SiteGroup = value.HasValue ? new SiteGroup(value.Value, 0, "") : null;
+                SiteGroup = value.HasValue ? new EntityGroup(value.Value, "", "site") : null;
             }
         }
 
-        public SiteGroup SiteGroup
+        public EntityGroup SiteGroup
         {
             get
             {
-                return siteGroupToolStripComboBox.SelectedItem == null ? null : siteGroupToolStripComboBox.SelectedItem as SiteGroup;
+                return siteGroupToolStripComboBox.SelectedItem == null ? null : siteGroupToolStripComboBox.SelectedItem as EntityGroup;
             }
             set
             {
@@ -209,7 +209,7 @@ namespace SOV.Amur.Meta
                 {
                     foreach (var item in siteGroupToolStripComboBox.Items)
                     {
-                        if (((SiteGroup)item).Id == value.Id)
+                        if (((EntityGroup)item).Id == value.Id)
                             siteGroupToolStripComboBox.SelectedItem = item;
                     }
                     //if (SiteGroup != null)
@@ -249,22 +249,22 @@ namespace SOV.Amur.Meta
         }
 
         #region EVENTS
-        public delegate void UCSelectedStationChangedEventHandler(Station station);
+        public delegate void UCSelectedStationChangedEventHandler(Site site);
         public event UCSelectedStationChangedEventHandler UCSelectedStationChangedEvent;
         protected virtual void RaiseSelectedStationChangedEvent()
         {
             if (UCSelectedStationChangedEvent != null)
             {
-                UCSelectedStationChangedEvent(Station);
+                UCSelectedStationChangedEvent(Site);
             }
         }
         public delegate void UCEditStationEventHandler(int stationId);
         public event UCEditStationEventHandler UCEditStationEvent;
         protected virtual void RaiseEditStationEvent()
         {
-            if (UCEditStationEvent != null && Station != null)
+            if (UCEditStationEvent != null && Site != null)
             {
-                UCEditStationEvent(Station.Id);
+                UCEditStationEvent(Site.Id);
             }
         }
         public delegate void UCNewStationEventHandler();
@@ -302,9 +302,7 @@ namespace SOV.Amur.Meta
 
         private void noSitesToolStripButton_Click(object sender, EventArgs e)
         {
-            SiteGroup = null;
-            List<Station> stations = Meta.DataManager.GetInstance().StationRepository.SelectWithoutSites();
-            FillStations(stations);
+            MessageBox.Show("Deprecated button...");
         }
 
         private void addNewToolStripButton_Click(object sender, EventArgs e)
@@ -340,7 +338,7 @@ namespace SOV.Amur.Meta
             List<int> ids = new List<int>();
             for (int i = 0; i < dgv.SelectedRows.Count; ++i)
                 ids.Add((int)dgv.SelectedRows[i].Cells["id"].Value);
-            return siteGroupToolStripComboBox.GetGroupSites().FindAll(x => ids.Contains(x.StationId));
+            return siteGroupToolStripComboBox.GetGroupSites().FindAll(x => ids.Contains(x.Id));
         }
 
         public void SetSelectedSites(List<int> sites)

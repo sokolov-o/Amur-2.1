@@ -34,7 +34,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ucStations = new SOV.Amur.Meta.UCStations();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ucStationEdit = new SOV.Amur.Meta.UCStationEdit();
+            this.ucStationEdit = new SOV.Amur.Meta.UCSiteEdit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -149,6 +149,6 @@
         private UCStations ucStations;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private UCStationEdit ucStationEdit;
+        private UCSiteEdit ucStationEdit;
     }
 }

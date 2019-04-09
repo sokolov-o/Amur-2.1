@@ -1,6 +1,6 @@
 ﻿namespace SOV.Amur.Meta
 {
-    partial class UCStationEdit
+    partial class UCSiteEdit
     {
         /// <summary> 
         /// Требуется переменная конструктора.
@@ -31,7 +31,7 @@
             SOV.Amur.Meta.Station station2 = new SOV.Amur.Meta.Station();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.ucStation = new SOV.Amur.Meta.UCStation();
+            this.ucStation = new SOV.Amur.Meta.UCSite();
             this.saveButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -121,7 +121,7 @@
             station2.NameRusShort = "";
             station2.OrgId = null;
             station2.TypeId = -2147483648;
-            this.ucStation.Station = station2;
+            this.ucStation.Site = station2;
             this.ucStation.TabIndex = 0;
             // 
             // saveButton
@@ -439,7 +439,7 @@
 
         #endregion
 
-        private UCStation ucStation;
+        private UCSite ucStation;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button saveButton;

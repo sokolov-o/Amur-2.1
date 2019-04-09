@@ -315,7 +315,7 @@ namespace SOV.Amur
             }
             else
             {
-                UCStationEdit uc = new UCStationEdit();
+                UCSiteEdit uc = new UCSiteEdit();
                 uc.ShowDataValueEventHandler = ShowDataValueEventHandler;
                 uc.Dock = DockStyle.Fill;
 
@@ -398,7 +398,7 @@ namespace SOV.Amur
                     }
                     else
                     {
-                        UCStationEdit uc = new UCStationEdit();
+                        UCSiteEdit uc = new UCSiteEdit();
                         uc.Dock = DockStyle.Fill;
 
                         tabPage = new TabPage(Meta.StationRepository.GetCash().Find(x => x.Id == station.Id).Name);
@@ -407,7 +407,7 @@ namespace SOV.Amur
                         tabPage.Controls.Add(uc);
                         this.tc.TabPages.Add(tabPage);
                     }
-                    ((UCStationEdit)tabPage.Controls[0]).Fill(station.Id);
+                    ((UCSiteEdit)tabPage.Controls[0]).Fill(station.Id);
                     tabPage.Text = Meta.StationRepository.GetCash().Find(x => x.Id == station.Id).Name;
                 }
                 if (node.Tag.GetType() == typeof(GeoObject))

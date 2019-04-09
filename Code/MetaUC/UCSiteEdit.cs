@@ -7,9 +7,9 @@ using SOV.Common;
 
 namespace SOV.Amur.Meta
 {
-    public partial class UCStationEdit : UserControl
+    public partial class UCSiteEdit : UserControl
     {
-        public UCStationEdit()
+        public UCSiteEdit()
         {
             InitializeComponent();
             ucEntityAttrValues.EntityName = "site";
@@ -22,16 +22,16 @@ namespace SOV.Amur.Meta
                 ucCatalogs.ShowDataValueEventHandler = value;
             }
         }
-        public void Fill(int stationId)
+        public void Fill(int siteId)
         {
-            ucStation.Station = DataManager.GetInstance().StationRepository.Select(stationId);
-            ucStationSites.Fill(stationId);
-            FillGO(stationId);
+            ucStation.Site = DataManager.GetInstance().SiteRepository.Select(siteId);
+            ucStationSites.Fill(siteId);
+            FillGO(siteId);
         }
-        private void FillGO(int stationId)
+        private void FillGO(int siteId)
         {
             geoObjectsListBox.Clear();
-            Dictionary<Station, List<GeoObject>> sgo = DataManager.GetInstance().StationGeoObjectRepository.SelectWithFK(stationId);
+            Dictionary<Site, List<GeoObject>> sgo = DataManager.GetInstance().SiteGeoObjectRepository.SelectBySites (siteId);
             if (sgo.Count > 0)
                 geoObjectsListBox.SetDataSource(sgo.ElementAt(0).Value.ToArray<object>().ToList(), "Name");
         }
@@ -58,7 +58,7 @@ namespace SOV.Amur.Meta
         }
         public void Clear()
         {
-            ucStation.Station = null;
+            ucStation.Site = null;
             ucStationSites.Clear();
             geoObjectsListBox.Clear();
         }
@@ -66,11 +66,11 @@ namespace SOV.Amur.Meta
         {
             get
             {
-                return ucStation.Station;
+                return ucStation.Site;
             }
             set
             {
-                ucStation.Station = value;
+                ucStation.Site = value;
             }
         }
 
@@ -78,23 +78,23 @@ namespace SOV.Amur.Meta
         {
             try
             {
-                if (ucStation.Station.Id > 0)
-                    DataManager.GetInstance().StationRepository.Update(ucStation.Station);
+                if (ucStation.Site.Id > 0)
+                    DataManager.GetInstance().StationRepository.Update(ucStation.Site);
                 else
                 {
                     //ucStation.Station.Id = DataManager.GetInstance().StationRepository.Insert(ucStation.Station);
-                    int Id = DataManager.GetInstance().StationRepository.Insert(ucStation.Station);
-                    ucStation.Station = DataManager.GetInstance().StationRepository.Select(Id);
+                    int Id = DataManager.GetInstance().StationRepository.Insert(ucStation.Site);
+                    ucStation.Site = DataManager.GetInstance().StationRepository.Select(Id);
                 }
-                ucEntityAttrValues.EntityId = ucStation.Station.Id;
-                ucStationSites.StationId = ucStation.Station.Id;
+                ucEntityAttrValues.EntityId = ucStation.Site.Id;
+                ucStationSites.StationId = ucStation.Site.Id;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return;
             }
-            RaiseStationSavedEvent(ucStation.Station);
+            RaiseStationSavedEvent(ucStation.Site);
             EnableSites = true;
         }
 
@@ -132,16 +132,16 @@ namespace SOV.Amur.Meta
             {
                 foreach (var geoObject in frm.SelectedItems)
                 {
-                    DataManager.GetInstance().StationGeoObjectRepository.Insert(((GeoObject)geoObject).Id, ucStation.Station.Id);
+                    DataManager.GetInstance().StationGeoObjectRepository.Insert(((GeoObject)geoObject).Id, ucStation.Site.Id);
                 }
-                FillGO(ucStation.Station.Id);
+                FillGO(ucStation.Site.Id);
             }
         }
 
         private void geoObjectsListBox_UCDeleteEvent(int id)
         {
-            DataManager.GetInstance().StationGeoObjectRepository.Delete(id, ucStation.Station.Id);
-            FillGO(ucStation.Station.Id);
+            DataManager.GetInstance().StationGeoObjectRepository.Delete(id, ucStation.Site.Id);
+            FillGO(ucStation.Site.Id);
         }
     }
 }

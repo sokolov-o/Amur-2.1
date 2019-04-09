@@ -11,40 +11,38 @@ using SOV.Common;
 
 namespace SOV.Amur.Meta
 {
-    public partial class UCStation : UserControl
+    public partial class UCSite : UserControl
     {
-        public UCStation()
+        public UCSite()
         {
             InitializeComponent();
             FillDics();
         }
-        public Station Station
+        public Site Site
         {
             get
             {
-                return new Station
-                    (
-                    string.IsNullOrEmpty(idTextBox.Text) ? IdClass.NaNId : int.Parse(idTextBox.Text),
-                    codeTextBox.Text,
-                    nameTextBox.Text,
-                    stationTypeComboBox.SelectedIndex >= 0 ? ((IdClass)stationTypeComboBox.SelectedItem).Id : IdClass.NaNId,
-                    nameEngTextBox.Text,
-                    regionComboBox.SelectedIndex >= 0 ? (int?)((IdClass)regionComboBox.SelectedItem).Id : null,
-                    orgComboBox.SelectedIndex >= 0 ? (int?)((IdClass)orgComboBox.SelectedItem).Id : null
-                    );
+                return new Site()
+                {
+                    Id = string.IsNullOrEmpty(idTextBox.Text) ? IdClass.NaNId : int.Parse(idTextBox.Text),
+                    Code = codeTextBox.Text,
+                    Name = nameTextBox.Text,
+                    TypeId = siteTypeComboBox.SelectedIndex >= 0 ? ((IdClass)siteTypeComboBox.SelectedItem).Id : IdClass.NaNId,
+                    AddrRegionId = regionComboBox.SelectedIndex >= 0 ? (int?)((IdClass)regionComboBox.SelectedItem).Id : null,
+                    OrgId = orgComboBox.SelectedIndex >= 0 ? (int?)((IdClass)orgComboBox.SelectedItem).Id : null
+                };
             }
             set
             {
-                if (value == null) value = new Meta.Station();
+                if (value == null) value = new Meta.Site();
 
                 idTextBox.Text = value.Id.ToString();
                 codeTextBox.Text = value.Code;
                 nameTextBox.Text = value.Name;
-                nameEngTextBox.Text = value.NameEng;
+                nameEngTextBox.Text = "Не реализовано...";
 
                 object o = SiteTypeRepository.GetCash().FirstOrDefault(x => x.Id == value.TypeId);
-                stationTypeComboBox.SelectedIndex = o == null ? -1 : stationTypeComboBox.Items.IndexOf(o);
-                //stationTypeBindingSource.Position = stationTypeBindingSource.Find("Id", value.TypeId);
+                siteTypeComboBox.SelectedIndex = o == null ? -1 : siteTypeComboBox.Items.IndexOf(o);
 
                 o = value.AddrRegionId.HasValue ? Social.AddrRepository.GetCash().Find(x => x.Id == (int)value.AddrRegionId) : null;
                 regionComboBox.SelectedIndex = o == null ? -1 : regionComboBox.Items.IndexOf(o);
@@ -58,7 +56,6 @@ namespace SOV.Amur.Meta
         {
             if (!DesignMode)
             {
-                //stationTypeComboBox.DataSource = SiteTypeRepository.GetCash().OrderBy(x => x.Name).ToList();
                 stationTypeBindingSource.DataSource = SiteTypeRepository.GetCash().Select(x => new IdName() { Id = x.Id, Name = x.Name }).OrderBy(x => x.Name).ToList();
                 regionComboBox.DataSource = Social.AddrRepository.GetCash().OrderBy(x => x.Name).ToList();
                 orgComboBox.DataSource = Social.LegalEntityRepository.GetCash().Where(x => x.Type == 'o').OrderBy(x => x.NameRus).ToList();
