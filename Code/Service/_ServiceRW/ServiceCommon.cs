@@ -28,6 +28,11 @@ namespace SOV.Amur.Service
         public Service()
         {
         }
+        public string TestServiceConnection(string userName, string password)
+        {
+            return "Hello " + userName + "!";
+        }
+
         /// <summary>
         /// Открытие рабочей сессии.
         /// </summary>

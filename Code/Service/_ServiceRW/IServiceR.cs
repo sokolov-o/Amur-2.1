@@ -21,6 +21,8 @@ namespace SOV.Amur.Service
     public partial interface IService
     {
         #region COMMON
+        [OperationContract]
+        string TestServiceConnection(string userName, string password);
         /// <summary>
         /// Открытие рабочей сессии.
         /// </summary>
@@ -150,15 +152,6 @@ namespace SOV.Amur.Service
         List<Site> GetSitesByAddrRegionIds(long hSvc, List<int> addrRegionIds);
         [OperationContract]
         List<SiteType> GetSiteTypes(long hSvc);
-        /// <summary>
-        /// Выбрать пункты станции и типа.
-        /// </summary>
-        /// <param name="hSvc">Ручка сервиса.</param>
-        /// <param name="stationId">Код станции.</param>
-        /// <param name="siteTypeId">Тип пункта.</param>
-        /// <returns></returns>
-        [OperationContract]
-        List<Site> GetSitesByParent(long hSvc, int parentId);
         /// <summary>
         /// Получить список пунктов по списку их кодов.
         /// </summary>

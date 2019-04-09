@@ -386,17 +386,6 @@ namespace SOV.Amur.Service
             return DataManagerMeta(hSvc).SiteTypeRepository.Select();
         }
         /// <summary>
-        /// Список наблюдательных пунктов указанной станции.
-        /// </summary>
-        /// <param name="hSvc">Ручка сервиса.</param>
-        /// <param name="parentId">Код станции.</param>
-        /// <param name="siteTypeId">Тип пункта.</param>
-        /// <returns></returns>
-        public List<Site> GetSitesByParent(long hSvc, int parentId)
-        {
-            return DataManagerMeta(hSvc).SiteRepository.SelectByParents(new List<int> { parentId });
-        }
-        /// <summary>
         /// Список наблюдательных пунктов.
         /// </summary>
         /// <param name="hSvc">Ручка сервиса.</param>

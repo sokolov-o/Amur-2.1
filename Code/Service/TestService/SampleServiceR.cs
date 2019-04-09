@@ -132,9 +132,9 @@ namespace TestService
             sites = client.GetSitesByType(hSvc, 6);
             Console.WriteLine("Пункты в регионе (всего {0}):", sites.Length);
 
-            // Получить станции, к которым относятся выбранные выше пункты.
-            int[] stationIds = sites.Select(x => x.StationId).Distinct().ToArray();
-            Station[] stations = client.GetStationsByList(hSvc, stationIds);
+            // Получить пункты, к которым относятся выбранные выше пункты.
+            int[] parentIds = sites.Where(x => x.ParentId.HasValue).Select(x => (int)x.ParentId).Distinct().ToArray();
+            Site[] parentSites = client.GetSitesByList(hSvc, parentIds);
 
             //
             // ПОЯСНЕНИЯ:
@@ -156,14 +156,14 @@ namespace TestService
             // Обратите внимание: координаты у пункта, не у станции. У станции нет координат.
             foreach (var site in sites)
             {
-                Station station = stations.FirstOrDefault(x => x.Id == site.StationId);
+                Site parentSite = parentSites.FirstOrDefault(x => x.Id == site.ParentId);
 
                 EntityAttrValue eav = sitesAttrs.FirstOrDefault(x => x.AttrTypeId == 1000 && x.EntityId == site.Id);
                 string lat = eav == null ? "нет широты" : eav.Value;
                 eav = sitesAttrs.FirstOrDefault(x => x.AttrTypeId == 1001 && x.EntityId == site.Id);
                 string lon = eav == null ? "нет долготы" : eav.Value;
 
-                Console.WriteLine("\t{0} {1}, {2} {3} {4}", station.Name, station.Code, site.Id, lat, lon);
+                Console.WriteLine("\t{0} {1}, {2} {3} {4}", parentSite.Name, parentSite.Code, site.Id, lat, lon);
             }
             #endregion
 
@@ -395,35 +395,19 @@ namespace TestService
 
             int siteTypeId = 2;
             Site[] sites = client.GetSitesByType(hSvc, siteTypeId);
-            Station[] stations = client.GetStationsByList(hSvc, sites.Select(x => x.StationId).ToArray());
+            Site[] parentSites = client.GetSitesByList(hSvc, sites.Where(x => x.ParentId.HasValue).Select(x => (int)x.ParentId).ToArray());
             Console.WriteLine("Пункты типа {1} (всего {0}):", sites.Length, siteTypeId);
             foreach (var site in sites)
             {
-                Station station = stations.FirstOrDefault(x => x.Id == site.StationId);
-                Console.WriteLine("\t{0} {1}, {2}", station.Name, station.Code, site.Id);
+                Site parentSite = parentSites.FirstOrDefault(x => x.Id == site.ParentId);
+                Console.WriteLine("\t{0} {1}, {2}", parentSite.Name, parentSite.Code, site.Id);
             }
 
-            #endregion
-
-            #region Получить пункты и станции в заданном регионе
-
-            sites = client.GetSitesInBox(hSvc, 40, 50, 120, 135); // Передаются координаты углов региона: юг, север, запад, восток
-            stations = client.GetStationsByList(hSvc, sites.Select(x => x.StationId).ToArray());
-            EntityAttrValue[] sitesAttrs = client.GetSitesAttrValues(hSvc, sites.Select(x => x.Id).ToArray(),
-                new int[] { 1000, 1001 }, DateTime.Today);
-            Console.WriteLine("Пункты в регионе (всего {0}):", sites.Length);
-            foreach (var site in sites)
-            {
-                Station station = stations.FirstOrDefault(x => x.Id == site.StationId);
-                string lat_ = sitesAttrs.FirstOrDefault(x => x.AttrTypeId == 1000 && x.EntityId == site.Id).Value;
-                string lon_ = sitesAttrs.FirstOrDefault(x => x.AttrTypeId == 1001 && x.EntityId == site.Id).Value;
-                Console.WriteLine("\t{0} {1}, {2} {3} {4}", station.Name, station.Code, site.Id, lat_, lon_);
-            }
             #endregion
 
             #region Получить организации - владельцев станций
             {
-                foreach (Station station in stations)
+                foreach (Site station in parentSites)
                 {
                     if (station.OrgId.HasValue)
                     {
@@ -443,7 +427,7 @@ namespace TestService
             EntityAttrValue utcOffset = client.GetSiteAttrValue(hSvc, sites[0].Id, 1003, DateTime.Today); // ВСВ-смещение
 
             Console.WriteLine("Широта {0} Долгота {1} Пояс {2} пункта с индексом {3}",
-                double.Parse(lat.Value), double.Parse(lon.Value), double.Parse(utcOffset.Value), stations[0].Code);
+                double.Parse(lat.Value), double.Parse(lon.Value), double.Parse(utcOffset.Value), parentSites[0].Code);
 
             EntityAttrValue[] eav = client.GetSitesAttrValues(hSvc, sites.Select(x => x.Id).ToArray(), new int[] { 1000, 1000, 1003 }, DateTime.Today);
             Console.WriteLine("Считано {0} значений атрибутов для {1} пунктов", eav.Length, sites.Length);
@@ -489,7 +473,7 @@ namespace TestService
             bool isActualValueOnly = true; // Только актуальные значения
             bool isSelectDeleted = false; // Не выбирать значения, помеченные как удалённые
 
-            int[] sitesId = sites.Where(x => x.SiteTypeId == 2).Select(x => x.Id).ToArray();
+            int[] sitesId = sites.Where(x => x.TypeId == 2).Select(x => x.Id).ToArray();
 
             Dictionary<Catalog, DataValue[]> dvs = client.GetDataValues(hSvc,
                 DateTime.Today.AddDays(-300),
@@ -517,109 +501,74 @@ namespace TestService
             #endregion GET DATA
         }
 
-        public static void Sample4DataForecast(ServiceClient client, long hSvc)
-        {
-            #region GET FCS VARIABLES
-            List<Variable> variables = client.GetVariables(hSvc, null, null, null, null, null, null, null, new int[] { 3 }).ToList();
-            Console.WriteLine("ПЕРЕМЕННЫЕ (всего {0})", variables.Count);
-            #endregion
+        //////public static void Sample4DataForecast(ServiceClient client, long hSvc)
+        //////{
+        //////    #region GET FCS VARIABLES
+        //////    List<Variable> variables = client.GetVariables(hSvc, null, null, null, null, null, null, null, new int[] { 3 }).ToList();
+        //////    Console.WriteLine("ПЕРЕМЕННЫЕ (всего {0})", variables.Count);
+        //////    #endregion
 
-            #region GET SITES BY TYPE
-            string[] stationCodeList = new string[] { "5132", "31981", "5280", "5167", "05148", "05160", "05122", "31878", "05094", "5171", "05092", "05085", "31942", "05135", "5166", "31935", "05761", "31939", "31961", "31962" };
-            Station[] stations = client.GetStationsByList(hSvc, new int[] { 2, 5 });
-            stations = client.GetStationsByIndices(hSvc, stationCodeList);
-            List<Site> sites = new List<Site>();
-            foreach (var station in stations)
-            {
-                List<Site> site = client.GetSitesByStation(hSvc, station.Id, null).ToList();
-                if (site != null && site.Count > 0 && site.Exists(x => x.SiteTypeId == 1 || x.SiteTypeId == 2))
-                    sites.Add(site.Find(x => x.SiteTypeId == 1 || x.SiteTypeId == 2));
-                else
-                    Console.WriteLine(string.Format("Для станции {0} отсутствует пункт наблюдения", station.Code));
-            }
-            Console.WriteLine(string.Format("Получено {0} постов для {1} станций", sites.Count, stationCodeList.Length));
-            #endregion
+        //////    #region GET SITES BY TYPE
+        //////    string[] stationCodeList = new string[] { "5132", "31981", "5280", "5167", "05148", "05160", "05122", "31878", "05094", "5171", "05092", "05085", "31942", "05135", "5166", "31935", "05761", "31939", "31961", "31962" };
+        //////    Station[] stations = client.GetStationsByList(hSvc, new int[] { 2, 5 });
+        //////    stations = client.GetStationsByIndices(hSvc, stationCodeList);
+        //////    List<Site> sites = new List<Site>();
+        //////    foreach (var station in stations)
+        //////    {
+        //////        List<Site> site = client.GetSitesByStation(hSvc, station.Id, null).ToList();
+        //////        if (site != null && site.Count > 0 && site.Exists(x => x.TypeId == 1 || x.TypeId == 2))
+        //////            sites.Add(site.Find(x => x.TypeId == 1 || x.TypeId == 2));
+        //////        else
+        //////            Console.WriteLine(string.Format("Для станции {0} отсутствует пункт наблюдения", station.Code));
+        //////    }
+        //////    Console.WriteLine(string.Format("Получено {0} постов для {1} станций", sites.Count, stationCodeList.Length));
+        //////    #endregion
 
-            #region GET CATALOGS FOR SITES & VARIABLES && GET DATA FORECAST
-            int[] methodId = null;
-            int[] sourceId = null;
-            int[] offsetTypeId = null;
-            double[] offsetValue = null;
+        //////    #region GET CATALOGS FOR SITES & VARIABLES && GET DATA FORECAST
+        //////    int[] methodId = null;
+        //////    int[] sourceId = null;
+        //////    int[] offsetTypeId = null;
+        //////    double[] offsetValue = null;
 
-            Catalog[] catalogs = client.GetCatalogList(hSvc,
-                sites.Select(x => x.Id).ToArray(),
-                variables.Select(x => x.Id).ToArray(),
-                methodId,
-                sourceId,
-                offsetTypeId,
-                offsetValue
-                );
-            Console.WriteLine("Всего {0} записей в каталоге для отобранных пунктов и переменных.", catalogs.Length);
+        //////    Catalog[] catalogs = client.GetCatalogList(hSvc,
+        //////        sites.Select(x => x.Id).ToArray(),
+        //////        variables.Select(x => x.Id).ToArray(),
+        //////        methodId,
+        //////        sourceId,
+        //////        offsetTypeId,
+        //////        offsetValue
+        //////        );
+        //////    Console.WriteLine("Всего {0} записей в каталоге для отобранных пунктов и переменных.", catalogs.Length);
 
-            // GET DATA VARIANT 1
-            foreach (var ctl in catalogs.OrderBy(x => x.SiteId))
-            {
-                Console.Write("\t{0} site {1} var {2} meth {3} src {4} off {5} offv {6}",
-                    ctl.Id,
-                    sites.Find(x => x.Id == ctl.SiteId).SiteCode,
-                    variables.Find(x => x.Id == ctl.VariableId).NameRus,
-                    ctl.MethodId, ctl.SourceId, ctl.OffsetTypeId, ctl.OffsetValue);
+        //////    // GET DATA VARIANT 1
+        //////    foreach (var ctl in catalogs.OrderBy(x => x.SiteId))
+        //////    {
+        //////        Console.Write("\t{0} site {1} var {2} meth {3} src {4} off {5} offv {6}",
+        //////            ctl.Id,
+        //////            sites.Find(x => x.Id == ctl.SiteId).Code,
+        //////            variables.Find(x => x.Id == ctl.VariableId).NameRus,
+        //////            ctl.MethodId, ctl.SourceId, ctl.OffsetTypeId, ctl.OffsetValue);
 
-                DataForecast[] data = client.GetDataForecasts(hSvc, ctl.Id, DateTime.Now.AddDays(-10), DateTime.Now, null, false);
-                if (data.Length > 0)
-                {
-                    Console.Write(" --- {0} data items readed", data.Length);
-                }
-                else
-                    Console.Write(" --- no data");
-                Console.WriteLine();
-            }
+        //////        DataForecast[] data = client.GetDataForecasts(hSvc, ctl.Id, DateTime.Now.AddDays(-10), DateTime.Now, null, false);
+        //////        if (data.Length > 0)
+        //////        {
+        //////            Console.Write(" --- {0} data items readed", data.Length);
+        //////        }
+        //////        else
+        //////            Console.Write(" --- no data");
+        //////        Console.WriteLine();
+        //////    }
 
-            // GET DATA VARIANT 2
-            Dictionary<int/*Catalog.Id*/, DataForecast[]> datadic = client.GetDataForecastsByIdList(hSvc, catalogs.Select(x => x.Id).ToArray(),
-                DateTime.Now.AddDays(-10), DateTime.Now, null, false);
-            foreach (KeyValuePair<int, DataForecast[]> kvp in datadic)
-            {
-                if (kvp.Value.Length > 0)
-                    Console.WriteLine("{0} {1} ", kvp.Key, kvp.Value.Length);
-            }
-            #endregion
-        }
-        /// <summary>
-        /// Получить отношение станция-пункты-атрибуты пункта 
-        /// по списку индексов (кодов) станций.
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="hSvc"></param>
-        /// <param name="stationCodes">Индексы (коды) станций.</param>
-        /// <param name="siteAttrTypeIds">Типы атрибутов пунктов. null - все атрибуты.</param>
-        /// <param name="dateActual">Дата актуальности атрибутов пунктов. null - все даты.</param>
-        /// <returns></returns>
-        public static Dictionary<Station, Dictionary<Site, List<EntityAttrValue>>> GetStationsXSites(ServiceClient client, long hSvc,
-            string[] stationCodes, int[] siteAttrTypeIds, DateTime? dateActual)
-        {
-            Dictionary<Station, Dictionary<Site, List<EntityAttrValue>>> ret = new Dictionary<Station, Dictionary<Site, List<EntityAttrValue>>>();
-            List<Station> stations = new List<Station>();
-            foreach (var stationCode in stationCodes)
-            {
-                Station station = client.GetStationByIndex(hSvc, stationCode);
-                if (station != null)
-                {
-                    Site[] sites = client.GetSitesByStation(hSvc, station.Id, null);
-                    Dictionary<Site, List<EntityAttrValue>> siteeavs = new Dictionary<Site, List<EntityAttrValue>>();
-                    if (sites.Length > 0)
-                    {
-                        foreach (var site in sites)
-                        {
-                            List<EntityAttrValue> eavs = client.GetSitesAttrValues(hSvc, new int[] { site.Id }, siteAttrTypeIds, dateActual).ToList();
-                            siteeavs.Add(site, eavs);
-                        }
-                    }
-                    ret.Add(station, siteeavs);
-                }
-            }
-            return ret;
-        }
+        //////    // GET DATA VARIANT 2
+        //////    Dictionary<int/*Catalog.Id*/, DataForecast[]> datadic = client.GetDataForecastsByIdList(hSvc, catalogs.Select(x => x.Id).ToArray(),
+        //////        DateTime.Now.AddDays(-10), DateTime.Now, null, false);
+        //////    foreach (KeyValuePair<int, DataForecast[]> kvp in datadic)
+        //////    {
+        //////        if (kvp.Value.Length > 0)
+        //////            Console.WriteLine("{0} {1} ", kvp.Key, kvp.Value.Length);
+        //////    }
+        //////    #endregion
+        //////}
 
         /// <summary>
         /// 
@@ -648,11 +597,6 @@ namespace TestService
             // Получаем пункты
             Site[] sites = client.GetSitesByList(hSvc, ids.ToArray());
 
-            // Определяем уникальные коды станций для пунктов
-            ids = sites.Select(x => x.StationId).Distinct().ToList();
-            // Получаем станции
-            Station[] stations = client.GetStationsByList(hSvc, ids.ToArray());
-
             // Определяем уникальные коды переменных
             ids = ctls.Select(x => x.VariableId).Distinct().ToList();
             // Получаем переменные
@@ -662,132 +606,101 @@ namespace TestService
             Console.WriteLine("{0} значений данных считано. В которых:", dvs.Length);
             Console.WriteLine("   {0} записей каталога.", ctls.Count());
             Console.WriteLine("   {0} пунктов.", sites.Count());
-            Console.WriteLine("   {0} станций.", stations.Count());
             Console.WriteLine("   {0} переменных.", vars.Count());
         }
 
-        /// <summary>
-        /// 
-        /// Пример 2 работы с сервисом доступа к данным БД "Амур", ДВНИГМИ
-        /// 
-        /// 1. Формирование запроса к данным (период, станции, параметры и др.)
-        /// 2. Получение данных.
-        /// 3. Определение станций, параметров и др., присутствующих в полученном наборе значений.
-        /// 4. Вывод метаинформации о данных на консоль.
-        /// 
-        /// OSokolov@ferhri.ru
-        /// </summary>
-        public static void Sample2(ServiceClient client, long hSvc)
-        {
-            // Формирование запроса - ДАТЫ начала и окончания временного периода
+        ///////// <summary>
+        ///////// 
+        ///////// Пример 2 работы с сервисом доступа к данным БД "Амур", ДВНИГМИ
+        ///////// 
+        ///////// 1. Формирование запроса к данным (период, станции, параметры и др.)
+        ///////// 2. Получение данных.
+        ///////// 3. Определение станций, параметров и др., присутствующих в полученном наборе значений.
+        ///////// 4. Вывод метаинформации о данных на консоль.
+        ///////// 
+        ///////// OSokolov@ferhri.ru
+        ///////// </summary>
+        //////public static void Sample2(ServiceClient client, long hSvc)
+        //////{
+        //////    // Формирование запроса - ДАТЫ начала и окончания временного периода
 
-            DateTime dateSLOC = new DateTime(2016, 5, 1);
-            DateTime dateFLOC = new DateTime(2016, 6, 1);
+        //////    DateTime dateSLOC = new DateTime(2016, 5, 1);
+        //////    DateTime dateFLOC = new DateTime(2016, 6, 1);
 
-            // Формирование запроса через индексы (коды) станций
+        //////    // Формирование запроса через индексы (коды) станций
 
-            string[] stationIndexList = new string[]
-                {
-                    "31866"
-                    //"31735"
-                    //,"05012"
-                    //,"05013"
-                };
-            List<Station> stations = new List<Station>();
-            List<Site> sites = new List<Site>();
-            foreach (var stationIndex in stationIndexList)
-            {
-                Station station = client.GetStationByIndex(hSvc, stationIndex);
-                sites.AddRange(client.GetSitesByStation(hSvc, station.Id, null));
-                stations.Add(station);
-            }
+        //////    string[] stationIndexList = new string[]
+        //////        {
+        //////            "31866"
+        //////            //"31735"
+        //////            //,"05012"
+        //////            //,"05013"
+        //////        };
 
-            // Формирование запроса - ПЕРЕМЕННЫЕ
+        //////    // Формирование запроса - ПЕРЕМЕННЫЕ
 
-            int[] variableIdList = new int[]
-                {
-                    7, // WindSpeed
-                    10, // TempAir
-                    13, // TempWater
-                    2,  // GageHeight
-                    47  // GageHeightDayly
-                };
+        //////    int[] variableIdList = new int[]
+        //////        {
+        //////            7, // WindSpeed
+        //////            10, // TempAir
+        //////            13, // TempWater
+        //////            2,  // GageHeight
+        //////            47  // GageHeightDayly
+        //////        };
 
-            // Формирование запроса - прочие атрибуты запроса
+        //////    // Формирование запроса - прочие атрибуты запроса
 
-            int[] offsetTypeId = null;      // Все типы смещений
-            double[] offsetValue = null;     // Все значения смещений
-            bool isActualOnly = true;       // Выбирать только актуальные (последние) значения
-            bool isSelectDeleted = false;   // Выбирать значения, помеченные как удалённые
-            byte? flagAQC = null;           // Выбирать значения с любым флагом АКК
-            int[] methodId = null;           // Все методы получения данных (наблюдённые, расчётные и др.)
-            int[] sourceId = null;           // Все источники данных
+        //////    int[] offsetTypeId = null;      // Все типы смещений
+        //////    double[] offsetValue = null;     // Все значения смещений
+        //////    bool isActualOnly = true;       // Выбирать только актуальные (последние) значения
+        //////    bool isSelectDeleted = false;   // Выбирать значения, помеченные как удалённые
+        //////    byte? flagAQC = null;           // Выбирать значения с любым флагом АКК
+        //////    int[] methodId = null;           // Все методы получения данных (наблюдённые, расчётные и др.)
+        //////    int[] sourceId = null;           // Все источники данных
 
-            // Получение значений данных, соответствующих запросу
+        //////    // Получение значений данных, соответствующих запросу
 
-            Dictionary<Catalog, DataValue[]> dvs = client.GetDataValues(hSvc,
-                dateSLOC, dateFLOC, true,
-                sites.Select(x => x.Id).Distinct().ToArray(),
-                variableIdList,
-                methodId, sourceId,
-                offsetTypeId, offsetValue,
-                flagAQC,
-                isActualOnly, isSelectDeleted
-            );
+        //////    Dictionary<Catalog, DataValue[]> dvs = client.GetDataValues(hSvc,
+        //////        dateSLOC, dateFLOC, true,
+        //////        sites.Select(x => x.Id).Distinct().ToArray(),
+        //////        variableIdList,
+        //////        methodId, sourceId,
+        //////        offsetTypeId, offsetValue,
+        //////        flagAQC,
+        //////        isActualOnly, isSelectDeleted
+        //////    );
 
-            Console.WriteLine("***********************SAMPLE 2");
-            Console.WriteLine("Считано {0} записей каталога", dvs.Count);
-            foreach (KeyValuePair<Catalog, DataValue[]> kvp in dvs)
-            {
-                Console.WriteLine("\t Catalog.Id={0} DataValues count {1}", kvp.Key.Id, kvp.Value.Length);
-            }
+        //////    Console.WriteLine("***********************SAMPLE 2");
+        //////    Console.WriteLine("Считано {0} записей каталога", dvs.Count);
+        //////    foreach (KeyValuePair<Catalog, DataValue[]> kvp in dvs)
+        //////    {
+        //////        Console.WriteLine("\t Catalog.Id={0} DataValues count {1}", kvp.Key.Id, kvp.Value.Length);
+        //////    }
 
 
-            // Определяем уникальные коды каталога данных для полученных значений
-            int[] ids = dvs.Select(x => x.Key.Id).Distinct().ToArray();
-            // Получаем элементы каталога
-            Catalog[] ctls = client.GetCatalogListById(hSvc, ids);
+        //////    // Определяем уникальные коды каталога данных для полученных значений
+        //////    int[] ids = dvs.Select(x => x.Key.Id).Distinct().ToArray();
+        //////    // Получаем элементы каталога
+        //////    Catalog[] ctls = client.GetCatalogListById(hSvc, ids);
 
-            // Определяем уникальные коды пунктов для элементов каталога
-            ids = ctls.Select(x => x.SiteId).Distinct().ToArray();
-            // Получаем пункты
-            Site[] sites1 = client.GetSitesByList(hSvc, ids);
+        //////    // Определяем уникальные коды пунктов для элементов каталога
+        //////    ids = ctls.Select(x => x.SiteId).Distinct().ToArray();
+        //////    // Получаем пункты
+        //////    Site[] sites1 = client.GetSitesByList(hSvc, ids);
 
-            // Определяем уникальные коды станций для пунктов
-            ids = sites1.Select(x => x.StationId).Distinct().ToArray();
-            // Получаем станции
-            Station[] stations1 = client.GetStationsByList(hSvc, ids);
+        //////    // Определяем уникальные коды переменных
+        //////    ids = ctls.Select(x => x.VariableId).Distinct().ToArray();
+        //////    // Получаем переменные
+        //////    Variable[] vars1 = client.GetVariablesByList(hSvc, ids);
 
-            // Определяем уникальные коды переменных
-            ids = ctls.Select(x => x.VariableId).Distinct().ToArray();
-            // Получаем переменные
-            Variable[] vars1 = client.GetVariablesByList(hSvc, ids);
+        //////    // Вывод результатов на консоль
 
-            // Вывод результатов на консоль
-
-            Console.WriteLine("\n--- SAMPLE 2 ---\n");
-            Console.WriteLine("Период {0} - {1}", dateSLOC.ToString("dd.MM.yyyy"), dateFLOC.ToString("dd.MM.yyyy"));
-            Console.WriteLine("Запрошено {0} станций {1} пунктов {2} переменных",
-                stations.Count(), sites.Count(), variableIdList.Length);
-            Console.WriteLine("Получено  {0} станций {1} пунктов {2} переменных",
-                stations1.Count(), sites1.Count(), vars1.Length);
-            Console.WriteLine("   всего XXX значений для {1} записей каталога",
-                ctls.Length);
-        }
-
-        /// <summary>
-        /// Работа с namespace PARSER
-        /// </summary>
-        public static void SampleParser(ServiceClient client, long hSvc)
-        {
-            SysObj sysObj = client.GetParserSysObj(hSvc, 9);
-            Console.WriteLine("SysObj: {0} {1} {2} {3} {4}", sysObj.Id, sysObj.Name, sysObj.Notes, sysObj.Heap, sysObj.LastStartParam);
-
-            SysParsersParams[] sysPar = client.GetParserSysParsersParams(hSvc, new int[] { 1, 2 });
-            if (sysPar.Length > 0)
-                Console.WriteLine("SysParam: {0} {1}", sysPar[0].CodeFormId, sysPar[0].ExtParam);
-            else
-                Console.WriteLine("SysParam: null");
-        }
+        //////    Console.WriteLine("\n--- SAMPLE 2 ---\n");
+        //////    Console.WriteLine("Период {0} - {1}", dateSLOC.ToString("dd.MM.yyyy"), dateFLOC.ToString("dd.MM.yyyy"));
+        //////    Console.WriteLine("Запрошено {0} пунктов {1} переменных",
+        //////        sites.Count(), variableIdList.Length);
+        //////    Console.WriteLine("   всего XXX значений для {1} записей каталога",
+        //////        ctls.Length);
+        //////}
     }
 }

@@ -53,7 +53,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="StationExt.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -96,9 +95,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AmurServiceRWReference\Service14.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AmurServiceRWReference\Service15.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AmurServiceRWReference\Service16.xsd">
@@ -189,25 +185,13 @@
     <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.SiteAttrType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.SiteType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.SiteXSite.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.SiteXSiteType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.Station.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.StationType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.SysObj.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.SysParsersParams.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.SysParsersXSites.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AmurServiceRWReference\TestService.AmurServiceRWReference.Unit.datasource">
