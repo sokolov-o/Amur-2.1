@@ -67,27 +67,28 @@ namespace SOV.Amur.Meta
 
         public Dictionary<Site, List<GeoObject>> SelectByStationsFK(List<int> stationIdList)
         {
-            Dictionary<Site, List<GeoObject>> ret = new Dictionary<Site, List<GeoObject>>();
+            //Dictionary<Site, List<GeoObject>> ret = new Dictionary<Site, List<GeoObject>>();
 
-            List<SiteGeoObject> sgo = SelectByStations(stationIdList);
-            foreach (var item in sgo)
-            {
-                IEnumerable<Site> stationi = ret.Keys.Where(x => x.Id == item.SiteId);
-                Site site;
-                if (stationi.Count() == 0)
-                {
-                    site = DataManager.GetInstance(_db.ConnectionString).SiteRepository.Select(item.SiteId);
-                    ret.Add(site, new List<GeoObject>());
-                }
-                else
-                    site = stationi.ElementAt(0);
+            //List<SiteGeoObject> sgo = SelectByStations(stationIdList);
+            //foreach (var item in sgo)
+            //{
+            //    IEnumerable<Site> stationi = ret.Keys.Where(x => x.Id == item.SiteId);
+            //    Site site;
+            //    if (stationi.Count() == 0)
+            //    {
+            //        site = DataManager.GetInstance(_db.ConnectionString).SiteRepository.Select(item.SiteId);
+            //        ret.Add(site, new List<GeoObject>());
+            //    }
+            //    else
+            //        site = stationi.ElementAt(0);
 
-                if (!ret[site].Exists(x => x.Id == item.GeoObjectId))
-                {
-                    ret[site].Add(DataManager.GetInstance(_db.ConnectionString).GeoObjectRepository.Select(item.GeoObjectId));
-                }
-            }
-            return ret;
+            //    if (!ret[site].Exists(x => x.Id == item.GeoObjectId))
+            //    {
+            //        ret[site].Add(DataManager.GetInstance(_db.ConnectionString).GeoObjectRepository.Select(item.GeoObjectId));
+            //    }
+            //}
+            //return ret;
+            return null;
         }
 
         public List<SiteGeoObject> SelectBySites(List<int> siteIds)
