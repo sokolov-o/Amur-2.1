@@ -19,7 +19,7 @@ namespace SOV.Amur.Meta
 
         private void ucStations_UCNewStationEvent()
         {
-            ucStationEdit.Station = new Station(-1, null, null, (int)EnumStationType.HydroPost, null, null, null);
+            ucStationEdit.Site = new Site() { Id = -1 };
         }
 
         private void ucStations_UCEditStationEvent(int stationId)
@@ -29,7 +29,7 @@ namespace SOV.Amur.Meta
             ucStationEdit.Focus();
         }
 
-        private void ucStations_UCSelectedStationChangedEvent(Station station)
+        private void ucStations_UCSelectedStationChangedEvent(Site site)
         {
             ucStationEdit.Clear();
             if (ucStations.Site != null)

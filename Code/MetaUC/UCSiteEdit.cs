@@ -62,7 +62,7 @@ namespace SOV.Amur.Meta
             ucStationSites.Clear();
             geoObjectsListBox.Clear();
         }
-        public Station Station
+        public Site Site
         {
             get
             {

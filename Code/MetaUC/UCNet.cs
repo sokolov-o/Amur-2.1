@@ -65,37 +65,30 @@ namespace SOV.Amur.Meta
             ret.Tag = go;
             return ret;
         }
-        TreeNode NewTreeNode(Station station, Site site)
+        TreeNode NewTreeNode(Site site)
         {
             TreeNode ret = new TreeNode();
-            if (site == null)
-            {
-                ret.Text = station.ToString();
-            }
-            else
-            {
-                ret.Text = Meta.Site.GetName(site, StationRepository.GetCash(), SiteTypeRepository.GetCash(), 1);
-                if (site.SiteTypeId != (int)EnumStationType.HydroPost && site.SiteTypeId != (int)EnumStationType.MeteoStation)
-                    ret.NodeFont = new Font(TreeView.DefaultFont, FontStyle.Italic);
-            }
-            ret.ForeColor = (station.TypeId == (int)EnumStationType.HydroPost) ? Color.Green : Color.Black;
+            ret.Text = Meta.Site.GetName(site, 1, true, SiteTypeRepository.GetCash());
+            if (site.TypeId != (int)EnumStationType.HydroPost && site.TypeId != (int)EnumStationType.MeteoStation)
+                ret.NodeFont = new Font(TreeView.DefaultFont, FontStyle.Italic);
+            ret.ForeColor = (site.TypeId == (int)EnumStationType.HydroPost) ? Color.Green : Color.Black;
 
-            ret.Tag = new object[] { station, site };
+            ret.Tag = new object[] { site };
             return ret;
         }
-        public void InsertChild(TreeNode nodeParent, Dictionary<GeoObject, List<Station>> gos, Dictionary<Station, List<Site>> ss)
+        public void InsertChild(TreeNode nodeParent, Dictionary<GeoObject, List<Site>> gos, Dictionary<Station, List<Site>> ss)
         {
-            foreach (KeyValuePair<GeoObject, List<Station>> go in gos.Where(x => x.Key.FallIntoId == ((GeoObject)nodeParent.Tag).Id).OrderBy(x => x.Key.Order))
+            foreach (KeyValuePair<GeoObject, List<Site>> go in gos.Where(x => x.Key.FallIntoId == ((GeoObject)nodeParent.Tag).Id).OrderBy(x => x.Key.OrderBy))
             {
                 TreeNode node = NewTreeNode(go.Key);
 
                 InsertChild(node, gos, ss);
 
-                foreach (Station station in go.Value)
+                foreach (Site site in go.Value)
                 {
-                    foreach (Site site in ss.First(x => x.Key.Id == station.Id).Value)
+                    foreach (Site site in ss.First(x => x.Key.Id == site.Id).Value)
                     {
-                        node.Nodes.Add(NewTreeNode(station, site));
+                        node.Nodes.Add(NewTreeNode(site));
                     }
                 }
                 nodeParent.Nodes.Add(node);
