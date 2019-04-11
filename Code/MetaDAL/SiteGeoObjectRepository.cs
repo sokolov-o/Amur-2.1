@@ -60,35 +60,60 @@ namespace SOV.Amur.Meta
         //////    }
         //////}
 
-        public Dictionary<Site, List<GeoObject>> SelectWithFK(int siteId)
+        //////public Dictionary<Site, List<GeoObject>> SelectWithFK(int siteId)
+        //////{
+        //////    return SelectByStationsFK(new List<int>(new int[] { siteId }));
+        //////}
+
+        //public Dictionary<Site, List<GeoObject>> SelectByStationsFK(List<int> stationIdList)
+        //{
+        //    Dictionary<Site, List<GeoObject>> ret = new Dictionary<Site, List<GeoObject>>();
+
+        //    List<SiteGeoObject> sgo = SelectByStations(stationIdList);
+        //    foreach (var item in sgo)
+        //    {
+        //        IEnumerable<Site> stationi = ret.Keys.Where(x => x.Id == item.SiteId);
+        //        Site site;
+        //        if (stationi.Count() == 0)
+        //        {
+        //            site = DataManager.GetInstance(_db.ConnectionString).SiteRepository.Select(item.SiteId);
+        //            ret.Add(site, new List<GeoObject>());
+        //        }
+        //        else
+        //            site = stationi.ElementAt(0);
+
+        //        if (!ret[site].Exists(x => x.Id == item.GeoObjectId))
+        //        {
+        //            ret[site].Add(DataManager.GetInstance(_db.ConnectionString).GeoObjectRepository.Select(item.GeoObjectId));
+        //        }
+        //    }
+        //    return ret;
+        //    return null;
+        //}
+        Dictionary<GeoObject, List<Site>> ToDictionaryGeoobSites(List<SiteGeoObject> siteGeoObjects)
         {
-            return SelectByStationsFK(new List<int>(new int[] { siteId }));
+            // READ ALL GEOOBS & SITES
+            List<GeoObject> geoobs = DataManager.GetInstance().GeoObjectRepository.Select(siteGeoObjects.Select(x => x.GeoObjectId).Distinct().ToList());
+            List<Site> sites = DataManager.GetInstance().SiteRepository.Select(siteGeoObjects.Select(x => x.SiteId).Distinct().ToList());
+
+            // MAKE Dictionary
+            Dictionary<GeoObject, List<Site>> ret = new Dictionary<GeoObject, List<Site>>();
+
+            foreach (var geoob in geoobs)
+            {
+                List<int> siteIds = siteGeoObjects.Where(y => y.GeoObjectId == geoob.Id).Select(x => x.SiteId).ToList();
+                List<Site> siteList = sites.Where(x => siteIds.Exists(y => y == x.Id)).ToList();
+
+                ret.Add(geoob, siteList);
+            }
+
+            return ret;
         }
 
-        public Dictionary<Site, List<GeoObject>> SelectByStationsFK(List<int> stationIdList)
+        public Dictionary<GeoObject, List<Site>> SelectGeoobSites()
         {
-            //Dictionary<Site, List<GeoObject>> ret = new Dictionary<Site, List<GeoObject>>();
+            return ToDictionaryGeoobSites(Select());
 
-            //List<SiteGeoObject> sgo = SelectByStations(stationIdList);
-            //foreach (var item in sgo)
-            //{
-            //    IEnumerable<Site> stationi = ret.Keys.Where(x => x.Id == item.SiteId);
-            //    Site site;
-            //    if (stationi.Count() == 0)
-            //    {
-            //        site = DataManager.GetInstance(_db.ConnectionString).SiteRepository.Select(item.SiteId);
-            //        ret.Add(site, new List<GeoObject>());
-            //    }
-            //    else
-            //        site = stationi.ElementAt(0);
-
-            //    if (!ret[site].Exists(x => x.Id == item.GeoObjectId))
-            //    {
-            //        ret[site].Add(DataManager.GetInstance(_db.ConnectionString).GeoObjectRepository.Select(item.GeoObjectId));
-            //    }
-            //}
-            //return ret;
-            return null;
         }
 
         public List<SiteGeoObject> SelectBySites(List<int> siteIds)

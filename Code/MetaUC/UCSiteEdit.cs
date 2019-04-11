@@ -24,7 +24,7 @@ namespace SOV.Amur.Meta
         }
         public void Fill(int siteId)
         {
-            ucStation.Site = DataManager.GetInstance().SiteRepository.Select(siteId);
+            ucSite.Site = DataManager.GetInstance().SiteRepository.Select(siteId);
             ucStationSites.Fill(siteId);
             FillGO(siteId);
         }
@@ -58,7 +58,7 @@ namespace SOV.Amur.Meta
         }
         public void Clear()
         {
-            ucStation.Site = null;
+            ucSite.Site = null;
             ucStationSites.Clear();
             geoObjectsListBox.Clear();
         }
@@ -66,11 +66,11 @@ namespace SOV.Amur.Meta
         {
             get
             {
-                return ucStation.Site;
+                return ucSite.Site;
             }
             set
             {
-                ucStation.Site = value;
+                ucSite.Site = value;
             }
         }
 
@@ -78,23 +78,23 @@ namespace SOV.Amur.Meta
         {
             try
             {
-                if (ucStation.Site.Id > 0)
-                    DataManager.GetInstance().StationRepository.Update(ucStation.Site);
+                if (ucSite.Site.Id > 0)
+                    DataManager.GetInstance().SiteRepository.Update(ucSite.Site);
                 else
                 {
                     //ucStation.Station.Id = DataManager.GetInstance().StationRepository.Insert(ucStation.Station);
-                    int Id = DataManager.GetInstance().StationRepository.Insert(ucStation.Site);
-                    ucStation.Site = DataManager.GetInstance().StationRepository.Select(Id);
+                    int Id = DataManager.GetInstance().SiteRepository.Insert(ucSite.Site);
+                    ucSite.Site = DataManager.GetInstance().SiteRepository.Select(Id);
                 }
-                ucEntityAttrValues.EntityId = ucStation.Site.Id;
-                ucStationSites.StationId = ucStation.Site.Id;
+                ucEntityAttrValues.EntityId = ucSite.Site.Id;
+                ucStationSites.StationId = ucSite.Site.Id;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return;
             }
-            RaiseStationSavedEvent(ucStation.Site);
+            RaiseStationSavedEvent(ucSite.Site);
             EnableSites = true;
         }
 
@@ -110,13 +110,13 @@ namespace SOV.Amur.Meta
             }
         }
         #region EVENTS
-        public delegate void UCStationSavedEventHandler(Station station);
+        public delegate void UCStationSavedEventHandler(Site site);
         public event UCStationSavedEventHandler UCStationSavedEvent;
-        protected virtual void RaiseStationSavedEvent(Station station)
+        protected virtual void RaiseStationSavedEvent(Site site)
         {
             if (UCStationSavedEvent != null)
             {
-                UCStationSavedEvent(station);
+                UCStationSavedEvent(site);
             }
         }
         #endregion
@@ -132,16 +132,16 @@ namespace SOV.Amur.Meta
             {
                 foreach (var geoObject in frm.SelectedItems)
                 {
-                    DataManager.GetInstance().StationGeoObjectRepository.Insert(((GeoObject)geoObject).Id, ucStation.Site.Id);
+                    DataManager.GetInstance().StationGeoObjectRepository.Insert(((GeoObject)geoObject).Id, ucSite.Site.Id);
                 }
-                FillGO(ucStation.Site.Id);
+                FillGO(ucSite.Site.Id);
             }
         }
 
         private void geoObjectsListBox_UCDeleteEvent(int id)
         {
-            DataManager.GetInstance().StationGeoObjectRepository.Delete(id, ucStation.Site.Id);
-            FillGO(ucStation.Site.Id);
+            DataManager.GetInstance().StationGeoObjectRepository.Delete(id, ucSite.Site.Id);
+            FillGO(ucSite.Site.Id);
         }
     }
 }

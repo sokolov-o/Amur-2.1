@@ -28,17 +28,16 @@ namespace SOV.Amur.Meta
 
             // ВОДНЫЕ ОБЪЕКТЫ И ИХ ПОСТЫ/СТАНЦИИ
 
-            Dictionary<GeoObject, List<Station>> goxs = Meta.DataManager.GetInstance().StationGeoObjectRepository.SelectGeoObjectsXStations();
-            Dictionary<Station, List<Site>> sxs = Meta.DataManager.GetInstance().StationRepository.SelectStationXSites();
+            Dictionary<GeoObject, List<Site>> geoobXsites = Meta.DataManager.GetInstance().SiteGeoObjectRepository.SelectGeoobSites();
 
-            foreach (KeyValuePair<GeoObject, List<Station>> gos in goxs.Where(x => !x.Key.FallIntoId.HasValue).OrderBy(x => x.Key.Order))
+            foreach (KeyValuePair<GeoObject, List<Site>> gos in geoobXsites.Where(x => !x.Key.FallIntoId.HasValue).OrderBy(x => x.Key.OrderBy))
             {
                 TreeNode node = new TreeNode(gos.Key.Name);
                 node.NodeFont = new Font(TreeView.DefaultFont, FontStyle.Regular);
                 node.ForeColor = Color.Blue;
                 node.Tag = gos.Key;
 
-                InsertChild(node, goxs, sxs);
+                InsertChild(node, geoobXsites, sxs);
 
                 tv.Nodes.Add(node);
             }
@@ -57,12 +56,12 @@ namespace SOV.Amur.Meta
                 tv.Nodes[i].Text += " - " + tv.Nodes[i].Nodes.Count + " шт.";
             }
         }
-        TreeNode NewTreeNode(GeoObject go)
+        TreeNode NewTreeNode(GeoObject geoob)
         {
-            TreeNode ret = new TreeNode(go.Name);
+            TreeNode ret = new TreeNode(geoob.Name);
             ret.NodeFont = new Font(TreeView.DefaultFont, FontStyle.Regular);
             ret.ForeColor = Color.Blue;
-            ret.Tag = go;
+            ret.Tag = geoob;
             return ret;
         }
         TreeNode NewTreeNode(Site site)
@@ -76,15 +75,15 @@ namespace SOV.Amur.Meta
             ret.Tag = new object[] { site };
             return ret;
         }
-        public void InsertChild(TreeNode nodeParent, Dictionary<GeoObject, List<Site>> gos, Dictionary<Station, List<Site>> ss)
+        public void InsertChild(TreeNode nodeParent, Dictionary<GeoObject, List<Site>> geoobXsites)
         {
-            foreach (KeyValuePair<GeoObject, List<Site>> go in gos.Where(x => x.Key.FallIntoId == ((GeoObject)nodeParent.Tag).Id).OrderBy(x => x.Key.OrderBy))
+            foreach (KeyValuePair<GeoObject, List<Site>> gxs in geoobXsites.Where(x => x.Key.FallIntoId == ((GeoObject)nodeParent.Tag).Id).OrderBy(x => x.Key.OrderBy))
             {
-                TreeNode node = NewTreeNode(go.Key);
+                TreeNode node = NewTreeNode(gxs.Key);
 
-                InsertChild(node, gos, ss);
+                InsertChild(node, geoobXsites, ss);
 
-                foreach (Site site in go.Value)
+                foreach (Site site in gxs.Value)
                 {
                     foreach (Site site in ss.First(x => x.Key.Id == site.Id).Value)
                     {

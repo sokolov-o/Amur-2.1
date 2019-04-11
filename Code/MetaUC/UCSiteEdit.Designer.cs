@@ -31,7 +31,7 @@
             SOV.Amur.Meta.Station station2 = new SOV.Amur.Meta.Station();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.ucStation = new SOV.Amur.Meta.UCSite();
+            this.ucSite = new SOV.Amur.Meta.UCSite();
             this.saveButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -94,7 +94,7 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.Controls.Add(this.ucStation, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.ucSite, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.saveButton, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 16);
@@ -106,11 +106,11 @@
             // 
             // ucStation
             // 
-            this.ucStation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucStation.Location = new System.Drawing.Point(7, 7);
-            this.ucStation.Margin = new System.Windows.Forms.Padding(7);
-            this.ucStation.Name = "ucStation";
-            this.ucStation.Size = new System.Drawing.Size(655, 83);
+            this.ucSite.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucSite.Location = new System.Drawing.Point(7, 7);
+            this.ucSite.Margin = new System.Windows.Forms.Padding(7);
+            this.ucSite.Name = "ucStation";
+            this.ucSite.Size = new System.Drawing.Size(655, 83);
             station2.AddrRegionId = null;
             station2.Code = "";
             station2.Id = -1;
@@ -121,8 +121,8 @@
             station2.NameRusShort = "";
             station2.OrgId = null;
             station2.TypeId = -2147483648;
-            this.ucStation.Site = station2;
-            this.ucStation.TabIndex = 0;
+            this.ucSite.Site = station2;
+            this.ucSite.TabIndex = 0;
             // 
             // saveButton
             // 
@@ -439,7 +439,7 @@
 
         #endregion
 
-        private UCSite ucStation;
+        private UCSite ucSite;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button saveButton;

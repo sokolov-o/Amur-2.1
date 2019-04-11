@@ -16,7 +16,7 @@ namespace SOV.Amur.Meta
         {
             InitializeComponent();
         }
-        public delegate void UCSiteGroupCurrentIndexChangedEventHandler(SiteGroup siteGroup);
+        public delegate void UCSiteGroupCurrentIndexChangedEventHandler(EntityGroup siteGroup);
         public event UCSiteGroupCurrentIndexChangedEventHandler UCSiteGroupCurrentIndexChangedEvent;
         protected virtual void RaiseUCSiteGroupCurrentIndexChangedEvent()
         {
@@ -26,26 +26,26 @@ namespace SOV.Amur.Meta
             }
         }
 
-        public SiteGroup SiteGroup
+        public EntityGroup SiteGroup
         {
-            get { return cb.SelectedItem == null ? null : (SiteGroup)cb.SelectedItem; }
+            get { return cb.SelectedItem == null ? null : (EntityGroup)cb.SelectedItem; }
             set
             {
                 cb.SelectedIndex = (value == null) ? -1 : cb.Items.IndexOf(value);
             }
         }
 
-        List<SiteGroup> _specGroups = new List<SiteGroup>
+        List<EntityGroup> _specGroups = new List<EntityGroup>
         {
-            new SiteGroup(-1,0,"(_Все пункты)"),
-            new SiteGroup(-2,0,"(_Все гидрологические посты)"),
-            new SiteGroup(-3,0,"(_Все метеорологические станции)"),
-            new SiteGroup(-4,0,"(_Все гео-объекты)")
+            new EntityGroup(-1,"(_Все пункты)","site"),
+            new EntityGroup(-2,"(_Все гидрологические посты)","site"),
+            new EntityGroup(-3,"(_Все метеорологические станции)","site"),
+            new EntityGroup(-4,"(_Все гео-объекты)","site")
         };
         private void refreshButton_Click(object sender, EventArgs e)
         {
             cb.Items.Clear();
-            List<SiteGroup> groups = Meta.DataManager.GetInstance().SiteGroupRepository.SelectGroups();
+            List<EntityGroup> groups = Meta.DataManager.GetInstance().EntityGroupRepository.SelectGroups("site");
             groups.AddRange(_specGroups);
             cb.Items.AddRange(groups.OrderBy(x => x.Name).ToArray());
         }
