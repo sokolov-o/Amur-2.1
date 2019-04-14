@@ -46,7 +46,7 @@ namespace SOV.Amur.Meta
                 }
                 else
                 {
-                    sites = DataManager.GetInstance().SiteRepository.SelectByType(siteTypeIds);
+                    sites = DataManager.GetInstance().SiteRepository.SelectByTypes(siteTypeIds);
                 }
                 sites.RemoveAll(x => ExcludeSites.Exists(y => y == x.Id));
 
@@ -57,7 +57,7 @@ namespace SOV.Amur.Meta
                 //    .OrderBy(x => x.Name)
                 //    .ToList());
                 UCList2.AddRange(
-                    sites.Select(x => new IdName() { Id = x.Id, Name = x.GetName(StationRepository.GetCash(), SiteTypeRepository.GetCash(), 1) })
+                    sites.Select(x => new IdName() { Id = x.Id, Name = x.GetName(1, true, SiteTypeRepository.GetCash()) })
                     .OrderBy(x => x.Name)
                     .ToList<object>());
             }

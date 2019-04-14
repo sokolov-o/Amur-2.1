@@ -13,52 +13,46 @@ namespace SOV.Amur.Meta
     {
         internal SiteGeoObjectRepository(Common.ADbNpgsql db) : base(db, "meta.site_x_geo_object") { }
 
-        ///////// <summary>
-        ///////// Связать станцию с географическим объектом.
-        ///////// </summary>
-        ///////// <param name="item">Экземпляр класса.</param>
-        ///////// <returns></returns>
-        //////public void Insert(SiteGeoObject item)
-        //////{
-        //////    using (NpgsqlConnection cnn = _db.Connection)
-        //////    {
-        //////        using (NpgsqlCommand cmd = new NpgsqlCommand("insert into meta.station_x_geoobject"
-        //////                        + "(site_id, geo_object_id, \"order_by\")"
-        //////                        + " values (:site_id,:geo_object_id,:order_by)", cnn))
-        //////        {
-        //////            cmd.Parameters.AddWithValue("site_id", item.SiteId);
-        //////            cmd.Parameters.AddWithValue("geo_object_id", item.GeoObjectId);
-        //////            cmd.Parameters.Add(ADbNpgsql.GetParameter("order_by", item.OrderBy));
+        /// <summary>
+        /// Связать станцию с географическим объектом.
+        /// </summary>
+        /// <param name="item">Экземпляр класса.</param>
+        /// <returns></returns>
+        public void Insert(SiteGeoObject item)
+        {
+            Insert(new Dictionary<string, object>()
+                {
+                    { "site_id",item.SiteId},
+                    { "geo_object_id",item.GeoObjectId},
+                    { "order_by",item.OrderBy}
+                }
+            );
+        }
 
-        //////            cmd.ExecuteNonQuery();
-        //////        }
-        //////    }
-        //////}
+        /// <summary>
+        /// Вставка с неизвестным порядком. Порядок будет установлен на 1 меньше минимального существующего
+        /// или 0, если к объекту не привязана ни одна станция.
+        /// </summary>
+        /// <param name="geoObjectId">Код объекта.</param>
+        /// <param name="siteId">Код станции.</param>
+        public void Insert(int geoObjectId, int siteId)
+        {
+            int? order_by = SelectMinOrderBy(geoObjectId);
+            Insert(new SiteGeoObject(siteId, geoObjectId, order_by.HasValue ? (int)order_by - 1 : 0));
+        }
 
-        ///////// <summary>
-        ///////// Вставка с неизвестным порядком. Порядок будет установлен на 1 меньше минимального существующего
-        ///////// или 0, если к объекту не привязана ни одна станция.
-        ///////// </summary>
-        ///////// <param name="geoObjectId">Код объекта.</param>
-        ///////// <param name="stationId">Код станции.</param>
-        //////public void Insert(int geoObjectId, int stationId)
-        //////{
-        //////    int? order_by = SelectMinorder_by(geoObjectId);
-        //////    Insert(new SiteGeoObject(stationId, geoObjectId, order_by.HasValue ? (int)order_by - 1 : 0));
-        //////}
-
-        //////private int? SelectMinorder_by(int geoObjectId)
-        //////{
-        //////    using (NpgsqlConnection cnn = _db.Connection)
-        //////    {
-        //////        using (NpgsqlCommand cmd = new NpgsqlCommand("select min(\"order_by\") from meta.station_x_geoobject"
-        //////                        + " where geo_object_id = " + geoObjectId, cnn))
-        //////        {
-        //////            object o = cmd.ExecuteScalar();
-        //////            return (o == System.DBNull.Value) ? null : (int?)int.Parse(o.ToString());
-        //////        }
-        //////    }
-        //////}
+        private int? SelectMinOrderBy(int geoObjectId)
+        {
+            using (NpgsqlConnection cnn = _db.Connection)
+            {
+                using (NpgsqlCommand cmd = new NpgsqlCommand("select min(\"order_by\") from meta.site_x_geoobject"
+                                + " where geo_object_id = " + geoObjectId, cnn))
+                {
+                    object o = cmd.ExecuteScalar();
+                    return (o == System.DBNull.Value) ? null : (int?)int.Parse(o.ToString());
+                }
+            }
+        }
 
         //////public Dictionary<Site, List<GeoObject>> SelectWithFK(int siteId)
         //////{
@@ -115,6 +109,11 @@ namespace SOV.Amur.Meta
             return ToDictionaryGeoobSites(Select());
 
         }
+        public Dictionary<GeoObject, List<Site>> SelectByGeoobs(List<int> idGeoobs)
+        {
+            return ToDictionaryGeoobSites(Select(idGeoobs));
+
+        }
 
         public List<SiteGeoObject> SelectBySites(List<int> siteIds)
         {
@@ -123,31 +122,6 @@ namespace SOV.Amur.Meta
                     {"site_id", siteIds}
                 }
             );
-
-            //////List<SiteGeoObject> ret = new List<SiteGeoObject>();
-            //////if (siteIds != null && siteIds.Count > 0)
-            //////{
-            //////    string sqlIn = StrVia.ToString(siteIds);
-
-            //////    using (NpgsqlConnection cnn = _db.Connection)
-            //////    {
-            //////        using (NpgsqlCommand cmd = new NpgsqlCommand("select * from meta.site_x_geoobject where site_id in (" + sqlIn + ")", cnn))
-            //////        {
-            //////            using (NpgsqlDataReader rdr = cmd.ExecuteReader())
-            //////            {
-            //////                while (rdr.Read())
-            //////                {
-            //////                    ret.Add(new SiteGeoObject(
-            //////                        (int)rdr["site_id"],
-            //////                        (int)rdr["geo_object_id"],
-            //////                        (int)rdr["order_by"]
-            //////                    ));
-            //////                }
-            //////            }
-            //////        }
-            //////    }
-            //////}
-            //////return ret;
         }
 
         protected override object ParseData(NpgsqlDataReader rdr)
@@ -217,47 +191,47 @@ namespace SOV.Amur.Meta
         //////    return ret;
         //////}
 
-        //////public void UpdateStationorder_by(int geoObjectId, List<int> stationIds)
-        //////{
-        //////    using (NpgsqlConnection cnn = _db.Connection)
-        //////    {
-        //////        using (NpgsqlCommand cmd = new NpgsqlCommand("update meta.station_x_geoobject"
-        //////            + " set \"order_by\" = :order_by"
-        //////            + " where site_id = :site_id and geo_object_id = :geo_object_id", cnn))
-        //////        {
-        //////            cmd.Parameters.AddWithValue("site_id", 0);
-        //////            cmd.Parameters.AddWithValue("geo_object_id", geoObjectId);
-        //////            cmd.Parameters.AddWithValue("order_by", 0);
+        public void UpdateSitesOrderBy(int geoObjectId, List<int> stationIds)
+        {
+            using (NpgsqlConnection cnn = _db.Connection)
+            {
+                using (NpgsqlCommand cmd = new NpgsqlCommand("update meta.station_x_geoobject"
+                    + " set order_by = :order_by"
+                    + " where site_id = :site_id and geo_object_id = :geo_object_id", cnn))
+                {
+                    cmd.Parameters.AddWithValue("site_id", 0);
+                    cmd.Parameters.AddWithValue("geo_object_id", geoObjectId);
+                    cmd.Parameters.AddWithValue("order_by", 0);
 
-        //////            try
-        //////            {
-        //////                cmd.Transaction = cnn.BeginTransaction();
+                    try
+                    {
+                        cmd.Transaction = cnn.BeginTransaction();
 
-        //////                for (int i = 0; i < stationIds.Count; i++)
-        //////                {
-        //////                    cmd.Parameters[0].Value = stationIds[i];
-        //////                    cmd.Parameters[2].Value = i + 1;
+                        for (int i = 0; i < stationIds.Count; i++)
+                        {
+                            cmd.Parameters[0].Value = stationIds[i];
+                            cmd.Parameters[2].Value = i + 1;
 
-        //////                    cmd.ExecuteNonQuery();
-        //////                }
+                            cmd.ExecuteNonQuery();
+                        }
 
-        //////                cmd.Transaction.Commit();
-        //////            }
-        //////            catch (Exception ex)
-        //////            {
-        //////                try
-        //////                {
-        //////                    cmd.Transaction.Rollback();
-        //////                }
-        //////                catch (Exception ex1)
-        //////                {
-        //////                    throw new Exception(ex1.ToString(), ex);
-        //////                }
-        //////                throw new Exception("Порядок пунктов в пределах водного объекта не сохранён.", ex);
-        //////            }
-        //////        }
-        //////    }
-        //////}
+                        cmd.Transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        try
+                        {
+                            cmd.Transaction.Rollback();
+                        }
+                        catch (Exception ex1)
+                        {
+                            throw new Exception(ex1.ToString(), ex);
+                        }
+                        throw new Exception("Порядок пунктов в пределах водного объекта не сохранён.", ex);
+                    }
+                }
+            }
+        }
 
         //////public void Delete(int geoObjectId, int stationId)
         //////{

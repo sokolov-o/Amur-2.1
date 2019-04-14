@@ -21,7 +21,7 @@ namespace SOV.Amur.Meta
         {
             InitializeComponent();
 
-            siteTypeComboBox.AddRange(StationType.ToList<DicItem>(SiteTypeRepository.GetCash()));
+            siteTypeComboBox.AddRange(SiteType.ToList<DicItem>(SiteTypeRepository.GetCash()));
         }
         Site _site = null;
         public Site Site
@@ -29,34 +29,35 @@ namespace SOV.Amur.Meta
             set
             {
                 if (value == null)
-                    _site = new Site(-1, -1, -1, null, null);
+                    _site = new Site();
                 else
-                    _site = new Site(value.Id, value.StationId, value.SiteTypeId, value.SiteCode, value.Description);
-
-                siteTypeComboBox.SelectedId = _site.SiteTypeId;
-                codeTtextBox.Text = _site.SiteCode;
+                {
+                    _site = value;// new Site(){ Id=value.Id,  ParentId= value.StationId, value.SiteTypeId, value.SiteCode, value.Description);
+                    stationUCTextBox.Value = value.ParentId.HasValue ? DataManager.GetInstance().SiteRepository.Select((int)value.ParentId) : null;
+                }
+                siteTypeComboBox.SelectedId = _site.TypeId;
+                codeTtextBox.Text = _site.Code;
                 descriptionTextBox.Text = _site.Description;
-                List<Station> stations = StationRepository.GetCash();
-                stationUCTextBox.Value = stations.FirstOrDefault(x => x.Id == value.StationId);
 
                 Text = "Пункт " + _site.Id + (codeTtextBox.Text == null ? "" : codeTtextBox.Text);
             }
             get
             {
-                return new Site(
-                    _site.Id,
-                    //_site.StationId, 
-                    ((Station)stationUCTextBox.Value).Id,
-                    (int)siteTypeComboBox.SelectedId,
-                    codeTtextBox.Text,
-                    descriptionTextBox.Text);
+                return new Site()
+                {
+                    Id = _site.Id,
+                    ParentId = stationUCTextBox.Value == null ? null : (int?)((Site)stationUCTextBox.Value).Id,
+                    TypeId = (int)siteTypeComboBox.SelectedId,
+                    Code = codeTtextBox.Text,
+                    Description = descriptionTextBox.Text
+                };
             }
         }
         public FormSite(Site site)
         {
             InitializeComponent();
 
-            siteTypeComboBox.AddRange(StationType.ToList<DicItem>(SiteTypeRepository.GetCash()));
+            siteTypeComboBox.AddRange(SiteType.ToList<DicItem>(SiteTypeRepository.GetCash()));
             Site = site;
         }
         private void button1_Click(object sender, EventArgs e)
@@ -78,7 +79,7 @@ namespace SOV.Amur.Meta
             if (frm == null)
             {
                 frm = new FormListBox("Выберите станцию",
-                    StationRepository.GetCash().OrderBy(x => x.NameRus).ToArray(),
+                    SiteRepository.GetCash().OrderBy(x => x.Name).ToArray(),
                     "NameRusShort"
                     , false);
                 frm.StartPosition = FormStartPosition.CenterScreen;

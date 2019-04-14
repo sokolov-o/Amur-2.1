@@ -53,7 +53,7 @@ namespace SOV.Amur.Meta
                 geoTypeDicComboBox.SelectedId = value.GeoTypeId;
 
                 fallIntoDicComboBox.SelectedId = value.FallIntoId;
-                orderTextBox.Text = value.Order.ToString();
+                orderTextBox.Text = value.OrderBy.ToString();
 
                 // Впадают/принадлежат геообъекту
                 childsDicListBox.Clear();

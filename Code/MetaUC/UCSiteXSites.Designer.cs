@@ -109,7 +109,7 @@
             this.addToolStripButton.Name = "addToolStripButton";
             this.addToolStripButton.Size = new System.Drawing.Size(23, 40);
             this.addToolStripButton.Text = "toolStripButton1";
-            this.addToolStripButton.Click += new System.EventHandler(this.addToolStripButton_Click);
+            this.addToolStripButton.Click += new System.EventHandler(this.AddToolStripButton_Click);
             // 
             // UCSiteXSites
             // 

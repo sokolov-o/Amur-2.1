@@ -37,8 +37,8 @@ namespace SOV.Amur.Meta
             Node0Site.ImageIndex = Node0Site.SelectedImageIndex = 3;
             Node0Site.ContextMenuStrip = contextMenuStrip1;
 
-            List<SiteGroup> sg = Meta.DataManager.GetInstance().SiteGroupRepository.SelectGroupsFK();
-            List<StationType> siteTypes = Meta.DataManager.GetInstance().SiteTypeRepository.Select();
+            List<EntityGroup> sg = Meta.DataManager.GetInstance().EntityGroupRepository.SelectGroups("site");
+            List<SiteType> siteTypes = Meta.DataManager.GetInstance().SiteTypeRepository.Select();
 
             foreach (var item in sg.OrderBy(x => x.Name))
             {
@@ -49,7 +49,7 @@ namespace SOV.Amur.Meta
 
                 foreach (var site in item.SiteList.OrderBy(x => item.StationList.Find(y => y.Id == x.StationId).Name))
                 {
-                    TreeNode node2 = node1.Nodes.Add("u", site.GetName(StationRepository.GetCash(), SiteTypeRepository.GetCash(), 2));
+                    TreeNode node2 = node1.Nodes.Add("u", site.GetName(2, false, SiteTypeRepository.GetCash()));
                     node2.Tag = site.Id;
                     node2.ImageIndex = node2.SelectedImageIndex = 1;
                 }

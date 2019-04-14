@@ -12,11 +12,11 @@ namespace SOV.Amur.Meta
         public int GeoObjectId { get; set; }
         public int OrderBy { get; set; }
 
-        public SiteGeoObject(int stationId, int geoObjectId, int order)
+        public SiteGeoObject(int siteId, int geoObjectId, int orderBy)
         {
-            SiteId = stationId;
+            SiteId = siteId;
             GeoObjectId = geoObjectId;
-            OrderBy = order;
+            OrderBy = orderBy;
         }
     }
 }

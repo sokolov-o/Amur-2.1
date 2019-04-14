@@ -21,12 +21,12 @@ namespace SOV.Amur.Meta
             List<Common.DicItem> dicis;
 
             dicis = (new List<Common.DicItem>(new Common.DicItem[] { dici }));
-            dicis.AddRange(StationType.ToList<Common.DicItem>(SiteTypeRepository.GetCash()));
+            dicis.AddRange(SiteType.ToList<Common.DicItem>(SiteTypeRepository.GetCash()));
             stationTypeComboBox.DataSource = dicis;
             stationTypeComboBox.SelectedIndex = 0;
 
             dicis = new List<Common.DicItem>(new Common.DicItem[] { dici });
-            dicis.AddRange(StationType.ToList<Common.DicItem>(SiteTypeRepository.GetCash()));
+            dicis.AddRange(SiteType.ToList<Common.DicItem>(SiteTypeRepository.GetCash()));
             siteTypeComboBox.AddRange(dicis);
             siteTypeComboBox.SelectedIndex = 0;
 
@@ -47,11 +47,10 @@ namespace SOV.Amur.Meta
                 SiteFilter ret = new SiteFilter()
                 {
                     AddrId = ((Addr)AddrComboBox.SelectedItem).Id,
-                    StationTypeId = ((Common.DicItem)stationTypeComboBox.SelectedItem).Id,
-                    SiteTypeId = ((Common.DicItem)siteTypeComboBox.SelectedItem).Id,
-                    StationCodeLike = stationCodeLikeTextBox.Text,
-                    StationNameLike = stationNameLikeTextBox.Text,
-                    OrgId = ((Addr)orgComboBox.SelectedItem).Id,
+                    TypeId = ((Common.DicItem)siteTypeComboBox.SelectedItem).Id,
+                    CodeLike = stationCodeLikeTextBox.Text,
+                    NameLike = stationNameLikeTextBox.Text,
+                    OrgId = ((Addr)orgComboBox.SelectedItem).Id
                 };
                 return ret;
             }

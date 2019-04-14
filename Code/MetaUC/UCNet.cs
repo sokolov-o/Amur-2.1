@@ -37,21 +37,21 @@ namespace SOV.Amur.Meta
                 node.ForeColor = Color.Blue;
                 node.Tag = gos.Key;
 
-                InsertChild(node, geoobXsites, sxs);
+                InsertChild(node, geoobXsites);
 
                 tv.Nodes.Add(node);
             }
 
             // ПОСТЫ/СТАНЦИИ БЕЗ ВОДНЫХ ОБЪЕКТОВ
-            List<Station> stations = Meta.DataManager.GetInstance().StationRepository.SelectWithoutGeoObject();
-            if (stations.Count > 0)
+            List<Site> sites = Meta.DataManager.GetInstance().SiteRepository.SelectWithoutGeoObject();
+            if (sites.Count > 0)
             {
                 int i = tv.Nodes.Add(new TreeNode("ПОСТЫ/СТАНЦИИ БЕЗ ВОДНЫХ ОБЪЕКТОВ"));
                 tv.Nodes[i].ForeColor = Color.Red;
 
-                foreach (Station station in stations.OrderBy(x => x.Code))
+                foreach (Site site in sites.OrderBy(x => x.Code))
                 {
-                    tv.Nodes[i].Nodes.Add(NewTreeNode(station, null));
+                    tv.Nodes[i].Nodes.Add(NewTreeNode(site));
                 }
                 tv.Nodes[i].Text += " - " + tv.Nodes[i].Nodes.Count + " шт.";
             }
@@ -81,14 +81,11 @@ namespace SOV.Amur.Meta
             {
                 TreeNode node = NewTreeNode(gxs.Key);
 
-                InsertChild(node, geoobXsites, ss);
+                InsertChild(node, geoobXsites);
 
                 foreach (Site site in gxs.Value)
                 {
-                    foreach (Site site in ss.First(x => x.Key.Id == site.Id).Value)
-                    {
-                        node.Nodes.Add(NewTreeNode(site));
-                    }
+                    node.Nodes.Add(NewTreeNode(site));
                 }
                 nodeParent.Nodes.Add(node);
             }

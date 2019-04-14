@@ -43,11 +43,21 @@ namespace SOV.Amur.Meta
         }
 
         int _iColSite, _iColRelation;
-
+        public void Clear()
+        {
+            dgv.Rows.Clear();
+        }
+        public int ParentSiteId { get; set; }
+        public void Fill(int siteId)
+        {
+            Fill(1, siteId);
+        }
         public void Fill(int siteNum1Or2, int siteId)
         {
             dgv.Rows.Clear();
             SiteNum1Or2 = siteNum1Or2;
+            ParentSiteId = siteId;
+
             List<SiteXSite> siteXsites = Meta.DataManager.GetInstance().SiteXSiteRepository.Select(siteId, SiteNum1Or2);
             if (siteXsites.Count == 0) return;
 
@@ -72,12 +82,12 @@ namespace SOV.Amur.Meta
                 DataGridViewRow row = dgv.Rows[dgv.Rows.Add()];
                 row.Cells[_iColRelation].Value = sxsTypes.FirstOrDefault(x => x.Id == item.RelationTypeId).Name;
                 row.Cells[_iColSite].Value = sites.FirstOrDefault(x => x.Id == ((SiteNum1Or2 == 1) ? item.SiteId2 : item.SiteId1))
-                    .GetName(StationRepository.GetCash(), SiteTypeRepository.GetCash(), 1);
+                    .GetName(1, true, SiteTypeRepository.GetCash());
                 row.Tag = item;
             }
         }
 
-        private void addToolStripButton_Click(object sender, EventArgs e)
+        private void AddToolStripButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Not implemented yet. OSokolov@SOV.ru, 2016/12/12");
         }

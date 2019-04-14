@@ -52,7 +52,7 @@ namespace SOV.Amur.Meta
             GeoObject go = gos.FirstOrDefault(x => x.Id == selectedGOId);
             ucGeoobTree.SelectedDicItem = go == null ? null : go.ToDicItem();
 
-            FillStations(ucGeoobTree.SelectedDicItem);
+            FillSites(ucGeoobTree.SelectedDicItem);
         }
         bool _stationOrderChanged = false;
         void CheckStationsOrderChange()
@@ -65,18 +65,21 @@ namespace SOV.Amur.Meta
                     "Порядок изменён",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    SaveStationsOrder();
+                    SaveSitesOrderBy();
                 }
             }
         }
-        void SaveStationsOrder()
+        /// <summary>
+        /// Сохранить порядок станций в пределах гео-объекта.
+        /// </summary>
+        void SaveSitesOrderBy()
         {
             Cursor cs = this.Cursor;
             this.Cursor = Cursors.WaitCursor;
             try
             {
-                Meta.DataManager.GetInstance().StationGeoObjectRepository.UpdateStationOrder(_currentWObject.Id,
-                    ucStations.GetDataSource().Select(x => ((Station)x).Id).ToList());
+                Meta.DataManager.GetInstance().SiteGeoObjectRepository.UpdateSitesOrderBy(_currentWObject.Id,
+                    ucStations.GetDataSource().Select(x => ((Site)x).Id).ToList());
                 _stationOrderChanged = false;
             }
             finally
@@ -114,7 +117,7 @@ namespace SOV.Amur.Meta
             //}
         }
         Common.DicItem _currentWObject;
-        void FillStations(Common.DicItem go)
+        void FillSites(Common.DicItem go)
         {
             Cursor cs = this.Cursor;
             this.Cursor = Cursors.WaitCursor;
@@ -126,11 +129,11 @@ namespace SOV.Amur.Meta
 
                 if (go != null)
                 {
-                    Dictionary<GeoObject, List<Station>> gos = Meta.DataManager.GetInstance().StationGeoObjectRepository.SelectByGeoObjectsFK(new List<int>(new int[] { go.Id }));
-                    List<Station> stations = gos.Count == 0 ? new List<Station>() : gos.ElementAt(0).Value;
+                    Dictionary<GeoObject, List<Site>> gos = Meta.DataManager.GetInstance().SiteGeoObjectRepository.SelectByGeoobs(new List<int>(new int[] { go.Id }));
+                    List<Site> sites = gos.Count == 0 ? new List<Site>() : gos.ElementAt(0).Value;
 
                     ucStations.Clear();
-                    ucStations.SetDataSource(stations.ToArray<object>().ToList(), "Name");
+                    ucStations.SetDataSource(sites.ToArray<object>().ToList(), "Name");
                 }
             }
             finally
@@ -141,7 +144,7 @@ namespace SOV.Amur.Meta
 
         private void ucWObjects_SelectedDicItemChangedEvent(Common.DicItem dic)
         {
-            FillStations(dic);
+            FillSites(dic);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -212,7 +215,7 @@ namespace SOV.Amur.Meta
 
         private void ucGeoobTree_UCSelectedItemChanged(DicItem dici)
         {
-            FillStations(ucGeoobTree.SelectedDicItem);
+            FillSites(ucGeoobTree.SelectedDicItem);
         }
 
         private void cmsEditToolStripMenuItem_Click(object sender, EventArgs e)
@@ -235,10 +238,10 @@ namespace SOV.Amur.Meta
 
         private void ucStations_UCAddNewEvent()
         {
-            List<StationType> sts = SiteTypeRepository.GetCash();
+            List<SiteType> sts = SiteTypeRepository.GetCash();
             FormSelectListItems frm = new FormSelectListItems("Добавить пункт к гео-объекту",
-                StationRepository.GetCash()
-                .Select(x => new IdName() { Id = x.Id, Name = x.Name + " " + x.Code + " " + sts.Find(y => y.Id == x.TypeId).NameShort })
+                SiteRepository.GetCash()
+                .Select(x => new IdName() { Id = x.Id, Name = x.GetName(2, true, SiteTypeRepository.GetCash()) })
                 .ToArray(),
                 "Name"
             );
@@ -250,9 +253,9 @@ namespace SOV.Amur.Meta
                 {
                     foreach (var id in frm.SelectedItemsId)
                     {
-                        Meta.DataManager.GetInstance().StationGeoObjectRepository.Insert(_currentWObject.Id, id);
+                        Meta.DataManager.GetInstance().SiteGeoObjectRepository.Insert(_currentWObject.Id, id);
                     }
-                    FillStations(_currentWObject);
+                    FillSites(_currentWObject);
                     ucStations.SetSelectedItemById(frm.SelectedItemsId[0]);
                 }
             }
@@ -262,14 +265,14 @@ namespace SOV.Amur.Meta
         {
             if (ucStations.CurrentId != null)
             {
-                DataManager.GetInstance().StationGeoObjectRepository.Delete(_currentWObject.Id, (int)ucStations.CurrentId);
-                FillStations(_currentWObject);
+                DataManager.GetInstance().SiteGeoObjectRepository.Delete((SiteGeoObject)_currentWObject.Entity);
+                FillSites(_currentWObject);
             }
         }
 
         private void ucStations_UCSaveEvent()
         {
-            SaveStationsOrder();
+            SaveSitesOrderBy();
         }
 
         private void ucStations_UCItemOrderChangedEvent()

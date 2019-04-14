@@ -128,6 +128,18 @@ namespace SOV.Amur.Meta
                 .OrderBy(x => idOrder.First(y => y[0] == x.Id)[1])
                 .ToList();
         }
+        public List<Site> SelectByParent(int parentSiteId)
+        {
+            var fields = new Dictionary<string, object>() { { "parent_id", parentSiteId } };
+            return Select(fields);
+        }
+        public List<Site> SelectWithoutGeoObject()
+        {
+            var fields = new Dictionary<string, object>();
+            string sql = "select * from meta.site s"
+                    + " where s.id not in (select distinct site_id from meta.site_x_geoobject)";
+            return ExecQuery<Site>(sql, fields);
+        }
 
     }
 }

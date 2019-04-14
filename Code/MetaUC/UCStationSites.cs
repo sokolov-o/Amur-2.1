@@ -25,17 +25,17 @@ namespace SOV.Amur.Meta
             dgv.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             dgv.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
-        public int StationId { get; set; }
+        public int ParentSiteId { get; set; }
         public void Clear()
         {
             dgv.Rows.Clear();
         }
-        public void Fill(int stationId)
+        public void Fill(int parentSiteId)
         {
             Clear();
 
-            List<Site> sites = DataManager.GetInstance().SiteRepository.Select(stationId, null);
-            StationId = stationId;
+            List<Site> sites = DataManager.GetInstance().SiteRepository.SelectByParent(parentSiteId);
+            ParentSiteId = parentSiteId;
 
             foreach (var item in sites)
             {
@@ -43,8 +43,8 @@ namespace SOV.Amur.Meta
                 row.Tag = item;
 
                 row.Cells["id"].Value = item.Id;
-                row.Cells["code"].Value = item.SiteCode;
-                row.Cells["siteTypeName"].Value = SiteTypeRepository.GetCash().Find(x => x.Id == item.SiteTypeId).Name;
+                row.Cells["code"].Value = item.Code;
+                row.Cells["siteTypeName"].Value = SiteTypeRepository.GetCash().Find(x => x.Id == item.TypeId).Name;
                 row.Cells["description"].Value = item.Description;
             }
             RaiseCurrentRowChangedEvent(this.Site);
@@ -55,13 +55,13 @@ namespace SOV.Amur.Meta
             try
             {
                 FormSite frm = new FormSite();
-                frm.Site = new Site(-1, StationId, -1, null, null);
+                frm.Site = new Site() { Id = -1, ParentId = ParentSiteId };
                 frm.StartPosition = FormStartPosition.CenterParent;
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     DataManager.GetInstance().SiteRepository.Insert(frm.Site);
                 }
-                Fill(StationId);
+                Fill(ParentSiteId);
             }
             catch (Exception ex)
             {
@@ -90,7 +90,7 @@ namespace SOV.Amur.Meta
             if (this.Site != null)
             {
                 DataManager.GetInstance().SiteRepository.Delete(this.Site.Id);
-                Fill(StationId);
+                Fill(ParentSiteId);
             }
         }
 
@@ -106,7 +106,7 @@ namespace SOV.Amur.Meta
                     {
                         DataManager.GetInstance().SiteRepository.Update(frm.Site);
                     }
-                    Fill(StationId);
+                    Fill(ParentSiteId);
                 }
                 catch (Exception ex)
                 {

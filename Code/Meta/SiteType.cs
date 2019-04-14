@@ -31,7 +31,9 @@ namespace SOV.Amur.Meta
             List<Common.DicItem> ret = new List<Common.DicItem>();
             foreach (var item in coll)
             {
-                ret.Add(new Common.DicItem(item.Id, item.Name, item.NameShort));
+                DicItem di = new Common.DicItem(item.Id, item.Name, item.NameShort);
+                di.Entity = item;
+                ret.Add(di);
             }
             return ret;
         }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SOV.Amur.Meta.Station station2 = new SOV.Amur.Meta.Station();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.ucSite = new SOV.Amur.Meta.UCSite();
@@ -37,7 +36,7 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.ucStationSites = new SOV.Amur.Meta.UCStationSites();
+            this.ucStationSites = new SOV.Amur.Meta.UCSiteXSites();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -111,17 +110,6 @@
             this.ucSite.Margin = new System.Windows.Forms.Padding(7);
             this.ucSite.Name = "ucStation";
             this.ucSite.Size = new System.Drawing.Size(655, 83);
-            station2.AddrRegionId = null;
-            station2.Code = "";
-            station2.Id = -1;
-            station2.Name = "";
-            station2.NameEng = "";
-            station2.NameEngShort = null;
-            station2.NameRus = "";
-            station2.NameRusShort = "";
-            station2.OrgId = null;
-            station2.TypeId = -2147483648;
-            this.ucSite.Site = station2;
             this.ucSite.TabIndex = 0;
             // 
             // saveButton
@@ -198,9 +186,7 @@
             this.ucStationSites.Margin = new System.Windows.Forms.Padding(7);
             this.ucStationSites.Name = "ucStationSites";
             this.ucStationSites.Size = new System.Drawing.Size(178, 336);
-            this.ucStationSites.StationId = 0;
             this.ucStationSites.TabIndex = 0;
-            this.ucStationSites.UCCurrentRowChangedEvent += new SOV.Amur.Meta.UCStationSites.UCCurrentRowChangedEventHandler(this.ucStationSites_UCCurrentRowChangedEvent);
             // 
             // tabControl1
             // 
@@ -444,7 +430,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private UCStationSites ucStationSites;
+        private UCSiteXSites ucStationSites;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.GroupBox groupBox3;
         private UCEntityAttrValues ucEntityAttrValues;

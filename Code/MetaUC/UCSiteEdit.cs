@@ -31,9 +31,11 @@ namespace SOV.Amur.Meta
         private void FillGO(int siteId)
         {
             geoObjectsListBox.Clear();
-            Dictionary<Site, List<GeoObject>> sgo = DataManager.GetInstance().SiteGeoObjectRepository.SelectBySites (siteId);
+            List<SiteGeoObject> sgo = DataManager.GetInstance().SiteGeoObjectRepository.SelectBySites(new List<int>(new int[] { siteId }));
             if (sgo.Count > 0)
-                geoObjectsListBox.SetDataSource(sgo.ElementAt(0).Value.ToArray<object>().ToList(), "Name");
+                geoObjectsListBox.SetDataSource(
+                    Enumerable.ToList<object>(DataManager.GetInstance().GeoObjectRepository.Select(sgo.Select(x => x.GeoObjectId).ToList()))
+                    , "Name");
         }
         private void ucStationSites_UCCurrentRowChangedEvent(Site site)
         {
@@ -44,7 +46,7 @@ namespace SOV.Amur.Meta
 
                 if (site != null)
                 {
-                    this.ucEntityAttrValues.Fill("site", site.Id, site.SiteTypeId);
+                    this.ucEntityAttrValues.Fill("site", site.Id, site.TypeId);
                     ucSiteXSites1.Fill(1, site.Id);
                     ucSiteXSites2.Fill(2, site.Id);
                     ucCatalogs.Fill(new CatalogFilter(new List<int>() { site.Id }, null, null, null, null, null));
@@ -87,7 +89,7 @@ namespace SOV.Amur.Meta
                     ucSite.Site = DataManager.GetInstance().SiteRepository.Select(Id);
                 }
                 ucEntityAttrValues.EntityId = ucSite.Site.Id;
-                ucStationSites.StationId = ucSite.Site.Id;
+                ucStationSites.ParentSiteId= ucSite.Site.Id;
             }
             catch (Exception ex)
             {
@@ -132,7 +134,7 @@ namespace SOV.Amur.Meta
             {
                 foreach (var geoObject in frm.SelectedItems)
                 {
-                    DataManager.GetInstance().StationGeoObjectRepository.Insert(((GeoObject)geoObject).Id, ucSite.Site.Id);
+                    DataManager.GetInstance().SiteGeoObjectRepository.Insert(((GeoObject)geoObject).Id, ucSite.Site.Id);
                 }
                 FillGO(ucSite.Site.Id);
             }
@@ -140,7 +142,7 @@ namespace SOV.Amur.Meta
 
         private void geoObjectsListBox_UCDeleteEvent(int id)
         {
-            DataManager.GetInstance().StationGeoObjectRepository.Delete(id, ucSite.Site.Id);
+            DataManager.GetInstance().SiteGeoObjectRepository.Delete(new SiteGeoObject(ucSite.Site.Id, id, 0));
             FillGO(ucSite.Site.Id);
         }
     }
