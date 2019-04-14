@@ -7,8 +7,8 @@
     <ProjectGuid>{73581D79-F154-4117-AA1F-7573EFCD4718}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FERHRI.Amur.Importer.GISMeteo</RootNamespace>
-    <AssemblyName>ECA.GISMeteo</AssemblyName>
+    <RootNamespace>SOV.Amur.Importer.GISMeteo</RootNamespace>
+    <AssemblyName>SOV.Amur.Import.GISMeteo</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -110,99 +110,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.Addr.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.AQCDataValue.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.Catalog.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.Curve.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.DataForecast.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.DataSource1.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.DataType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.DataValue.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.EntityAttrValue.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.GeneralCategory.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.GeoObject.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.GeoPoint.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.GeoType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.LegalEntity.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.MeteoZone.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.Method.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.MethodForecast.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.OffsetType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.Org.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.Person.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.SampleMedium1.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.Site.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.SiteAttrType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.SiteType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.SiteXSite.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.SiteXSiteType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.Unit.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.ValueType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.Variable.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.VariableCode.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\AmurService\FERHRI.Amur.Importer.GISMeteo.AmurService.VariableType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\AmurService\Service1.wsdl" />
     <None Include="Service References\AmurService\Service11.xsd">
       <SubType>Designer</SubType>
@@ -236,6 +143,99 @@
     </None>
     <None Include="Service References\AmurService\Service22.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.Addr.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.AQCDataValue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.Catalog.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.Curve.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.DataForecast.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.DataSource.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.DataType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.DataValue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.EntityAttrValue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.GeneralCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.GeoObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.GeoPoint.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.GeoType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.LegalEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.MeteoZone.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.Method.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.MethodForecast.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.OffsetType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.Org.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.Person.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.SampleMedium.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.Site.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.SiteAttrType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.SiteType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.SiteXSite.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.SiteXSiteType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.Unit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.ValueType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.Variable.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.VariableCode.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AmurService\SOV.Amur.Importer.GISMeteo.AmurService.VariableType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

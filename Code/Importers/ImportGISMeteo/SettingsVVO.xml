@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <setting>
   <!--<mdbObsSearchPeriod name="Начало периода импорта данных из БД ГИС-метео" dateS="20160520 00:00">-->
-  <mdbObsSearchPeriod name="Начало периода импорта данных из БД ГИС-метео" dateS="20190301 00:00">
+  <mdbObsSearchPeriod name="Начало периода импорта данных из БД ГИС-метео" dateS="">
     <!--"20160523 00:00">-->
   </mdbObsSearchPeriod>
 

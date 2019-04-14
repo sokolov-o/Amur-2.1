@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
+namespace SOV.Amur.Importer.GISMeteo.AmurService {
     using System.Runtime.Serialization;
     using System;
     
@@ -219,7 +219,7 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="VariableVirtual", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.Variable))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Variable))]
     public partial class VariableVirtual : SOV.Common.IdClass, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -361,7 +361,7 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Variable", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    public partial class Variable : FERHRI.Amur.Importer.GISMeteo.AmurService.VariableVirtual {
+    public partial class Variable : SOV.Amur.Importer.GISMeteo.AmurService.VariableVirtual {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double CodeErrDataField;
@@ -470,7 +470,7 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Addr> ChildsField;
+        private System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Addr> ChildsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
@@ -495,7 +495,7 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Addr> Childs {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Addr> Childs {
             get {
                 return this.ChildsField;
             }
@@ -573,88 +573,88 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="LegalEntity", Namespace="http://schemas.datacontract.org/2004/07/SOV.Social")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.GeoPoint))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.EntityAttrValue))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.Site))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.Catalog))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Method>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.Method))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Site>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.MethodForecast))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.GeoObject))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.SiteAttrType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.SiteAttrType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.EntityAttrType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.SampleMedium>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.SampleMedium))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.EntityAttrValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.SiteType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.SiteType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Variable>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.Variable))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.VariableVirtual))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.DataType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.DataType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.GeneralCategory>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.GeneralCategory))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.GeoObject>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.GeoType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.GeoType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.MeteoZone>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.MeteoZone))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.MethodForecast>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.OffsetType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.OffsetType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.SiteXSite>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.SiteXSite))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.SiteXSiteType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.SiteXSiteType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Unit>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.Unit))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.ValueType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.ValueType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.VariableCode>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.VariableCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.VariableType>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.VariableType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Catalog>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.AQCDataValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.AQCDataValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.GeoPoint))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.EntityAttrValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Site))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Catalog))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Method>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Method))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Site>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.MethodForecast))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.GeoObject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SiteAttrType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.SiteAttrType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.EntityAttrType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SampleMedium>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.SampleMedium))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.EntityAttrValue>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SiteType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.SiteType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Variable>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Variable))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.VariableVirtual))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.DataType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.GeneralCategory>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.GeneralCategory))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.GeoObject>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.GeoType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.GeoType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.MeteoZone>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.MeteoZone))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.MethodForecast>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.OffsetType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.OffsetType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SiteXSite>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.SiteXSite))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SiteXSiteType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.SiteXSiteType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Unit>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Unit))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.ValueType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.ValueType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.VariableCode>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.VariableCode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.VariableType>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.VariableType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Catalog>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.AQCDataValue>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.AQCDataValue))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<int>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<string, string>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<string>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<double>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, FERHRI.Amur.Importer.GISMeteo.AmurService.GeoPoint>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, FERHRI.Amur.Importer.GISMeteo.AmurService.GeoObject>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, SOV.Amur.Importer.GISMeteo.AmurService.GeoPoint>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, SOV.Amur.Importer.GISMeteo.AmurService.GeoObject>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<System.Collections.Generic.List<double>>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<short, System.Collections.Generic.List<string>>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, bool>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Curve>>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.DataForecast>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Curve>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataForecast>>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<long>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<long, FERHRI.Amur.Importer.GISMeteo.AmurService.DataSource>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<FERHRI.Amur.Importer.GISMeteo.AmurService.Catalog, System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.DataValue>>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.Org))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Org>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.Person))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Person>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Addr>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.Addr))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.LegalEntity>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<long, SOV.Amur.Importer.GISMeteo.AmurService.DataSource>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.Dictionary<SOV.Amur.Importer.GISMeteo.AmurService.Catalog, System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataValue>>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Org))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Org>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Person))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Person>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Addr>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Addr))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.LegalEntity>))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Reflection.MemberInfo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.DataValue))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.DataSource))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.DataValue>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.DataForecast>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.DataForecast))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Curve>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.Curve))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Curve.Seria>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.Curve.Seria))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Curve.Seria.Coef>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.Curve.Seria.Coef))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Curve.Seria.Point>))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.Curve.Seria.Point))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.DataValue))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.DataSource))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataValue>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataForecast>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.DataForecast))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Curve>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Curve))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Curve.Seria>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Curve.Seria))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Curve.Seria.Coef>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Curve.Seria.Coef))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Curve.Seria.Point>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.Curve.Seria.Point))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Type))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdNameParent))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Common.IdName))]
@@ -1181,7 +1181,7 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
         private System.Collections.Generic.List<double> LeadTimesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FERHRI.Amur.Importer.GISMeteo.AmurService.Method MethodField;
+        private SOV.Amur.Importer.GISMeteo.AmurService.Method MethodField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1246,7 +1246,7 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public FERHRI.Amur.Importer.GISMeteo.AmurService.Method Method {
+        public SOV.Amur.Importer.GISMeteo.AmurService.Method Method {
             get {
                 return this.MethodField;
             }
@@ -1365,14 +1365,14 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SiteAttrType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    public partial class SiteAttrType : FERHRI.Amur.Importer.GISMeteo.AmurService.EntityAttrType {
+    public partial class SiteAttrType : SOV.Amur.Importer.GISMeteo.AmurService.EntityAttrType {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EntityAttrType", Namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FERHRI.Amur.Importer.GISMeteo.AmurService.SiteAttrType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SOV.Amur.Importer.GISMeteo.AmurService.SiteAttrType))]
     public partial class EntityAttrType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -2370,7 +2370,7 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Curve.Seria> SeriesField;
+        private System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Curve.Seria> SeriesField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2435,7 +2435,7 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Curve.Seria> Series {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Curve.Seria> Series {
             get {
                 return this.SeriesField;
             }
@@ -2466,7 +2466,7 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
             private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
             
             [System.Runtime.Serialization.OptionalFieldAttribute()]
-            private System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Curve.Seria.Coef> CoefsField;
+            private System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Curve.Seria.Coef> CoefsField;
             
             [System.Runtime.Serialization.OptionalFieldAttribute()]
             private int CurveIdField;
@@ -2484,7 +2484,7 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
             private int IdField;
             
             [System.Runtime.Serialization.OptionalFieldAttribute()]
-            private System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Curve.Seria.Point> PointsField;
+            private System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Curve.Seria.Point> PointsField;
             
             public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
                 get {
@@ -2496,7 +2496,7 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
             }
             
             [System.Runtime.Serialization.DataMemberAttribute()]
-            public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Curve.Seria.Coef> Coefs {
+            public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Curve.Seria.Coef> Coefs {
                 get {
                     return this.CoefsField;
                 }
@@ -2574,7 +2574,7 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
             }
             
             [System.Runtime.Serialization.DataMemberAttribute()]
-            public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Curve.Seria.Point> Points {
+            public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Curve.Seria.Point> Points {
                 get {
                     return this.PointsField;
                 }
@@ -3299,13 +3299,13 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
     public interface IService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSiteAttribute", ReplyAction="http://tempuri.org/IService/SaveSiteAttributeResponse")]
-        void SaveSiteAttribute(long hSvc, FERHRI.Amur.Importer.GISMeteo.AmurService.EntityAttrValue eav);
+        void SaveSiteAttribute(long hSvc, SOV.Amur.Importer.GISMeteo.AmurService.EntityAttrValue eav);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveSite", ReplyAction="http://tempuri.org/IService/SaveSiteResponse")]
-        int SaveSite(long hSvc, FERHRI.Amur.Importer.GISMeteo.AmurService.Site site);
+        int SaveSite(long hSvc, SOV.Amur.Importer.GISMeteo.AmurService.Site site);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveCatalog", ReplyAction="http://tempuri.org/IService/SaveCatalogResponse")]
-        FERHRI.Amur.Importer.GISMeteo.AmurService.Catalog SaveCatalog(long hSvc, FERHRI.Amur.Importer.GISMeteo.AmurService.Catalog catalog);
+        SOV.Amur.Importer.GISMeteo.AmurService.Catalog SaveCatalog(long hSvc, SOV.Amur.Importer.GISMeteo.AmurService.Catalog catalog);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ActualizeDataValue", ReplyAction="http://tempuri.org/IService/ActualizeDataValueResponse")]
         void ActualizeDataValue(long hSvc, long dataValueId);
@@ -3314,19 +3314,19 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
         long SaveValue(long hSvc, int catalogId, System.DateTime dateUTC, System.DateTime dateLOC, double value, byte flagAQC, System.Nullable<long> dataSourceId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValue", ReplyAction="http://tempuri.org/IService/SaveDataValueResponse")]
-        long SaveDataValue(long hSvc, FERHRI.Amur.Importer.GISMeteo.AmurService.DataValue dv);
+        long SaveDataValue(long hSvc, SOV.Amur.Importer.GISMeteo.AmurService.DataValue dv);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValueXSource", ReplyAction="http://tempuri.org/IService/SaveDataValueXSourceResponse")]
         void SaveDataValueXSource(long hSvc, int dataValueId, long dataSourceId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataSource", ReplyAction="http://tempuri.org/IService/SaveDataSourceResponse")]
-        long SaveDataSource(long hSvc, FERHRI.Amur.Importer.GISMeteo.AmurService.DataSource dataSource);
+        long SaveDataSource(long hSvc, SOV.Amur.Importer.GISMeteo.AmurService.DataSource dataSource);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataValueList", ReplyAction="http://tempuri.org/IService/SaveDataValueListResponse")]
-        void SaveDataValueList(long hSvc, System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.DataValue> dvs, System.Nullable<long> dataSourceId);
+        void SaveDataValueList(long hSvc, System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataValue> dvs, System.Nullable<long> dataSourceId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataForecastList", ReplyAction="http://tempuri.org/IService/SaveDataForecastListResponse")]
-        void SaveDataForecastList(long hSvc, System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.DataForecast> dvs);
+        void SaveDataForecastList(long hSvc, System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataForecast> dvs);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveDataPRole", ReplyAction="http://tempuri.org/IService/SaveDataPRoleResponse")]
         void SaveDataPRole(long hSvc, long dvId, int roleId, bool isAQCApplied);
@@ -3338,199 +3338,199 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
         void Close(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethods", ReplyAction="http://tempuri.org/IService/GetMethodsResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Method> GetMethods(long hSvc, System.Collections.Generic.List<int> methodIds);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Method> GetMethods(long hSvc, System.Collections.Generic.List<int> methodIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByCodes", ReplyAction="http://tempuri.org/IService/GetSitesByCodesResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByCodes(long hSvc, System.Collections.Generic.List<string> siteIndices);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByCodes(long hSvc, System.Collections.Generic.List<string> siteIndices);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetParentFcsMethod", ReplyAction="http://tempuri.org/IService/GetParentFcsMethodResponse")]
-        FERHRI.Amur.Importer.GISMeteo.AmurService.MethodForecast GetParentFcsMethod(long hSvc, int methodId);
+        SOV.Amur.Importer.GISMeteo.AmurService.MethodForecast GetParentFcsMethod(long hSvc, int methodId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesPoints", ReplyAction="http://tempuri.org/IService/GetSitesPointsResponse")]
-        System.Collections.Generic.Dictionary<int, FERHRI.Amur.Importer.GISMeteo.AmurService.GeoPoint> GetSitesPoints(long hSvc, System.Collections.Generic.List<int> siteIds, System.DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon);
+        System.Collections.Generic.Dictionary<int, SOV.Amur.Importer.GISMeteo.AmurService.GeoPoint> GetSitesPoints(long hSvc, System.Collections.Generic.List<int> siteIds, System.DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeoObjectsBySiteIds", ReplyAction="http://tempuri.org/IService/GetGeoObjectsBySiteIdsResponse")]
-        System.Collections.Generic.Dictionary<int, FERHRI.Amur.Importer.GISMeteo.AmurService.GeoObject> GetGeoObjectsBySiteIds(long hSvc, System.Collections.Generic.List<int> stationIds);
+        System.Collections.Generic.Dictionary<int, SOV.Amur.Importer.GISMeteo.AmurService.GeoObject> GetGeoObjectsBySiteIds(long hSvc, System.Collections.Generic.List<int> stationIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteAttrTypesAll", ReplyAction="http://tempuri.org/IService/GetSiteAttrTypesAllResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.SiteAttrType> GetSiteAttrTypesAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SiteAttrType> GetSiteAttrTypesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesInBox", ReplyAction="http://tempuri.org/IService/GetSitesInBoxResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Site> GetSitesInBox(long hSvc, double south, double north, double west, double east);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Site> GetSitesInBox(long hSvc, double south, double north, double west, double east);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSampleMediumsAll", ReplyAction="http://tempuri.org/IService/GetSampleMediumsAllResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.SampleMedium> GetSampleMediumsAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SampleMedium> GetSampleMediumsAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesAttrValues", ReplyAction="http://tempuri.org/IService/GetSitesAttrValuesResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.EntityAttrValue> GetSitesAttrValues(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> attrTypeId, System.Nullable<System.DateTime> dateActual);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.EntityAttrValue> GetSitesAttrValues(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> attrTypeId, System.Nullable<System.DateTime> dateActual);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethod", ReplyAction="http://tempuri.org/IService/GetMethodResponse")]
-        FERHRI.Amur.Importer.GISMeteo.AmurService.Method GetMethod(long hSvc, int methodId);
+        SOV.Amur.Importer.GISMeteo.AmurService.Method GetMethod(long hSvc, int methodId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteAttrValue", ReplyAction="http://tempuri.org/IService/GetSiteAttrValueResponse")]
-        FERHRI.Amur.Importer.GISMeteo.AmurService.EntityAttrValue GetSiteAttrValue(long hSvc, int siteId, int siteAttrTypeId, System.DateTime dateActual);
+        SOV.Amur.Importer.GISMeteo.AmurService.EntityAttrValue GetSiteAttrValue(long hSvc, int siteId, int siteAttrTypeId, System.DateTime dateActual);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesAttrValue", ReplyAction="http://tempuri.org/IService/GetSitesAttrValueResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.EntityAttrValue> GetSitesAttrValue(long hSvc, System.Collections.Generic.List<int> siteId, int siteAttrTypeId, System.DateTime dateActual);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.EntityAttrValue> GetSitesAttrValue(long hSvc, System.Collections.Generic.List<int> siteId, int siteAttrTypeId, System.DateTime dateActual);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByType", ReplyAction="http://tempuri.org/IService/GetSitesByTypeResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByType(long hSvc, int siteTypeId);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByType(long hSvc, int siteTypeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByGroup", ReplyAction="http://tempuri.org/IService/GetSitesByGroupResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByGroup(long hSvc, int siteGroupId);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByGroup(long hSvc, int siteGroupId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByAddrRegionIds", ReplyAction="http://tempuri.org/IService/GetSitesByAddrRegionIdsResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByAddrRegionIds(long hSvc, System.Collections.Generic.List<int> addrRegionIds);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByAddrRegionIds(long hSvc, System.Collections.Generic.List<int> addrRegionIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteTypes", ReplyAction="http://tempuri.org/IService/GetSiteTypesResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.SiteType> GetSiteTypes(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SiteType> GetSiteTypes(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByParent", ReplyAction="http://tempuri.org/IService/GetSitesByParentResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByParent(long hSvc, int parentId);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByParent(long hSvc, int parentId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSitesByList", ReplyAction="http://tempuri.org/IService/GetSitesByListResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByList(long hSvc, System.Collections.Generic.List<int> siteIdList);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByList(long hSvc, System.Collections.Generic.List<int> siteIdList);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariablesByList", ReplyAction="http://tempuri.org/IService/GetVariablesByListResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Variable> GetVariablesByList(long hSvc, System.Collections.Generic.List<int> variableIdList);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Variable> GetVariablesByList(long hSvc, System.Collections.Generic.List<int> variableIdList);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariableById", ReplyAction="http://tempuri.org/IService/GetVariableByIdResponse")]
-        FERHRI.Amur.Importer.GISMeteo.AmurService.Variable GetVariableById(long hSvc, int variableId);
+        SOV.Amur.Importer.GISMeteo.AmurService.Variable GetVariableById(long hSvc, int variableId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariableByKey", ReplyAction="http://tempuri.org/IService/GetVariableByKeyResponse")]
-        FERHRI.Amur.Importer.GISMeteo.AmurService.Variable GetVariableByKey(long hSvc, int variableTypeId, int timeId, int unitId, int dataTypeId, int generalCategoryId, int sampleMediumId, int timeSupport, int valueTypeId);
+        SOV.Amur.Importer.GISMeteo.AmurService.Variable GetVariableByKey(long hSvc, int variableTypeId, int timeId, int unitId, int dataTypeId, int generalCategoryId, int sampleMediumId, int timeSupport, int valueTypeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariables", ReplyAction="http://tempuri.org/IService/GetVariablesResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Variable> GetVariables(long hSvc, System.Collections.Generic.List<int> variableTypeId, System.Collections.Generic.List<int> timeId, System.Collections.Generic.List<int> unitId, System.Collections.Generic.List<int> dataTypeId, System.Collections.Generic.List<int> generalCategoryId, System.Collections.Generic.List<int> sampleMediumId, System.Collections.Generic.List<int> timeSupport, System.Collections.Generic.List<int> valueTypeId);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Variable> GetVariables(long hSvc, System.Collections.Generic.List<int> variableTypeId, System.Collections.Generic.List<int> timeId, System.Collections.Generic.List<int> unitId, System.Collections.Generic.List<int> dataTypeId, System.Collections.Generic.List<int> generalCategoryId, System.Collections.Generic.List<int> sampleMediumId, System.Collections.Generic.List<int> timeSupport, System.Collections.Generic.List<int> valueTypeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariablesAll", ReplyAction="http://tempuri.org/IService/GetVariablesAllResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Variable> GetVariablesAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Variable> GetVariablesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataTypesAll", ReplyAction="http://tempuri.org/IService/GetDataTypesAllResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.DataType> GetDataTypesAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataType> GetDataTypesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetFlagAQCAll", ReplyAction="http://tempuri.org/IService/GetFlagAQCAllResponse")]
         System.Collections.Generic.Dictionary<short, System.Collections.Generic.List<string>> GetFlagAQCAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeneralCategoryesAll", ReplyAction="http://tempuri.org/IService/GetGeneralCategoryesAllResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.GeneralCategory> GetGeneralCategoryesAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.GeneralCategory> GetGeneralCategoryesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeoObjectsAll", ReplyAction="http://tempuri.org/IService/GetGeoObjectsAllResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.GeoObject> GetGeoObjectsAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.GeoObject> GetGeoObjectsAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetGeoObjectTypesAll", ReplyAction="http://tempuri.org/IService/GetGeoObjectTypesAllResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.GeoType> GetGeoObjectTypesAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.GeoType> GetGeoObjectTypesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMeteoZonesAll", ReplyAction="http://tempuri.org/IService/GetMeteoZonesAllResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.MeteoZone> GetMeteoZonesAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.MeteoZone> GetMeteoZonesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethodsAll", ReplyAction="http://tempuri.org/IService/GetMethodsAllResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Method> GetMethodsAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Method> GetMethodsAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMethodForecastsAll", ReplyAction="http://tempuri.org/IService/GetMethodForecastsAllResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.MethodForecast> GetMethodForecastsAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.MethodForecast> GetMethodForecastsAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetOffsetTypesAll", ReplyAction="http://tempuri.org/IService/GetOffsetTypesAllResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.OffsetType> GetOffsetTypesAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.OffsetType> GetOffsetTypesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteXSitesByLeftSite", ReplyAction="http://tempuri.org/IService/GetSiteXSitesByLeftSiteResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.SiteXSite> GetSiteXSitesByLeftSite(long hSvc, int siteId);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SiteXSite> GetSiteXSitesByLeftSite(long hSvc, int siteId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteXSitesByRightSite", ReplyAction="http://tempuri.org/IService/GetSiteXSitesByRightSiteResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.SiteXSite> GetSiteXSitesByRightSite(long hSvc, int siteId);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SiteXSite> GetSiteXSitesByRightSite(long hSvc, int siteId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSiteXSiteTypesAll", ReplyAction="http://tempuri.org/IService/GetSiteXSiteTypesAllResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.SiteXSiteType> GetSiteXSiteTypesAll(long hSvc, int siteId);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SiteXSiteType> GetSiteXSiteTypesAll(long hSvc, int siteId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetUnitsAll", ReplyAction="http://tempuri.org/IService/GetUnitsAllResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Unit> GetUnitsAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Unit> GetUnitsAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetValueTypesAll", ReplyAction="http://tempuri.org/IService/GetValueTypesAllResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.ValueType> GetValueTypesAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.ValueType> GetValueTypesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariableCodesAll", ReplyAction="http://tempuri.org/IService/GetVariableCodesAllResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.VariableCode> GetVariableCodesAll(long hSvc, int variableId);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.VariableCode> GetVariableCodesAll(long hSvc, int variableId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetVariableTypesAll", ReplyAction="http://tempuri.org/IService/GetVariableTypesAllResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.VariableType> GetVariableTypesAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.VariableType> GetVariableTypesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ExistsDataForecasts", ReplyAction="http://tempuri.org/IService/ExistsDataForecastsResponse")]
         System.Collections.Generic.Dictionary<int, bool> ExistsDataForecasts(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateIni);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCurvesBySites", ReplyAction="http://tempuri.org/IService/GetCurvesBySitesResponse")]
-        System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Curve>> GetCurvesBySites(long hSvc, System.Collections.Generic.List<int> sitesIds, int variableIdX, int variableIdY, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF);
+        System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Curve>> GetCurvesBySites(long hSvc, System.Collections.Generic.List<int> sitesIds, int variableIdX, int variableIdY, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCurveByCatalog", ReplyAction="http://tempuri.org/IService/GetCurveByCatalogResponse")]
-        FERHRI.Amur.Importer.GISMeteo.AmurService.Curve GetCurveByCatalog(long hSvc, int catalog_id_x, int catalog_id_y, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF);
+        SOV.Amur.Importer.GISMeteo.AmurService.Curve GetCurveByCatalog(long hSvc, int catalog_id_x, int catalog_id_y, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataForecastsByIdList", ReplyAction="http://tempuri.org/IService/GetDataForecastsByIdListResponse")]
-        System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.DataForecast>> GetDataForecastsByIdList(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs);
+        System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataForecast>> GetDataForecastsByIdList(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataSources", ReplyAction="http://tempuri.org/IService/GetDataSourcesResponse")]
-        System.Collections.Generic.Dictionary<long, FERHRI.Amur.Importer.GISMeteo.AmurService.DataSource> GetDataSources(long hSvc, System.Collections.Generic.List<long> dataValueIds);
+        System.Collections.Generic.Dictionary<long, SOV.Amur.Importer.GISMeteo.AmurService.DataSource> GetDataSources(long hSvc, System.Collections.Generic.List<long> dataValueIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataValues", ReplyAction="http://tempuri.org/IService/GetDataValuesResponse")]
-        System.Collections.Generic.Dictionary<FERHRI.Amur.Importer.GISMeteo.AmurService.Catalog, System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.DataValue>> GetDataValues(long hSvc, System.DateTime dateS, System.DateTime dateF, bool isDateLOC, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> variableId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue, System.Nullable<byte> flagAQC, bool isActualValueOnly, bool isSelectDeleted);
+        System.Collections.Generic.Dictionary<SOV.Amur.Importer.GISMeteo.AmurService.Catalog, System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataValue>> GetDataValues(long hSvc, System.DateTime dateS, System.DateTime dateF, bool isDateLOC, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> variableId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue, System.Nullable<byte> flagAQC, bool isActualValueOnly, bool isSelectDeleted);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataForecasts", ReplyAction="http://tempuri.org/IService/GetDataForecastsResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.DataForecast> GetDataForecasts(long hSvc, int catalogId, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataForecast> GetDataForecasts(long hSvc, int catalogId, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCatalogListById", ReplyAction="http://tempuri.org/IService/GetCatalogListByIdResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Catalog> GetCatalogListById(long hSvc, System.Collections.Generic.List<int> ctlId);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Catalog> GetCatalogListById(long hSvc, System.Collections.Generic.List<int> ctlId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCatalogList", ReplyAction="http://tempuri.org/IService/GetCatalogListResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Catalog> GetCatalogList(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> varId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Catalog> GetCatalogList(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> varId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCatalog", ReplyAction="http://tempuri.org/IService/GetCatalogResponse")]
-        FERHRI.Amur.Importer.GISMeteo.AmurService.Catalog GetCatalog(long hSvc, int siteId, int varId, int offsetTypeId, int methodId, int sourceId, double offsetValue);
+        SOV.Amur.Importer.GISMeteo.AmurService.Catalog GetCatalog(long hSvc, int siteId, int varId, int offsetTypeId, int methodId, int sourceId, double offsetValue);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataPDataValueAQC", ReplyAction="http://tempuri.org/IService/GetDataPDataValueAQCResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.AQCDataValue> GetDataPDataValueAQC(long hSvc, long dvId);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.AQCDataValue> GetDataPDataValueAQC(long hSvc, long dvId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetOrg", ReplyAction="http://tempuri.org/IService/GetOrgResponse")]
-        FERHRI.Amur.Importer.GISMeteo.AmurService.Org GetOrg(long hSvc, int orgId);
+        SOV.Amur.Importer.GISMeteo.AmurService.Org GetOrg(long hSvc, int orgId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetOrgsById", ReplyAction="http://tempuri.org/IService/GetOrgsByIdResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Org> GetOrgsById(long hSvc, System.Collections.Generic.List<int> orgIds);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Org> GetOrgsById(long hSvc, System.Collections.Generic.List<int> orgIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetOrgsAll", ReplyAction="http://tempuri.org/IService/GetOrgsAllResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Org> GetOrgsAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Org> GetOrgsAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetPerson", ReplyAction="http://tempuri.org/IService/GetPersonResponse")]
-        FERHRI.Amur.Importer.GISMeteo.AmurService.Person GetPerson(long hSvc, int personIds);
+        SOV.Amur.Importer.GISMeteo.AmurService.Person GetPerson(long hSvc, int personIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetPersonsById", ReplyAction="http://tempuri.org/IService/GetPersonsByIdResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Person> GetPersonsById(long hSvc, System.Collections.Generic.List<int> personIds);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Person> GetPersonsById(long hSvc, System.Collections.Generic.List<int> personIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetPersonsAll", ReplyAction="http://tempuri.org/IService/GetPersonsAllResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Person> GetPersonsAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Person> GetPersonsAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAddrs", ReplyAction="http://tempuri.org/IService/GetAddrsResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Addr> GetAddrs(long hSvc, System.Collections.Generic.List<int> parentAddrRegionsId, bool isWithChilds);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Addr> GetAddrs(long hSvc, System.Collections.Generic.List<int> parentAddrRegionsId, bool isWithChilds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAddrsAll", ReplyAction="http://tempuri.org/IService/GetAddrsAllResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Addr> GetAddrsAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Addr> GetAddrsAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetLegalEntity", ReplyAction="http://tempuri.org/IService/GetLegalEntityResponse")]
-        FERHRI.Amur.Importer.GISMeteo.AmurService.LegalEntity GetLegalEntity(long hSvc, int leIds);
+        SOV.Amur.Importer.GISMeteo.AmurService.LegalEntity GetLegalEntity(long hSvc, int leIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetLegalEntityesById", ReplyAction="http://tempuri.org/IService/GetLegalEntityesByIdResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.LegalEntity> GetLegalEntityesById(long hSvc, System.Collections.Generic.List<int> leIds);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.LegalEntity> GetLegalEntityesById(long hSvc, System.Collections.Generic.List<int> leIds);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetLegalEntityesAll", ReplyAction="http://tempuri.org/IService/GetLegalEntityesAllResponse")]
-        System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.LegalEntity> GetLegalEntityesAll(long hSvc);
+        System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.LegalEntity> GetLegalEntityesAll(long hSvc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveVariableCode", ReplyAction="http://tempuri.org/IService/SaveVariableCodeResponse")]
-        void SaveVariableCode(long hSvc, FERHRI.Amur.Importer.GISMeteo.AmurService.VariableCode vc);
+        void SaveVariableCode(long hSvc, SOV.Amur.Importer.GISMeteo.AmurService.VariableCode vc);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IServiceChannel : FERHRI.Amur.Importer.GISMeteo.AmurService.IService, System.ServiceModel.IClientChannel {
+    public interface IServiceChannel : SOV.Amur.Importer.GISMeteo.AmurService.IService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServiceClient : System.ServiceModel.ClientBase<FERHRI.Amur.Importer.GISMeteo.AmurService.IService>, FERHRI.Amur.Importer.GISMeteo.AmurService.IService {
+    public partial class ServiceClient : System.ServiceModel.ClientBase<SOV.Amur.Importer.GISMeteo.AmurService.IService>, SOV.Amur.Importer.GISMeteo.AmurService.IService {
         
         public ServiceClient() {
         }
@@ -3551,15 +3551,15 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
                 base(binding, remoteAddress) {
         }
         
-        public void SaveSiteAttribute(long hSvc, FERHRI.Amur.Importer.GISMeteo.AmurService.EntityAttrValue eav) {
+        public void SaveSiteAttribute(long hSvc, SOV.Amur.Importer.GISMeteo.AmurService.EntityAttrValue eav) {
             base.Channel.SaveSiteAttribute(hSvc, eav);
         }
         
-        public int SaveSite(long hSvc, FERHRI.Amur.Importer.GISMeteo.AmurService.Site site) {
+        public int SaveSite(long hSvc, SOV.Amur.Importer.GISMeteo.AmurService.Site site) {
             return base.Channel.SaveSite(hSvc, site);
         }
         
-        public FERHRI.Amur.Importer.GISMeteo.AmurService.Catalog SaveCatalog(long hSvc, FERHRI.Amur.Importer.GISMeteo.AmurService.Catalog catalog) {
+        public SOV.Amur.Importer.GISMeteo.AmurService.Catalog SaveCatalog(long hSvc, SOV.Amur.Importer.GISMeteo.AmurService.Catalog catalog) {
             return base.Channel.SaveCatalog(hSvc, catalog);
         }
         
@@ -3571,7 +3571,7 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
             return base.Channel.SaveValue(hSvc, catalogId, dateUTC, dateLOC, value, flagAQC, dataSourceId);
         }
         
-        public long SaveDataValue(long hSvc, FERHRI.Amur.Importer.GISMeteo.AmurService.DataValue dv) {
+        public long SaveDataValue(long hSvc, SOV.Amur.Importer.GISMeteo.AmurService.DataValue dv) {
             return base.Channel.SaveDataValue(hSvc, dv);
         }
         
@@ -3579,15 +3579,15 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
             base.Channel.SaveDataValueXSource(hSvc, dataValueId, dataSourceId);
         }
         
-        public long SaveDataSource(long hSvc, FERHRI.Amur.Importer.GISMeteo.AmurService.DataSource dataSource) {
+        public long SaveDataSource(long hSvc, SOV.Amur.Importer.GISMeteo.AmurService.DataSource dataSource) {
             return base.Channel.SaveDataSource(hSvc, dataSource);
         }
         
-        public void SaveDataValueList(long hSvc, System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.DataValue> dvs, System.Nullable<long> dataSourceId) {
+        public void SaveDataValueList(long hSvc, System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataValue> dvs, System.Nullable<long> dataSourceId) {
             base.Channel.SaveDataValueList(hSvc, dvs, dataSourceId);
         }
         
-        public void SaveDataForecastList(long hSvc, System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.DataForecast> dvs) {
+        public void SaveDataForecastList(long hSvc, System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataForecast> dvs) {
             base.Channel.SaveDataForecastList(hSvc, dvs);
         }
         
@@ -3603,99 +3603,99 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
             base.Channel.Close(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Method> GetMethods(long hSvc, System.Collections.Generic.List<int> methodIds) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Method> GetMethods(long hSvc, System.Collections.Generic.List<int> methodIds) {
             return base.Channel.GetMethods(hSvc, methodIds);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByCodes(long hSvc, System.Collections.Generic.List<string> siteIndices) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByCodes(long hSvc, System.Collections.Generic.List<string> siteIndices) {
             return base.Channel.GetSitesByCodes(hSvc, siteIndices);
         }
         
-        public FERHRI.Amur.Importer.GISMeteo.AmurService.MethodForecast GetParentFcsMethod(long hSvc, int methodId) {
+        public SOV.Amur.Importer.GISMeteo.AmurService.MethodForecast GetParentFcsMethod(long hSvc, int methodId) {
             return base.Channel.GetParentFcsMethod(hSvc, methodId);
         }
         
-        public System.Collections.Generic.Dictionary<int, FERHRI.Amur.Importer.GISMeteo.AmurService.GeoPoint> GetSitesPoints(long hSvc, System.Collections.Generic.List<int> siteIds, System.DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon) {
+        public System.Collections.Generic.Dictionary<int, SOV.Amur.Importer.GISMeteo.AmurService.GeoPoint> GetSitesPoints(long hSvc, System.Collections.Generic.List<int> siteIds, System.DateTime dateActual, int siteAttrTypeIdLat, int siteAttrTypeIdLon) {
             return base.Channel.GetSitesPoints(hSvc, siteIds, dateActual, siteAttrTypeIdLat, siteAttrTypeIdLon);
         }
         
-        public System.Collections.Generic.Dictionary<int, FERHRI.Amur.Importer.GISMeteo.AmurService.GeoObject> GetGeoObjectsBySiteIds(long hSvc, System.Collections.Generic.List<int> stationIds) {
+        public System.Collections.Generic.Dictionary<int, SOV.Amur.Importer.GISMeteo.AmurService.GeoObject> GetGeoObjectsBySiteIds(long hSvc, System.Collections.Generic.List<int> stationIds) {
             return base.Channel.GetGeoObjectsBySiteIds(hSvc, stationIds);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.SiteAttrType> GetSiteAttrTypesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SiteAttrType> GetSiteAttrTypesAll(long hSvc) {
             return base.Channel.GetSiteAttrTypesAll(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Site> GetSitesInBox(long hSvc, double south, double north, double west, double east) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Site> GetSitesInBox(long hSvc, double south, double north, double west, double east) {
             return base.Channel.GetSitesInBox(hSvc, south, north, west, east);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.SampleMedium> GetSampleMediumsAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SampleMedium> GetSampleMediumsAll(long hSvc) {
             return base.Channel.GetSampleMediumsAll(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.EntityAttrValue> GetSitesAttrValues(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> attrTypeId, System.Nullable<System.DateTime> dateActual) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.EntityAttrValue> GetSitesAttrValues(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> attrTypeId, System.Nullable<System.DateTime> dateActual) {
             return base.Channel.GetSitesAttrValues(hSvc, siteId, attrTypeId, dateActual);
         }
         
-        public FERHRI.Amur.Importer.GISMeteo.AmurService.Method GetMethod(long hSvc, int methodId) {
+        public SOV.Amur.Importer.GISMeteo.AmurService.Method GetMethod(long hSvc, int methodId) {
             return base.Channel.GetMethod(hSvc, methodId);
         }
         
-        public FERHRI.Amur.Importer.GISMeteo.AmurService.EntityAttrValue GetSiteAttrValue(long hSvc, int siteId, int siteAttrTypeId, System.DateTime dateActual) {
+        public SOV.Amur.Importer.GISMeteo.AmurService.EntityAttrValue GetSiteAttrValue(long hSvc, int siteId, int siteAttrTypeId, System.DateTime dateActual) {
             return base.Channel.GetSiteAttrValue(hSvc, siteId, siteAttrTypeId, dateActual);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.EntityAttrValue> GetSitesAttrValue(long hSvc, System.Collections.Generic.List<int> siteId, int siteAttrTypeId, System.DateTime dateActual) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.EntityAttrValue> GetSitesAttrValue(long hSvc, System.Collections.Generic.List<int> siteId, int siteAttrTypeId, System.DateTime dateActual) {
             return base.Channel.GetSitesAttrValue(hSvc, siteId, siteAttrTypeId, dateActual);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByType(long hSvc, int siteTypeId) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByType(long hSvc, int siteTypeId) {
             return base.Channel.GetSitesByType(hSvc, siteTypeId);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByGroup(long hSvc, int siteGroupId) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByGroup(long hSvc, int siteGroupId) {
             return base.Channel.GetSitesByGroup(hSvc, siteGroupId);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByAddrRegionIds(long hSvc, System.Collections.Generic.List<int> addrRegionIds) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByAddrRegionIds(long hSvc, System.Collections.Generic.List<int> addrRegionIds) {
             return base.Channel.GetSitesByAddrRegionIds(hSvc, addrRegionIds);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.SiteType> GetSiteTypes(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SiteType> GetSiteTypes(long hSvc) {
             return base.Channel.GetSiteTypes(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByParent(long hSvc, int parentId) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByParent(long hSvc, int parentId) {
             return base.Channel.GetSitesByParent(hSvc, parentId);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByList(long hSvc, System.Collections.Generic.List<int> siteIdList) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Site> GetSitesByList(long hSvc, System.Collections.Generic.List<int> siteIdList) {
             return base.Channel.GetSitesByList(hSvc, siteIdList);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Variable> GetVariablesByList(long hSvc, System.Collections.Generic.List<int> variableIdList) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Variable> GetVariablesByList(long hSvc, System.Collections.Generic.List<int> variableIdList) {
             return base.Channel.GetVariablesByList(hSvc, variableIdList);
         }
         
-        public FERHRI.Amur.Importer.GISMeteo.AmurService.Variable GetVariableById(long hSvc, int variableId) {
+        public SOV.Amur.Importer.GISMeteo.AmurService.Variable GetVariableById(long hSvc, int variableId) {
             return base.Channel.GetVariableById(hSvc, variableId);
         }
         
-        public FERHRI.Amur.Importer.GISMeteo.AmurService.Variable GetVariableByKey(long hSvc, int variableTypeId, int timeId, int unitId, int dataTypeId, int generalCategoryId, int sampleMediumId, int timeSupport, int valueTypeId) {
+        public SOV.Amur.Importer.GISMeteo.AmurService.Variable GetVariableByKey(long hSvc, int variableTypeId, int timeId, int unitId, int dataTypeId, int generalCategoryId, int sampleMediumId, int timeSupport, int valueTypeId) {
             return base.Channel.GetVariableByKey(hSvc, variableTypeId, timeId, unitId, dataTypeId, generalCategoryId, sampleMediumId, timeSupport, valueTypeId);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Variable> GetVariables(long hSvc, System.Collections.Generic.List<int> variableTypeId, System.Collections.Generic.List<int> timeId, System.Collections.Generic.List<int> unitId, System.Collections.Generic.List<int> dataTypeId, System.Collections.Generic.List<int> generalCategoryId, System.Collections.Generic.List<int> sampleMediumId, System.Collections.Generic.List<int> timeSupport, System.Collections.Generic.List<int> valueTypeId) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Variable> GetVariables(long hSvc, System.Collections.Generic.List<int> variableTypeId, System.Collections.Generic.List<int> timeId, System.Collections.Generic.List<int> unitId, System.Collections.Generic.List<int> dataTypeId, System.Collections.Generic.List<int> generalCategoryId, System.Collections.Generic.List<int> sampleMediumId, System.Collections.Generic.List<int> timeSupport, System.Collections.Generic.List<int> valueTypeId) {
             return base.Channel.GetVariables(hSvc, variableTypeId, timeId, unitId, dataTypeId, generalCategoryId, sampleMediumId, timeSupport, valueTypeId);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Variable> GetVariablesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Variable> GetVariablesAll(long hSvc) {
             return base.Channel.GetVariablesAll(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.DataType> GetDataTypesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataType> GetDataTypesAll(long hSvc) {
             return base.Channel.GetDataTypesAll(hSvc);
         }
         
@@ -3703,59 +3703,59 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
             return base.Channel.GetFlagAQCAll(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.GeneralCategory> GetGeneralCategoryesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.GeneralCategory> GetGeneralCategoryesAll(long hSvc) {
             return base.Channel.GetGeneralCategoryesAll(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.GeoObject> GetGeoObjectsAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.GeoObject> GetGeoObjectsAll(long hSvc) {
             return base.Channel.GetGeoObjectsAll(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.GeoType> GetGeoObjectTypesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.GeoType> GetGeoObjectTypesAll(long hSvc) {
             return base.Channel.GetGeoObjectTypesAll(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.MeteoZone> GetMeteoZonesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.MeteoZone> GetMeteoZonesAll(long hSvc) {
             return base.Channel.GetMeteoZonesAll(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Method> GetMethodsAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Method> GetMethodsAll(long hSvc) {
             return base.Channel.GetMethodsAll(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.MethodForecast> GetMethodForecastsAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.MethodForecast> GetMethodForecastsAll(long hSvc) {
             return base.Channel.GetMethodForecastsAll(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.OffsetType> GetOffsetTypesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.OffsetType> GetOffsetTypesAll(long hSvc) {
             return base.Channel.GetOffsetTypesAll(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.SiteXSite> GetSiteXSitesByLeftSite(long hSvc, int siteId) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SiteXSite> GetSiteXSitesByLeftSite(long hSvc, int siteId) {
             return base.Channel.GetSiteXSitesByLeftSite(hSvc, siteId);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.SiteXSite> GetSiteXSitesByRightSite(long hSvc, int siteId) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SiteXSite> GetSiteXSitesByRightSite(long hSvc, int siteId) {
             return base.Channel.GetSiteXSitesByRightSite(hSvc, siteId);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.SiteXSiteType> GetSiteXSiteTypesAll(long hSvc, int siteId) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.SiteXSiteType> GetSiteXSiteTypesAll(long hSvc, int siteId) {
             return base.Channel.GetSiteXSiteTypesAll(hSvc, siteId);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Unit> GetUnitsAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Unit> GetUnitsAll(long hSvc) {
             return base.Channel.GetUnitsAll(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.ValueType> GetValueTypesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.ValueType> GetValueTypesAll(long hSvc) {
             return base.Channel.GetValueTypesAll(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.VariableCode> GetVariableCodesAll(long hSvc, int variableId) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.VariableCode> GetVariableCodesAll(long hSvc, int variableId) {
             return base.Channel.GetVariableCodesAll(hSvc, variableId);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.VariableType> GetVariableTypesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.VariableType> GetVariableTypesAll(long hSvc) {
             return base.Channel.GetVariableTypesAll(hSvc);
         }
         
@@ -3763,91 +3763,91 @@ namespace FERHRI.Amur.Importer.GISMeteo.AmurService {
             return base.Channel.ExistsDataForecasts(hSvc, catalogIds, dateIni);
         }
         
-        public System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Curve>> GetCurvesBySites(long hSvc, System.Collections.Generic.List<int> sitesIds, int variableIdX, int variableIdY, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF) {
+        public System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Curve>> GetCurvesBySites(long hSvc, System.Collections.Generic.List<int> sitesIds, int variableIdX, int variableIdY, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF) {
             return base.Channel.GetCurvesBySites(hSvc, sitesIds, variableIdX, variableIdY, curve_seria_type_id, seriaDateSS, seriaDateSF);
         }
         
-        public FERHRI.Amur.Importer.GISMeteo.AmurService.Curve GetCurveByCatalog(long hSvc, int catalog_id_x, int catalog_id_y, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF) {
+        public SOV.Amur.Importer.GISMeteo.AmurService.Curve GetCurveByCatalog(long hSvc, int catalog_id_x, int catalog_id_y, int curve_seria_type_id, System.DateTime seriaDateSS, System.DateTime seriaDateSF) {
             return base.Channel.GetCurveByCatalog(hSvc, catalog_id_x, catalog_id_y, curve_seria_type_id, seriaDateSS, seriaDateSF);
         }
         
-        public System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.DataForecast>> GetDataForecastsByIdList(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs) {
+        public System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataForecast>> GetDataForecastsByIdList(long hSvc, System.Collections.Generic.List<int> catalogIds, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs) {
             return base.Channel.GetDataForecastsByIdList(hSvc, catalogIds, dateFcsS, dateFcsF, fcsLag, isDateFcs);
         }
         
-        public System.Collections.Generic.Dictionary<long, FERHRI.Amur.Importer.GISMeteo.AmurService.DataSource> GetDataSources(long hSvc, System.Collections.Generic.List<long> dataValueIds) {
+        public System.Collections.Generic.Dictionary<long, SOV.Amur.Importer.GISMeteo.AmurService.DataSource> GetDataSources(long hSvc, System.Collections.Generic.List<long> dataValueIds) {
             return base.Channel.GetDataSources(hSvc, dataValueIds);
         }
         
-        public System.Collections.Generic.Dictionary<FERHRI.Amur.Importer.GISMeteo.AmurService.Catalog, System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.DataValue>> GetDataValues(long hSvc, System.DateTime dateS, System.DateTime dateF, bool isDateLOC, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> variableId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue, System.Nullable<byte> flagAQC, bool isActualValueOnly, bool isSelectDeleted) {
+        public System.Collections.Generic.Dictionary<SOV.Amur.Importer.GISMeteo.AmurService.Catalog, System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataValue>> GetDataValues(long hSvc, System.DateTime dateS, System.DateTime dateF, bool isDateLOC, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> variableId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue, System.Nullable<byte> flagAQC, bool isActualValueOnly, bool isSelectDeleted) {
             return base.Channel.GetDataValues(hSvc, dateS, dateF, isDateLOC, siteId, variableId, methodId, sourceId, offsetTypeId, offsetValue, flagAQC, isActualValueOnly, isSelectDeleted);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.DataForecast> GetDataForecasts(long hSvc, int catalogId, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.DataForecast> GetDataForecasts(long hSvc, int catalogId, System.DateTime dateFcsS, System.DateTime dateFcsF, System.Nullable<double> fcsLag, bool isDateFcs) {
             return base.Channel.GetDataForecasts(hSvc, catalogId, dateFcsS, dateFcsF, fcsLag, isDateFcs);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Catalog> GetCatalogListById(long hSvc, System.Collections.Generic.List<int> ctlId) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Catalog> GetCatalogListById(long hSvc, System.Collections.Generic.List<int> ctlId) {
             return base.Channel.GetCatalogListById(hSvc, ctlId);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Catalog> GetCatalogList(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> varId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Catalog> GetCatalogList(long hSvc, System.Collections.Generic.List<int> siteId, System.Collections.Generic.List<int> varId, System.Collections.Generic.List<int> methodId, System.Collections.Generic.List<int> sourceId, System.Collections.Generic.List<int> offsetTypeId, System.Collections.Generic.List<double> offsetValue) {
             return base.Channel.GetCatalogList(hSvc, siteId, varId, methodId, sourceId, offsetTypeId, offsetValue);
         }
         
-        public FERHRI.Amur.Importer.GISMeteo.AmurService.Catalog GetCatalog(long hSvc, int siteId, int varId, int offsetTypeId, int methodId, int sourceId, double offsetValue) {
+        public SOV.Amur.Importer.GISMeteo.AmurService.Catalog GetCatalog(long hSvc, int siteId, int varId, int offsetTypeId, int methodId, int sourceId, double offsetValue) {
             return base.Channel.GetCatalog(hSvc, siteId, varId, offsetTypeId, methodId, sourceId, offsetValue);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.AQCDataValue> GetDataPDataValueAQC(long hSvc, long dvId) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.AQCDataValue> GetDataPDataValueAQC(long hSvc, long dvId) {
             return base.Channel.GetDataPDataValueAQC(hSvc, dvId);
         }
         
-        public FERHRI.Amur.Importer.GISMeteo.AmurService.Org GetOrg(long hSvc, int orgId) {
+        public SOV.Amur.Importer.GISMeteo.AmurService.Org GetOrg(long hSvc, int orgId) {
             return base.Channel.GetOrg(hSvc, orgId);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Org> GetOrgsById(long hSvc, System.Collections.Generic.List<int> orgIds) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Org> GetOrgsById(long hSvc, System.Collections.Generic.List<int> orgIds) {
             return base.Channel.GetOrgsById(hSvc, orgIds);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Org> GetOrgsAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Org> GetOrgsAll(long hSvc) {
             return base.Channel.GetOrgsAll(hSvc);
         }
         
-        public FERHRI.Amur.Importer.GISMeteo.AmurService.Person GetPerson(long hSvc, int personIds) {
+        public SOV.Amur.Importer.GISMeteo.AmurService.Person GetPerson(long hSvc, int personIds) {
             return base.Channel.GetPerson(hSvc, personIds);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Person> GetPersonsById(long hSvc, System.Collections.Generic.List<int> personIds) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Person> GetPersonsById(long hSvc, System.Collections.Generic.List<int> personIds) {
             return base.Channel.GetPersonsById(hSvc, personIds);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Person> GetPersonsAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Person> GetPersonsAll(long hSvc) {
             return base.Channel.GetPersonsAll(hSvc);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Addr> GetAddrs(long hSvc, System.Collections.Generic.List<int> parentAddrRegionsId, bool isWithChilds) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Addr> GetAddrs(long hSvc, System.Collections.Generic.List<int> parentAddrRegionsId, bool isWithChilds) {
             return base.Channel.GetAddrs(hSvc, parentAddrRegionsId, isWithChilds);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.Addr> GetAddrsAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.Addr> GetAddrsAll(long hSvc) {
             return base.Channel.GetAddrsAll(hSvc);
         }
         
-        public FERHRI.Amur.Importer.GISMeteo.AmurService.LegalEntity GetLegalEntity(long hSvc, int leIds) {
+        public SOV.Amur.Importer.GISMeteo.AmurService.LegalEntity GetLegalEntity(long hSvc, int leIds) {
             return base.Channel.GetLegalEntity(hSvc, leIds);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.LegalEntity> GetLegalEntityesById(long hSvc, System.Collections.Generic.List<int> leIds) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.LegalEntity> GetLegalEntityesById(long hSvc, System.Collections.Generic.List<int> leIds) {
             return base.Channel.GetLegalEntityesById(hSvc, leIds);
         }
         
-        public System.Collections.Generic.List<FERHRI.Amur.Importer.GISMeteo.AmurService.LegalEntity> GetLegalEntityesAll(long hSvc) {
+        public System.Collections.Generic.List<SOV.Amur.Importer.GISMeteo.AmurService.LegalEntity> GetLegalEntityesAll(long hSvc) {
             return base.Channel.GetLegalEntityesAll(hSvc);
         }
         
-        public void SaveVariableCode(long hSvc, FERHRI.Amur.Importer.GISMeteo.AmurService.VariableCode vc) {
+        public void SaveVariableCode(long hSvc, SOV.Amur.Importer.GISMeteo.AmurService.VariableCode vc) {
             base.Channel.SaveVariableCode(hSvc, vc);
         }
     }

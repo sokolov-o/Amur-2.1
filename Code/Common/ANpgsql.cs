@@ -85,15 +85,15 @@ namespace SOV.Common
         }
         static public bool IsConnectionOK(string connectionString)
         {
-            try
-            {
+            //try
+            //{
                 TestConnection(connectionString);
                 return true;
-            }
-            catch
-            {
-                return false;
-            }
+            //}
+            //catch
+            //{
+            //    return false;
+            //}
         }
         static public void TestConnection(string connectionString)
         {

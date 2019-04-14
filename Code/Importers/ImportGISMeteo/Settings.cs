@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FERHRI.Amur.GISMeteo;
-using FERHRI.Amur.Importer.GISMeteo.AmurService;
+using SOV.Amur.Importer.GISMeteo.AmurService;
 using System.Configuration;
 using System.Xml;
 
-namespace FERHRI.Amur.GISMeteo
+namespace SOV.Amur.Importer.GISMeteo
 {
     public class Settings
     {

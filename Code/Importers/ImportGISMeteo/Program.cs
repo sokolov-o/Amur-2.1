@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using System.Configuration;
 using FERHRI.Amur.GISMeteo;
 //using FERHRI.Amur.Logger;
-using FERHRI.Amur.Importer.GISMeteo.AmurService;
+using SOV.Amur.Importer.GISMeteo.AmurService;
 using System.Diagnostics;
 
-namespace FERHRI.Amur.Importer.GISMeteo
+namespace SOV.Amur.Importer.GISMeteo
 {
     /// <summary>
     /// TODO: !!! перед publish убедиться в App.config: 1) в корректности строки <add key="Setting.xml path" value="SettingsKHB.xml" />2) в ip сервиса !!!
@@ -36,7 +36,7 @@ namespace FERHRI.Amur.Importer.GISMeteo
 
             // INITIALIZE Amur service
 
-            string[] suser = global::FERHRI.Amur.Importer.GISMeteo.Properties.Settings.Default.User.Split(';');
+            string[] suser = Properties.Settings.Default.User.Split(';');
             user = new SOV.Common.User(suser[0], suser[1]);
             svc = new ServiceClient();
             svc.Open();

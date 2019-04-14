@@ -21,18 +21,14 @@ namespace SOV.Amur.Service
         static Dictionary<long/*Session Id*/, string/*Connection string*/> _svcConfig = new Dictionary<long, string>();
         static int MaxUsers = 10;
         static bool _isOpening = false;
-        static string _logFilePath = @"c:\temp\amur_service_db_log.txt";
+        static string _logFilePath = @"c:\temp\amur_service_rw_log.txt";
         /// <summary>
-        /// Клнструктор по умолчанию.
+        /// Конструктор по умолчанию.
         /// </summary>
         public Service()
         {
+            SOV.Amur.Meta.DataManager.SetDefaultConnectionString(System.Configuration.ConfigurationManager.ConnectionStrings["AmurConnectionString"].ConnectionString);
         }
-        public string TestServiceConnection(string userName, string password)
-        {
-            return "Hello " + userName + "!";
-        }
-
         /// <summary>
         /// Открытие рабочей сессии.
         /// </summary>

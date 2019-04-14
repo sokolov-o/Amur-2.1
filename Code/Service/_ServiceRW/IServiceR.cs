@@ -21,8 +21,6 @@ namespace SOV.Amur.Service
     public partial interface IService
     {
         #region COMMON
-        [OperationContract]
-        string TestServiceConnection(string userName, string password);
         /// <summary>
         /// Открытие рабочей сессии.
         /// </summary>
