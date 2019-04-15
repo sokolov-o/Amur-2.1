@@ -37,7 +37,7 @@ namespace SOV.Amur.Meta
             Node0Site.ImageIndex = Node0Site.SelectedImageIndex = 3;
             Node0Site.ContextMenuStrip = contextMenuStrip1;
 
-            List<EntityGroup> sg = Meta.DataManager.GetInstance().EntityGroupRepository.SelectGroups("site");
+            List<EntityGroup> sg = Meta.DataManager.GetInstance().EntityGroupRepository.SelectByEntityTableName("site");
             List<SiteType> siteTypes = Meta.DataManager.GetInstance().SiteTypeRepository.Select();
 
             foreach (var item in sg.OrderBy(x => x.Name))

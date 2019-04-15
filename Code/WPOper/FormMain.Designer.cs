@@ -220,7 +220,7 @@
             this.mnuDicEntityGroupToolStripMenuItem.Name = "mnuDicEntityGroupToolStripMenuItem";
             this.mnuDicEntityGroupToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
             this.mnuDicEntityGroupToolStripMenuItem.Text = "Группы для справочников";
-            this.mnuDicEntityGroupToolStripMenuItem.Click += new System.EventHandler(this.mnuDicEntityGroupToolStripMenuItem_Click);
+            this.mnuDicEntityGroupToolStripMenuItem.Click += new System.EventHandler(this.MnuDicEntityGroupToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
             // 

@@ -2,9 +2,10 @@
 using System.Linq;
 using System.Windows.Forms;
 using SOV.Common;
+using SOV.Social;
 using SOV.Common.TableIUD;
 
-namespace SOV.Amur.Report
+namespace SOV.Amur.Reports
 {
     public partial class FormReportOrg : FormReportOrgTableEdit
     {

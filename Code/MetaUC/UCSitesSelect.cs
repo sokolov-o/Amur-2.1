@@ -57,7 +57,7 @@ namespace SOV.Amur.Meta
                 //    .OrderBy(x => x.Name)
                 //    .ToList());
                 UCList2.AddRange(
-                    sites.Select(x => new IdName() { Id = x.Id, Name = x.GetName(1, true, SiteTypeRepository.GetCash()) })
+                    sites.Select(x => new IdName() { Id = x.Id, Name = x.GetName(1, SiteTypeRepository.GetCash()) })
                     .OrderBy(x => x.Name)
                     .ToList<object>());
             }

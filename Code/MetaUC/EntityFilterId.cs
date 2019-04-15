@@ -37,7 +37,7 @@ namespace SOV.Amur.Meta
         {
             switch (entityName)
             {
-                case "site_view":
+                case "site":
                     if (fsf == null) fsf = new FormSiteFilter();
                     return fsf.GetFilteredSites().Select(x => x.Id).ToList();
                 default:

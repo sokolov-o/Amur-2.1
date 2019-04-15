@@ -18,7 +18,8 @@ namespace SOV.Amur.Data.Chart
         private class SiteAndVar
         {
             private int? varId;
-            public int VarId {
+            public int VarId
+            {
                 get { return varId.HasValue ? varId.Value : 0; }
                 set { varId = value; }
             }
@@ -62,7 +63,7 @@ namespace SOV.Amur.Data.Chart
 
             siteAndVarArr.Add(new SiteAndVar());
             siteAndVarArr.Add(new SiteAndVar());
-            updateAxisButtonsImg();
+            UpdateAxisButtonsImg();
         }
 
         private DateTimePeriod timePeriod;
@@ -187,8 +188,8 @@ namespace SOV.Amur.Data.Chart
             chart.Series["Trend Line"].IsVisibleInLegend = false;
             chart.Legends[0].CustomItems.Clear();
             addLegentItem("Параметры", true);
-            addLegentItem("X: " + sitePlusGeoObjName(siteAndVarArr[0].SiteId));
-            addLegentItem("Y: " + sitePlusGeoObjName(siteAndVarArr[1].SiteId));
+            addLegentItem("X: " + SitePlusGeoObjName(siteAndVarArr[0].SiteId));
+            addLegentItem("Y: " + SitePlusGeoObjName(siteAndVarArr[1].SiteId));
             addLegentItem("");
             addLegentItem("a = " + Math.Round(a, 4));
             addLegentItem("b = " + Math.Round(b, 4));
@@ -213,20 +214,17 @@ namespace SOV.Amur.Data.Chart
 
         }
 
-        private string sitePlusGeoObjName(int siteId)
+        private string SitePlusGeoObjName(int siteId)
         {
-            var station = Meta.StationRepository.GetCash()
-                .Find(x => x.Id == Meta.SiteRepository.GetCash().Find(site => site.Id == siteId).StationId);
-            List<StationGeoObject> geoObjId = Meta.DataManager.GetInstance().StationGeoObjectRepository.SelectByStations(
-                new List<int>() { station.Id }
-            );
-            string geoObj = geoObjId.Count == 0 ? "" : Meta.GeoObjectRepository.GetCash().Find(
-                x => x.Id == geoObjId[0].GeoObjectId
-            ).Name;
-            return station.Code + " " + geoObj + " " + station.NameRus;
+            List<SiteGeoObject> geoObjId = Meta.DataManager.GetInstance().SiteGeoObjectRepository.SelectBySites(new List<int>() { siteId });
+            string geoObjName = geoObjId.Count == 0 ? "" : Meta.GeoObjectRepository.GetCash()
+                .Find(x => x.Id == geoObjId[0].GeoObjectId)
+                .Name;
+            Site site = SiteRepository.GetCash().Find(x => x.Id == siteId);
+            return site.Code + " " + geoObjName + " " + site.Name;
         }
 
-        private void updateAxisButtonsImg()
+        private void UpdateAxisButtonsImg()
         {
             XAxisButton.Image = siteAndVarArr[0].IsInit() ? Properties.Resources.X_letter : Properties.Resources.X_letter_attention;
             YAxisButton.Image = siteAndVarArr[1].IsInit() ? Properties.Resources.Y_letter : Properties.Resources.Y_letter_attention;
@@ -234,7 +232,7 @@ namespace SOV.Amur.Data.Chart
 
         /*** Events ***/
 
-        private void swapAsixButton_Click(object sender, EventArgs e)
+        private void SwapAsixButton_Click(object sender, EventArgs e)
         {
             SiteAndVar tmp = siteAndVarArr[0];
             siteAndVarArr[0] = siteAndVarArr[1];
@@ -260,7 +258,7 @@ namespace SOV.Amur.Data.Chart
             int index = Int32.Parse((string)form.Tag);
             siteAndVarArr[index].SiteId = form.SiteId.Value;
             siteAndVarArr[index].VarId = form.VarId.Value;
-            updateAxisButtonsImg();
+            UpdateAxisButtonsImg();
             refreshButton_Click(null, null);
         }
 
@@ -355,7 +353,7 @@ namespace SOV.Amur.Data.Chart
                         (string)point.Tag,
                         point.XValue,
                         point.YValues[0]
-                    ), 
+                    ),
                     chart, pos.X, pos.Y - 15
                 );
             }

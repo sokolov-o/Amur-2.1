@@ -153,8 +153,7 @@ namespace SOV.Amur.Data
                 row.Cells["dateUTC"].Value = dv.DateUTC;
                 row.Cells["utcOffset"].Value = dv.UTCOffset;
 
-                row.Cells["siteName"].Value = SiteRepository.GetCash().FirstOrDefault(x => x.Id == ctl.SiteId).GetName(
-                    StationRepository.GetCash(), SiteTypeRepository.GetCash(), 2);
+                row.Cells["siteName"].Value = SiteRepository.GetCash().FirstOrDefault(x => x.Id == ctl.SiteId).GetName(2, SiteTypeRepository.GetCash());
                 row.Cells["variableName"].Value = VariableRepository.GetCash().FirstOrDefault(x => x.Id == ctl.VariableId).NameRus;
                 row.Cells["offsetTypeName"].Value = OffsetTypeRepository.GetCash().FirstOrDefault(x => x.Id == ctl.OffsetTypeId).Name;
                 row.Cells["methodName"].Value = MethodRepository.GetCash().FirstOrDefault(x => x.Id == ctl.MethodId).Name;

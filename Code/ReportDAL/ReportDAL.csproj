@@ -7,8 +7,8 @@
     <ProjectGuid>{EEAD327E-0113-400B-9E0D-3DC8A36CA1C4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FERHRI.Amur.Report</RootNamespace>
-    <AssemblyName>FERHRI.Amur.ReportDAL</AssemblyName>
+    <RootNamespace>SOV.Amur.Reports</RootNamespace>
+    <AssemblyName>SOV.Amur.ReportDAL</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -59,11 +59,15 @@
     <Compile Include="DataManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Social\SocialBL\SocialBL.csproj">
+    <ProjectReference Include="..\Report\Report\Report.csproj">
+      <Project>{0517c974-3f2c-46ac-99a3-735088d45701}</Project>
+      <Name>Report</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Social\SocialBL\SocialBL.csproj">
       <Project>{da541fab-7762-49a4-bc85-f6ff4d74e28b}</Project>
       <Name>SocialBL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Social\SocialDAL\SocialDAL.csproj">
+    <ProjectReference Include="..\Social\SocialDAL\SocialDAL.csproj">
       <Project>{81804cf3-0bf8-459c-8e8e-b9f81e52cf57}</Project>
       <Name>SocialDAL</Name>
     </ProjectReference>

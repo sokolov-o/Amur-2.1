@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using SOV.Common;
+using SOV.Social;
 using Npgsql;
 
-namespace SOV.Amur.Report
+namespace SOV.Amur.Reports
 {
     public class OrgRepository : BaseRepository<Org>
     {
@@ -10,7 +11,8 @@ namespace SOV.Amur.Report
 
         protected override object ParseData(NpgsqlDataReader reader)
         {
-            return new Org(
+            return new Org
+            (
                 (int)reader["report_id"],
                 (int)reader["org_id"],
                 ADbNpgsql.GetValueString(reader, "param"),
@@ -36,7 +38,7 @@ namespace SOV.Amur.Report
 
         public Org Select(int reportId, int orgId)
         {
-            var fields = new Dictionary<string, object>() {{"report_id", reportId}, {"org_id", orgId}};
+            var fields = new Dictionary<string, object>() { { "report_id", reportId }, { "org_id", orgId } };
             var res = Select(fields);
             return res != null ? res[0] : null;
         }
@@ -64,8 +66,8 @@ namespace SOV.Amur.Report
         {
             var res = (Org)ParseData(reader);
             res.Img = ADbNpgsql.GetValueByteArr(reader, "img_data");
-            res.OrgView = (string)reader["org_view"];
-            res.ReportView = (string)reader["report_view"];
+            res.OrgView = reader["org_view"].ToString();
+            res.ReportView = reader["report_view"].ToString();
             return res;
         }
     }

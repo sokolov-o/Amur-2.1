@@ -7,8 +7,8 @@
     <ProjectGuid>{8A5617AE-ED37-480A-A4D2-EF99E209BB7F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FERHRI.Amur.Report</RootNamespace>
-    <AssemblyName>FERHRI.Amur.ReportUC</AssemblyName>
+    <RootNamespace>SOV.Amur.Reports</RootNamespace>
+    <AssemblyName>SOV.Amur.ReportUC</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -96,11 +96,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Social\SocialBL\SocialBL.csproj">
+    <ProjectReference Include="..\..\ReportDAL\ReportDAL.csproj">
+      <Project>{eead327e-0113-400b-9e0d-3dc8a36ca1c4}</Project>
+      <Name>ReportDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Social\SocialBL\SocialBL.csproj">
       <Project>{da541fab-7762-49a4-bc85-f6ff4d74e28b}</Project>
       <Name>SocialBL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Social\SocialDAL\SocialDAL.csproj">
+    <ProjectReference Include="..\..\Social\SocialDAL\SocialDAL.csproj">
       <Project>{81804cf3-0bf8-459c-8e8e-b9f81e52cf57}</Project>
       <Name>SocialDAL</Name>
     </ProjectReference>
@@ -127,6 +131,10 @@
     <ProjectReference Include="..\..\Meta\Meta.csproj">
       <Project>{9ff17c08-ffd4-40fb-a371-c5907b7b4d27}</Project>
       <Name>Meta</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Report\Report.csproj">
+      <Project>{0517c974-3f2c-46ac-99a3-735088d45701}</Project>
+      <Name>Report</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

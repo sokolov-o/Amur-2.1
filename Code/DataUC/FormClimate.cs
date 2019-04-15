@@ -13,8 +13,6 @@ namespace SOV.Amur.Data
 {
     public partial class FormClimate : Form
     {
-        bool isInitializingNow = true;
-
         public FormClimate()
         {
             InitializeComponent();
@@ -22,7 +20,6 @@ namespace SOV.Amur.Data
             ucMethods.UCToolbarVisible = false;
             ucMethods.UCMethodDetailVisible = false;
             ucMethods.SetMethodSet(Meta.UCMethods.MethodSet.ClimateMethodsOnly);
-            isInitializingNow = false;
         }
 
         private void ucMethods_UCCurrentMethodChangedEvent(Meta.Method method)

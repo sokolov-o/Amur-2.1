@@ -144,7 +144,7 @@ namespace SOV.Amur.Meta
         private void RefreshChild(TreeNode entityNode)
         {
             entityNode.Nodes.Clear();
-            List<EntityGroup> groups = Meta.DataManager.GetInstance().EntityGroupRepository.SelectGroups(((Entity)entityNode.Tag).NameEng);
+            List<EntityGroup> groups = Meta.DataManager.GetInstance().EntityGroupRepository.SelectByEntityTableName(((Entity)entityNode.Tag).NameEng);
 
             foreach (var group in groups.OrderBy(x => x.Name))
             {

@@ -278,7 +278,7 @@ namespace SOV.Amur.DataP
 
                 Sys.DataManager.GetInstance().LogRepository.Insert(THIS_SYS_ENTITY_ID,
                     "Для пункта отсутствует обязательный атрибут " + sat.Name + "."
-                    + "\nПункт: " + Site.GetName(SiteRepository.GetCash().Find(x => x.Id == site.Id), 2, true, SiteTypeRepository.GetCash())
+                    + "\nПункт: " + Site.GetName(site, 2, SiteTypeRepository.GetCash())
                     + "(id=" + site.Id + ")"
                     , _rootLogId, true
                 );

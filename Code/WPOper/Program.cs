@@ -42,7 +42,7 @@ namespace SOV.Amur
             Data.DataManager.SetDefaultConnectionString(ConnectionStringAmur);
             Meta.DataManager.SetDefaultConnectionString(ConnectionStringAmur);
             DataP.DataManager.SetDefaultConnectionString(ConnectionStringAmur);
-            Report.DataManager.SetDefaultConnectionString(ConnectionStringAmur);
+            Reports.DataManager.SetDefaultConnectionString(ConnectionStringAmur);
             Social.DataManager.SetDefaultConnectionString(ConnectionStringAmur);
             Sys.DataManager.SetDefaultConnectionString(ConnectionStringAmur);
 

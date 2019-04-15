@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using SOV.Amur.Meta;
 using SOV.Common;
 
-namespace SOV.Amur.Report
+namespace SOV.Amur.Reports
 {
     public partial class UCF50DGV : UserControl
     {

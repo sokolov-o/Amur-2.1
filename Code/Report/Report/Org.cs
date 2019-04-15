@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 using SOV.Common;
 using SOV.Social;
 
-namespace SOV.Amur.Report
+namespace SOV.Amur.Reports
 {
     /// <summary>
     ///  Изображения отчетов

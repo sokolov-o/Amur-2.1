@@ -84,7 +84,7 @@ namespace SOV.Amur.Meta
         //    return ret;
         //    return null;
         //}
-        Dictionary<GeoObject, List<Site>> ToDictionaryGeoobSites(List<SiteGeoObject> siteGeoObjects)
+        public static Dictionary<GeoObject, List<Site>> ToDictionaryGeoobSites(List<SiteGeoObject> siteGeoObjects)
         {
             // READ ALL GEOOBS & SITES
             List<GeoObject> geoobs = DataManager.GetInstance().GeoObjectRepository.Select(siteGeoObjects.Select(x => x.GeoObjectId).Distinct().ToList());
@@ -99,6 +99,25 @@ namespace SOV.Amur.Meta
                 List<Site> siteList = sites.Where(x => siteIds.Exists(y => y == x.Id)).ToList();
 
                 ret.Add(geoob, siteList);
+            }
+
+            return ret;
+        }
+        public static Dictionary<Site, List<GeoObject>> ToDictionarySiteGeoobs(List<SiteGeoObject> siteGeoObjects)
+        {
+            // READ ALL GEOOBS & SITES
+            List<GeoObject> geoobs = DataManager.GetInstance().GeoObjectRepository.Select(siteGeoObjects.Select(x => x.GeoObjectId).Distinct().ToList());
+            List<Site> sites = DataManager.GetInstance().SiteRepository.Select(siteGeoObjects.Select(x => x.SiteId).Distinct().ToList());
+
+            // MAKE Dictionary
+            Dictionary<Site, List<GeoObject>> ret = new Dictionary<Site, List<GeoObject>>();
+
+            foreach (var site in sites)
+            {
+                List<int> geoobIds = siteGeoObjects.Where(y => y.SiteId == site.Id).Select(x => x.GeoObjectId).ToList();
+                List<GeoObject> geoobList = geoobs.Where(x => geoobIds.Exists(y => y == x.Id)).ToList();
+
+                ret.Add(site, geoobList);
             }
 
             return ret;

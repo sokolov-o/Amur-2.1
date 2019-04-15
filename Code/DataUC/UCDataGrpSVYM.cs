@@ -105,10 +105,10 @@ namespace SOV.Amur.Data
                         filter.Variables == null ? null : filter.Variables.Select(x => x.Id).ToList(),
                         filter.YearSUTC, filter.YearFUTC, filter.Monthes);
 
-                    if (filter.Sites ==    null)
+                    if (filter.Sites == null)
                     {
                         List<Site> sites = Meta.DataManager.GetInstance().SiteRepository.Select(_datas.Select(x => x.SiteId).ToList());
-                        sitesCB.DataSource = Meta.Site.ToDicItemList(sites, StationRepository.GetCash(), SiteTypeRepository.GetCash(), 1);
+                        sitesCB.DataSource = Meta.Site.ToDicItemList(sites, 1, SiteTypeRepository.GetCash());
                     }
                     if (filter.Variables == null)
                     {
@@ -159,7 +159,7 @@ namespace SOV.Amur.Data
                         // DRAW CHART
                         DrawChart();
                         // END
-                        infoLabel.Text = CurSite.GetName(StationRepository.GetCash(), SiteTypeRepository.GetCash(), 1) +
+                        infoLabel.Text = CurSite.GetName(1, SiteTypeRepository.GetCash()) +
                             ", " + CurVariable.NameRus + " (" + (string)cellValueTypeCB.SelectedItem +
                             ")";
                         dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;

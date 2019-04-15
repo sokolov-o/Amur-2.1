@@ -7,8 +7,8 @@
     <ProjectGuid>{253C989A-D966-4973-81D1-1EF7135F2E75}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FERHRI.Amur.ObsVsFcs</RootNamespace>
-    <AssemblyName>FERHRI.Amur.ObsVsFcs</AssemblyName>
+    <RootNamespace>SOV.Amur.ObsVsFcs</RootNamespace>
+    <AssemblyName>SOV.Amur.ObsVsFcs</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

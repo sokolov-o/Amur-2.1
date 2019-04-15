@@ -98,7 +98,7 @@
             this.swapAsixButton.Size = new System.Drawing.Size(23, 22);
             this.swapAsixButton.Text = "Поменять оси";
             this.swapAsixButton.ToolTipText = "Поменять оси";
-            this.swapAsixButton.Click += new System.EventHandler(this.swapAsixButton_Click);
+            this.swapAsixButton.Click += new System.EventHandler(this.SwapAsixButton_Click);
             // 
             // YAxisButton
             // 

@@ -13,7 +13,7 @@ using System.Reflection;
 using SOV.Amur.Data.Chart;
 using SOV.Amur.Properties;
 using SOV.Amur.Sys;
-using SOV.Amur.Report;
+using SOV.Amur.Reports;
 using SOV.Common;
 using SOV.Common.TableIUD;
 using SOV.Social;
@@ -301,31 +301,33 @@ namespace SOV.Amur
 
         private void ucSiteGeoObjectList1_UCEditSiteEvent(int siteId)
         {
-            EditStation(Meta.DataManager.GetInstance().SiteRepository.Select(siteId).StationId);
+            EditSite(siteId);
         }
 
-        private void EditStation(int stationId)
+        private void EditSite(int siteId)
         {
             TabPage tabPage;
-            Station station = Meta.DataManager.GetInstance().StationRepository.Select(stationId);
-            int i = tc.TabPages.IndexOfKey("station " + station.Id.ToString());
+            Site site = Meta.DataManager.GetInstance().SiteRepository.Select(siteId);
+            int i = tc.TabPages.IndexOfKey("station " + site.Id.ToString());
             if (i >= 0)
             {
                 tabPage = tc.TabPages[i];
             }
             else
             {
-                UCSiteEdit uc = new UCSiteEdit();
-                uc.ShowDataValueEventHandler = ShowDataValueEventHandler;
-                uc.Dock = DockStyle.Fill;
+                UCSiteEdit uc = new UCSiteEdit()
+                {
+                    ShowDataValueEventHandler = ShowDataValueEventHandler,
+                    Dock = DockStyle.Fill
+                };
 
-                tabPage = new TabPage(StationRepository.GetCash().Find(x => x.Id == station.Id).Name);
-                tabPage.Name = "station " + station.Id.ToString();
+                tabPage = new TabPage(site.Name);
+                tabPage.Name = "site " + site.Id.ToString();
                 tabPage.ImageIndex = 1;
                 tabPage.Controls.Add(uc);
                 this.tc.TabPages.Add(tabPage);
 
-                uc.Fill(station.Id);
+                uc.Fill(site.Id);
             }
             tc.SelectedTab = tabPage;
         }
@@ -388,10 +390,10 @@ namespace SOV.Amur
             {
                 TabPage tabPage = null;
 
-                if (node.Tag.GetType() == typeof(object[]))
+                if (node.Tag.GetType() == typeof(Site))
                 {
-                    Station station = (Station)((object[])node.Tag)[0];
-                    int i = tc.TabPages.IndexOfKey("station");
+                    Site site = (Site)((object[])node.Tag)[0];
+                    int i = tc.TabPages.IndexOfKey("site");
                     if (i >= 0)
                     {
                         tabPage = tc.TabPages[i];
@@ -401,14 +403,14 @@ namespace SOV.Amur
                         UCSiteEdit uc = new UCSiteEdit();
                         uc.Dock = DockStyle.Fill;
 
-                        tabPage = new TabPage(Meta.StationRepository.GetCash().Find(x => x.Id == station.Id).Name);
-                        tabPage.Name = "station";
+                        tabPage = new TabPage(site.Name);
+                        tabPage.Name = "site";
                         tabPage.ImageIndex = 1;
                         tabPage.Controls.Add(uc);
                         this.tc.TabPages.Add(tabPage);
                     }
-                    ((UCSiteEdit)tabPage.Controls[0]).Fill(station.Id);
-                    tabPage.Text = Meta.StationRepository.GetCash().Find(x => x.Id == station.Id).Name;
+                    ((UCSiteEdit)tabPage.Controls[0]).Fill(site.Id);
+                    tabPage.Text = site.Name;
                 }
                 if (node.Tag.GetType() == typeof(GeoObject))
                 {
@@ -455,13 +457,12 @@ namespace SOV.Amur
             // SITE
             if (node != null)
             {
-                if (node.Tag.GetType() == typeof(object[]))
+                if (node.Tag.GetType() == typeof(Site))
                 {
-                    Station station = (Station)((object[])node.Tag)[0];
-                    Site site = ((object[])node.Tag)[1] == null ? null : (Site)((object[])node.Tag)[1];
-                    if (site == null) return;
+                    if (node.Tag == null) return;
+                    Site site = (Site)node.Tag;
 
-                    UCDataTable uc = null;
+                    UCDataTable uc;
                     int i = tc.TabPages.IndexOfKey("data");
                     if (i >= 0)
                     {
@@ -470,13 +471,17 @@ namespace SOV.Amur
                     }
                     else
                     {
-                        uc = new UCDataTable(UserOrganisationId, UserFilterData1SiteSAV);
-                        uc.CurViewType = UCDataTable.ViewType.Station_RDates_CVariables;
-                        uc.Dock = DockStyle.Fill;
+                        uc = new UCDataTable(UserOrganisationId, UserFilterData1SiteSAV)
+                        {
+                            CurViewType = UCDataTable.ViewType.Station_RDates_CVariables,
+                            Dock = DockStyle.Fill
+                        };
 
-                        tabPage = new TabPage();
-                        tabPage.Name = "data";
-                        tabPage.ImageIndex = 0;
+                        tabPage = new TabPage
+                        {
+                            Name = "data",
+                            ImageIndex = 0
+                        };
                         tabPage.Controls.Add(uc);
                         this.tc.TabPages.Add(tabPage);
                     }
@@ -486,7 +491,7 @@ namespace SOV.Amur
                     uc.Fill(DataFilter);
                     DataFilter.CatalogFilter.Sites = siteOld;
 
-                    tabPage.Text = site.GetName(Meta.StationRepository.GetCash(), Meta.SiteTypeRepository.GetCash(), 1);
+                    tabPage.Text = site.GetName(1, Meta.SiteTypeRepository.GetCash());
                     tc.SelectedTab = tabPage;
                 }
             }
@@ -563,7 +568,7 @@ namespace SOV.Amur
                             F50Collection.Instance(frm.SiteGroup, frm.Year, frm.Month, null, 0);
 
                         UCF50DGV uc = new UCF50DGV(f50);
-                        Report.Report rep = Report.DataManager.GetInstance().ReportRepository.Select(50);
+                        Reports.Report rep = Reports.DataManager.GetInstance().ReportRepository.Select(50);
                         new FormSingleUC(uc, rep.NameFull);
                     }
                     finally
@@ -602,14 +607,14 @@ namespace SOV.Amur
                         break;
                 }
                 UCReport ucR = new UCReport((int)repId, dataFilter, Program.User.Name);
-                Report.Report rep = Report.DataManager.GetInstance().ReportRepository.Select(repId);
+                Reports.Report rep = Reports.DataManager.GetInstance().ReportRepository.Select(repId);
                 new FormSingleUC(ucR, rep.NameFull).Show();
                 //Report.Report rep = SOV.Amur.Report.DataManager.Reports.GetReport((int)repId);
                 //frm.Text = "ОТЧЕТ: \"" + rep.Name + " (" + rep.NameShort + ") " + "\"";
             }
         }
 
-        private void mnuDicEntityGroupToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MnuDicEntityGroupToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormEntityGroup frm = new FormEntityGroup();
             frm.StartPosition = FormStartPosition.CenterParent;
@@ -651,8 +656,6 @@ namespace SOV.Amur
         TabPage GetDataTabPage(Site site)
         {
             TabPage tabPage = null;
-            Station station = Meta.StationRepository.GetCash().First(x => x.Id == site.StationId);
-            StationType siteType = Meta.SiteTypeRepository.GetCash().First(x => x.Id == site.SiteTypeId);
 
             if (ucSites.IsOneDataTable)
             {
@@ -690,10 +693,10 @@ namespace SOV.Amur
                 this.tc.TabPages.Add(tabPage);
             }
 
-            tabPage.Text = station.Code + " " + station.Name + " " + siteType.NameShort;
+            tabPage.Text = site.GetName(1, SiteTypeRepository.GetCash());
             return tabPage;
         }
-        private void ucSiteGeoObjectList1_UCEditDataEvent(Site site, Station station, StationType siteType)
+        private void ucSiteGeoObjectList1_UCEditDataEvent(Site site)
         {
             RefreshDataTabPage(site);//, station, siteType);
         }
@@ -709,7 +712,7 @@ namespace SOV.Amur
 
         private void ucStations1_UCEditStationEvent(int stationId)
         {
-            EditStation(stationId);
+            EditSite(stationId);
         }
         FormCatalogs frmCatalogs = null;
         private void mnuDataCatalogsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -750,10 +753,12 @@ namespace SOV.Amur
         {
             try
             {
-                SiteGroup sg = Meta.DataManager.GetInstance().SiteGroupRepository.SelectGroupFK(siteGroupId);
+                EntityGroup siteGroup = Meta.DataManager.GetInstance().EntityGroupRepository.Select(siteGroupId);
+                List<int[]> groupSiteIds = Meta.DataManager.GetInstance().EntityGroupRepository.SelectEntities(siteGroupId);
+                List<Site> sites = Meta.DataManager.GetInstance().SiteRepository.Select(groupSiteIds.Select(x => x[0]).ToList());
 
                 TabPage tabPage;
-                string tabPageName = "data_grp_" + sg.Id;
+                string tabPageName = "data_grp_" + siteGroup.Id;
                 int i = tc.TabPages.IndexOfKey(tabPageName);
 
                 if (i >= 0)
@@ -762,17 +767,19 @@ namespace SOV.Amur
                 }
                 else
                 {
-                    UCDataGrpSVYM uc = new UCDataGrpSVYM();
-                    uc.Dock = DockStyle.Fill;
+                    UCDataGrpSVYM uc = new UCDataGrpSVYM
+                    {
+                        Dock = DockStyle.Fill
+                    };
 
-                    tabPage = new TabPage(sg.Name);
+                    tabPage = new TabPage(siteGroup.Name);
                     tabPage.Name = tabPageName;
                     tabPage.ImageIndex = 4;
                     tabPage.Controls.Add(uc);
                     this.tc.TabPages.Add(tabPage);
 
                     DateTime date = DateTime.Today.AddMonths(-1);
-                    uc.Fill(sg.SiteList, null, date.Year, date.Year, null);
+                    uc.Fill(sites, null, date.Year, date.Year, null);
                 }
                 tc.SelectedTab = tabPage;
 
@@ -800,7 +807,7 @@ namespace SOV.Amur
                 UCDataGrpSVYM uc = new UCDataGrpSVYM();
                 uc.Dock = DockStyle.Fill;
 
-                tabPage = new TabPage(site.GetName(Meta.StationRepository.GetCash(), Meta.SiteTypeRepository.GetCash(), 2));
+                tabPage = new TabPage(site.GetName(2, Meta.SiteTypeRepository.GetCash()));
                 tabPage.Name = tabPageName;
                 tabPage.ImageIndex = 4;
                 tabPage.Controls.Add(uc);
@@ -846,17 +853,17 @@ namespace SOV.Amur
 
         private void orgsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var rep = Report.DataManager.GetInstance().OrgRepository;
-            var form = new FormTableView<Report.Org, FormReportOrg>(rep, Report.Org.ViewTableFields(), "Организации для отчета");
+            var rep = Reports.DataManager.GetInstance().OrgRepository;
+            var form = new FormTableView<Reports.Org, FormReportOrg>(rep, Reports.Org.ViewTableFields(), "Организации для отчета");
             form.OnRefreshViwer += onReportOrgRefreshEvent;
             form.Show();
         }
 
-        private void onReportOrgRefreshEvent(FormTableView<Report.Org, FormReportOrg> tableView)
+        private void onReportOrgRefreshEvent(FormTableView<Reports.Org, FormReportOrg> tableView)
         {
             var socialDM = Social.DataManager.GetInstance();
-            var reportDM = Report.DataManager.GetInstance();
-            var fields = Report.Org.ViewTableFields();
+            var reportDM = Reports.DataManager.GetInstance();
+            var fields = Reports.Org.ViewTableFields();
             var data = reportDM.OrgRepository.SelectAllFields();
             var orgsItems = socialDM.LegalEntityRepository.SelectByType('o').Select(x => new DicItem(x.Id, x.NameRus, x.Id));
             var repItems = reportDM.ReportRepository.Select().Select(x => new DicItem(x.Id, x.Name, x.Id));

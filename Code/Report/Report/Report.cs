@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
-namespace SOV.Amur.Report
+namespace SOV.Amur.Reports
 {
     /// <summary>
     ///  Отчет

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using SOV.Common;
 using Npgsql;
 
-namespace SOV.Amur.Report
+namespace SOV.Amur.Reports
 {
     public class ReportRepository : BaseRepository<Report>
     {

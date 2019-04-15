@@ -7,7 +7,7 @@ using SOV.Amur.Data;
 using SOV.Amur.Meta;
 using SOV.Common;
 
-namespace SOV.Amur.Report
+namespace SOV.Amur.Reports
 {
     public class F51Report : List<F51Value>
     {
@@ -38,10 +38,7 @@ namespace SOV.Amur.Report
                     double? valueDec = dvD != null ? dvD.Value : (double?)null;
                     DataValue dvM = f51Row.DataValues[34];
                     double? valueM = dvM != null ? dvM.Value : (double?)null;
-                    ret.Add(new F51Value(
-                        StationRepository.GetCash().First(x=>x.Id == f51Row.Site.StationId).Code, 
-                        f51Row.Site.GetName(StationRepository.GetCash(), StationTypeRepository.GetCash(), 0), 
-                        f51Row.Notes, day, value, valueDec, valueM)
+                    ret.Add(new F51Value(f51Row.Site.Code, f51Row.Site.GetName(0, SiteTypeRepository.GetCash()), f51Row.Notes, day, value, valueDec, valueM)
                     );
                 }
             }
@@ -138,14 +135,15 @@ namespace SOV.Amur.Report
             int monthDaysQ = DateTime.DaysInMonth(year, month);
 
             // SITES
-            SiteGroup sg = Meta.DataManager.GetInstance().SiteGroupRepository.SelectGroupFK(siteGroupId);
-            ret.AddSites(sg.SiteList);
+            List<int[]> sg = Meta.DataManager.GetInstance().EntityGroupRepository.SelectEntities(siteGroupId);
+            List<Site> sites = Meta.DataManager.GetInstance().SiteRepository.Select(sg.Select(x => x[0]).ToList());
+            ret.AddSites(sites);
 
             // ДАННЫЕ: суточные, декадные и месячные осадки для всех постов за временной период отчёта
 
             List<DataValue> dvAll = Data.DataManager.GetInstance().DataValueRepository.SelectA(
-                dateSF[0], dateSF[1],true,
-                sg.SiteList.Select(x => x.Id).ToList(), variables,
+                dateSF[0], dateSF[1], true,
+                sites.Select(x => x.Id).ToList(), variables,
                 new List<int> { offsetTypeId }, offsetValue, true, false,
                 null, null, null);
             List<Catalog> catalogs = Meta.DataManager.GetInstance().CatalogRepository.Select(dvAll.Select(x => x.CatalogId).Distinct().ToList());

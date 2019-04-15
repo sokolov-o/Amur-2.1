@@ -55,7 +55,6 @@
     <Compile Include="PileRepository.cs" />
     <Compile Include="SiteAttrTypeRepository.cs" />
     <Compile Include="FlagAQCRepository.cs" />
-    <Compile Include="SiteNewRepository.cs" />
     <Compile Include="SiteXSiteRepository.cs" />
     <Compile Include="VariableAttributesRepository.cs" />
     <Compile Include="EntityRepository.cs" />

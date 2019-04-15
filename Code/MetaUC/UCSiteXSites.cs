@@ -82,7 +82,7 @@ namespace SOV.Amur.Meta
                 DataGridViewRow row = dgv.Rows[dgv.Rows.Add()];
                 row.Cells[_iColRelation].Value = sxsTypes.FirstOrDefault(x => x.Id == item.RelationTypeId).Name;
                 row.Cells[_iColSite].Value = sites.FirstOrDefault(x => x.Id == ((SiteNum1Or2 == 1) ? item.SiteId2 : item.SiteId1))
-                    .GetName(1, true, SiteTypeRepository.GetCash());
+                    .GetName(1, SiteTypeRepository.GetCash());
                 row.Tag = item;
             }
         }

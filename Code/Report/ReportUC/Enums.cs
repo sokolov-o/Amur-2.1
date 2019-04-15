@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SOV.Amur.Report
+namespace SOV.Amur.Reports
 {
     /// <summary>
     /// Использовать в отчётах для указания на каких данных был создан отчёт или форма.

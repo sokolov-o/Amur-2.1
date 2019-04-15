@@ -7,8 +7,8 @@
     <ProjectGuid>{BB34A841-7CBE-4C0D-8268-6AECE9B7271E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FERHRI.Common</RootNamespace>
-    <AssemblyName>FERHRI.CommonUC</AssemblyName>
+    <RootNamespace>SOV.Common</RootNamespace>
+    <AssemblyName>SOV.CommonUC</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -34,10 +34,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Npgsql, Version=3.2.5.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\DLL\Npgsql 3.2.5\net451\Npgsql.dll</HintPath>
+    <Reference Include="Npgsql">
+      <HintPath>..\..\DLL\Npgsql 3.2.5\net45\Npgsql.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

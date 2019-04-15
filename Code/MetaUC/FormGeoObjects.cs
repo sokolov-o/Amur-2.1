@@ -241,7 +241,7 @@ namespace SOV.Amur.Meta
             List<SiteType> sts = SiteTypeRepository.GetCash();
             FormSelectListItems frm = new FormSelectListItems("Добавить пункт к гео-объекту",
                 SiteRepository.GetCash()
-                .Select(x => new IdName() { Id = x.Id, Name = x.GetName(2, true, SiteTypeRepository.GetCash()) })
+                .Select(x => new IdName() { Id = x.Id, Name = x.GetName(2, SiteTypeRepository.GetCash()) })
                 .ToArray(),
                 "Name"
             );

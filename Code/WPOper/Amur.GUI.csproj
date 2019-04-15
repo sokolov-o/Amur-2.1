@@ -7,8 +7,8 @@
     <ProjectGuid>{D7A38B79-4D33-4055-A5A3-10489EE18CD2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FERHRI.Amur</RootNamespace>
-    <AssemblyName>FERHRI.Amur.WPOper</AssemblyName>
+    <RootNamespace>SOV.Amur</RootNamespace>
+    <AssemblyName>SOV.Amur.GUI</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -71,12 +71,8 @@
     <ApplicationIcon>WPOper.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Mono.Security">
-      <HintPath>..\..\DLL\Mono.Security.dll</HintPath>
-    </Reference>
-    <Reference Include="Npgsql, Version=3.2.5.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Npgsql.3.2.5\lib\net45\Npgsql.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Npgsql">
+      <HintPath>..\DLL\Npgsql 3.2.5\net451\Npgsql.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -155,6 +151,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ReportDAL\ReportDAL.csproj">
+      <Project>{eead327e-0113-400b-9e0d-3dc8a36ca1c4}</Project>
+      <Name>ReportDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Report\ReportUC\ReportUC.csproj">
+      <Project>{8a5617ae-ed37-480a-a4d2-ef99e209bb7f}</Project>
+      <Name>ReportUC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Report\Report\Report.csproj">
+      <Project>{0517c974-3f2c-46ac-99a3-735088d45701}</Project>
+      <Name>Report</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Social\SocialBL\SocialBL.csproj">
       <Project>{da541fab-7762-49a4-bc85-f6ff4d74e28b}</Project>
       <Name>SocialBL</Name>

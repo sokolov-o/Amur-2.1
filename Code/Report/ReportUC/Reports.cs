@@ -7,11 +7,11 @@ using SOV.Amur.Data;
 using SOV.Amur.Meta;
 using SOV.Common;
 
-namespace SOV.Amur.Report
+namespace SOV.Amur.Reports
 {
     public class DiffReportItem
     {
-        public string PostName { get { return Site.GetName(_sitePost, StationRepository.GetCash(), StationTypeRepository.GetCash(), 1); } }
+        public string PostName { get { return Site.GetName(_sitePost, 1, SiteTypeRepository.GetCash()); } }
         private Site _sitePost { get; set; }
         private Variable _var { get; set; }
         public int ParamId { get { return _var.Id; } }
@@ -73,14 +73,12 @@ namespace SOV.Amur.Report
     public class JournalReportItem
     {
         private Site _site { get; set; }
-        private Station _staition { get; set; }
-        //private DataValue _dataValue;
         private Variable _variable { get; set; }
         public DateTime Date { get; set; }
         public string ParamName { get { return _variable.NameRus; } }
         public int ParamId { get { return _variable.Id; } }
-        public string StationCode { get { return _staition.Code; } }
-        public int SiteType { get { return _site.SiteTypeId; } }
+        public string SiteCode { get { return _site.Code; } }
+        public int SiteType { get { return _site.TypeId; } }
         public double? Value { get; set; }
         public bool? IsBad { get; set; }
         public int? CountInDay
@@ -92,23 +90,20 @@ namespace SOV.Amur.Report
         }
 
 
-        public JournalReportItem(Variable var, Station stn, Site site, double value, bool? isBad, DateTime date)
+        public JournalReportItem(Variable var, Site site, double value, bool? isBad, DateTime date)
         {
             Value = double.IsNaN(value) ? (double?)null : value;
             IsBad = isBad;
             Date = date;
             _site = site;
-            _staition = stn;
             _variable = var;
         }
     }
     public class JournalReport : List<JournalReportItem>
     {
         public JournalReport() { }
-        public JournalReport(List<DataValue> dataValues, Dictionary<int, Catalog> ctlDic, Variable var, Site site, Station stn, List<DateTime> dateD)
+        public JournalReport(List<DataValue> dataValues, Dictionary<int, Catalog> ctlDic, Variable var, Site site, List<DateTime> dateD)
         {
-            if (site.StationId != stn.Id)
-                throw new Exception("site.StationId!=stn.Id");
             foreach (DateTime d in dateD)
             {
                 JournalReport jrI = new JournalReport();
@@ -116,7 +111,7 @@ namespace SOV.Amur.Report
                     dataValues.Where(t => t.DateLOC.Date == d).ToArray() : new DataValue[0];
                 if (data.Length == 0)
 
-                    Add(new JournalReportItem(var, stn, site, double.NaN, null, d.Date));
+                    Add(new JournalReportItem(var, site, double.NaN, null, d.Date));
                 else
                 {
                     foreach (DataValue dv in data)
@@ -126,13 +121,13 @@ namespace SOV.Amur.Report
                         {
                             if (ctl.VariableId == var.Id && ctl.SiteId == site.Id)
                             {
-                                jrI.Add(new JournalReportItem(var, stn, site, dv.Value, dv.FlagAQC == 2 ? true : false, dv.DateLOC));
+                                jrI.Add(new JournalReportItem(var, site, dv.Value, dv.FlagAQC == 2 ? true : false, dv.DateLOC));
                             }
                         }
                     }
                 }
                 if (jrI.Count == 0)
-                    Add(new JournalReportItem(var, stn, site, double.NaN, null, d.Date));
+                    Add(new JournalReportItem(var, site, double.NaN, null, d.Date));
                 else
                     AddRange(jrI);
             }
@@ -143,7 +138,7 @@ namespace SOV.Amur.Report
     public class GP25Header
     {
         //        public GP25Header(Site site, SiteAttributeCollection siteAttributeCollection, WaterObjectCollection woc, List<ClimateInfo> climateInfoList, CriteriaCollection criteriaCollection, DateTime beginDate, DateTime endDate)
-        public GP25Header(Station stn, Site site, List<EntityAttrValue> siteAttributeCollection, List<GeoObject> woc, List<Climate> clm, DateTime beginDate, DateTime endDate)
+        public GP25Header(Site site, List<EntityAttrValue> siteAttributeCollection, List<GeoObject> woc, List<Climate> clm, DateTime beginDate, DateTime endDate)
         {
             if (beginDate.AddDays(1).ToLocalTime().Month == endDate.AddDays(-1).ToLocalTime().Month)
             {
@@ -158,11 +153,11 @@ namespace SOV.Amur.Report
                 this.Period = string.Format("{0:dd.MM.yyyy} - {1:dd.MM.yyyy}", beginDate.ToLocalTime(), endDate.ToLocalTime());
             }
             int stationIndex = 0;
-            if (Int32.TryParse(stn.Code, out stationIndex))
+            if (Int32.TryParse(site.Code, out stationIndex))
             {
                 this.StationIndex = stationIndex;
             }
-            this.StationName = stn.Name;
+            this.StationName = site.Name;
             if (woc != null && woc.Count > 0)
             {
                 for (int w = 0; w < woc.Count; w++)

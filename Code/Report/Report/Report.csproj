@@ -7,8 +7,8 @@
     <ProjectGuid>{0517C974-3F2C-46AC-99A3-735088D45701}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FERHRI.Amur.Report</RootNamespace>
-    <AssemblyName>FERHRI.Amur.Report</AssemblyName>
+    <RootNamespace>SOV.Amur.Reports</RootNamespace>
+    <AssemblyName>SOV.Amur.Reports</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

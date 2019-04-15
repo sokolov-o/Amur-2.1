@@ -392,7 +392,7 @@ namespace SOV.Amur.Data
             {
                 foreach (var item in _sites)
                 {
-                    sitesComboBox.Items.Add(new Common.DicItem(item.Id, item.GetName(1, true, SiteTypeRepository.GetCash()), item));
+                    sitesComboBox.Items.Add(new Common.DicItem(item.Id, item.GetName(1, SiteTypeRepository.GetCash()), item));
                 }
                 sitesComboBox.SelectedIndex = 0;
             }

@@ -1,4 +1,4 @@
-﻿namespace SOV.Amur.Report
+﻿namespace SOV.Amur.Reports
 {
     partial class UCF50ReportFilter
     {

@@ -12,7 +12,7 @@ namespace SOV.Amur.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.0.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,9 +26,9 @@ namespace SOV.Amur.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("ДВНИГМИ/Server=10.11.203.20;Port=5432;Database=SOV.amur;/ДВ УГМС/Server=10.8.3" +
-            ".180;Port=5432;Database=SOV.amur;/localhost/Server=localhost;Port=5432;Databa" +
-            "se=SOV.amur;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("ДВНИГМИ/Server=10.11.203.20;Port=5432;Database=SOV.amur;/ДВ УГМС/Server=10.8.3.18" +
+            "0;Port=5432;Database=SOV.amur;/localhost/Server=localhost;Port=5432;Database=SOV" +
+            ".amur;")]
         public string AmurConnectionString {
             get {
                 return ((string)(this["AmurConnectionString"]));

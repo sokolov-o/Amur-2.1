@@ -33,7 +33,7 @@ namespace SOV.Amur.Data
 
         public void Fill(List<int> sitesId, int[] yearSF)
         {
-            _sites = Meta.DataManager.GetInstance().SiteRepository.Select(sitesId).OrderBy(x => x.GetName(StationRepository.GetCash(), SiteTypeRepository.GetCash(), 2)).ToList();
+            _sites = Meta.DataManager.GetInstance().SiteRepository.Select(sitesId).OrderBy(x => x.GetName(2, SiteTypeRepository.GetCash())).ToList();
             _data = Data.DataManager.GetInstance().ClimateRepository.SelectClimateMetaAndData(sitesId, null, null, null, null, null,
                 yearSF[0], yearSF[1]);
             _variables = Meta.DataManager.GetInstance().VariableRepository.Select(_data.Select(x => x.VariableId).Distinct().ToList()).OrderBy(x => x.NameRus).ToList();
@@ -74,7 +74,7 @@ namespace SOV.Amur.Data
                     foreach (var site in _sites)
                     {
                         DataGridViewRow row = dgv.Rows[dgv.Rows.Add()];
-                        row.Cells[0].Value = site.GetName(StationRepository.GetCash(), SiteTypeRepository.GetCash(), 2);
+                        row.Cells[0].Value = site.GetName(2, SiteTypeRepository.GetCash());
 
                         foreach (var dataType in _datatypes)
                         {

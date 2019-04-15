@@ -6,7 +6,7 @@ using SOV.Common;
 using SOV.Amur.Meta;
 using SOV.Social;
 
-namespace SOV.Amur.Report
+namespace SOV.Amur.Reports
 {
     public partial class FormWaterObjectReport : Form
     {
@@ -82,7 +82,7 @@ namespace SOV.Amur.Report
             typeComboBox.Items.AddRange(reviewTypes.ToArray());
             typeComboBox.SelectedIndex = 0;
 
-            stationComboBox.Items.AddRange(Meta.DataManager.GetInstance().SiteGroupRepository.SelectGroups().ToArray());
+            stationComboBox.Items.AddRange(Meta.DataManager.GetInstance().EntityGroupRepository.SelectByEntityTableName("site").ToArray());
             if (stationComboBox.Items.Count > 0)
                 stationComboBox.SelectedIndex = stationComboBox.Items.Count - 1;
         }
@@ -152,7 +152,7 @@ namespace SOV.Amur.Report
             };
 
             WaterObjReport waterObjReport = new WaterObjReport(
-                Meta.DataManager.GetInstance().SiteGroupRepository.SelectGroupFK(((SiteGroup)stationComboBox.SelectedItem).Id),
+                Meta.DataManager.GetInstance().EntityGroupRepository.Select(((EntityGroup)stationComboBox.SelectedItem).Id),
                 dataFilter,
                 rep,
                 org,

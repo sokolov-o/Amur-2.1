@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SOV.Amur.Meta;
 
-namespace SOV.Amur.Report
+namespace SOV.Amur.Reports
 {
     public partial class UCF50ReportFilter : UserControl
     {
@@ -62,9 +62,10 @@ namespace SOV.Amur.Report
             timeUnitComboBox.Add(new Common.DicItem((int)EnumTime.DecadeOfYear, "Декада"));
             TimeUnit = (int)EnumTime.Month;
 
-            siteGroupComboBox.AddRange(
-                Meta.SiteGroup.ToListDicItem(Meta.DataManager.GetInstance().SiteGroupRepository.SelectGroups())
-            );
+            List<EntityGroup> egList = Meta.DataManager.GetInstance().EntityGroupRepository.Select();
+            List<Common.DicItem> diList = egList.Select(x => new Common.DicItem() { Id = x.Id, Name = x.Name, Entity = x }).ToList();
+            siteGroupComboBox.AddRange(diList);
+
             siteGroupComboBox.SelectedId = 9;
 
             flagAQCComboBox.Add(new Common.DicItem(-1, "Все"));

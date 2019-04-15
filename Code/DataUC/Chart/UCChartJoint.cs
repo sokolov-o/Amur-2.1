@@ -53,8 +53,8 @@ namespace SOV.Amur.Data.Chart
                 if (activeSite < 0)
                     return;
                 activeSiteLabel.Text = SitePlusGeoObjName(value);
-                chart.Series.First(x => (int) x.Tag == activeSite).BorderDashStyle = ActiveSerias.style;
-                chart.Series.First(x => (int) x.Tag == activeSite).BorderWidth = ActiveSerias.width;
+                chart.Series.First(x => (int)x.Tag == activeSite).BorderDashStyle = ActiveSerias.style;
+                chart.Series.First(x => (int)x.Tag == activeSite).BorderWidth = ActiveSerias.width;
                 foreach (var item in offsetSite.Items)
                     if (((DicItem)item).Id == value)
                         offsetSite.SelectedItem = item;
@@ -148,8 +148,8 @@ namespace SOV.Amur.Data.Chart
         private List<DataValue> SubData(List<Catalog> catalogs, int site)
         {
             List<Catalog> subCatalogs = catalogs.Where(x => x.SiteId == site).ToList();
-            return fullData.Where(x => 
-                subCatalogs.Exists(y => y.Id == x.CatalogId) && 
+            return fullData.Where(x =>
+                subCatalogs.Exists(y => y.Id == x.CatalogId) &&
                 x.Date(TimeType) >= TimePeriod.DateS &&
                 x.Date(TimeType) <= TimePeriod.DateF
             ).ToList();
@@ -183,11 +183,11 @@ namespace SOV.Amur.Data.Chart
         private void FillChart()
         {
             bool isSeparete = !separateMenuItem.Enabled;
-            List<Color> validColors = chart.Series.Count > 0 ? 
+            List<Color> validColors = chart.Series.Count > 0 ?
                 chart.Series.Select(x => x.Color).ToList() :
                 new List<Color>()
                 {
-                    Color.Blue, Color.BlueViolet, Color.Brown, Color.Chocolate, Color.Crimson, Color.DarkBlue, 
+                    Color.Blue, Color.BlueViolet, Color.Brown, Color.Chocolate, Color.Crimson, Color.DarkBlue,
                     Color.DarkGreen, Color.DarkCyan, Color.DarkGoldenrod, Color.DarkMagenta, Color.DarkSlateGray,
                     Color.OliveDrab, Color.DarkRed, Color.DarkGray, Color.DarkKhaki, Color.DarkSlateBlue, Color.DarkOliveGreen
                 };
@@ -244,7 +244,7 @@ namespace SOV.Amur.Data.Chart
                 if (isSeparete)
                     CreateChartArea(seria.Name);
                 //if (site != sitesGroupList[sitesGroupList.Count - 1])
-                    //seria.ChartType = SeriesChartType.Stock;
+                //seria.ChartType = SeriesChartType.Stock;
                 seria.XValueType = ChartValueType.DateTime;
                 chart.Series.Add(seria);
                 seriesCurrPoint.Add(seria.Name, null);
@@ -289,8 +289,8 @@ namespace SOV.Amur.Data.Chart
             foreach (var dataElm1 in data1)
             {
                 DateTime date1 = dataElm1.Date(TimeType).AddHours(chartHoursOffset[site1.Id]);
-                var dataElm2 = data2.Find(x => 
-                    x.Date(TimeType).AddHours(chartHoursOffset[site2.Id]) > date1.AddSeconds(-1) && 
+                var dataElm2 = data2.Find(x =>
+                    x.Date(TimeType).AddHours(chartHoursOffset[site2.Id]) > date1.AddSeconds(-1) &&
                     x.Date(TimeType).AddHours(chartHoursOffset[site2.Id]) < date1.AddSeconds(1)
                 );
                 if (dataElm2 == null)
@@ -300,8 +300,8 @@ namespace SOV.Amur.Data.Chart
                 trendY.Add(dataElm2.Value);
                 point.SetValueXY(dataElm1.Value, dataElm2.Value);
                 point.ToolTip = string.Format(
-                    "Время наблюдения: {0}\nЗначение X: {1}\nЗначение Y: {2}", 
-                    date1.ToString("dd.MM.yy HH:mm"), 
+                    "Время наблюдения: {0}\nЗначение X: {1}\nЗначение Y: {2}",
+                    date1.ToString("dd.MM.yy HH:mm"),
                     dataElm1.Value,
                     dataElm2.Value
                 );
@@ -378,7 +378,7 @@ namespace SOV.Amur.Data.Chart
             dataFilter = new DataFilter()
             {
                 DateTimePeriod = new DateTimePeriod(
-                    TimePeriod.DateS.Value.AddMonths(-1), 
+                    TimePeriod.DateS.Value.AddMonths(-1),
                     TimePeriod.DateF.Value.AddMonths(1),
                     TimePeriod.PeriodType,
                     TimePeriod.DaysBeforeDateNow
@@ -429,7 +429,7 @@ namespace SOV.Amur.Data.Chart
 
         private void ResetSiteTitle(int siteId)
         {
-            var series = chart.Series.First(x => (int) x.Tag == siteId);
+            var series = chart.Series.First(x => (int)x.Tag == siteId);
             series.Name = new Regex("\\s[\\+-][\\d]+\\s[дч]\\.").Replace(series.Name, "");
         }
 
@@ -528,12 +528,12 @@ namespace SOV.Amur.Data.Chart
                         ActiveSite = -1;
                         return;
                     }
-                    if (FixedSite == (int) result.Series.Tag)
+                    if (FixedSite == (int)result.Series.Tag)
                         return;
-                    if (ActiveSite == (int) result.Series.Tag)
+                    if (ActiveSite == (int)result.Series.Tag)
                         FixedSite = ActiveSite;
                     else
-                        ActiveSite = (int) result.Series.Tag;
+                        ActiveSite = (int)result.Series.Tag;
                 }
                 if (pointActionRadioButton.Checked)
                 {
@@ -541,7 +541,7 @@ namespace SOV.Amur.Data.Chart
                     currPointXVal = -1;
                     if (result.ChartElementType != ChartElementType.DataPoint)
                         return;
-                    var point = (DataPoint) result.Object;
+                    var point = (DataPoint)result.Object;
                     dateInfolabel.Text = DateTime.FromOADate(point.XValue).ToString("dd.MM.yyyy hh:mm");
                     currPointXVal = point.XValue;
                     MarkPoints();
@@ -565,15 +565,11 @@ namespace SOV.Amur.Data.Chart
 
         private string SitePlusGeoObjName(int siteId)
         {
-            var station = Meta.StationRepository.GetCash()
-                .Find(x => x.Id == Meta.SiteRepository.GetCash().Find(site => site.Id == siteId).StationId);
-            List<StationGeoObject> geoObjId = Meta.DataManager.GetInstance().StationGeoObjectRepository.SelectByStations(
-                new List<int>() { station.Id }
-            );
-            string geoObj = geoObjId.Count == 0 ? "" : Meta.GeoObjectRepository.GetCash().Find(
-                x => x.Id == geoObjId[0].GeoObjectId
-            ).Name;
-            return station.Code + " " + geoObj;
+            List<SiteGeoObject> geoObjId = Meta.DataManager.GetInstance().SiteGeoObjectRepository.SelectBySites(new List<int>() { siteId });
+            string geoObjName = geoObjId.Count == 0 ? "" : Meta.GeoObjectRepository.GetCash()
+                .Find(x => x.Id == geoObjId[0].GeoObjectId)
+                .Name;
+            return SiteRepository.GetCash().Find(x => x.Id == siteId).Code + " " + geoObjName;
         }
 
         private void jointMenuItem_Click(object sender, EventArgs e)

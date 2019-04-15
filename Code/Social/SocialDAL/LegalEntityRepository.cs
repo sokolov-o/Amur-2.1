@@ -75,7 +75,7 @@ namespace SOV.Social
                     Social.Org entity = (Social.Org)item.Entity;
                     ret[1] = new Dictionary<string, object>()
                     {
-                        {"legal_entity_id", entity.LegalEntityId},
+                        {"legal_entity_id", entity.Id},
                         {"staff_id_first_face", entity.StaffIdFirstFace}
                     };
                 }
@@ -194,7 +194,7 @@ namespace SOV.Social
             List<int> ids = ret.Where(x => x.Type == 'o').Select(x => x.Id).ToList();
             foreach (var item in DataManager.GetInstance().OrgRepository.SelectById(ids))
             {
-                ret.FirstOrDefault(x => x.Id == item.LegalEntityId).Entity = item;
+                ret.FirstOrDefault(x => x.Id == item.Id).Entity = item;
             }
             ids = ret.Where(x => x.Type == 'p').Select(x => x.Id).ToList();
             foreach (var item in DataManager.GetInstance().PersonRepository.SelectById(ids))

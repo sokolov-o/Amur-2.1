@@ -113,7 +113,7 @@ namespace SOV.Amur.Data
 
                     foreach (var site in _sites.OrderBy(x => x.Name))
                     {
-                        TreeNode tnV = new TreeNode(Meta.Site.GetName(site, 2, true, SiteTypeRepository.GetCash()));
+                        TreeNode tnV = new TreeNode(Meta.Site.GetName(site, 2, SiteTypeRepository.GetCash()));
                         tnV.Tag = site;
 
                         tv.Nodes.Add(tnV);
@@ -212,7 +212,7 @@ namespace SOV.Amur.Data
                     foreach (var site in _sites)
                     {
                         DataGridViewRow row = dgv.Rows[dgv.Rows.Add()];
-                        row.Cells[0].Value = Meta.Site.GetName(site, 0, true, SiteTypeRepository.GetCash());
+                        row.Cells[0].Value = Meta.Site.GetName(site, 0, SiteTypeRepository.GetCash());
                         row.Cells[0].Tag = site;
 
                         List<DataForecast> data1 = data.FindAll(x => ctls.Exists(y => y.SiteId == site.Id && y.Id == x.CatalogId));

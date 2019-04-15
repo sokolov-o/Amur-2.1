@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SOV.Amur.Report
+namespace SOV.Amur.Reports
 {
     public class DataManager : Common.BaseDataManager
     {
@@ -15,12 +15,12 @@ namespace SOV.Amur.Report
 
         public static string GetDefaultConnectionString()
         {
-            return Properties.Settings.Default.ConnectionString;
+            return SOV.Amur.Reports.Properties.Settings.Default.ConnectionString;
         }
 
         public static void SetDefaultConnectionString(string cnns)
         {
-            Properties.Settings.Default["ConnectionString"] = cnns;
+            SOV.Amur.Reports.Properties.Settings.Default["ConnectionString"] = cnns;
         }
 
         /// <summary>
@@ -29,14 +29,14 @@ namespace SOV.Amur.Report
         /// <returns></returns>
         public static DataManager GetInstance()
         {
-            return (DataManager)GetInstance(GetDefaultConnectionString(), Type.GetType("SOV.Amur.Report.DataManager"));
+            return (DataManager)GetInstance(GetDefaultConnectionString(), Type.GetType("SOV.Amur.Reports.DataManager"));
         }
         /// <summary>
         /// Экземпляр с заданной строкой подключения.
         /// </summary>
         public static DataManager GetInstance(string connectionString)
         {
-            return (DataManager)GetInstance(connectionString, Type.GetType("SOV.Amur.Report.DataManager"));
+            return (DataManager)GetInstance(connectionString, Type.GetType("SOV.Amur.Reports.DataManager"));
         }
     }
 }

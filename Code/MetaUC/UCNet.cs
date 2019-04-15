@@ -67,7 +67,7 @@ namespace SOV.Amur.Meta
         TreeNode NewTreeNode(Site site)
         {
             TreeNode ret = new TreeNode();
-            ret.Text = Meta.Site.GetName(site, 1, true, SiteTypeRepository.GetCash());
+            ret.Text = Meta.Site.GetName(site, 1, SiteTypeRepository.GetCash());
             if (site.TypeId != (int)EnumStationType.HydroPost && site.TypeId != (int)EnumStationType.MeteoStation)
                 ret.NodeFont = new Font(TreeView.DefaultFont, FontStyle.Italic);
             ret.ForeColor = (site.TypeId == (int)EnumStationType.HydroPost) ? Color.Green : Color.Black;

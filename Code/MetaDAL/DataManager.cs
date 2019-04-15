@@ -47,14 +47,12 @@ namespace SOV.Amur.Meta
         public CategoryItemRepository CategoryItemRepository;
         public CategorySetRepository CategorySetRepository;
         public SiteRepository SiteRepository;
-        public SiteNewRepository SiteNewRepository;
 
         static public void ClearCashs()
         {
             VariableRepository.ClearCache();
             VariableVirtualRepository.ClearCache();
             SiteRepository.ClearCache();
-            SiteNewRepository.ClearCache();
             GeoObjectRepository.ClearCache();
             DataTypeRepository.ClearCache();
             GeneralCategoryRepository.ClearCache();
@@ -111,7 +109,6 @@ namespace SOV.Amur.Meta
             CategoryItemRepository = new CategoryItemRepository(this);
 
             SiteRepository = new SiteRepository(this);
-            SiteNewRepository = new SiteNewRepository(this);
         }
 
         public static string GetDefaultConnectionString()

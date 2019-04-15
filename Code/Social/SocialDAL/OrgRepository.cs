@@ -16,7 +16,7 @@ namespace SOV.Social
         {
             return new Org()
             {
-                LegalEntityId = (int)reader["legal_entity_id"],
+                Id = (int)reader["legal_entity_id"],
                 StaffIdFirstFace = ADbNpgsql.GetValueInt(reader, "staff_id_first_face")
             };
         }
@@ -42,7 +42,7 @@ namespace SOV.Social
 
         public override void Delete(Org org)
         {
-            Delete(new Dictionary<string, object> { { "legal_entity_id", org.LegalEntityId } });
+            Delete(new Dictionary<string, object> { { "legal_entity_id", org.Id } });
         }
 
         public override void Delete(Dictionary<string, object> fields)

@@ -9,7 +9,6 @@ namespace SOV.UnitTest
     [TestClass]
     public class EntityTest
     {
-        static int num = 0;
         static SysEntityRepository repo;
         static string testInstance1 = "testInst1";
         static string testInstance2 = "testInst2";

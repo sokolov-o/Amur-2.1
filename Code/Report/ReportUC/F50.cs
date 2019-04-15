@@ -7,7 +7,7 @@ using SOV.Amur.Data;
 using SOV.Amur.Meta;
 using SOV.Common;
 
-namespace SOV.Amur.Report
+namespace SOV.Amur.Reports
 {
     /// <summary>
     /// 
@@ -68,9 +68,9 @@ namespace SOV.Amur.Report
             switch (ret.ReportTimeUnit)
             {
                 case EnumTime.Month:
-                    variables = new int[] { 
-                        (int)EnumVariable.GageHeightAvgMonth, 
-                        (int)EnumVariable.GageHeightMinMonth, 
+                    variables = new int[] {
+                        (int)EnumVariable.GageHeightAvgMonth,
+                        (int)EnumVariable.GageHeightMinMonth,
                         (int)EnumVariable.GageHeightMaxMonth,
                         (int)EnumVariable.PrecipMonth,
                         (int)EnumVariable.GageHeightF,
@@ -78,14 +78,14 @@ namespace SOV.Amur.Report
                         (int)EnumVariable.IcePhenom,
                         (int)EnumVariable.GageHeightAvgDay};
                     dateSF = DateTimeProcess.GetMonthDateSF(year, month);
-                    decadeOfYearSF = new int[] { 
-                        DateTimeProcess.GetDecadeYearByDecadeMonth(month, 1), 
+                    decadeOfYearSF = new int[] {
+                        DateTimeProcess.GetDecadeYearByDecadeMonth(month, 1),
                         DateTimeProcess.GetDecadeYearByDecadeMonth(month, 3) };
                     break;
                 case EnumTime.DecadeOfYear:
-                    variables = new int[] { 
-                        (int)EnumVariable.GageHeightAvgDecade, 
-                        (int)EnumVariable.GageHeightMinDecade, 
+                    variables = new int[] {
+                        (int)EnumVariable.GageHeightAvgDecade,
+                        (int)EnumVariable.GageHeightMinDecade,
                         (int)EnumVariable.GageHeightMaxDecade,
                         (int)EnumVariable.PrecipDecade,
                         (int)EnumVariable.GageHeightF,
@@ -93,8 +93,8 @@ namespace SOV.Amur.Report
                         (int)EnumVariable.IcePhenom,
                         (int)EnumVariable.GageHeightAvgDay};
                     dateSF = DateTimeProcess.GetMonthDecadeDateSF(year, month, (int)monthDecade);
-                    decadeOfYearSF = new int[] { 
-                        DateTimeProcess.GetDecadeYearByDecadeMonth(month, (int)monthDecade), 
+                    decadeOfYearSF = new int[] {
+                        DateTimeProcess.GetDecadeYearByDecadeMonth(month, (int)monthDecade),
                         DateTimeProcess.GetDecadeYearByDecadeMonth(month, (int)monthDecade) };
                     break;
                 default:
@@ -105,17 +105,16 @@ namespace SOV.Amur.Report
 
             #region Формирование списка постов
 
-            SiteGroup siteGroup = Meta.DataManager.GetInstance().SiteGroupRepository.SelectGroupFK(siteGroupId);
-            Dictionary<Site, List<GeoObject>> siteXgos =
-                 Meta.DataManager.GetInstance().StationGeoObjectRepository.SelectSiteXGeoObjects(siteGroup.SiteList.Select(x => x.Id).ToList());
+            List<int[]> groupItems = Meta.DataManager.GetInstance().EntityGroupRepository.SelectEntities(siteGroupId);
+            List<SiteGeoObject> sgos =
+                 Meta.DataManager.GetInstance().SiteGeoObjectRepository.SelectBySites(groupItems.Select(x => x[0]).ToList());
 
-            ret.AddRange(siteXgos);
-            //CriteriaRepository critrep = MetaData.DataManager.Instance.Criterias;
+            ret.AddRange(SiteGeoObjectRepository.ToDictionarySiteGeoobs(sgos));
 
             #endregion Формирование списка постов
 
             // Все данные для всех постов за временной период отчёта
-            List<DataValue> dvAll = repdv.SelectA(dateSF[0], dateSF[1],true,
+            List<DataValue> dvAll = repdv.SelectA(dateSF[0], dateSF[1], true,
                 ret.GetSiteIdList(), new List<int>(variables),
                 new List<int> { offsetTypeId }, offsetValue,
                 true, false, null, null, flagAQC);
@@ -574,7 +573,7 @@ namespace SOV.Amur.Report
                 //DicItem dicStation = MetaDicCash.GetDicItem(typeof(Station), this.Site.StationId);
                 //DicItem dicSiteType = MetaDicCash.GetDicItem(typeof(SiteType), this.Site.SiteTypeId);
 
-                return Site.GetName(StationRepository.GetCash(), StationTypeRepository.GetCash(), 2);
+                return Site.GetName(2, SiteTypeRepository.GetCash());
             }
         }
         public string WaterObjectName { get { return (GeoObject == null) ? null : GeoObject.Name; } }

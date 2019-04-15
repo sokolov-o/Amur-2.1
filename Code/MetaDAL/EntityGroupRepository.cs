@@ -9,13 +9,12 @@ using Npgsql;
 
 namespace SOV.Amur.Meta
 {
-    public class EntityGroupRepository
+    public class EntityGroupRepository : BaseRepository<EntityGroup>
     {
-        Common.ADbNpgsql _db;
-        internal EntityGroupRepository(Common.ADbNpgsql db)
+        internal EntityGroupRepository(Common.ADbNpgsql db) : base(db, "meta.entity_group")
         {
-            _db = db;
         }
+
         /// <summary>
         /// Вставка группы.
         /// </summary>
@@ -70,7 +69,7 @@ namespace SOV.Amur.Meta
         {
             Dictionary<EntityGroup, List<int[]>> ret = new Dictionary<EntityGroup, List<int[]>>();
 
-            List<EntityGroup> groups = SelectGroups(groupId);
+            List<EntityGroup> groups = Select(groupId);
             foreach (var group in groups)
             {
                 ret.Add(group, SelectEntities(group.Id));
@@ -84,55 +83,64 @@ namespace SOV.Amur.Meta
         /// <returns>Словарь или пустой словарь.</returns>
         public Dictionary<EntityGroup, List<int[]>> SelectGroupsFK(string entityTabName)
         {
-            return SelectGroupsFK(SelectGroups(entityTabName).Select(x => x.Id).ToList());
+            return SelectGroupsFK(SelectByEntityTableName(entityTabName).Select(x => x.Id).ToList());
         }
 
-        public List<EntityGroup> SelectGroups(List<int> groupId)
+        //////public List<EntityGroup> SelectGroups(List<int> groupId)
+        //////{
+        //////    List<EntityGroup> ret = new List<EntityGroup>();
+        //////    if (groupId != null && groupId.Count > 0)
+        //////    {
+        //////        using (NpgsqlConnection cnn = _db.Connection)
+        //////        {
+        //////            using (NpgsqlCommand cmd = new NpgsqlCommand("select * from meta.entity_group where id = ANY(:groupId)", cnn))
+        //////            {
+        //////                cmd.Parameters.AddWithValue("groupId", groupId);
+
+        //////                using (NpgsqlDataReader rdr = cmd.ExecuteReader())
+        //////                {
+        //////                    while (rdr.Read())
+        //////                    {
+        //////                        ret.Add(new EntityGroup((int)rdr["id"], rdr["name"].ToString(), rdr["entity_tab_name"].ToString()));
+        //////                    }
+        //////                }
+        //////            }
+        //////        }
+        //////    }
+        //////    return ret;
+        //////}
+        protected override object ParseData(NpgsqlDataReader rdr)
         {
-            List<EntityGroup> ret = new List<EntityGroup>();
-            if (groupId != null && groupId.Count > 0)
-            {
-                using (NpgsqlConnection cnn = _db.Connection)
-                {
-                    using (NpgsqlCommand cmd = new NpgsqlCommand("select * from meta.entity_group where id = ANY(:groupId)", cnn))
-                    {
-                        cmd.Parameters.AddWithValue("groupId", groupId);
-
-                        using (NpgsqlDataReader rdr = cmd.ExecuteReader())
-                        {
-                            while (rdr.Read())
-                            {
-                                ret.Add(new EntityGroup((int)rdr["id"], rdr["name"].ToString(), rdr["entity_tab_name"].ToString()));
-                            }
-                        }
-                    }
-                }
-            }
-            return ret;
+            return new EntityGroup((int)rdr["id"], rdr["name"].ToString(), rdr["entity_tab_name"].ToString());
         }
+
         /// <summary>
         /// Все группы.
         /// </summary>
         /// <param name="entityTabName">Название таблицы с сущностями.</param>
         /// <returns>Список или пустой список.</returns>
-        public List<EntityGroup> SelectGroups(string entityTabName)
+        public List<EntityGroup> SelectByEntityTableName(string entityTabName)
         {
-            List<int> id = new List<int>();
+            return ExecQuery<EntityGroup>(
+                "select * from meta.entity_group where entity_tab_name = :entity_tab_name",
+                new Dictionary<string, object>() { { "entity_tab_name", entityTabName } }
+                );
+            ////List<int> ids = new List<int>();
 
-            using (NpgsqlConnection cnn = _db.Connection)
-            {
-                using (NpgsqlCommand cmd = new NpgsqlCommand("select id from meta.entity_group where entity_tab_name = '" + entityTabName + "'", cnn))
-                {
-                    using (NpgsqlDataReader rdr = cmd.ExecuteReader())
-                    {
-                        while (rdr.Read())
-                        {
-                            id.Add((int)rdr["id"]);
-                        }
-                    }
-                }
-            }
-            return SelectGroups(id);
+            ////using (NpgsqlConnection cnn = _db.Connection)
+            ////{
+            ////    using (NpgsqlCommand cmd = new NpgsqlCommand("select id from meta.entity_group where entity_tab_name = '" + entityTabName + "'", cnn))
+            ////    {
+            ////        using (NpgsqlDataReader rdr = cmd.ExecuteReader())
+            ////        {
+            ////            while (rdr.Read())
+            ////            {
+            ////                ids.Add((int)rdr["id"]);
+            ////            }
+            ////        }
+            ////    }
+            ////}
+            ////return Select(ids);
         }
         /// <summary>
         /// Считывание кодов сущностей и их порядка в указанной группе.

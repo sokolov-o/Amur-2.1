@@ -129,7 +129,7 @@ namespace SOV.Amur.Meta
             dm.TestConnection();
 
             // ENTITY ITEMS
-            sitesFilter.SetDicItems(sites.Select(x => new IdName() { Id = x.Id, Name = x.GetName(2, true, SiteTypeRepository.GetCash()) }).ToList());
+            sitesFilter.SetDicItems(sites.Select(x => new IdName() { Id = x.Id, Name = x.GetName(2, SiteTypeRepository.GetCash()) }).ToList());
             varsFilter.SetDicItems(Variable.ToListIdName(vars, EnumLanguage.Rus));
             methodsFilter.SetDicItems(methods.ToList<IdName>());
             sourcesFilter.SetDicItems(sources.Select(x => new IdName() { Id = x.Id, Name = x.NameRus }).ToList());

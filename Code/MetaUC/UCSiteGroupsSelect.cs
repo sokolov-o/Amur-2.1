@@ -45,7 +45,7 @@ namespace SOV.Amur.Meta
         private void refreshButton_Click(object sender, EventArgs e)
         {
             cb.Items.Clear();
-            List<EntityGroup> groups = Meta.DataManager.GetInstance().EntityGroupRepository.SelectGroups("site");
+            List<EntityGroup> groups = Meta.DataManager.GetInstance().EntityGroupRepository.SelectByEntityTableName("site");
             groups.AddRange(_specGroups);
             cb.Items.AddRange(groups.OrderBy(x => x.Name).ToArray());
         }

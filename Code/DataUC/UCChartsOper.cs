@@ -28,7 +28,11 @@ namespace SOV.Amur.Data
                 DateTimePeriod = _chartsFilter.DateTimePeriod;
                 SiteGroupId = _chartsFilter.SiteGroup.HasValue ? _chartsFilter.SiteGroup.Value : -1;
                 if (SiteGroupId != -1)
-                    SitesGroupList = Meta.DataManager.GetInstance().SiteGroupRepository.SelectGroupFK(SiteGroupId).SiteList;
+                {
+                    List<int[]> idOrderBy = Meta.DataManager.GetInstance().EntityGroupRepository.SelectEntities(SiteGroupId);
+                    List<Site> sitesInGroup = Meta.DataManager.GetInstance().SiteRepository.Select(idOrderBy.Select(x => x[0]).ToList());
+                    SitesGroupList = sitesInGroup.OrderBy(x => idOrderBy.First(y => y[0] == x.Id)[1]).ToList();
+                }
             }
         }
         private int userOrganisationId;
@@ -57,7 +61,7 @@ namespace SOV.Amur.Data
 
             Meta.DataManager mrep = Meta.DataManager.GetInstance();
             Data.DataManager drep = Data.DataManager.GetInstance();
-            List<Station> stations = mrep.StationRepository.Select(SitesGroupList.Select(x => x.StationId).Distinct().ToList());
+            //////List<Station> stations = mrep.StationRepository.Select(SitesGroupList.Select(x => x.StationId).Distinct().ToList());
             SitesGroupList.RemoveAll(x => SitesGroupList.FindIndex(y => y.Id == x.Id) != SitesGroupList.IndexOf(x));
             // ЦИКЛ по всем пунктам группы
             // TODO: неэффективный алгоритм чтения данных. Исправить. OSokolof@SOV.ru
@@ -65,9 +69,9 @@ namespace SOV.Amur.Data
             {
                 // CREATE CHART OPTIONS
                 // SITES
-                List<Site> sites = mrep.SiteRepository.SelectRelated(site.StationId);
-                Site AHK_Or_Hydropost = sites.Find(
-                    x => (new List<int> { (int)EnumStationType.HydroPost, (int)EnumStationType.AHK }).Contains(x.SiteTypeId)
+                List<Site> childSites = mrep.SiteRepository.SelectByParent(site.Id);
+                Site AHK_Or_Hydropost = childSites.Find(
+                    x => (new List<int> { (int)EnumStationType.HydroPost, (int)EnumStationType.AHK }).Contains(x.TypeId)
                 );
                 if (AHK_Or_Hydropost == null)
                     continue;
@@ -82,7 +86,7 @@ namespace SOV.Amur.Data
                     DateTimePeriod = this.DateTimePeriod,
                     CatalogFilter = new CatalogFilter()
                     {
-                        Sites = sites.Select(x => x.Id).Distinct().ToList(),
+                        Sites = childSites.Select(x => x.Id).Distinct().ToList(),
                         Variables = varIds,
                         Methods = null,
                         Sources = null,
@@ -98,8 +102,7 @@ namespace SOV.Amur.Data
 
                 UCChartHydro.ChartOptions chartOptions = new UCChartHydro.ChartOptions()
                 {
-                    Station = Meta.DataManager.GetInstance().StationRepository.Select(site.StationId),
-                    Sites = sites,
+                    Sites = childSites,
                     Vars = vars,
                     DataFilter = dataFilter,
                     TimeType = this.TimeType,
@@ -126,7 +129,7 @@ namespace SOV.Amur.Data
                 uc.ToolbarVisible = false;
                 uc.EnableAxesTitle = false;
                 uc.EnableLegendRevert();
-                uc.title = site.GetName(Meta.StationRepository.GetCash(), Meta.SiteTypeRepository.GetCash(), 2);
+                uc.title = site.GetName(2, Meta.SiteTypeRepository.GetCash());
                 uc.Dock = DockStyle.Fill;
                 uc.HandleDestroyed += uc_HandleDestroyed;
 
