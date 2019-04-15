@@ -44,9 +44,9 @@ namespace SOV.Amur.Meta
                 tsi.Tag = item;
                 tsi.Click += new EventHandler(SiteAttrEventHandler);
             }
-
-            ucEntityAttrValue.EntityAttrTypes = SiteAttrType.ToEntityAttrTypeList(sat);
-            ucEntityAttrValue.UCEnableEntityAttrTypeComboBox = false;
+            throw new NotImplementedException();
+            //////ucEntityAttrValue.EntityAttrTypes = SiteAttrType.ToEntityAttrTypeList(sat);
+            //////ucEntityAttrValue.UCEnableEntityAttrTypeComboBox = false;
         }
 
         internal void SiteAttrEventHandler(object sender, EventArgs e)
@@ -97,15 +97,17 @@ namespace SOV.Amur.Meta
 
         private void saveEAVButton_Click(object sender, EventArgs e)
         {
-            DataManager.GetInstance().EntityAttrRepository.InsertUpdateValue("site", ucEntityAttrValue.EntityAttrValue);
+            throw new NotImplementedException();
+            //////DataManager.GetInstance().EntityAttrRepository.InsertUpdateValue("site", ucEntityAttrValue.EntityAttrValue);
         }
 
         private void ucSites_UCEntityAttrValueChangedEvent(string siteName, EntityAttrValue eav)
         {
+            throw new NotImplementedException();
             try
             {
                 eavGroupBox.Text = string.IsNullOrEmpty(siteName) ? "NULL" : siteName;
-                ucEntityAttrValue.EntityAttrValue = eav;
+                //////ucEntityAttrValue.EntityAttrValue = eav;
 
             }
             catch (Exception ex)

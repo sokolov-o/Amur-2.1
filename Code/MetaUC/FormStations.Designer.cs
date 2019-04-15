@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SOV.Amur.Meta.Station station1 = new SOV.Amur.Meta.Station();
+            SOV.Amur.Meta.Site station1 = new SOV.Amur.Meta.Site();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStations));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -115,13 +115,10 @@
             station1.Code = "";
             station1.Id = -1;
             station1.Name = "";
-            station1.NameEng = "";
-            station1.NameEngShort = null;
-            station1.NameRus = "";
-            station1.NameRusShort = "";
             station1.OrgId = null;
             station1.TypeId = -2147483648;
-            this.ucStationEdit.Station = station1;
+            station1.AddrRegionId = null;
+            this.ucStationEdit.Site = station1;
             this.ucStationEdit.TabIndex = 0;
             // 
             // FormStations

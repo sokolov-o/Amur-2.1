@@ -68,7 +68,7 @@ namespace SOV.Amur.Data
 
             List<Site> sites = Meta.DataManager.GetInstance().SiteRepository.Select(catalogXs.Select(x => x.SiteId).ToList());
             catalogXs = catalogXs
-                .OrderBy(x => sites.First(y => y.Id == x.SiteId).GetName(StationRepository.GetCash(), SiteTypeRepository.GetCash(), 2))
+                .OrderBy(x => sites.First(y => y.Id == x.SiteId).GetName(2, SiteTypeRepository.GetCash()))
                 .ToList();
 
             List<Curve.Seria> series = DataManager.GetInstance().CurveSeriaRepository.SelectSeries4CurveIds(
@@ -81,13 +81,13 @@ namespace SOV.Amur.Data
             // FILL TREE
             List<TreeNode> nodes = new List<TreeNode>();
 
-            foreach (var curve in curves.OrderBy(x => sites.First(y => y.Id == catalogXs.Find(z => z.Id == x.CatalogIdX).SiteId).GetName(StationRepository.GetCash(), SiteTypeRepository.GetCash(), 2)))
+            foreach (var curve in curves.OrderBy(x => sites.First(y => y.Id == catalogXs.Find(z => z.Id == x.CatalogIdX).SiteId).GetName(2, SiteTypeRepository.GetCash())))
             {
                 Catalog catalog = _allCatalogs.First(x => x.Id == curve.CatalogIdX);
 
                 // NODES 0 - SITES
                 TreeNode nodeSite = new TreeNode();
-                nodeSite.Text = sites.Find(x => x.Id == catalog.SiteId).GetName(StationRepository.GetCash(), SiteTypeRepository.GetCash(), 2);
+                nodeSite.Text = sites.Find(x => x.Id == catalog.SiteId).GetName(2, SiteTypeRepository.GetCash());
                 nodeSite.Tag = catalog;
 
                 // NODES 1 - SITE SERIES (DATETIME'S)

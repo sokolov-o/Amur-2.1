@@ -457,41 +457,41 @@ namespace SOV.Amur.Importer.GISMeteo
             return ret;
         }
 
-        //////static EventLog GetEventLog(string logName, string source)
-        //////{
-        //////    EventLog ret = null;
-        //////    try
-        //////    {
-        //////        //if (EventLog.SourceExists(source))
-        //////        //{
-        //////            ret = new EventLog(logName, ".", source);
-        //////        //}
-        //////        //An event log source should not be created and immediately used.
-        //////        //There is a latency time to enable the source, it should be created
-        //////        //prior to executing the application that uses the source.
-        //////        //Execute this sample a second time to use the new source.
-        //////        EventLog.CreateEventSource(source, logName);
+        static EventLog GetEventLog(string logName, string source)
+        {
+            EventLog ret = null;
+            try
+            {
+                //if (EventLog.SourceExists(source))
+                //{
+                ret = new EventLog(logName, ".", source);
+                //}
+                //An event log source should not be created and immediately used.
+                //There is a latency time to enable the source, it should be created
+                //prior to executing the application that uses the source.
+                //Execute this sample a second time to use the new source.
+                EventLog.CreateEventSource(source, logName);
 
-        //////        // The source is created.Exit the application to allow it to be registered.
-        //////        Console.WriteLine("Создан сервис событий источника {0} в системном журнале {1}.", source, logName);
-        //////        Console.WriteLine("Закройте приложение и перезапустите его для использования журнала и источника.");
-        //////        return null;
-        //////    }
-        //////    catch (System.Security.SecurityException sex)
-        //////    {
-        //////        EventLog.CreateEventSource(source, logName);
+                // The source is created.Exit the application to allow it to be registered.
+                Console.WriteLine("Создан сервис событий источника {0} в системном журнале {1}.", source, logName);
+                Console.WriteLine("Закройте приложение и перезапустите его для использования журнала и источника.");
+                return null;
+            }
+            catch (System.Security.SecurityException sex)
+            {
+                EventLog.CreateEventSource(source, logName);
 
-        //////        Console.WriteLine("Создан сервис событий источника " + source + " в журнале " + logName);
-        //////        // The source is created.  Exit the application to allow it to be registered.
-        //////        Console.WriteLine("Закройте приложение и перезапустите его для использования источника.");
-        //////        return null;
-        //////    }
-        //////    catch (Exception ex)
-        //////    {
-        //////        Console.WriteLine("GetEventLog" + logName + source);
-        //////        throw ex;
-        //////    }
-        //////}
+                Console.WriteLine("Создан сервис событий источника " + source + " в журнале " + logName);
+                // The source is created.  Exit the application to allow it to be registered.
+                Console.WriteLine("Закройте приложение и перезапустите его для использования источника.");
+                return null;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("GetEventLog" + logName + source);
+                throw ex;
+            }
+        }
 
         /// <summary>
         /// Задача найти запись каталога, по которой потом ("не в нашем районе") будет записано значение за конкретную дату.

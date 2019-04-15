@@ -178,7 +178,7 @@ namespace SOV.Amur.Data
                 string geoObj = geoObjId.Count == 0 ? "" : Meta.DataManager.GetInstance().GeoObjectRepository.Select(
                                                                 geoObjId[0].GeoObjectId
                                                         ).Name;
-                geoObj = chartOptions.Station.Code + " " + geoObj;
+                geoObj = (chartOptions.Sites.Count > 0 ? chartOptions.Sites[0].Code : "НЕТ ПУНКТА!") + " " + geoObj;
 
                 string titleData = (dailyGageHeight.Count == 0 ? "" : ("ГП: " + Math.Round(dailyGageHeight.Last().Value).ToString() + " cм")) +
                                     (hourlyGageHeight.Count == 0 ? "" : (" АГК: " + Math.Round(hourlyGageHeight.Last().Value).ToString() + " cм"));
@@ -338,7 +338,7 @@ namespace SOV.Amur.Data
                         "Пункт: {2}\nВремя наблюдения: {0}\nЗначение: {1}",
                         date.ToString("dd.MM.yy HH:mm"),
                         datas[i].Value,
-                        sites[j].GetName(2, true, SiteTypeRepository.GetCash())
+                        sites[j].GetName(2, SiteTypeRepository.GetCash())
                     );
                     seria.Points.Add(point);
 

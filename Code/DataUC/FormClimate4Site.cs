@@ -23,7 +23,7 @@ namespace SOV.Amur.Data
             this.Site = site;
             YearSF = yearSF;
 
-            Text = "Климатические данные " + site.GetName(StationRepository.GetCash(), SiteTypeRepository.GetCash(), 1);
+            Text = "Климатические данные " + site.GetName(1, SiteTypeRepository.GetCash());
         }
         public void Fill()
         {

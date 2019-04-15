@@ -47,9 +47,9 @@ namespace SOV.Amur.Meta
                 node1.ImageIndex = node1.SelectedImageIndex = 3;
                 node1.ContextMenuStrip = contextMenuStrip2;
 
-                foreach (var site in item.SiteList.OrderBy(x => item.StationList.Find(y => y.Id == x.StationId).Name))
+                foreach (Site site in item.Items.OrderBy(x => ((Site)x).Name))
                 {
-                    TreeNode node2 = node1.Nodes.Add("u", site.GetName(2, false, SiteTypeRepository.GetCash()));
+                    TreeNode node2 = node1.Nodes.Add("u", site.GetName(2, SiteTypeRepository.GetCash()));
                     node2.Tag = site.Id;
                     node2.ImageIndex = node2.SelectedImageIndex = 1;
                 }

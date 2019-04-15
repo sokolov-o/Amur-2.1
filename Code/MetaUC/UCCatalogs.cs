@@ -39,8 +39,7 @@ namespace SOV.Amur.Meta
                 DataGridViewRow row = dgv.Rows[dgv.Rows.Add()];
                 row.Tag = ctl;
 
-                row.Cells[0].Value = Meta.Site.GetName(
-                    SiteRepository.GetCash().Find(y => y.Id == ctl.SiteId), StationRepository.GetCash(), SiteTypeRepository.GetCash(), 2);
+                row.Cells[0].Value = Meta.Site.GetName(SiteRepository.GetCash().Find(y => y.Id == ctl.SiteId), 2, SiteTypeRepository.GetCash());
                 row.Cells[1].Value = VariableRepository.GetCash().Find(x => x.Id == ctl.VariableId).NameRus;
                 row.Cells[2].Value = OffsetTypeRepository.GetCash().Find(x => x.Id == ctl.OffsetTypeId).Name;
                 row.Cells[3].Value = ctl.OffsetValue;

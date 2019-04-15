@@ -121,11 +121,7 @@ namespace SOV.Amur.Data
         /// <summary>
         /// Объекты указанные в фильтре
         /// </summary>
-        List<Station> _stations;
-        /// <summary>
-        /// Объекты указанные в фильтре
-        /// </summary>
-        List<StationType> _siteTypes;
+        List<SiteType> _siteTypes;
         /// <summary>
         /// Объекты указанные в фильтре
         /// </summary>
@@ -174,7 +170,6 @@ namespace SOV.Amur.Data
                 CatalogList = Meta.DataManager.GetInstance().CatalogRepository.Select(_dvs.Select(x => x.CatalogId).Distinct().ToList());
 
                 _sites = Meta.DataManager.GetInstance().SiteRepository.Select(DataFilter.CatalogFilter.Sites);
-                _stations = Meta.DataManager.GetInstance().StationRepository.Select(_sites.Select(x => x.StationId).Distinct().ToList());
                 _siteTypes = Meta.DataManager.GetInstance().SiteTypeRepository.Select();
                 _vars = Meta.DataManager.GetInstance().VariableRepository.Select(DataFilter.CatalogFilter.Variables);
 
@@ -261,13 +256,13 @@ namespace SOV.Amur.Data
 
             foreach (Site site in _sites)
             {
-                Station station = _stations.Find(x => x.Id == site.StationId);
+                //////Station station = _stations.Find(x => x.Id == site.StationId);
 
                 DataGridViewRow row = dgv.Rows[dgv.Rows.Add()];
-                row.Tag = new object[] { site, station };
-                row.Cells[0].Value = station.Code;
-                row.Cells[1].Value = station.Name;
-                row.Cells[2].Value = _siteTypes.Find(x => x.Id == site.SiteTypeId).NameShort;
+                row.Tag = site;
+                row.Cells[0].Value = site.Code;
+                row.Cells[1].Value = site.Name;
+                row.Cells[2].Value = _siteTypes.Find(x => x.Id == site.TypeId).NameShort;
             }
             FillDataCells();
 
@@ -309,13 +304,11 @@ namespace SOV.Amur.Data
 
             foreach (Site site in _sites)
             {
-                Station station = _stations.Find(x => x.Id == site.StationId);
-
                 DataGridViewRow row = dgv.Rows[dgv.Rows.Add()];
-                row.Tag = new object[] { site, station };
-                row.Cells[0].Value = station.Code;
-                row.Cells[1].Value = station.Name;
-                row.Cells[2].Value = _siteTypes.Find(x => x.Id == site.SiteTypeId).NameShort;
+                row.Tag = site;
+                row.Cells[0].Value = site.Code;
+                row.Cells[1].Value = site.Name;
+                row.Cells[2].Value = _siteTypes.Find(x => x.Id == site.TypeId).NameShort;
             }
             FillDataCells();
 
@@ -399,7 +392,7 @@ namespace SOV.Amur.Data
             {
                 foreach (var item in _sites)
                 {
-                    sitesComboBox.Items.Add(new Common.DicItem(item.Id, Meta.Site.GetName(item, StationRepository.GetCash(), SiteTypeRepository.GetCash(), 1)));
+                    sitesComboBox.Items.Add(new Common.DicItem(item.Id, item.GetName(1, true, SiteTypeRepository.GetCash()), item));
                 }
                 sitesComboBox.SelectedIndex = 0;
             }
