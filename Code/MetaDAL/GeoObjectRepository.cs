@@ -31,7 +31,7 @@ namespace SOV.Amur.Meta
             using (NpgsqlConnection cnn = _db.Connection)
             {
                 using (NpgsqlCommand cmd = new NpgsqlCommand("insert into meta.geo_object"
-                                + "(name, geo_type_id, fall_into_id, \"order\")"
+                                + "(name, geo_type_id, fall_into_id, \"order_by\")"
                                 + " values (:name, :geo_type_id, :fall_into_id, :order); select max(id) from meta.geo_object", cnn))
                 {
                     cmd.Parameters.AddWithValue(":name", item.Name);
@@ -80,7 +80,7 @@ namespace SOV.Amur.Meta
                 (int)rdr["geo_type_id"],
                 rdr["name"].ToString(),
                 (rdr.IsDBNull(rdr.GetOrdinal("fall_into_id"))) ? null : (int?)(int)rdr["fall_into_id"],
-                (int)rdr["order"]
+                (int)rdr["order_by"]
             );
         }
 
@@ -94,7 +94,7 @@ namespace SOV.Amur.Meta
             {
                 NpgsqlTransaction tran = cnn.BeginTransaction();
                 using (NpgsqlCommand cmd = new NpgsqlCommand("update meta.geo_object"
-                    + " set \"order\" = :order"
+                    + " set \"order_by\" = :order"
                     + " where id = :id", cnn))
                 {
                     cmd.Parameters.AddWithValue("id", 0);

@@ -11,7 +11,7 @@ namespace SOV.Amur.Meta
 {
     public class SiteGeoObjectRepository : BaseRepository<SiteGeoObject>
     {
-        internal SiteGeoObjectRepository(Common.ADbNpgsql db) : base(db, "meta.site_x_geo_object") { }
+        internal SiteGeoObjectRepository(Common.ADbNpgsql db) : base(db, "meta.site_x_geoobject") { }
 
         /// <summary>
         /// Связать станцию с географическим объектом.

@@ -263,14 +263,14 @@
             // stationCode
             // 
             this.stationCode.HeaderText = "Индекс";
-            this.stationCode.Name = "stationCode";
+            this.stationCode.Name = "siteCode";
             this.stationCode.ReadOnly = true;
             this.stationCode.Width = 70;
             // 
             // stationName
             // 
             this.stationName.HeaderText = "Пункт";
-            this.stationName.Name = "stationName";
+            this.stationName.Name = "siteName";
             this.stationName.ReadOnly = true;
             this.stationName.Width = 185;
             // 

@@ -11,7 +11,7 @@ namespace SOV.Amur.Meta
 {
     public class SiteTypeRepository : BaseRepository<SiteType>
     {
-        internal SiteTypeRepository(Common.ADbNpgsql db) : base(db, "meta.station_type") { }
+        internal SiteTypeRepository(Common.ADbNpgsql db) : base(db, "meta.site_type") { }
 
         public static List<SiteType> GetCash() { return GetCash(DataManager.GetInstance().SiteTypeRepository); }
 
