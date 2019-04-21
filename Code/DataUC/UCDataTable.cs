@@ -524,7 +524,7 @@ namespace SOV.Amur.Data
         }
         Site GetRowSite(int iRow)
         {
-            return (Site)((object[])dgv.Rows[iRow].Tag)[0];
+            return (Site)dgv.Rows[iRow].Tag;
         }
         private void dataFilterToolStripButton_Click(object sender, EventArgs e)
         {

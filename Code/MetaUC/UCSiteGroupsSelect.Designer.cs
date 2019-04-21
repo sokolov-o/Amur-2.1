@@ -65,7 +65,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(145, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(128, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -84,9 +84,10 @@
             // 
             this.refreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.refreshButton.Image = global::SOV.Amur.Meta.Properties.Resources.refresh_16xLG;
+            this.refreshButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.refreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(40, 22);
+            this.refreshButton.Size = new System.Drawing.Size(23, 22);
             this.refreshButton.Text = "toolStripButton1";
             this.refreshButton.ToolTipText = "Обновить список групп пунктов";
             this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
@@ -96,9 +97,9 @@
             this.cb.BackColor = System.Drawing.SystemColors.Info;
             this.cb.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cb.FormattingEnabled = true;
-            this.cb.Location = new System.Drawing.Point(148, 3);
+            this.cb.Location = new System.Drawing.Point(131, 3);
             this.cb.Name = "cb";
-            this.cb.Size = new System.Drawing.Size(203, 21);
+            this.cb.Size = new System.Drawing.Size(220, 21);
             this.cb.TabIndex = 1;
             // 
             // UCSiteGroupsSelect

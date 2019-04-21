@@ -33,7 +33,7 @@
             this.codeTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.siteTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.stationTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.siteTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameEngTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             this.legalEntityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.stationTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siteTypeBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addrBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.legalEntityBindingSource)).BeginInit();
@@ -81,16 +81,18 @@
             // 
             // siteTypeComboBox
             // 
-            this.siteTypeComboBox.DataSource = this.stationTypeBindingSource;
+            this.siteTypeComboBox.DataSource = this.siteTypeBindingSource;
+            this.siteTypeComboBox.DisplayMember = "Name";
             this.siteTypeComboBox.FormattingEnabled = true;
             this.siteTypeComboBox.Location = new System.Drawing.Point(325, 3);
             this.siteTypeComboBox.Name = "siteTypeComboBox";
             this.siteTypeComboBox.Size = new System.Drawing.Size(171, 21);
             this.siteTypeComboBox.TabIndex = 1;
+            this.siteTypeComboBox.ValueMember = "Id";
             // 
-            // stationTypeBindingSource
+            // siteTypeBindingSource
             // 
-            this.stationTypeBindingSource.DataSource = typeof(SOV.Amur.Meta.SiteType);
+            this.siteTypeBindingSource.DataSource = typeof(SOV.Amur.Meta.SiteType);
             // 
             // nameEngTextBox
             // 
@@ -225,7 +227,8 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UCSite";
             this.Size = new System.Drawing.Size(499, 80);
-            ((System.ComponentModel.ISupportInitialize)(this.stationTypeBindingSource)).EndInit();
+            this.Load += new System.EventHandler(this.UCSite_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.siteTypeBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addrBindingSource)).EndInit();
@@ -252,6 +255,6 @@
         private System.Windows.Forms.BindingSource legalEntityBindingSource;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.BindingSource stationTypeBindingSource;
+        private System.Windows.Forms.BindingSource siteTypeBindingSource;
     }
 }

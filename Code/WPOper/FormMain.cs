@@ -89,6 +89,10 @@ namespace SOV.Amur
                 Program.UserSettings.Add(UserFilterData1SiteSAV);
             }
             //formDataFilter = new FormDataFilter(UserFilterData1SiteSAV);
+
+            // ucSiteGeoObjectList
+            ucSites.AllowSpecialSiteGroups = true;
+            ucSites.FillSiteGroups();
         }
 
         EntityInstanceValue UserFilterData1SiteSAV { get; set; }

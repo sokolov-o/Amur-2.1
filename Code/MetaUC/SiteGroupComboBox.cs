@@ -15,7 +15,7 @@ namespace SOV.Amur.Meta
         public static void GlobalReloadItems()
         {
             foreach (var item in SiteGroupComboBoxList)
-                item.ReloadItems();
+                item.Fill();
         }
     }
 
@@ -23,23 +23,26 @@ namespace SOV.Amur.Meta
     {
         public SiteGroupComboBox() : base()
         {
-            ReloadItems();
             SiteGroupControls.SiteGroupComboBoxList.Add(this);
         }
-        const string TAB_NAME = "meta.site";
+        const string TAB_NAME = "site";
         List<EntityGroup> _specGroups = new List<EntityGroup>
         {
-            new EntityGroup(0,"(_Все пункты)",TAB_NAME),
-            new EntityGroup(-((int)Meta.EnumStationType.HydroPost),"(_Все гидрологические посты)",TAB_NAME),
-            new EntityGroup(-((int)Meta.EnumStationType.MeteoStation),"(_Все метеорологические станции)",TAB_NAME),
-            new EntityGroup(-((int)Meta.EnumStationType.GeoObject),"(_Все гео-объекты)",TAB_NAME),
-            new EntityGroup(-((int)Meta.EnumStationType.MorePost),"(_Все морские посты)",TAB_NAME)
+            new EntityGroup(0,"(Все пункты)",TAB_NAME),
+            new EntityGroup(-((int)Meta.EnumStationType.HydroPost),"(Все гидрологические посты)",TAB_NAME),
+            new EntityGroup(-((int)Meta.EnumStationType.MeteoStation),"(Все метеорологические станции)",TAB_NAME),
+            new EntityGroup(-((int)Meta.EnumStationType.GeoObject),"(Все гео-объекты)",TAB_NAME),
+            new EntityGroup(-((int)Meta.EnumStationType.MorePost),"(Все морские посты)",TAB_NAME)
         };
-        public void ReloadItems()
+
+        public bool AllowSpecialGroups { get; set; }
+
+        public void Fill()
         {
             Items.Clear();
             List<EntityGroup> groups = Meta.DataManager.GetInstance().EntityGroupRepository.SelectByEntityTableName(TAB_NAME);
-            groups.AddRange(_specGroups);
+            if (AllowSpecialGroups)
+                groups.AddRange(_specGroups);
             Items.AddRange(groups.OrderBy(x => x.Name).ToArray());
         }
 

@@ -508,6 +508,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\CommonUC\CommonUC.csproj">
+      <Project>{bb34a841-7cbe-4c0d-8268-6aece9b7271e}</Project>
+      <Name>CommonUC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MetaDAL\MetaDAL.csproj">
       <Project>{73194647-7254-44fe-86a1-97aaf2b47f88}</Project>
       <Name>MetaDAL</Name>
@@ -523,10 +527,6 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
       <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Common\CommonUC\CommonUC.csproj">
-      <Project>{bb34a841-7cbe-4c0d-8268-6aece9b7271e}</Project>
-      <Name>CommonUC</Name>
     </ProjectReference>
     <ProjectReference Include="..\Social\SocialBL\SocialBL.csproj">
       <Project>{da541fab-7762-49a4-bc85-f6ff4d74e28b}</Project>

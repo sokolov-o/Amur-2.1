@@ -40,7 +40,7 @@
             this.editToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.editStationToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.showDataGrpSVYMButton = new System.Windows.Forms.ToolStripButton();
-            this.siteGroupToolStripComboBox = new SOV.Amur.Meta.SiteGroupComboBox();
+            this.siteGroupCombobox = new SOV.Amur.Meta.SiteGroupComboBox();
             this.infoToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.findToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.findNextToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -87,7 +87,7 @@
             this.editToolStripButton,
             this.editStationToolStripButton,
             this.showDataGrpSVYMButton,
-            this.siteGroupToolStripComboBox,
+            this.siteGroupCombobox,
             this.infoToolStripLabel,
             this.findToolStripTextBox,
             this.findNextToolStripButton,
@@ -108,7 +108,7 @@
             this.refreshToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.refreshToolStripButton.Text = "toolStripButton1";
             this.refreshToolStripButton.ToolTipText = "Обновить таблицу";
-            this.refreshToolStripButton.Click += new System.EventHandler(this.refreshToolStripButton_Click);
+            this.refreshToolStripButton.Click += new System.EventHandler(this.RefreshToolStripButton_Click);
             // 
             // saveEditedButton
             // 
@@ -155,12 +155,12 @@
             // 
             // siteGroupToolStripComboBox
             // 
-            this.siteGroupToolStripComboBox.BackColor = System.Drawing.SystemColors.Info;
-            this.siteGroupToolStripComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
-            this.siteGroupToolStripComboBox.Name = "siteGroupToolStripComboBox";
-            this.siteGroupToolStripComboBox.SiteGroup = null;
-            this.siteGroupToolStripComboBox.Size = new System.Drawing.Size(200, 25);
-            this.siteGroupToolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.siteGroupToolStripComboBox_SelectedIndexChanged);
+            this.siteGroupCombobox.BackColor = System.Drawing.SystemColors.Info;
+            this.siteGroupCombobox.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
+            this.siteGroupCombobox.Name = "siteGroupToolStripComboBox";
+            this.siteGroupCombobox.SiteGroup = null;
+            this.siteGroupCombobox.Size = new System.Drawing.Size(200, 25);
+            this.siteGroupCombobox.SelectedIndexChanged += new System.EventHandler(this.siteGroupToolStripComboBox_SelectedIndexChanged);
             // 
             // infoToolStripLabel
             // 
@@ -352,7 +352,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.DataGridView dgv;
-        private Meta.SiteGroupComboBox siteGroupToolStripComboBox;
+        private Meta.SiteGroupComboBox siteGroupCombobox;
         private System.Windows.Forms.ToolStripLabel infoToolStripLabel;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuEditDataToolStripMenuItem;

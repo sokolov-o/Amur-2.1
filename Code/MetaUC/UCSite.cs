@@ -16,7 +16,7 @@ namespace SOV.Amur.Meta
         public UCSite()
         {
             InitializeComponent();
-            FillDics();
+            //FillDics();
         }
         public Site Site
         {
@@ -41,7 +41,7 @@ namespace SOV.Amur.Meta
                 nameTextBox.Text = value.Name;
                 nameEngTextBox.Text = "Не реализовано...";
 
-                object o = SiteTypeRepository.GetCash().FirstOrDefault(x => x.Id == value.TypeId);
+                object o = SiteTypeRepository.GetCash().FirstOrDefault(x => x.Id == value.TypeId);...
                 siteTypeComboBox.SelectedIndex = o == null ? -1 : siteTypeComboBox.Items.IndexOf(o);
 
                 o = value.AddrRegionId.HasValue ? Social.AddrRepository.GetCash().Find(x => x.Id == (int)value.AddrRegionId) : null;
@@ -56,10 +56,15 @@ namespace SOV.Amur.Meta
         {
             if (!DesignMode)
             {
-                stationTypeBindingSource.DataSource = SiteTypeRepository.GetCash().Select(x => new IdName() { Id = x.Id, Name = x.Name }).OrderBy(x => x.Name).ToList();
+                siteTypeBindingSource.DataSource = SiteTypeRepository.GetCash().Select(x => new IdName() { Id = x.Id, Name = x.Name }).OrderBy(x => x.Name).ToList();
                 regionComboBox.DataSource = Social.AddrRepository.GetCash().OrderBy(x => x.Name).ToList();
                 orgComboBox.DataSource = Social.LegalEntityRepository.GetCash().Where(x => x.Type == 'o').OrderBy(x => x.NameRus).ToList();
             }
+        }
+
+        private void UCSite_Load(object sender, EventArgs e)
+        {
+            FillDics();
         }
     }
 }

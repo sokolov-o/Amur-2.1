@@ -21,6 +21,18 @@ namespace SOV.Amur.Meta
 
             DefaultNewSiteAttrDateTime = new DateTime(1900, 1, 1);
         }
+        /// <summary>
+        /// Наличие специальных групп (все пкнкты осовных типов) в combobox.
+        /// </summary>
+        public bool AllowSpecialSiteGroups { get { return siteGroupCombobox.AllowSpecialGroups; } set { siteGroupCombobox.AllowSpecialGroups = value; } }
+        /// <summary>
+        /// Заполнить combobox группами сайтов.
+        /// </summary>
+        public void FillSiteGroups()
+        {
+            siteGroupCombobox.Fill();
+        }
+
         bool _isFilled = false;
         public void Fill(int? siteGroupId)
         {
@@ -32,6 +44,7 @@ namespace SOV.Amur.Meta
                 dgv.Columns["siteName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
                 dgv.Columns["siteTypeName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.NotSet;
                 dgv.Rows.Clear();
+
                 if (siteGroupId.HasValue)
                 {
                     DataManager dm = DataManager.GetInstance();
@@ -142,11 +155,11 @@ namespace SOV.Amur.Meta
 
         public int? SiteGroupId
         {
-            get { return siteGroupToolStripComboBox.SiteGroup == null ? null : (int?)siteGroupToolStripComboBox.SiteGroup.Id; }
+            get { return siteGroupCombobox.SiteGroup == null ? null : (int?)siteGroupCombobox.SiteGroup.Id; }
             set
             {
                 dgv.Rows.Clear();
-                siteGroupToolStripComboBox.SetSiteGroup(value);
+                siteGroupCombobox.SetSiteGroup(value);
             }
         }
 
@@ -204,10 +217,12 @@ namespace SOV.Amur.Meta
             RaiseShowClimateEvent();
         }
 
-        private void refreshToolStripButton_Click(object sender, EventArgs e)
+        private void RefreshToolStripButton_Click(object sender, EventArgs e)
         {
             Meta.DataManager.ClearCashs();
-            Fill(SiteGroupId);
+            int? siteGroupId = SiteGroupId;
+            FillSiteGroups();
+            Fill(siteGroupId);
         }
 
         private void isOneTableToolStripButton_Click(object sender, EventArgs e)

@@ -94,7 +94,7 @@ namespace SOV.Amur.Data.Chart
         public UCChartJoint()
         {
             InitializeComponent();
-            siteGroupComboBox.ReloadItems();
+            siteGroupComboBox.Fill();
             offsetTypeComboBox.SelectedIndex = 0;
             timeTypeComboBox.Items.Add(EnumDateType.LOC);
             timeTypeComboBox.Items.Add(EnumDateType.UTC);
