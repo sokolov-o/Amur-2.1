@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_ServiceRW", "_ServiceRW.csproj", "{983D54D8-263D-4BD3-A8A5-965CFCB4912D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "..\..\Common\Common.csproj", "{31660004-130A-4001-A6D0-F8209EE3A3E6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataDAL", "..\..\DataDAL\DataDAL.csproj", "{7372CB1E-D1A2-4021-813D-0D02C1271A8C}"
@@ -23,10 +21,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataP", "..\..\DataP\DataP.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataPDAL", "..\..\DataPDAL\DataPDAL.csproj", "{E82EBD52-ACB7-4B6D-BB18-04F691211A00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialBL", "..\..\..\Social\SocialBL\SocialBL.csproj", "{DA541FAB-7762-49A4-BC85-F6FF4D74E28B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialDAL", "..\..\..\Social\SocialDAL\SocialDAL.csproj", "{81804CF3-0BF8-459C-8E8E-B9F81E52CF57}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geo", "..\..\..\Geo\Geo.csproj", "{34F63CAA-4627-4434-BE40-16AC1B3D2541}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FERHRI", "FERHRI", "{44499F11-A893-42A2-8EF0-09132D160BD1}"
@@ -37,16 +31,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateYT", "..\..\DateYT\Date
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonMath", "..\..\CommonMath\CommonMath.csproj", "{FFE71285-3013-4590-8130-6D5C559153CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Amur.Service.RW", "_Amur.Service.RW.csproj", "{983D54D8-263D-4BD3-A8A5-965CFCB4912D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{983D54D8-263D-4BD3-A8A5-965CFCB4912D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{983D54D8-263D-4BD3-A8A5-965CFCB4912D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{983D54D8-263D-4BD3-A8A5-965CFCB4912D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{983D54D8-263D-4BD3-A8A5-965CFCB4912D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{31660004-130A-4001-A6D0-F8209EE3A3E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{31660004-130A-4001-A6D0-F8209EE3A3E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31660004-130A-4001-A6D0-F8209EE3A3E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -83,14 +75,6 @@ Global
 		{E82EBD52-ACB7-4B6D-BB18-04F691211A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E82EBD52-ACB7-4B6D-BB18-04F691211A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E82EBD52-ACB7-4B6D-BB18-04F691211A00}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DA541FAB-7762-49A4-BC85-F6FF4D74E28B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DA541FAB-7762-49A4-BC85-F6FF4D74E28B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DA541FAB-7762-49A4-BC85-F6FF4D74E28B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DA541FAB-7762-49A4-BC85-F6FF4D74E28B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{81804CF3-0BF8-459C-8E8E-B9F81E52CF57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{81804CF3-0BF8-459C-8E8E-B9F81E52CF57}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{81804CF3-0BF8-459C-8E8E-B9F81E52CF57}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{81804CF3-0BF8-459C-8E8E-B9F81E52CF57}.Release|Any CPU.Build.0 = Release|Any CPU
 		{34F63CAA-4627-4434-BE40-16AC1B3D2541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{34F63CAA-4627-4434-BE40-16AC1B3D2541}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34F63CAA-4627-4434-BE40-16AC1B3D2541}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -107,11 +91,18 @@ Global
 		{FFE71285-3013-4590-8130-6D5C559153CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFE71285-3013-4590-8130-6D5C559153CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFE71285-3013-4590-8130-6D5C559153CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{983D54D8-263D-4BD3-A8A5-965CFCB4912D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{983D54D8-263D-4BD3-A8A5-965CFCB4912D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{983D54D8-263D-4BD3-A8A5-965CFCB4912D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{983D54D8-263D-4BD3-A8A5-965CFCB4912D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{34F63CAA-4627-4434-BE40-16AC1B3D2541} = {44499F11-A893-42A2-8EF0-09132D160BD1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {73585D7D-0FF3-43B4-8B1B-C2A3E1D97563}
 	EndGlobalSection
 EndGlobal

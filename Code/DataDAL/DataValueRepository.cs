@@ -228,40 +228,40 @@ namespace SOV.Amur.Data
             return ExecQuery<DataValue>(sql, fields, Parse, System.Data.CommandType.Text);
         }
 
-    //    public List<DataValue> _DELME_SelectA(
-    //DateTime dateS, DateTime dateF, List<int> catalogId,
-    //bool isActualValue, bool isSelectDeleted = false, byte? flagAQC = null, bool isDateLOC = true)
-    //    {
-    //        if (catalogId == null) 
-    //            throw new Exception("Не определены записи каталога данных для считывания данных: или null, или Count = 0.");
+        //    public List<DataValue> _DELME_SelectA(
+        //DateTime dateS, DateTime dateF, List<int> catalogId,
+        //bool isActualValue, bool isSelectDeleted = false, byte? flagAQC = null, bool isDateLOC = true)
+        //    {
+        //        if (catalogId == null) 
+        //            throw new Exception("Не определены записи каталога данных для считывания данных: или null, или Count = 0.");
 
-    //        List<DataValue> ret = new List<DataValue>();
-    //        using (NpgsqlConnection cnn = _db.Connection)
-    //        {
-    //            using (Npgsql.NpgsqlCommand cmd = new Npgsql.NpgsqlCommand("data.select_data_value_2017", cnn))
-    //            {
-    //                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-    //                cmd.CommandTimeout = 5 * 60;
+        //        List<DataValue> ret = new List<DataValue>();
+        //        using (NpgsqlConnection cnn = _db.Connection)
+        //        {
+        //            using (Npgsql.NpgsqlCommand cmd = new Npgsql.NpgsqlCommand("data.select_data_value_2017", cnn))
+        //            {
+        //                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+        //                cmd.CommandTimeout = 5 * 60;
 
-    //                cmd.Parameters.AddWithValue("_date_s", dateS.ToString(DATE_FORMAT));
-    //                cmd.Parameters.AddWithValue("_date_f", dateF.ToString(DATE_FORMAT));
-    //                cmd.Parameters.Add(ADbNpgsql.GetParameter("_catalog_id", catalogId.ToArray()));
-    //                cmd.Parameters.Add(ADbNpgsql.GetParameter("_flagAQC", flagAQC)).NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Smallint;
-    //                cmd.Parameters.AddWithValue("_is_actual_value", isActualValue);
-    //                cmd.Parameters.AddWithValue("is_sel_deleted", isSelectDeleted);
-    //                cmd.Parameters.AddWithValue("is_date_loc", isDateLOC);
+        //                cmd.Parameters.AddWithValue("_date_s", dateS.ToString(DATE_FORMAT));
+        //                cmd.Parameters.AddWithValue("_date_f", dateF.ToString(DATE_FORMAT));
+        //                cmd.Parameters.Add(ADbNpgsql.GetParameter("_catalog_id", catalogId.ToArray()));
+        //                cmd.Parameters.Add(ADbNpgsql.GetParameter("_flagAQC", flagAQC)).NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Smallint;
+        //                cmd.Parameters.AddWithValue("_is_actual_value", isActualValue);
+        //                cmd.Parameters.AddWithValue("is_sel_deleted", isSelectDeleted);
+        //                cmd.Parameters.AddWithValue("is_date_loc", isDateLOC);
 
-    //                using (Npgsql.NpgsqlDataReader rdr = cmd.ExecuteReader())
-    //                {
-    //                    while (rdr.Read())
-    //                    {
-    //                        ret.Add(Parse(rdr));
-    //                    }
-    //                    return ret;
-    //                }
-    //            }
-    //        }
-    //    }
+        //                using (Npgsql.NpgsqlDataReader rdr = cmd.ExecuteReader())
+        //                {
+        //                    while (rdr.Read())
+        //                    {
+        //                        ret.Add(Parse(rdr));
+        //                    }
+        //                    return ret;
+        //                }
+        //            }
+        //        }
+        //    }
 
         /// <summary>
         /// Установка флага значение в состояние "удалено".
@@ -350,7 +350,8 @@ namespace SOV.Amur.Data
                     cmd.Parameters.AddWithValue("_date_loc", dateLOC);
                     cmd.Parameters.AddWithValue("_value", value);
                     cmd.Parameters.AddWithValue("_flag_aqc", flagAQC);
-                    cmd.Parameters.Add(ADbNpgsql.GetParameter("_data_source_id", dataSourceId));
+                    cmd.Parameters.AddWithValue("_data_source_id", NpgsqlTypes.NpgsqlDbType.Bigint, dataSourceId.HasValue ? dataSourceId : null);
+                    //cmd.Parameters.Add(ADbNpgsql.GetParameter("_data_source_id", dataSourceId));
 
                     return (long)cmd.ExecuteScalar();
                 }
