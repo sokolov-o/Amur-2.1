@@ -52,7 +52,7 @@ namespace SOV.Amur.Meta
 
             infoLabel.Text = dgv.Rows.Count.ToString();
         }
-        private void saveButton_Click(object sender, EventArgs e)
+        private void SaveButton_Click(object sender, EventArgs e)
         {
             Catalog ctl = ucCatalog.Catalog;
             if ((object)ctl == null)
@@ -71,7 +71,7 @@ namespace SOV.Amur.Meta
             ucCatalog.Catalog = null;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             Catalog ctl = ucCatalog.Catalog;
             ctl.Id = -1;
@@ -358,9 +358,10 @@ namespace SOV.Amur.Meta
 
         private void UCCatalogs_Load(object sender, EventArgs e)
         {
-            ucCatalogFilter.Fill(SiteRepository.GetCash(), VariableRepository.GetCash(),
-                MethodRepository.GetCash(), Social.LegalEntityRepository.GetCash(),
-                OffsetTypeRepository.GetCash());
+            if (!DesignMode)
+            {
+                ucCatalogFilter.Fill(SiteRepository.GetCash(), VariableRepository.GetCash(), MethodRepository.GetCash(), Social.LegalEntityRepository.GetCash(), OffsetTypeRepository.GetCash());
+            }
         }
     }
 

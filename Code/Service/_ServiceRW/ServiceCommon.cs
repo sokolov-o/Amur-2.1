@@ -130,9 +130,9 @@ namespace SOV.Amur.Service
         {
             return Social.DataManager.GetInstance(GetConnectionString(hSvc));
         }
-        //static public Parser.DataManager DataManagerParser(long hSvc)
-        //{
-        //    return Parser.DataManager.GetInstance(GetConnectionString(hSvc));
-        //}
+        static public Parser.DataManager DataManagerParser(long hSvc)
+        {
+            return Parser.DataManager.GetInstance(GetConnectionString(hSvc));
+        }
     }
 }

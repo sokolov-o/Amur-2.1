@@ -334,24 +334,24 @@ namespace SOV.Amur.Data
         /// </summary>
         public long Insert(int catalogId, DateTime dateUTC, DateTime dateLOC, double value, byte flagAQC = 0, long? dataSourceId = null)
         {
-            //string sql = "data.insert_data_value_201611"
-            //    + " (:catalog_id::integer, :date_utc::timestamp without time zone, :date_loc::timestamp without time zone,"
-            //    + " :value::double precision, :flag_aqc::smallint, :data_source_id::bigint);";
-            string sql = "data.insert_data_value_201611";
+            string sql = "select * from data.insert_data_value_201611"
+                + " (:catalog_id::integer, :date_utc::timestamp without time zone, :date_loc::timestamp without time zone,"
+                + " :value::double precision, :flag_aqc::smallint, :data_source_id::bigint);";
+            //string sql = "data.insert_data_value_201611";
 
 
             using (NpgsqlConnection cnn = _db.Connection)
             {
                 using (Npgsql.NpgsqlCommand cmd = new Npgsql.NpgsqlCommand(sql, cnn))
                 {
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("_catalog_id", catalogId);
-                    cmd.Parameters.AddWithValue("_date_utc", dateUTC);
-                    cmd.Parameters.AddWithValue("_date_loc", dateLOC);
-                    cmd.Parameters.AddWithValue("_value", value);
-                    cmd.Parameters.AddWithValue("_flag_aqc", flagAQC);
-                    cmd.Parameters.AddWithValue("_data_source_id", NpgsqlTypes.NpgsqlDbType.Bigint, dataSourceId.HasValue ? dataSourceId : null);
-                    //cmd.Parameters.Add(ADbNpgsql.GetParameter("_data_source_id", dataSourceId));
+                    //cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("catalog_id", catalogId);
+                    cmd.Parameters.AddWithValue("date_utc", dateUTC);
+                    cmd.Parameters.AddWithValue("date_loc", dateLOC);
+                    cmd.Parameters.AddWithValue("value", value);
+                    cmd.Parameters.AddWithValue("flag_aqc", flagAQC);
+                    //cmd.Parameters.AddWithValue("_data_source_id", NpgsqlTypes.NpgsqlDbType.Bigint, dataSourceId.HasValue ? dataSourceId : null);
+                    cmd.Parameters.Add(ADbNpgsql.GetParameter("data_source_id", dataSourceId));
 
                     return (long)cmd.ExecuteScalar();
                 }

@@ -50,7 +50,9 @@ namespace SOV.Amur.Service
         }
         public long SaveDataSource(long hSvc, DataSource dataSource)
         {
-            return DataManagerData(hSvc).DataSourceRepository.Insert(dataSource);
+            long id = DataManagerData(hSvc).DataSourceRepository.Insert(dataSource);
+            System.IO.File.AppendAllText(_logFilePath, string.Format("SaveDataSource {0} {1}\n", id, DateTime.Now));
+            return id;
         }
         public void SaveDataValueXSource(long hSvc, int dataValueId, long dataSourceId)
         {
@@ -97,10 +99,10 @@ namespace SOV.Amur.Service
         #endregion META
 
         #region PARSER
-        //////public void SaveParserSysObjLastStartParam(long hSvc, int sysObjId, string lastStartParam)
-        //////{
-        //////    DataManagerParser(hSvc).SysObjRepository.UpdateLastStartParam(sysObjId, lastStartParam);
-        //////}
+        public void SaveParserSysObjLastStartParam(long hSvc, int sysObjId, string lastStartParam)
+        {
+            DataManagerParser(hSvc).SysObjRepository.UpdateLastStartParam(sysObjId, lastStartParam);
+        }
         #endregion PARSER
     }
 }

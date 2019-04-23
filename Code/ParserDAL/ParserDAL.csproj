@@ -7,8 +7,8 @@
     <ProjectGuid>{6D9EE84F-A1EB-46EC-A797-A4F6F4DBEE84}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FERHRI.Amur.Parser</RootNamespace>
-    <AssemblyName>FERHRI.Amur.ParserDAL</AssemblyName>
+    <RootNamespace>SOV.Amur.Parser</RootNamespace>
+    <AssemblyName>SOV.Amur.ParserDAL</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

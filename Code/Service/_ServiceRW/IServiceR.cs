@@ -8,6 +8,7 @@ using SOV.Amur.Meta;
 using SOV.Amur.Data;
 using SOV.Social;
 using SOV.Amur.DataP;
+using SOV.Amur.Parser;
 
 namespace SOV.Amur.Service
 {
@@ -457,14 +458,14 @@ namespace SOV.Amur.Service
         List<AQCDataValue> GetDataPDataValueAQC(long hSvc, long dvId);
         //////#endregion DATAP
 
-        //////#region PARSER
-        //////[OperationContract]
-        //////Parser.SysObj GetParserSysObj(long hSvc, int sysObjId);
-        //////[OperationContract]
-        //////List<Parser.SysParsersXSites> GetParserSysParsersXSites(long hSvc, int sysObjId);
-        //////[OperationContract]
-        //////List<Parser.SysParsersParams> GetParserSysParsersParams(long hSvc, List<int> sysParsersParamsSetIds);
-        //////#endregion PARSER
+        #region PARSER
+        [OperationContract]
+        SysObj GetParserSysObj(long hSvc, int sysObjId);
+        [OperationContract]
+        List<SysParsersXSites> GetParserSysParsersXSites(long hSvc, int sysObjId);
+        [OperationContract]
+        List<SysParsersParams> GetParserSysParsersParams(long hSvc, List<int> sysParsersParamsSetIds);
+        #endregion PARSER
 
         #region SOCIAL
 

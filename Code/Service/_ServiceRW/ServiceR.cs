@@ -295,9 +295,9 @@ namespace SOV.Amur.Service
             return DataManagerMeta(hSvc).SiteAttrTypeRepository.Select();
         }
         /// <summary>
-        /// Получить набор всех флагов автоматического критконтроля данных.
+        /// Получить словарь флагов автоматического критконтроля данных.
         /// </summary>
-        /// <returns>Набор флагов автоматического критконтроля данных.</returns>
+        /// <returns>Словарь флагов автоматического критконтроля данных.</returns>
         public Dictionary<short, string[/*name, name_short*/]> GetFlagAQCAll(long hSvc)
         {
             return DataManagerMeta(hSvc).FlaAQCRepository.Select();
@@ -377,16 +377,16 @@ namespace SOV.Amur.Service
             return DataManagerMeta(hSvc).SiteRepository.SelectByAddrRegionIds(addrRegionIds);
         }
         /// <summary>
-        /// Получить список всех типов станций.
+        /// Получить список типов пунктов.
         /// </summary>
-        /// <param name="hSvc">Ручка сервиса.</param>
+        /// <param name="hSvc">Дескриптор сервиса.</param>
         /// <returns>Список типов станций.</returns>
         public List<SiteType> GetSiteTypes(long hSvc)
         {
             return DataManagerMeta(hSvc).SiteTypeRepository.Select();
         }
         /// <summary>
-        /// Список наблюдательных пунктов.
+        /// Получить список наблюдательных пунктов по их id.
         /// </summary>
         /// <param name="hSvc">Ручка сервиса.</param>
         /// <param name="siteIdList">Список кодов пунктов для выборки.</param>
@@ -395,6 +395,12 @@ namespace SOV.Amur.Service
         {
             return DataManagerMeta(hSvc).SiteRepository.Select(siteIdList);
         }
+        /// <summary>
+        /// Получить список наблюдательных пунктов по их типу.
+        /// </summary>
+        /// <param name="hSvc"></param>
+        /// <param name="siteTypeId">Тип пунктов.</param>
+        /// <returns></returns>
         public List<Site> GetSitesByType(long hSvc, int siteTypeId)
         {
             return DataManagerMeta(hSvc).SiteRepository.SelectByType(siteTypeId);
@@ -409,14 +415,6 @@ namespace SOV.Amur.Service
         {
             return DataManagerMeta(hSvc).SiteRepository.SelectSitesByGroup(siteGroupId);
         }
-        /////// <summary>
-        /////// Получить список всех типов наблюдательных пунктов.
-        /////// </summary>
-        /////// <returns>Список типов пунктов.</returns>
-        ////public List<SiteType> GetSiteTypes(long hSvc)
-        ////{
-        ////    return DataManagerMeta(hSvc).SiteTypeRepository.Select();
-        ////}
         public EntityAttrValue GetSiteAttrValue(long hSvc, int siteId, int siteAttrTypeId, DateTime dateActual)
         {
             return DataManagerMeta(hSvc).EntityAttrRepository.SelectAttrValue("site", siteId, siteAttrTypeId, dateActual);
@@ -620,18 +618,24 @@ namespace SOV.Amur.Service
         #endregion DATAP
 
         #region PARSER
-        //////public Parser.SysObj GetParserSysObj(long hSvc, int sysObjId)
-        //////{
-        //////    return DataManagerParser(hSvc).SysObjRepository.Select(new List<int>(new int[] { sysObjId }))[0];
-        //////}
-        //////public List<Parser.SysParsersXSites> GetParserSysParsersXSites(long hSvc, int sysObjId)
-        //////{
-        //////    return DataManagerParser(hSvc).SysParsersXSitesRepository.Select(sysObjId);
-        //////}
-        //////public List<Parser.SysParsersParams> GetParserSysParsersParams(long hSvc, List<int> sysParsersParamsSetIds)
-        //////{
-        //////    return DataManagerParser(hSvc).SysParsersParamsRepository.Select(sysParsersParamsSetIds);
-        //////}
+        public Parser.SysObj GetParserSysObj(long hSvc, int sysObjId)
+        {
+            List<Parser.SysObj> sysObjs = DataManagerParser(hSvc).SysObjRepository.Select(new List<int>(new int[] { sysObjId }));
+            Parser.SysObj ret =(sysObjs is null || sysObjs.Count == 0) ? null : sysObjs[0];
+
+            System.IO.File.AppendAllText(_logFilePath, string.Format("GetParserSysObj {0}\n", DateTime.Now));
+            return ret;
+        }
+        public List<Parser.SysParsersXSites> GetParserSysParsersXSites(long hSvc, int sysObjId)
+        {
+            System.IO.File.AppendAllText(_logFilePath, string.Format("GetParserSysParsersXSites {0}\n", DateTime.Now));
+            return DataManagerParser(hSvc).SysParsersXSitesRepository.Select(sysObjId);
+        }
+        public List<Parser.SysParsersParams> GetParserSysParsersParams(long hSvc, List<int> sysParsersParamsSetIds)
+        {
+            System.IO.File.AppendAllText(_logFilePath, string.Format("GetParserSysParsersParams {0}\n", DateTime.Now));
+            return DataManagerParser(hSvc).SysParsersParamsRepository.Select(sysParsersParamsSetIds);
+        }
 
         #endregion PARSER
     }

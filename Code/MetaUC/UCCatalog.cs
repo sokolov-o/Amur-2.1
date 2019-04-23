@@ -106,11 +106,14 @@ namespace SOV.Amur.Meta
 
         private void UCCatalog_Load(object sender, EventArgs e)
         {
-            sitesCombo.Items.AddRange(Meta.Site.ToDicItemList(SiteRepository.GetCash(), 2, SiteTypeRepository.GetCash()).OrderBy(x => x.Name).ToArray());
-            varsCombo.Items.AddRange(VariableRepository.GetCash().OrderBy(x => x.NameRus).ToArray());
-            methodsCombo.Items.AddRange(MethodRepository.GetCash().OrderBy(x => x.Name).ToArray());
-            sourcesCombo.Items.AddRange(Social.LegalEntityRepository.GetCash().OrderBy(x => x.NameRus).ToArray());
-            offsCombo.Items.AddRange(OffsetTypeRepository.GetCash().OrderBy(x => x.Name).ToArray());
+            if (!DesignMode)
+            {
+                sitesCombo.Items.AddRange(Meta.Site.ToDicItemList(SiteRepository.GetCash(), 2, SiteTypeRepository.GetCash()).OrderBy(x => x.Name).ToArray());
+                varsCombo.Items.AddRange(VariableRepository.GetCash().OrderBy(x => x.NameRus).ToArray());
+                methodsCombo.Items.AddRange(MethodRepository.GetCash().OrderBy(x => x.Name).ToArray());
+                sourcesCombo.Items.AddRange(Social.LegalEntityRepository.GetCash().OrderBy(x => x.NameRus).ToArray());
+                offsCombo.Items.AddRange(OffsetTypeRepository.GetCash().OrderBy(x => x.Name).ToArray()); 
+            }
         }
     }
 }

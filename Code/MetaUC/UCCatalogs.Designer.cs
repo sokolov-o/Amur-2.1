@@ -393,7 +393,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Создать на основе";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // newButton
             // 
@@ -419,7 +419,7 @@
             this.saveButton.Text = "Сохранить";
             this.saveButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // ucCatalog
             // 

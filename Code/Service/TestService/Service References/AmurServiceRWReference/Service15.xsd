@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SysObj">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Heap" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LastStartParam" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SysObjTypeId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SysObj" nillable="true" type="tns:SysObj" />
+  <xs:complexType name="ArrayOfSysParsersXSites">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SysParsersXSites" nillable="true" type="tns:SysParsersXSites" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSysParsersXSites" nillable="true" type="tns:ArrayOfSysParsersXSites" />
+  <xs:complexType name="SysParsersXSites">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExtSiteId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiteTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="SysObjId" type="xs:int" />
+      <xs:element minOccurs="0" name="SysParsersParamsSetId" type="xs:int" />
+      <xs:element minOccurs="0" name="isActual" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SysParsersXSites" nillable="true" type="tns:SysParsersXSites" />
+  <xs:complexType name="ArrayOfSysParsersParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SysParsersParams" nillable="true" type="tns:SysParsersParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSysParsersParams" nillable="true" type="tns:ArrayOfSysParsersParams" />
+  <xs:complexType name="SysParsersParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodeFormId" type="xs:int" />
+      <xs:element minOccurs="0" name="ExtLevelId" type="xs:int" />
+      <xs:element minOccurs="0" name="ExtParam" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IntOffsetId" type="xs:int" />
+      <xs:element minOccurs="0" name="IntVariableId" type="xs:int" />
+      <xs:element minOccurs="0" name="Multiplier" type="xs:double" />
+      <xs:element minOccurs="0" name="OffsetDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OffsetUnitsId" type="xs:int" />
+      <xs:element minOccurs="0" name="SysParsersParamsSetId" type="xs:int" />
+      <xs:element minOccurs="0" name="VarErrorDataValue" type="xs:double" />
+      <xs:element minOccurs="0" name="VarNoDataValue" type="xs:double" />
+      <xs:element minOccurs="0" name="VariableName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SysParsersParams" nillable="true" type="tns:SysParsersParams" />
+</xs:schema>

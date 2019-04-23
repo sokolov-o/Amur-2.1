@@ -16,7 +16,6 @@ namespace SOV.Amur.Meta
         public UCSite()
         {
             InitializeComponent();
-            //FillDics();
         }
         public Site Site
         {
@@ -41,13 +40,14 @@ namespace SOV.Amur.Meta
                 nameTextBox.Text = value.Name;
                 nameEngTextBox.Text = "Не реализовано...";
 
-                object o = SiteTypeRepository.GetCash().FirstOrDefault(x => x.Id == value.TypeId);...
+                object o;
+                o = ((List<IdName>)siteTypeBindingSource.DataSource).FirstOrDefault(x => x.Id == value.TypeId);
                 siteTypeComboBox.SelectedIndex = o == null ? -1 : siteTypeComboBox.Items.IndexOf(o);
 
-                o = value.AddrRegionId.HasValue ? Social.AddrRepository.GetCash().Find(x => x.Id == (int)value.AddrRegionId) : null;
+                o = ((List<IdName>)addrBindingSource.DataSource).FirstOrDefault(x => x.Id == value.AddrRegionId);
                 regionComboBox.SelectedIndex = o == null ? -1 : regionComboBox.Items.IndexOf(o);
 
-                o = value.OrgId.HasValue ? Social.LegalEntityRepository.GetCash().FirstOrDefault(x => x.Id == (int)value.OrgId) : null;
+                o = ((List<IdName>)legalEntityBindingSource.DataSource).FirstOrDefault(x => x.Id == value.OrgId);
                 orgComboBox.SelectedIndex = o == null ? -1 : orgComboBox.Items.IndexOf(o);
             }
         }
@@ -57,8 +57,8 @@ namespace SOV.Amur.Meta
             if (!DesignMode)
             {
                 siteTypeBindingSource.DataSource = SiteTypeRepository.GetCash().Select(x => new IdName() { Id = x.Id, Name = x.Name }).OrderBy(x => x.Name).ToList();
-                regionComboBox.DataSource = Social.AddrRepository.GetCash().OrderBy(x => x.Name).ToList();
-                orgComboBox.DataSource = Social.LegalEntityRepository.GetCash().Where(x => x.Type == 'o').OrderBy(x => x.NameRus).ToList();
+                addrBindingSource.DataSource = Social.AddrRepository.GetCash().Select(x => new IdName() { Id = x.Id, Name = x.Name }).OrderBy(x => x.Name).ToList();
+                legalEntityBindingSource.DataSource = Social.LegalEntityRepository.GetCash().Where(x => x.Type == 'o').Select(x => new IdName() { Id = x.Id, Name = x.NameRus }).OrderBy(x => x.Name).ToList();
             }
         }
 

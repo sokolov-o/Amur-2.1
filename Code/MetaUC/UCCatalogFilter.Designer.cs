@@ -155,7 +155,7 @@
             this._tpSite.Controls.Add(this.sitesFilter);
             this._tpSite.Location = new System.Drawing.Point(4, 25);
             this._tpSite.Name = "_tpSite";
-            this._tpSite.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this._tpSite.Padding = new System.Windows.Forms.Padding(3);
             this._tpSite.Size = new System.Drawing.Size(337, 220);
             this._tpSite.TabIndex = 0;
             this._tpSite.Text = "Пункты";
@@ -165,7 +165,7 @@
             // 
             this.sitesFilter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sitesFilter.Location = new System.Drawing.Point(3, 3);
-            this.sitesFilter.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.sitesFilter.Margin = new System.Windows.Forms.Padding(7);
             this.sitesFilter.Name = "sitesFilter";
             this.sitesFilter.Size = new System.Drawing.Size(331, 214);
             this.sitesFilter.TabIndex = 0;
@@ -177,7 +177,7 @@
             this._tpVariable.Controls.Add(this.varsFilter);
             this._tpVariable.Location = new System.Drawing.Point(4, 25);
             this._tpVariable.Name = "_tpVariable";
-            this._tpVariable.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this._tpVariable.Padding = new System.Windows.Forms.Padding(3);
             this._tpVariable.Size = new System.Drawing.Size(337, 220);
             this._tpVariable.TabIndex = 1;
             this._tpVariable.Text = "Переменные";
@@ -187,7 +187,7 @@
             // 
             this.varsFilter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.varsFilter.Location = new System.Drawing.Point(3, 3);
-            this.varsFilter.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.varsFilter.Margin = new System.Windows.Forms.Padding(7);
             this.varsFilter.Name = "varsFilter";
             this.varsFilter.Size = new System.Drawing.Size(331, 214);
             this.varsFilter.TabIndex = 1;
@@ -221,7 +221,7 @@
             // 
             this.offsetsFilter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.offsetsFilter.Location = new System.Drawing.Point(7, 7);
-            this.offsetsFilter.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.offsetsFilter.Margin = new System.Windows.Forms.Padding(7);
             this.offsetsFilter.Name = "offsetsFilter";
             this.offsetsFilter.Size = new System.Drawing.Size(323, 173);
             this.offsetsFilter.TabIndex = 1;
@@ -272,7 +272,7 @@
             // 
             this.methodsFilter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.methodsFilter.Location = new System.Drawing.Point(0, 0);
-            this.methodsFilter.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.methodsFilter.Margin = new System.Windows.Forms.Padding(7);
             this.methodsFilter.Name = "methodsFilter";
             this.methodsFilter.Size = new System.Drawing.Size(337, 220);
             this.methodsFilter.TabIndex = 1;
@@ -291,7 +291,7 @@
             // 
             this.sourcesFilter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sourcesFilter.Location = new System.Drawing.Point(0, 0);
-            this.sourcesFilter.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.sourcesFilter.Margin = new System.Windows.Forms.Padding(7);
             this.sourcesFilter.Name = "sourcesFilter";
             this.sourcesFilter.Size = new System.Drawing.Size(337, 220);
             this.sourcesFilter.TabIndex = 1;

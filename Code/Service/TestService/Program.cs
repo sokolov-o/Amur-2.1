@@ -40,10 +40,6 @@ namespace TestService
                 //client = GetClient(@"http://10.8.3.180:8001/Service.svc");
                 client = GetClient(@"http://localhost:8001/Service.svc");
 
-                // TEST SERVICE CONNETION
-                string answer = client.TestServiceConnection(UserName, UserPassword);
-                Console.WriteLine(answer);
-
                 // Дескриптор сеанса/сессии сервиса
                 hSvc = client.Open(UserName, UserPassword);  // Корректный идентификатор сессии
                 if (hSvc < 1)
@@ -52,7 +48,8 @@ namespace TestService
                     return;
                 }
                 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Собственно пример использования сервиса
-                SampleServiceR.Sample4NICPlaneta(client, hSvc);
+                SampleServiceR.SampleParser(client, hSvc);
+                //SampleServiceR.Sample4NICPlaneta(client, hSvc);
                 //SampleServiceW.SampleForecast(client, hSvc);
                 //SampleServiceR.Sample4Bugaets(client, hSvc);
                 //SampleServiceR.Sample4DataForecast(client, hSvc);

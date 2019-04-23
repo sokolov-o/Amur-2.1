@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonMath", "..\..\CommonM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Amur.Service.RW", "_Amur.Service.RW.csproj", "{983D54D8-263D-4BD3-A8A5-965CFCB4912D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geo", "..\..\Geo\Geo.csproj", "{3D2D6261-0EC0-43A7-90E3-8FA7BB9DFDCA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,10 @@ Global
 		{983D54D8-263D-4BD3-A8A5-965CFCB4912D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{983D54D8-263D-4BD3-A8A5-965CFCB4912D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{983D54D8-263D-4BD3-A8A5-965CFCB4912D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D2D6261-0EC0-43A7-90E3-8FA7BB9DFDCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D2D6261-0EC0-43A7-90E3-8FA7BB9DFDCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D2D6261-0EC0-43A7-90E3-8FA7BB9DFDCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D2D6261-0EC0-43A7-90E3-8FA7BB9DFDCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

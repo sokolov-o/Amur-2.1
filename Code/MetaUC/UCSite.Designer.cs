@@ -92,7 +92,7 @@
             // 
             // siteTypeBindingSource
             // 
-            this.siteTypeBindingSource.DataSource = typeof(SOV.Amur.Meta.SiteType);
+            this.siteTypeBindingSource.DataSource = typeof(SOV.Common.IdName);
             // 
             // nameEngTextBox
             // 
@@ -176,6 +176,10 @@
             this.regionComboBox.TabIndex = 5;
             this.regionComboBox.ValueMember = "Id";
             // 
+            // addrBindingSource
+            // 
+            this.addrBindingSource.DataSource = typeof(SOV.Common.IdName);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -190,7 +194,7 @@
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.orgComboBox, 2);
             this.orgComboBox.DataSource = this.legalEntityBindingSource;
-            this.orgComboBox.DisplayMember = "NameRus";
+            this.orgComboBox.DisplayMember = "Name";
             this.orgComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.orgComboBox.FormattingEnabled = true;
             this.orgComboBox.Location = new System.Drawing.Point(86, 56);
@@ -198,6 +202,10 @@
             this.orgComboBox.Size = new System.Drawing.Size(171, 21);
             this.orgComboBox.TabIndex = 4;
             this.orgComboBox.ValueMember = "Id";
+            // 
+            // legalEntityBindingSource
+            // 
+            this.legalEntityBindingSource.DataSource = typeof(SOV.Common.IdName);
             // 
             // label5
             // 

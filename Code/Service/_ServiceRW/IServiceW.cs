@@ -72,8 +72,8 @@ namespace SOV.Amur.Service
         #endregion DATAP
 
         #region PARSER
-        //[OperationContract]
-        //void SaveParserSysObjLastStartParam(long hSvc, int sysObjId, string lastStartParam);
+        [OperationContract]
+        void SaveParserSysObjLastStartParam(long hSvc, int sysObjId, string lastStartParam);
         #endregion PARSER
 
     }

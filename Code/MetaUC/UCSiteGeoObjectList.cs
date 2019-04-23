@@ -321,7 +321,7 @@ namespace SOV.Amur.Meta
         public event UCEditSiteEventHandler UCEditSiteEvent;
         protected virtual void RaiseEditSiteEvent()
         {
-            if (UCEditSiteEvent != null)
+            if (UCEditSiteEvent != null && Site != null)
             {
                 UCEditSiteEvent(Site.Id);
             }

@@ -501,6 +501,18 @@ namespace TestService
             #endregion GET DATA
         }
 
+        public static void SampleParser(ServiceClient client, long hSvc)
+        {
+
+            SysObj sysObj = client.GetParserSysObj(hSvc, 8);
+            Console.WriteLine("SysObj.Name = {0}", (sysObj is null) ? "null" : sysObj.Name);
+
+            SysParsersXSites[] pxs = client.GetParserSysParsersXSites(hSvc, 8);
+            Console.WriteLine("SysParsersXSites.Count = {0}", (pxs is null || pxs.Length == 0) ? 0 : pxs.Length);
+
+            SysParsersParams[] pps = client.GetParserSysParsersParams(hSvc, new int[] { 1, 2 });
+            Console.WriteLine("GetParserSysParsersParams.Count = {0}", (pps is null || pps.Length == 0) ? 0 : pps.Length);
+        }
         //////public static void Sample4DataForecast(ServiceClient client, long hSvc)
         //////{
         //////    #region GET FCS VARIABLES

@@ -4,17 +4,24 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOV.Social" />
       <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SOV.Common" />
-      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" />
-      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SOV.Geo" />
-      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System" />
-      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/System.Reflection" />
-      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.DataP" />
-      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/SOV.Social" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Data" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/SOV.Geo" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/System.Reflection" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.DataP" />
+      <xsd:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Parser" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService_GetLegalEntityesAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLegalEntityesAll" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLegalEntityesAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLegalEntityesAllResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_SaveVariableCode_InputMessage">
     <wsdl:part name="parameters" element="tns:SaveVariableCode" />
   </wsdl:message>
@@ -86,12 +93,6 @@
   </wsdl:message>
   <wsdl:message name="IService_SaveDataPRole_OutputMessage">
     <wsdl:part name="parameters" element="tns:SaveDataPRoleResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_TestServiceConnection_InputMessage">
-    <wsdl:part name="parameters" element="tns:TestServiceConnection" />
-  </wsdl:message>
-  <wsdl:message name="IService_TestServiceConnection_OutputMessage">
-    <wsdl:part name="parameters" element="tns:TestServiceConnectionResponse" />
   </wsdl:message>
   <wsdl:message name="IService_Open_InputMessage">
     <wsdl:part name="parameters" element="tns:Open" />
@@ -200,12 +201,6 @@
   </wsdl:message>
   <wsdl:message name="IService_GetSiteTypes_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSiteTypesResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_GetSitesByParent_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetSitesByParent" />
-  </wsdl:message>
-  <wsdl:message name="IService_GetSitesByParent_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetSitesByParentResponse" />
   </wsdl:message>
   <wsdl:message name="IService_GetSitesByList_InputMessage">
     <wsdl:part name="parameters" element="tns:GetSitesByList" />
@@ -405,6 +400,24 @@
   <wsdl:message name="IService_GetDataPDataValueAQC_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDataPDataValueAQCResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_GetParserSysObj_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParserSysObj" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetParserSysObj_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParserSysObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetParserSysParsersXSites_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParserSysParsersXSites" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetParserSysParsersXSites_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParserSysParsersXSitesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetParserSysParsersParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParserSysParsersParams" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetParserSysParsersParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParserSysParsersParamsResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_GetOrg_InputMessage">
     <wsdl:part name="parameters" element="tns:GetOrg" />
   </wsdl:message>
@@ -465,13 +478,11 @@
   <wsdl:message name="IService_GetLegalEntityesById_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetLegalEntityesByIdResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_GetLegalEntityesAll_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetLegalEntityesAll" />
-  </wsdl:message>
-  <wsdl:message name="IService_GetLegalEntityesAll_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetLegalEntityesAllResponse" />
-  </wsdl:message>
   <wsdl:portType name="IService">
+    <wsdl:operation name="GetLegalEntityesAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetLegalEntityesAll" message="tns:IService_GetLegalEntityesAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetLegalEntityesAllResponse" message="tns:IService_GetLegalEntityesAll_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="SaveVariableCode">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveVariableCode" message="tns:IService_SaveVariableCode_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveVariableCodeResponse" message="tns:IService_SaveVariableCode_OutputMessage" />
@@ -519,10 +530,6 @@
     <wsdl:operation name="SaveDataPRole">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveDataPRole" message="tns:IService_SaveDataPRole_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveDataPRoleResponse" message="tns:IService_SaveDataPRole_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="TestServiceConnection">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/TestServiceConnection" message="tns:IService_TestServiceConnection_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/TestServiceConnectionResponse" message="tns:IService_TestServiceConnection_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Open">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Open" message="tns:IService_Open_InputMessage" />
@@ -595,10 +602,6 @@
     <wsdl:operation name="GetSiteTypes">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSiteTypes" message="tns:IService_GetSiteTypes_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSiteTypesResponse" message="tns:IService_GetSiteTypes_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetSitesByParent">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSitesByParent" message="tns:IService_GetSitesByParent_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSitesByParentResponse" message="tns:IService_GetSitesByParent_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetSitesByList">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSitesByList" message="tns:IService_GetSitesByList_InputMessage" />
@@ -732,6 +735,18 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetDataPDataValueAQC" message="tns:IService_GetDataPDataValueAQC_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetDataPDataValueAQCResponse" message="tns:IService_GetDataPDataValueAQC_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetParserSysObj">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetParserSysObj" message="tns:IService_GetParserSysObj_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetParserSysObjResponse" message="tns:IService_GetParserSysObj_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParserSysParsersXSites">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetParserSysParsersXSites" message="tns:IService_GetParserSysParsersXSites_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetParserSysParsersXSitesResponse" message="tns:IService_GetParserSysParsersXSites_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParserSysParsersParams">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetParserSysParsersParams" message="tns:IService_GetParserSysParsersParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetParserSysParsersParamsResponse" message="tns:IService_GetParserSysParsersParams_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetOrg">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetOrg" message="tns:IService_GetOrg_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetOrgResponse" message="tns:IService_GetOrg_OutputMessage" />
@@ -772,13 +787,18 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetLegalEntityesById" message="tns:IService_GetLegalEntityesById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetLegalEntityesByIdResponse" message="tns:IService_GetLegalEntityesById_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetLegalEntityesAll">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetLegalEntityesAll" message="tns:IService_GetLegalEntityesAll_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetLegalEntityesAllResponse" message="tns:IService_GetLegalEntityesAll_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLegalEntityesAll">
+      <soap:operation soapAction="http://tempuri.org/IService/GetLegalEntityesAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SaveVariableCode">
       <soap:operation soapAction="http://tempuri.org/IService/SaveVariableCode" style="document" />
       <wsdl:input>
@@ -880,15 +900,6 @@
     </wsdl:operation>
     <wsdl:operation name="SaveDataPRole">
       <soap:operation soapAction="http://tempuri.org/IService/SaveDataPRole" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="TestServiceConnection">
-      <soap:operation soapAction="http://tempuri.org/IService/TestServiceConnection" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1051,15 +1062,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetSiteTypes">
       <soap:operation soapAction="http://tempuri.org/IService/GetSiteTypes" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetSitesByParent">
-      <soap:operation soapAction="http://tempuri.org/IService/GetSitesByParent" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1364,6 +1366,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetParserSysObj">
+      <soap:operation soapAction="http://tempuri.org/IService/GetParserSysObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParserSysParsersXSites">
+      <soap:operation soapAction="http://tempuri.org/IService/GetParserSysParsersXSites" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParserSysParsersParams">
+      <soap:operation soapAction="http://tempuri.org/IService/GetParserSysParsersParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetOrg">
       <soap:operation soapAction="http://tempuri.org/IService/GetOrg" style="document" />
       <wsdl:input>
@@ -1447,15 +1476,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetLegalEntityesById">
       <soap:operation soapAction="http://tempuri.org/IService/GetLegalEntityesById" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetLegalEntityesAll">
-      <soap:operation soapAction="http://tempuri.org/IService/GetLegalEntityesAll" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

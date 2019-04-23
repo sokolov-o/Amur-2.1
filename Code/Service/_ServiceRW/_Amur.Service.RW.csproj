@@ -101,6 +101,7 @@
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\AmurServiceRW_HBR.pubxml" />
     <None Include="Properties\PublishProfiles\AmurSeviceRW 10.11.203.34.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -109,9 +110,21 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\CommonMath\CommonMath.csproj">
+      <Project>{ffe71285-3013-4590-8130-6d5c559153ca}</Project>
+      <Name>CommonMath</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Geo\Geo.csproj">
-      <Project>{34f63caa-4627-4434-be40-16ac1b3d2541}</Project>
+      <Project>{3d2d6261-0ec0-43a7-90e3-8fa7bb9dfdca}</Project>
       <Name>Geo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ParserDAL\ParserDAL.csproj">
+      <Project>{6d9ee84f-a1eb-46ec-a797-a4f6f4dbee84}</Project>
+      <Name>ParserDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Parser\Parser.csproj">
+      <Project>{6263f638-5182-440a-a9ce-b8ff033171d4}</Project>
+      <Name>Parser</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Social\SocialBL\SocialBL.csproj">
       <Project>{da541fab-7762-49a4-bc85-f6ff4d74e28b}</Project>
