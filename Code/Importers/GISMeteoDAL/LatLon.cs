@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FERHRI.Amur.GISMeteo
+namespace SOV.GISMeteo
 {
     internal struct LatLon
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace FERHRI.Amur.GISMeteo
+namespace SOV.GISMeteo
 {
     /// <summary>
     /// Запись данных по параметру

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<setting>
+  <!--<mdbObsSearchPeriod name="Начало периода импорта данных из БД ГИС-метео" dateS="20160520 00:00">-->
+  <mdbObsSearchPeriod name="Начало периода импорта данных из БД ГИС-метео" dateS="">
+    <!--"20160523 00:00">-->
+  </mdbObsSearchPeriod>
+
+  <codeForm codeFormName="kn15" gCodeFormId = "44" hCodeFormId="2" hSourceId="0" checkPointPath="checkpoint_44">
+    <!--Группа "Все гидропосты ГП"-->
+    <siteGroupId>9</siteGroupId>
+
+    <param name="Расход воды" gParamId = "55" hParamId = "14" multip="1"/>
+    <param name="Уровень воды" gLevelId = "50" gParamId = "53" hParamId = "2" multip="1"/>
+    <param name="Осадки" gParamId = "12" hParamId = "3" multip="0.1"/>
+    <param name="Изменение уровня" gParamId = "54" hParamId = "28" multip="1"/>
+    <param name="Температура воды" gParamId = "8" hParamId = "13" multip="0.01"/>
+    <param name="Температура воздуха" gParamId = "2" hParamId = "10" multip="0.01"/>
+    <param name="Толщина льда" gParamId = "25" hParamId = "21" multip="1"/>
+    <param name="Высота снежного покрова на льду, код" gParamId = "115" hParamId = "50" multip="1"/>
+    <param name="Ледовые явления" gParamId = "193" hParamId = "33" multip="1"/>
+    <param name="Состояние водного объекта" gParamId = "195" hParamId = "34" multip="1"/>
+  </codeForm>
+
+  <codeForm codeFormName="kn24" gCodeFormId = "45" hCodeFormId="6" hSourceId="0" checkPointPath="checkpoint_45" >
+    <!--Группа "Все гидропосты ГП"-->
+    <siteGroupId>9</siteGroupId>
+    <!--Группа "Метеостанции для пополнения из ГИС-метео"-->
+    <siteGroupId>23</siteGroupId>
+
+    <param name="Глубина снежного покрова" gParamId = "51" hParamId = "19" multip="1"/>
+    <param name="Плотность снега" gParamId = "140" hParamId = "36" multip="0.1"/>
+    <param name="Толщина льда" gParamId = "25" hParamId = "21" multip="1"/>
+    <param name="Запас воды в снеге" gParamId = "12" hParamId = "37" multip="1"/>
+    <param name="Состояние почвы" gParamId = "223" hParamId = "38" multip="1"/>
+    <param name="Степень покрытости" gParamId = "31" hParamId = "39" multip="1"/>
+    <param name="Характеристика залегания снега" gParamId = "174" hParamId = "44" multip="1"/>
+  </codeForm>
+
+  <codeForm codeFormName="kn01" gCodeFormId = "16" hCodeFormId="1" hSourceId="0" checkPointPath="checkpoint_16" >
+    <!-- Группа "Все гидропосты ГП"-->
+    <siteGroupId>9</siteGroupId>
+    <!--Группа "Метеостанции для пополнения из ГИС-метео"-->
+    <siteGroupId>23</siteGroupId>
+
+    <param name="Направление ветра" gParamId = "4" hParamId = "1" multip="1"/>
+    <param name="Скорость ветра" gParamId = "5" hParamId = "7" multip="1"/>
+    <param name="Направление порывов ветра" gParamId = "132" hParamId = "1058" multip="1"/>
+    <!--hParamId - порыв в срок. В парсере ищется код порыва между сроками и за полусутки-->
+    <param name="Скорость порывов ветра" gParamId = "133" hParamId = "8" multip="1"/>
+
+    <param name="Температура воздуха" gParamId = "2" hParamId = "10" multip="0.01"/>
+    <param name="Температура воздуха ср. суточная" gParamId = "130" hParamId = "1015" multip="0.01"/>
+    <param name="Температура точки росы" gParamId = "7" hParamId = "1010" multip="0.01"/>
+    <param name="Минимальная температура воздуха" gParamId = "141" hParamId = "53" multip="0.01"/>
+    <param name="Максимальная температура воздуха" gParamId = "144" hParamId = "52" multip="0.01"/>
+
+    <param name="Давление на уровне станции" gLevelId = "1" gParamId = "1" hParamId = "11" multip="0.1"/>
+    <param name="Давление на уровне моря" gLevelId = "6" gParamId = "1" hParamId = "12" multip="0.1"/>
+
+    <param name="Осадки за полусутки" gParamId = "12" hParamId = "45" multip="0.1"/>
+    <param name="Осадки за сутки" gParamId = "140" hParamId = "23" multip="0.1"/>
+
+    <param name="Горизонтальная видимость" gParamId = "33" hParamId = "1053" multip="1"/>
+    <param name="Горизонтальная видимость" gParamId = "225" hParamId = "1053" multip="1"/>
+    <param name="Погода в срок" gParamId = "226" hParamId = "51" multip="1"/>
+    <param name="Погода прошедшая" gParamId = "227" hParamId = "1057" multip="1"/>
+    <param name="Глубина снежного покрова" gParamId = "51" hParamId = "19" multip="1"/>
+
+    <param name="Облачность, балл" gParamId = "229" hParamId = "1118" multip="1"/>
+  </codeForm>
+
+  <codeForm codeFormName="kn13" gCodeFormId = "94" hCodeFormId="105" hSourceId="0" checkPointPath="checkpoint_94">
+    <!--Группа "ГИС-Метео: посты для пополнения"-->
+    <siteGroupId>23</siteGroupId>
+    <param name="Радиация" gParamId = "174" hParamId = "1119" multip="1"/>
+  </codeForm>
+
+ <!--<codeForm codeFormName="kn02 (море)" gCodeFormId = "83" hCodeFormId="104" hSourceId="0" checkPointPath="checkpoint_кн02">
+    -->
+    <!--Группа "Все морские посты"--><!--
+    <siteGroupId>39</siteGroupId>
+
+    <param name="Температура воды" gParamId = "8" hParamId = "13" multip="0.01"/>
+    <param name="Температура воздуха" gParamId = "2" hParamId = "10" multip="0.01"/>
+  </codeForm>-->
+</setting>

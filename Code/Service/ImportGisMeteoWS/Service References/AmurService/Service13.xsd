@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SOV.Amur.DataP" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SOV.Amur.DataP" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfAQCDataValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AQCDataValue" nillable="true" type="tns:AQCDataValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAQCDataValue" nillable="true" type="tns:ArrayOfAQCDataValue" />
+  <xs:complexType name="AQCDataValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AQCRoleId" type="xs:int" />
+      <xs:element minOccurs="0" name="DataValueId" type="xs:long" />
+      <xs:element minOccurs="0" name="IsAQCApplied" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AQCDataValue" nillable="true" type="tns:AQCDataValue" />
+</xs:schema>

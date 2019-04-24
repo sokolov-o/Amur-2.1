@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SOV.Amur.Meta" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SOV.Common" />
+  <xs:import schemaLocation="http://localhost:8001/Service.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="EntityAttrValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttrTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="DateS" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EntityId" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntityAttrValue" nillable="true" type="tns:EntityAttrValue" />
+  <xs:complexType name="Site">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/SOV.Common" base="q1:IdNameParent">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddrRegionId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrgId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="TypeId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Site" nillable="true" type="tns:Site" />
+  <xs:complexType name="Catalog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="MethodId" type="xs:int" />
+      <xs:element minOccurs="0" name="OffsetTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="OffsetValue" type="xs:double" />
+      <xs:element minOccurs="0" name="ParentId" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteId" type="xs:int" />
+      <xs:element minOccurs="0" name="SourceId" type="xs:int" />
+      <xs:element minOccurs="0" name="VariableId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Catalog" nillable="true" type="tns:Catalog" />
+  <xs:complexType name="ArrayOfMethod">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Method" nillable="true" type="tns:Method" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMethod" nillable="true" type="tns:ArrayOfMethod" />
+  <xs:complexType name="Method">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/SOV.Common" base="q2:IdName">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MethodOutputStoreParameters" nillable="true" type="q3:ArrayOfKeyValueOfstringstring" />
+          <xs:element minOccurs="0" name="Order" type="xs:short" />
+          <xs:element minOccurs="0" name="ParentId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SourceLegalEntityId" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Method" nillable="true" type="tns:Method" />
+  <xs:complexType name="ArrayOfSite">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Site" nillable="true" type="tns:Site" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSite" nillable="true" type="tns:ArrayOfSite" />
+  <xs:complexType name="MethodForecast">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Attr" nillable="true" type="q4:ArrayOfKeyValueOfstringstring" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DateIniHoursUTC" nillable="true" type="q5:ArrayOfdouble" />
+      <xs:element minOccurs="0" name="LeadTimeUnitId" type="xs:int" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LeadTimes" nillable="true" type="q6:ArrayOfdouble" />
+      <xs:element minOccurs="0" name="Method" nillable="true" type="tns:Method" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MethodForecast" nillable="true" type="tns:MethodForecast" />
+  <xs:complexType name="GeoObject">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/SOV.Common" base="q7:IdName">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FallIntoId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="GeoTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="OrderBy" type="xs:int" />
+          <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Shape2D" nillable="true" type="q8:ArrayOfArrayOfdouble" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GeoObject" nillable="true" type="tns:GeoObject" />
+  <xs:complexType name="ArrayOfSiteAttrType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteAttrType" nillable="true" type="tns:SiteAttrType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSiteAttrType" nillable="true" type="tns:ArrayOfSiteAttrType" />
+  <xs:complexType name="SiteAttrType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityAttrType">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SiteAttrType" nillable="true" type="tns:SiteAttrType" />
+  <xs:complexType name="EntityAttrType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Mandatories" nillable="true" type="q9:ArrayOfint" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntityAttrType" nillable="true" type="tns:EntityAttrType" />
+  <xs:complexType name="ArrayOfSampleMedium">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SampleMedium" nillable="true" type="tns:SampleMedium" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSampleMedium" nillable="true" type="tns:ArrayOfSampleMedium" />
+  <xs:complexType name="SampleMedium">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/SOV.Common" base="q10:DicItem">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SampleMedium" nillable="true" type="tns:SampleMedium" />
+  <xs:complexType name="ArrayOfEntityAttrValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EntityAttrValue" nillable="true" type="tns:EntityAttrValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEntityAttrValue" nillable="true" type="tns:ArrayOfEntityAttrValue" />
+  <xs:complexType name="ArrayOfSiteType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteType" nillable="true" type="tns:SiteType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSiteType" nillable="true" type="tns:ArrayOfSiteType" />
+  <xs:complexType name="SiteType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/SOV.Common" base="q11:IdName">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NameShort" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SiteType" nillable="true" type="tns:SiteType" />
+  <xs:complexType name="ArrayOfVariable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Variable" nillable="true" type="tns:Variable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVariable" nillable="true" type="tns:ArrayOfVariable" />
+  <xs:complexType name="Variable">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:VariableVirtual">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeErrData" type="xs:double" />
+          <xs:element minOccurs="0" name="CodeNoData" type="xs:double" />
+          <xs:element minOccurs="0" name="NameC" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NameEng" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NameRus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValueTypeId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Variable" nillable="true" type="tns:Variable" />
+  <xs:complexType name="VariableVirtual">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/SOV.Common" base="q12:IdClass">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataTypeId" type="xs:int" />
+          <xs:element minOccurs="0" name="GeneralCategoryId" type="xs:int" />
+          <xs:element minOccurs="0" name="SampleMediumId" type="xs:int" />
+          <xs:element minOccurs="0" name="TimeId" type="xs:int" />
+          <xs:element minOccurs="0" name="TimeSupport" type="xs:int" />
+          <xs:element minOccurs="0" name="UnitId" type="xs:int" />
+          <xs:element minOccurs="0" name="VariableTypeId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VariableVirtual" nillable="true" type="tns:VariableVirtual" />
+  <xs:complexType name="ArrayOfDataType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataType" nillable="true" type="tns:DataType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataType" nillable="true" type="tns:ArrayOfDataType" />
+  <xs:complexType name="DataType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/SOV.Common" base="q13:DicItem">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DataType" nillable="true" type="tns:DataType" />
+  <xs:complexType name="ArrayOfGeneralCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GeneralCategory" nillable="true" type="tns:GeneralCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGeneralCategory" nillable="true" type="tns:ArrayOfGeneralCategory" />
+  <xs:complexType name="GeneralCategory">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/SOV.Common" base="q14:DicItem">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GeneralCategory" nillable="true" type="tns:GeneralCategory" />
+  <xs:complexType name="ArrayOfGeoObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GeoObject" nillable="true" type="tns:GeoObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGeoObject" nillable="true" type="tns:ArrayOfGeoObject" />
+  <xs:complexType name="ArrayOfGeoType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GeoType" nillable="true" type="tns:GeoType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGeoType" nillable="true" type="tns:ArrayOfGeoType" />
+  <xs:complexType name="GeoType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameEng" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GeoType" nillable="true" type="tns:GeoType" />
+  <xs:complexType name="ArrayOfMeteoZone">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MeteoZone" nillable="true" type="tns:MeteoZone" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMeteoZone" nillable="true" type="tns:ArrayOfMeteoZone" />
+  <xs:complexType name="MeteoZone">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UTCHourDayStart" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeteoZone" nillable="true" type="tns:MeteoZone" />
+  <xs:complexType name="ArrayOfMethodForecast">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MethodForecast" nillable="true" type="tns:MethodForecast" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMethodForecast" nillable="true" type="tns:ArrayOfMethodForecast" />
+  <xs:complexType name="ArrayOfOffsetType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OffsetType" nillable="true" type="tns:OffsetType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOffsetType" nillable="true" type="tns:ArrayOfOffsetType" />
+  <xs:complexType name="OffsetType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/SOV.Common" base="q15:IdName">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UnitId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OffsetType" nillable="true" type="tns:OffsetType" />
+  <xs:complexType name="ArrayOfSiteXSite">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteXSite" nillable="true" type="tns:SiteXSite" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSiteXSite" nillable="true" type="tns:ArrayOfSiteXSite" />
+  <xs:complexType name="SiteXSite">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RelationTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteId1" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteId2" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SiteXSite" nillable="true" type="tns:SiteXSite" />
+  <xs:complexType name="ArrayOfSiteXSiteType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SiteXSiteType" nillable="true" type="tns:SiteXSiteType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSiteXSiteType" nillable="true" type="tns:ArrayOfSiteXSiteType" />
+  <xs:complexType name="SiteXSiteType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SiteXSiteType" nillable="true" type="tns:SiteXSiteType" />
+  <xs:complexType name="ArrayOfUnit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Unit" nillable="true" type="tns:Unit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUnit" nillable="true" type="tns:ArrayOfUnit" />
+  <xs:complexType name="Unit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Abbreviation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AbbreviationEng" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameEng" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SIConvertion" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Unit" nillable="true" type="tns:Unit" />
+  <xs:complexType name="ArrayOfValueType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ValueType" nillable="true" type="tns:ValueType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfValueType" nillable="true" type="tns:ArrayOfValueType" />
+  <xs:complexType name="ValueType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/SOV.Common" base="q16:DicItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NameEng" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ValueType" nillable="true" type="tns:ValueType" />
+  <xs:complexType name="ArrayOfVariableCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VariableCode" nillable="true" type="tns:VariableCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVariableCode" nillable="true" type="tns:ArrayOfVariableCode" />
+  <xs:complexType name="VariableCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameShort" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VariableId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VariableCode" nillable="true" type="tns:VariableCode" />
+  <xs:complexType name="ArrayOfVariableType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VariableType" nillable="true" type="tns:VariableType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVariableType" nillable="true" type="tns:ArrayOfVariableType" />
+  <xs:complexType name="VariableType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/SOV.Common" base="q17:DicItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NameEng" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VariableType" nillable="true" type="tns:VariableType" />
+  <xs:complexType name="ArrayOfCatalog">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Catalog" nillable="true" type="tns:Catalog" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCatalog" nillable="true" type="tns:ArrayOfCatalog" />
+</xs:schema>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Configuration;
 using System.IO;
 
-namespace FERHRI.Amur.GISMeteo
+namespace SOV.GISMeteo
 {
     public class GISMeteoRepository
     {

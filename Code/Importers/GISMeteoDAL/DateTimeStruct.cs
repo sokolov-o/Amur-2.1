@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace FERHRI.Amur.GISMeteo
+namespace SOV.GISMeteo
 {
     /// <summary>
     /// Структура данных для даты и времени в ГИС-Метео
