@@ -101,7 +101,7 @@
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\AmurServiceRW_HBR.pubxml" />
     <None Include="Properties\PublishProfiles\AmurSeviceRW 10.11.203.34.pubxml" />
-    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\localhost FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
