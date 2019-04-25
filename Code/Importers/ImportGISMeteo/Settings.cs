@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FERHRI.Amur.GISMeteo;
+using SOV.GISMeteo;
 using SOV.Amur.Importer.GISMeteo.AmurService;
 using System.Configuration;
 using System.Xml;

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
-using FERHRI.Amur.GISMeteo;
-//using FERHRI.Amur.Logger;
+using SOV.Amur.Importer.GISMeteo;
 using SOV.Amur.Importer.GISMeteo.AmurService;
 using System.Diagnostics;
+using SOV.GISMeteo;
 
 namespace SOV.Amur.Importer.GISMeteo
 {
@@ -189,11 +189,11 @@ namespace SOV.Amur.Importer.GISMeteo
             int codeForm = 0; // Unknown;
             switch (config.CodeFormGis)
             {
-                case (int)FERHRI.Amur.GISMeteo.EnumCodeForm.KH01: codeForm = 1/*Meta.EnumCodeForm.KH01*/; break;
-                case (int)FERHRI.Amur.GISMeteo.EnumCodeForm.KH15: codeForm = 2/*Meta.EnumCodeForm.KH15*/; break;
-                case (int)FERHRI.Amur.GISMeteo.EnumCodeForm.KH24: codeForm = 6/*Meta.EnumCodeForm.KH24*/; break;
-                case (int)FERHRI.Amur.GISMeteo.EnumCodeForm.KH02: codeForm = 6/*Meta.EnumCodeForm.KH24*/; break;
-                case (int)FERHRI.Amur.GISMeteo.EnumCodeForm.KH13: codeForm = 105/*Meta.EnumCodeForm.KH24*/; break;
+                case (int)EnumCodeForm.KH01: codeForm = 1/*Meta.EnumCodeForm.KH01*/; break;
+                case (int)EnumCodeForm.KH15: codeForm = 2/*Meta.EnumCodeForm.KH15*/; break;
+                case (int)EnumCodeForm.KH24: codeForm = 6/*Meta.EnumCodeForm.KH24*/; break;
+                case (int)EnumCodeForm.KH02: codeForm = 6/*Meta.EnumCodeForm.KH24*/; break;
+                case (int)EnumCodeForm.KH13: codeForm = 105/*Meta.EnumCodeForm.KH24*/; break;
                 default:
                     throw new Exception("switch (config.CodeFormGis) : " + config.CodeFormGis);
             }
@@ -257,7 +257,7 @@ namespace SOV.Amur.Importer.GISMeteo
                 switch (config.CodeFormGis)
                 {
                     #region EnumCodeForm.KH24
-                    case (int)FERHRI.Amur.GISMeteo.EnumCodeForm.KH24:
+                    case (int)EnumCodeForm.KH24:
                         offsetTypeId = 1; // Маршрут: 0 - поле, 1 - лес
                         offsetValue = dRecord.ltype; // Указатель - лес/поле
                         if (param.GisParamId != 174)
@@ -299,7 +299,7 @@ namespace SOV.Amur.Importer.GISMeteo
                     #endregion
 
                     #region EnumCodeForm.KH15
-                    case (int)FERHRI.Amur.GISMeteo.EnumCodeForm.KH15:
+                    case (int)EnumCodeForm.KH15:
                         //                       if (dRecord.check != 0) { continue; }
                         if (dRecord.paramId == 55) // расход воды
                         {
@@ -329,9 +329,9 @@ namespace SOV.Amur.Importer.GISMeteo
                         break;
                     #endregion
 
-                    case (int)FERHRI.Amur.GISMeteo.EnumCodeForm.KH01:
-                    case (int)FERHRI.Amur.GISMeteo.EnumCodeForm.KH02:
-                    case (int)FERHRI.Amur.GISMeteo.EnumCodeForm.KH13:
+                    case (int)EnumCodeForm.KH01:
+                    case (int)EnumCodeForm.KH02:
+                    case (int)EnumCodeForm.KH13:
                         obsDateUTC = DateTime.FromBinary(obsDateLOC.ToBinary());
                         obsDateLOC = dataGM.Station.UTCOffset.HasValue
                             ? obsDateUTC.AddHours(dataGM.Station.UTCOffset.Value)
