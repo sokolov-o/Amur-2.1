@@ -33,9 +33,7 @@ namespace SOV.GISMeteo
 
         public List<Telegram> GetTelegrams(int codeForm, string checkPointPath, List<StationGM> stationList, List<Param> paramList, DateTime? dateS)
         {
-            List<Telegram> ret = new List<Telegram>();
-            int hDB = 0;
-            hDB = GismeteoDLL.MdbOpenR(ConnectionString);
+            int hDB = GismeteoDLL.MdbOpenR(ConnectionString);
             if (hDB == 0) throw new Exception("HDB = 0");
                         
             GismeteoDLL.MdbSetClear(hDB);
@@ -68,6 +66,8 @@ namespace SOV.GISMeteo
             {
                 GismeteoDLL.MdbAddPname(hDB, item.GisParamId);
             }
+
+            List<Telegram> ret = new List<Telegram>();
 
             while (GismeteoDLL.MdbNext(hDB) != 0)
             {
@@ -113,7 +113,6 @@ namespace SOV.GISMeteo
             catch (Exception ex)
             {
                 throw new Exception(string.Format("Ошибка при сохранении checkPoint'а: {0}", ex.ToString()));
-                //Logger.LoggerManager.Instance.WriteError(string.Format("Ошибка при сохранении checkPoint'а: {0}", ex.ToString()));
             }
             GismeteoDLL.MdbClose(hDB);
             return ret;
