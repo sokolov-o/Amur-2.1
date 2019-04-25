@@ -13,10 +13,10 @@
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>\\192.168.203.155\Exchange\Setup\FERHRI\Amur\GUI\</PublishUrl>
+    <PublishUrl>C:\Amur\Setup\Amur 2.1 GUI\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Unc</InstallFrom>
-    <UpdateEnabled>true</UpdateEnabled>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
@@ -27,7 +27,6 @@
     <ProductName>АСГМ Амур - опер, ДВНИГМИ, v 2.0</ProductName>
     <PublisherName>FERHRI</PublisherName>
     <SuiteName>FERHRI.Amur.20.OGUI</SuiteName>
-    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <ApplicationRevision>66</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
