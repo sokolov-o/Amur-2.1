@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
 [assembly: AssemblyTitle("АРМ Амур")]
-[assembly: AssemblyDescription("Автоматизированное рабочее место оперативного гидролога. \n\nКонтакт OSokolov@SOV.ru")]
+[assembly: AssemblyDescription("Автоматизированное рабочее место гидролога.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("ФГБУ ДВНИГМИ www.SOV.ru")]
-[assembly: AssemblyProduct("SOV.Amur20")]
-[assembly: AssemblyCopyright("ДВНИГМИ©  2015-2016")]
+[assembly: AssemblyCompany("viator.im@gmail.com")]
+[assembly: AssemblyProduct("SOV.Amur21.GUI")]
+[assembly: AssemblyCopyright("SOV©  2015-2019")]
 [assembly: AssemblyTrademark("Viaware")]
 [assembly: AssemblyCulture("")]
 
@@ -33,4 +33,4 @@ using System.Runtime.InteropServices;
 // используя "*", как показано ниже:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("2.1.0.0")]

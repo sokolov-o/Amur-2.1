@@ -26,8 +26,7 @@ namespace SOV.Amur
         public FormMain()
         {
             InitializeComponent();
-
-            Text = AssemblyTitle + ", " + AssemblyCompany;
+            Text = AssemblyTitle + " в. " + AssemblyFileVersionAttribute.Version;// + " (" + AssemblyCompany + ")";
         }
 
         int UserOrganisationId { get; set; }
@@ -192,8 +191,15 @@ namespace SOV.Amur
                 return ((AssemblyCompanyAttribute)attributes[0]).Company;
             }
         }
+        public AssemblyFileVersionAttribute AssemblyFileVersionAttribute
+        {
+            get
+            {
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyFileVersionAttribute), false);
+                return (attributes.Length == 0) ? null : (AssemblyFileVersionAttribute)attributes[0];
+            }
+        }
         #endregion
-
         FormDataFilter _formDataFilter = null;
         FormDataFilter formDataFilter
         {

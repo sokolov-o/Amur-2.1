@@ -69,7 +69,7 @@ namespace SOV.Amur.Importer.GISMeteo
                         case "siteGroupId":
                             int siteGroupId = Convert.ToInt32(opt.InnerText);
                             List<Site> sites = svc.GetSitesByGroup(hSvc, siteGroupId);
-                           // List<Station> stations = svc.GetStationsByList(hSvc, sites.Select(x => x.StationId).Distinct().ToList());
+                            // List<Station> stations = svc.GetStationsByList(hSvc, sites.Select(x => x.StationId).Distinct().ToList());
                             List<EntityAttrValue> utsOffsets = svc.GetSitesAttrValue(hSvc, sites.Select(x => x.Id).Distinct().ToList(), 1003, DateTime.Now);
                             List<Site> siteNoOffset = new List<Site>();
                             foreach (Site site in sites)
@@ -186,13 +186,14 @@ namespace SOV.Amur.Importer.GISMeteo
                 varIds.Add(config.VariableIdWindGustHalfDay);
 
 
-                List<Catalog> catalogList = svc.GetCatalogList(hSvc, siteIds, varIds, null, null,
-                    new List<int> { 0 }, new List<double> { 0 });
-
+                List<Catalog> catalogList = svc.GetCatalogList(hSvc, siteIds, varIds, null, null, null, null);
+                    //new List<int> { 0 }, new List<double> { 0 });
+                Catalog ctlTemp = catalogList.FirstOrDefault(x => x.Id == 37533);
+                int siteId = siteIds.FirstOrDefault(x => x == 1019);
                 catalogList = catalogList.Where(x =>
                     (x.OffsetTypeId == 0/*NoOffset*/ && x.OffsetValue == 0)
                     || x.OffsetTypeId == 1/*MarshrutPoleLes*/).ToList();
-
+                ctlTemp = catalogList.FirstOrDefault(x => x.Id == 37533);
                 config.CatalogList = catalogList;
 
                 #endregion FillCatalog

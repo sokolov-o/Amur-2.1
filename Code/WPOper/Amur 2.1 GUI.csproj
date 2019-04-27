@@ -24,11 +24,11 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <TargetCulture>ru-RU</TargetCulture>
-    <ProductName>АСГМ Амур - опер, ДВНИГМИ, v 2.0</ProductName>
-    <PublisherName>FERHRI</PublisherName>
-    <SuiteName>FERHRI.Amur.20.OGUI</SuiteName>
+    <ProductName>АСГМ Амур в. 2.1</ProductName>
+    <PublisherName>SOV</PublisherName>
+    <SuiteName>Amur 2.1 OGUI</SuiteName>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>66</ApplicationRevision>
+    <ApplicationRevision>70</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -67,7 +67,7 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>WPOper.ico</ApplicationIcon>
+    <ApplicationIcon>App.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Npgsql">
@@ -299,7 +299,7 @@
     <Content Include="Resources\Expand_large.bmp" />
     <None Include="Resources\TreeView_713.png" />
     <None Include="Resources\table_16xLG1.png" />
-    <Content Include="WPOper.ico" />
+    <Content Include="App.ico" />
   </ItemGroup>
   <ItemGroup>
     <PublishFile Include="Microsoft.ReportViewer.Common">
