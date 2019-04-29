@@ -12,9 +12,9 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\192.168.203.155\Exchange\Setup\FERHRI\Amur\Import.Gismeteo\</PublishUrl>
+    <PublishUrl>C:\Amur\Setup\Amur.Import.GISMeteo\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Unc</InstallFrom>
+    <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -22,11 +22,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ProductName>FERHRI.Amur.Importer.GisMeteo</ProductName>
-    <PublisherName>FERHRI</PublisherName>
-    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <UpdateUrl>http://localhost/SOV.Amur.Import.GISMeteo/</UpdateUrl>
+    <ProductName>Amur.Importer.GisMeteo</ProductName>
+    <PublisherName>SOV</PublisherName>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>82</ApplicationRevision>
+    <ApplicationRevision>83</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
