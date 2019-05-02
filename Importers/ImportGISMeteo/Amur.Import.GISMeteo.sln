@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amur.Import.GISMeteo", "Amu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "..\..\Common\Common.csproj", "{31660004-130A-4001-A6D0-F8209EE3A3E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GISMeteo", "..\GISMeteoDAL\GISMeteo.csproj", "{FB18DD70-50F8-4FC7-B0EA-7F53ADB092E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GISMeteoDAL", "..\GISMeteoDAL\GISMeteoDAL.csproj", "{FB18DD70-50F8-4FC7-B0EA-7F53ADB092E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

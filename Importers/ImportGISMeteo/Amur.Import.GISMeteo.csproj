@@ -244,9 +244,9 @@
       <Project>{31660004-130a-4001-a6d0-f8209ee3a3e6}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GISMeteoDAL\GISMeteo.csproj">
+    <ProjectReference Include="..\GISMeteoDAL\GISMeteoDAL.csproj">
       <Project>{fb18dd70-50f8-4fc7-b0ea-7f53adb092e1}</Project>
-      <Name>GISMeteo</Name>
+      <Name>GISMeteoDAL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
