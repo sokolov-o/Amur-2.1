@@ -27,7 +27,7 @@ namespace SOV.GISMeteo
             }
         }
 
-        static public GISMeteoRepository GetInstance { get { return new GISMeteoRepository(); } }
+        static public GISMeteoRepository GetInstance() { return new GISMeteoRepository(); }
 
         public byte[] CheckPointBuffer { get; set; }
 
@@ -35,14 +35,14 @@ namespace SOV.GISMeteo
         {
             int hDB = GismeteoDLL.MdbOpenR(ConnectionString);
             if (hDB == 0) throw new Exception("HDB = 0");
-                        
+
             GismeteoDLL.MdbSetClear(hDB);
             GismeteoDLL.MdbSetCodeForm(hDB, codeForm);
 
             // Выбирает все записи с датой наблюдения больше заданной  
             if (dateS.HasValue)
             {
-                GismeteoDLL.MdbSetObsStart(hDB, new DateTimeStruct(dateS.Value)); 
+                GismeteoDLL.MdbSetObsStart(hDB, new DateTimeStruct(dateS.Value));
             }
             else
             {

@@ -88,7 +88,7 @@ namespace SOV.Amur.Importer.GISMeteo
                 hSvc = svc.Open(user.Name, user.Password);
 
                 // SCAN CODE FORMS
-                GISMeteoRepository repo = GISMeteoRepository.GetInstance;
+                GISMeteoRepository repo = GISMeteoRepository.GetInstance();
                 foreach (Settings config in _settings)
                 {
                     mess = string.Format($"Кодовая форма {config.CodeFormGis}");
