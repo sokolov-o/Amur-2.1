@@ -34,7 +34,7 @@ namespace SOV.Common
         }
         static public NpgsqlParameter GetParameter(string paramName, object value)
         {
-            return new NpgsqlParameter(paramName, (value == null) ? DBNull.Value : value);
+            return new NpgsqlParameter(paramName, value ?? DBNull.Value);
         }
         static public string ConnectionStringUpdateUser(string connectionString, User user)
         {
@@ -59,10 +59,9 @@ namespace SOV.Common
         static public User ConnectionStringGetUser(string connectionString)
         {
             Dictionary<string, string> dic = Common.StrVia.ToDictionary(connectionString);
-            string userName, pwd;
             return new User(
-                dic.TryGetValue("USER ID", out userName) ? userName : null,
-                dic.TryGetValue("PASSWORD", out pwd) ? pwd : null
+                dic.TryGetValue("USER ID", out string userName) ? userName : null,
+                dic.TryGetValue("PASSWORD", out string pwd) ? pwd : null
                 );
             ;
         }

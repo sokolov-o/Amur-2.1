@@ -16,10 +16,10 @@ namespace SOV.Amur.Importer.GISMeteo
     /// </summary>
     class Program
     {
-        static System.Threading.Timer timer;
-        static List<Settings> configList = null;
-        static bool isBusy = false;
-        static SOV.Common.User user = null;
+        static System.Threading.Timer _timer;
+        static List<Settings> _settings = null;
+        static bool _isCallbackBusy = false;
+        static Common.User user = null;
 
         static readonly string EVENT_LOG_NAME = "SOV";
         static readonly string EVENT_LOG_SOURCE = "Amur.Import.GisMeteo";
@@ -47,8 +47,8 @@ namespace SOV.Amur.Importer.GISMeteo
 
             try
             {
-                // Get importer settings
-                configList = Settings.Parse(svc, hSvc,
+                // Get importer settings.xml
+                _settings = Settings.Parse(svc, hSvc,
                     ConfigurationManager.AppSettings["Setting.xml path"],
                     ConfigurationManager.ConnectionStrings["MdbCheckPointDirectory"].ConnectionString);
 
@@ -68,17 +68,17 @@ namespace SOV.Amur.Importer.GISMeteo
 
             // INIT TIMER
             int periodInMinutes = Convert.ToInt32(ConfigurationManager.AppSettings["periodInMinutes"]);
-            timer = new System.Threading.Timer(TimerCallback, null, 0, periodInMinutes * 60 * 1000);
-            
+            _timer = new System.Threading.Timer(TimerCallback, null, 0, periodInMinutes * 60 * 1000);
+
             Console.ReadKey();
         }
 
         static void TimerCallback(Object stateInfo)
         {
-            if (isBusy) return; else isBusy = true;
+            if (_isCallbackBusy) return; else _isCallbackBusy = true;
 
             DateTime dateTimerS = DateTime.UtcNow;
-            Console.WriteLine("Start " + dateTimerS);
+            Console.WriteLine($"Timer callback started at {dateTimerS}");
             string mess = "";
 
             try
@@ -88,10 +88,10 @@ namespace SOV.Amur.Importer.GISMeteo
                 hSvc = svc.Open(user.Name, user.Password);
 
                 // SCAN CODE FORMS
-                GISMeteoRepository repo = GISMeteoRepository.Instance;
-                foreach (Settings config in configList)
+                GISMeteoRepository repo = GISMeteoRepository.GetInstance;
+                foreach (Settings config in _settings)
                 {
-                    mess = string.Format("Кодовая форма {0}.", config.CodeFormGis);
+                    mess = string.Format($"Кодовая форма {config.CodeFormGis}");
                     Console.Write(mess);
                     bool ok = true;
 
@@ -175,33 +175,32 @@ namespace SOV.Amur.Importer.GISMeteo
             }
             finally
             {
-                mess = string.Format("End. {1} min elapsed.", DateTime.UtcNow, (DateTime.UtcNow - dateTimerS).TotalMinutes);
+                mess = string.Format($"Timer callback ended. {(DateTime.UtcNow - dateTimerS).TotalMinutes} min elapsed.");
                 Console.WriteLine(mess);
                 EventLog.WriteEntry(EVENT_LOG_SOURCE, mess, EventLogEntryType.Information);
 
                 svc.Close();
-                isBusy = false;
+                _isCallbackBusy = false;
             }
         }
-
-        private static DataSource Convert2DataSource(Telegram dataGM, Settings config)
+        private static DataSource Convert2DataSource(Telegram dataGM, Settings settings)
         {
-            int codeForm = 0; // Unknown;
-            switch (config.CodeFormGis)
+            int codeFormId;
+            switch (settings.CodeFormGis)
             {
-                case (int)EnumCodeForm.KH01: codeForm = 1/*Meta.EnumCodeForm.KH01*/; break;
-                case (int)EnumCodeForm.KH15: codeForm = 2/*Meta.EnumCodeForm.KH15*/; break;
-                case (int)EnumCodeForm.KH24: codeForm = 6/*Meta.EnumCodeForm.KH24*/; break;
-                case (int)EnumCodeForm.KH02: codeForm = 6/*Meta.EnumCodeForm.KH24*/; break;
-                case (int)EnumCodeForm.KH13: codeForm = 105/*Meta.EnumCodeForm.KH24*/; break;
+                case (int)EnumCodeForm.KH01: codeFormId = 1/*Meta.EnumCodeForm.KH01*/; break;
+                case (int)EnumCodeForm.KH15: codeFormId = 2/*Meta.EnumCodeForm.KH15*/; break;
+                case (int)EnumCodeForm.KH24: codeFormId = 6/*Meta.EnumCodeForm.KH24*/; break;
+                case (int)EnumCodeForm.KH02: codeFormId = 6/*Meta.EnumCodeForm.KH24*/; break;
+                case (int)EnumCodeForm.KH13: codeFormId = 105/*Meta.EnumCodeForm.KH24*/; break;
                 default:
-                    throw new Exception("switch (config.CodeFormGis) : " + config.CodeFormGis);
+                    throw new Exception("switch (config.CodeFormGis) : " + settings.CodeFormGis);
             }
             return new DataSource()
             {
                 Id = -1,
                 SiteId = dataGM.Station.SiteIdAmur,
-                CodeFormId = codeForm,
+                CodeFormId = codeFormId,
                 DateUTC = dataGM.DateObserv,
                 DateUTCRecieve = dataGM.DateRecieve,
                 DateLOCInsert = DateTime.Now,

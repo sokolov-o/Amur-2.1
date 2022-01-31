@@ -27,7 +27,7 @@ namespace SOV.GISMeteo
             }
         }
 
-        static public GISMeteoRepository Instance { get { return new GISMeteoRepository(); } }
+        static public GISMeteoRepository GetInstance { get { return new GISMeteoRepository(); } }
 
         public byte[] CheckPointBuffer { get; set; }
 

@@ -33,13 +33,7 @@ namespace SOV.Common
 
         public static bool IsEqual(User user1, User user2)
         {
-            if 
-            (
-                user1.Name == user2.Name
-                && user1.Password == user2.Password
-            )
-            return true;
-            return false;
+            return (user1.Name == user2.Name && user1.Password == user2.Password);
         }
     }
 }
